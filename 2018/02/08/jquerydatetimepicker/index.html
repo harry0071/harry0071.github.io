@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="js,插件,教程,jq," />
+  <meta name="keywords" content="教程,js,插件,jq," />
 
 
 
@@ -79,19 +79,25 @@
 
 
 
-<meta name="description" content="此项目的Github地址：https://github.com/xdan/datetimepicker演示地址: https://xdsoft.net/jqplugins/datetimepicker/">
+<meta name="description" content="datetimepicker是一个配置灵活的日期选择插件，你可以定义它的展示方式，包括日期格式、语言、限制选择日期范围、添加相关按钮以及其它导航等
+
+此项目的Github地址：https://github.com/xdan/datetimepicker演示地址: https://xdsoft.net/jqplugins/datetimepicker/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="日期时间控件jQuery datetimepicker的使用简介">
 <meta property="og:url" content="harry0071.github.io/2018/02/08/jquerydatetimepicker/index.html">
 <meta property="og:site_name" content="stage's blog">
-<meta property="og:description" content="此项目的Github地址：https://github.com/xdan/datetimepicker演示地址: https://xdsoft.net/jqplugins/datetimepicker/">
+<meta property="og:description" content="datetimepicker是一个配置灵活的日期选择插件，你可以定义它的展示方式，包括日期格式、语言、限制选择日期范围、添加相关按钮以及其它导航等
+
+此项目的Github地址：https://github.com/xdan/datetimepicker演示地址: https://xdsoft.net/jqplugins/datetimepicker/">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/0060lm7Tly1fo8yr0dcopj308x071aaf.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/0060lm7Tly1fo8yr0dcopj308x071aaf.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/0060lm7Tly1fo8ytxgumlj306z06cglv.jpg">
-<meta property="og:updated_time" content="2018-02-08T05:22:48.966Z">
+<meta property="og:updated_time" content="2018-02-08T12:08:05.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日期时间控件jQuery datetimepicker的使用简介">
-<meta name="twitter:description" content="此项目的Github地址：https://github.com/xdan/datetimepicker演示地址: https://xdsoft.net/jqplugins/datetimepicker/">
+<meta name="twitter:description" content="datetimepicker是一个配置灵活的日期选择插件，你可以定义它的展示方式，包括日期格式、语言、限制选择日期范围、添加相关按钮以及其它导航等
+
+此项目的Github地址：https://github.com/xdan/datetimepicker演示地址: https://xdsoft.net/jqplugins/datetimepicker/">
 <meta name="twitter:image" content="http://ww3.sinaimg.cn/large/0060lm7Tly1fo8yr0dcopj308x071aaf.jpg">
 
 
@@ -359,6 +365,9 @@
 
       
         <p><img src="http://ww3.sinaimg.cn/large/0060lm7Tly1fo8yr0dcopj308x071aaf.jpg" alt=""></p>
+<blockquote>
+<p>datetimepicker是一个配置灵活的日期选择插件，你可以定义它的展示方式，包括日期格式、语言、限制选择日期范围、添加相关按钮以及其它导航等</p>
+</blockquote>
 <p>此项目的Github地址：<a href="https://github.com/xdan/datetimepicker" target="_blank" rel="external">https://github.com/xdan/datetimepicker</a><br>演示地址: <a href="https://xdsoft.net/jqplugins/datetimepicker/" target="_blank" rel="external">https://xdsoft.net/jqplugins/datetimepicker/</a><br><a id="more"></a></p>
 <h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><h3 id="1-添加引用"><a href="#1-添加引用" class="headerlink" title="1.添加引用"></a>1.添加引用</h3><p>添加jquery.js、datetimepicker.js和datetimepicker.css到您的页面<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"css/jquery.datetimepicker.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span> =<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"js/jquery.datetimepicker.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <h3 id="2-创建input元素"><a href="#2-创建input元素" class="headerlink" title="2.创建input元素"></a>2.创建input元素</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"datetimepicker"</span> <span class="attr">type</span>=<span class="string">"text"</span> &gt;</span></div></pre></td></tr></table></figure>
@@ -387,11 +396,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/教程/" rel="tag"># 教程</a>
+          
             <a href="/tags/js/" rel="tag"># js</a>
           
             <a href="/tags/插件/" rel="tag"># 插件</a>
-          
-            <a href="/tags/教程/" rel="tag"># 教程</a>
           
             <a href="/tags/jq/" rel="tag"># jq</a>
           
@@ -415,6 +424,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/08/hexonext/" rel="prev" title="hexo的next主题个性化教程:打造炫酷网站">
+                hexo的next主题个性化教程:打造炫酷网站 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -495,7 +508,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -506,7 +519,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -517,7 +530,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -596,7 +609,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">自豪地采用 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
