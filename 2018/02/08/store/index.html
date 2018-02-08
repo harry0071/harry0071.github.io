@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="js,插件,教程," />
+  <meta name="keywords" content="js,插件,教程,jq," />
 
 
 
@@ -88,7 +88,7 @@
 <meta property="og:image" content="https://sfault-image.b0.upaiyun.com/242/242/2422428910-58314820ac1b1">
 <meta property="og:image" content="https://sfault-image.b0.upaiyun.com/391/813/3918133969-58314b8c58258">
 <meta property="og:image" content="https://sfault-image.b0.upaiyun.com/167/451/1674512367-58314fe041eac">
-<meta property="og:updated_time" content="2018-02-08T03:31:57.033Z">
+<meta property="og:updated_time" content="2018-02-08T04:53:00.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="store.js的使用 -- 本地存储localStorage的封装插件">
 <meta name="twitter:description" content="store.js 是一个兼容所有浏览器的 LocalStorage 包装器，不需要借助 Cookie 或者 Flash来实现。它提供非常了简洁的 API 来实现跨浏览器的本地存储功能。使用store,js简化了使用localStorage原生方法的操作。本文主要介绍如何用store.js操作localStorage。">
@@ -321,8 +321,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
+                  <a href="/categories/jq/" itemprop="url" rel="index">
+                    <span itemprop="name">jq</span>
                   </a>
                 </span>
 
@@ -367,7 +367,7 @@
 <p>store.js 是一个兼容所有浏览器的 LocalStorage 包装器，不需要借助 Cookie 或者 Flash来实现。它提供非常了简洁的 API 来实现跨浏览器的本地存储功能。<br>使用store,js简化了使用localStorage原生方法的操作。</p>
 <h3 id="store-js的使用"><a href="#store-js的使用" class="headerlink" title="store.js的使用"></a>store.js的使用</h3><ol>
 <li><p>首先引入store.min.js插件:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"store.min.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"store.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
 </li>
 <li><p>判断浏览器是否支持本地存储</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    init();</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(!store.enabled)&#123;</div><div class="line">            alert(<span class="string">"你的浏览器不支持本地存储，请使用更高版本的浏览器"</span>);</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            ......</div><div class="line">            &#125;</div><div class="line"> &lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
@@ -387,8 +387,13 @@
 <li>remove 移除key的记录<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">store.remove(<span class="string">'name'</span>);</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>在控制台可以看到name的值已经被移除  </p>
-<h2 id=""><a href="#" class="headerlink" title="  "></a><img src="https://sfault-image.b0.upaiyun.com/242/242/2422428910-58314820ac1b1" alt="">  </h2><h2 id="store-clear-清空所有本地存储"><a href="#store-clear-清空所有本地存储" class="headerlink" title="- store.clear(); 清空所有本地存储"></a>- <code>store.clear();</code> 清空所有本地存储</h2><ul>
+<p>在控制台可以看到name的值已经被移除<br><img src="https://sfault-image.b0.upaiyun.com/242/242/2422428910-58314820ac1b1" alt=""></p>
+<hr>
+<ul>
+<li>store.clear(); 清空所有本地存储</li>
+</ul>
+<hr>
+<ul>
 <li>getAll 从所有存储中获取值<br>格式：<code>store.getAll()</code>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">store.set(<span class="string">'name'</span>,<span class="string">'mavis'</span>);</div><div class="line">store.getAll().user.name == <span class="string">'mavis'</span>;   <span class="comment">//true</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -397,8 +402,7 @@
 <li>forEach 遍历所有的值  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">store.set(<span class="string">'user'</span>,&#123;<span class="attr">name</span>:<span class="string">'mavis'</span>,<span class="attr">likes</span>:<span class="string">'javascript'</span>&#125;); <span class="comment">// 存储对象 - 自动调用 JSON.stringify</span></div><div class="line"><span class="keyword">var</span> user = store.get(<span class="string">'user'</span>); <span class="comment">// 获取存储的对象 - 自动执行 JSON.parse</span></div><div class="line">store.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">key, val</span>) </span>&#123;</div><div class="line">                  <span class="built_in">console</span>.log(key, <span class="string">'=='</span>, val)</div><div class="line">            &#125;)  <span class="comment">// 遍历所有存储</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="https://sfault-image.b0.upaiyun.com/391/813/3918133969-58314b8c58258" alt="">  </p>
-<h3 id="在浏览器中查看LocalStorage的方法"><a href="#在浏览器中查看LocalStorage的方法" class="headerlink" title="在浏览器中查看LocalStorage的方法"></a>在浏览器中查看LocalStorage的方法</h3><p>F12打开开发人员工具→Application→Storage→LocalStorage<br><img src="https://sfault-image.b0.upaiyun.com/167/451/1674512367-58314fe041eac" alt=""></p>
+<h2 id=""><a href="#" class="headerlink" title="  "></a><img src="https://sfault-image.b0.upaiyun.com/391/813/3918133969-58314b8c58258" alt="">  </h2><h3 id="在浏览器中查看LocalStorage的方法"><a href="#在浏览器中查看LocalStorage的方法" class="headerlink" title="在浏览器中查看LocalStorage的方法"></a>在浏览器中查看LocalStorage的方法</h3><p>F12打开开发人员工具→Application→Storage→LocalStorage<br><img src="https://sfault-image.b0.upaiyun.com/167/451/1674512367-58314fe041eac" alt=""></p>
 
       
     </div>
@@ -422,6 +426,8 @@
           
             <a href="/tags/教程/" rel="tag"># 教程</a>
           
+            <a href="/tags/jq/" rel="tag"># jq</a>
+          
         </div>
       
 
@@ -429,6 +435,22 @@
       
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/08/jquerydatetimepicker/" rel="prev" title="日期时间控件jQuery datetimepicker的使用简介">
+                日期时间控件jQuery datetimepicker的使用简介 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -506,7 +528,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -528,7 +550,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -577,7 +599,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地存储localstorage"><span class="nav-number">1.</span> <span class="nav-text">本地存储localstorage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#store-js"><span class="nav-number">2.</span> <span class="nav-text">store.js</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#store-js的使用"><span class="nav-number">2.1.</span> <span class="nav-text">store.js的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.</span> <span class="nav-text">  </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#store-clear-清空所有本地存储"><span class="nav-number">4.</span> <span class="nav-text">- store.clear(); 清空所有本地存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在浏览器中查看LocalStorage的方法"><span class="nav-number">4.1.</span> <span class="nav-text">在浏览器中查看LocalStorage的方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地存储localstorage"><span class="nav-number">1.</span> <span class="nav-text">本地存储localstorage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#store-js"><span class="nav-number">2.</span> <span class="nav-text">store.js</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#store-js的使用"><span class="nav-number">2.1.</span> <span class="nav-text">store.js的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.</span> <span class="nav-text">  </span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在浏览器中查看LocalStorage的方法"><span class="nav-number">3.1.</span> <span class="nav-text">在浏览器中查看LocalStorage的方法</span></a></li></ol></li></ol></div>
             
 
           </div>
