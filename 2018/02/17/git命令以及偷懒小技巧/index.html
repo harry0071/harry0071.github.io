@@ -102,7 +102,7 @@
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fojttae5rvj215o106agj.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1fojtu8nw2zj21k210u44b.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1fojtypznvyj20qc0gcq50.jpg">
-<meta property="og:updated_time" content="2018-02-17T15:24:42.301Z">
+<meta property="og:updated_time" content="2018-02-20T06:35:29.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git命令以及偷懒小技巧">
 <meta name="twitter:description" content="本文简单介绍了git与github的配置，以及如何将本地仓库与github连接起来。还介绍了git常用的一些命令，以及如何简化git命令
@@ -401,8 +401,10 @@
 <li>如果你新买了电脑，就在新电脑上重新生成一个 SSH key，把这个 key 也上传到 GitHub，它可以和之前的 key 共存在 GitHub 上</li>
 <li>如果你把 key 从电脑上删除了，重新生成一个 key 即可，替换之前的 key</li>
 </ul>
-<h1 id="Git的配置与使用"><a href="#Git的配置与使用" class="headerlink" title="Git的配置与使用"></a>Git的配置与使用</h1><h2 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git config --global user.name 你的英文名</div><div class="line">git config --global user.email 你的邮箱</div><div class="line">git config --global push.default matching</div><div class="line">git config --global core.quotepath false</div><div class="line">git config --global core.editor &quot;vim&quot;</div></pre></td></tr></table></figure>
+<h1 id="Git的配置与使用"><a href="#Git的配置与使用" class="headerlink" title="Git的配置与使用"></a>Git的配置与使用</h1><h2 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h2><p><code>git --version</code> :查看当前git版本号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git config --global user.name 你的英文名</div><div class="line">git config --global user.email 你的邮箱</div><div class="line">git config --global push.default matching</div><div class="line">git config --global core.quotepath false</div><div class="line">git config --global core.editor &quot;vim&quot;</div></pre></td></tr></table></figure>
 <p>五句话，依次运行。不执行的话，电脑可能会爆炸你信不信。</p>
+<p><code>git config -l</code> : 查看配置</p>
 <hr>
 <h2 id="只在本地使用Git"><a href="#只在本地使用Git" class="headerlink" title="只在本地使用Git"></a>只在本地使用Git</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
 <li>创建目录作为我们的项目目录：<code>mkdir git-demo-1</code></li>
@@ -434,11 +436,12 @@
 <p>你也可以一次性 commit<br><code>git commit . -m &quot;添加了几个文件&quot;</code></p>
 <ol>
 <li>再再次运行 <code>git status -sb</code>，发现没有文件变动了，这是因为文件的变动已经记录在仓库里了。</li>
-<li><p>这时你使用 <code>git log</code> 就可以看到历史上文件的变动：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">commit f0d95058cd32a332b98967f6c0a701c64a00810a</div><div class="line">Author: xxxxxx &lt;xxxxxxxx@gmail.com&gt;</div><div class="line">Date:   Thu Sep 28 22:30:43 2017 +0800</div><div class="line"></div><div class="line">    添加几个文件</div></pre></td></tr></table></figure>
+<li>这时你使用 <code>git log</code> 就可以看到历史上文件的变动：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">commit f0d95058cd32a332b98967f6c0a701c64a00810a</div><div class="line">Author: xxxxxx &lt;xxxxxxxx@gmail.com&gt;</div><div class="line">Date:   Thu Sep 28 22:30:43 2017 +0800</div><div class="line"></div><div class="line">    添加几个文件</div></pre></td></tr></table></figure>
 </li>
-<li><p>运行<code>history</code>可以看到历史上输入过的命令</p>
-</li>
+</ol>
+<p>按↑ ↓键查看，按 Q 退出</p>
+<ol>
+<li>运行<code>history</code>可以看到历史上输入过的命令</li>
 <li>运行<code>start css/style.css</code> 会使用默认的编辑器编辑style.css，保存</li>
 <li><p>运行<code>git status -sb</code>,可以看到style.css前面一个红色的M(Modified)，代表文件有过变动但未add到仓库</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">## master</div><div class="line">M css/style.css</div></pre></td></tr></table></figure>
@@ -492,7 +495,7 @@
 <li>如果有新的变动，我们只需要依次执行 git add xxx 和 git commit -m ‘xxx’ 两个命令即可。别看本教程废话那么多，其实就这一句有用！先 add 再 commit，行了，你学会 git 了。</li>
 <li>git log 查看变更历史</li>
 </ul>
-<h2 id="如何上传更新"><a href="#如何上传更新" class="headerlink" title="如何上传更新"></a>如何上传更新</h2><p>你在本地目录有任何变动，只需按照以下顺序就能上传到github：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git add 文件路径</div><div class="line">git commit -m &quot;信息&quot;</div><div class="line">git pull （相信我，你一定会忘记这一个命令）</div><div class="line">git push</div></pre></td></tr></table></figure></p>
+<h2 id="如何上传更新"><a href="#如何上传更新" class="headerlink" title="如何上传更新"></a>如何上传更新</h2><p>你在本地目录有任何变动，只需按照以下顺序就能上传到github：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git add 文件路径</div><div class="line">git commit -m &quot;信息&quot;</div><div class="line">git pull （相信我，你一定会忘记这一个命令）获取远程仓库最新文件</div><div class="line">git push</div></pre></td></tr></table></figure></p>
 <p>下面是例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cd git-demo-1</div><div class="line">touch index2.html</div><div class="line">git add index2.html</div><div class="line">git commit -m &quot;新建 index2.html&quot;</div><div class="line">git pull</div><div class="line">退出vim: esc + : + q + !</div><div class="line">git push</div></pre></td></tr></table></figure></p>
 <p>然后你去 git-demo-1 的 GitHub 页面，就能看到 index2.html 出现在里面了。是不是很……简……单……呢……</p>
 <h2 id="其他Git命令"><a href="#其他Git命令" class="headerlink" title="其他Git命令"></a>其他Git命令</h2><ul>
@@ -517,7 +520,7 @@
 <li>重新编辑 ~/.bashrc，内容改为 <code>cd ~/Desktop</code>，重启 Git Bash，有没有发现默认就进入桌面目录了？</li>
 </ul>
 <p>你可以用 ~/.bashrc 在进入 Git Bash 前执行任何命令，十分方便。</p>
-<h2 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h2><ol>
+<h2 id="alias-简写"><a href="#alias-简写" class="headerlink" title="alias(简写)"></a>alias(简写)</h2><ol>
 <li>在 ~/.bashrc 里新增一行 <code>alias f=&quot;echo &#39;frank is awesome&#39;&quot;</code>，等于号两边不能有空格，你最好一个字都不要错。</li>
 </ol>
 <ul>
@@ -584,6 +587,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/18/git使用的步骤与流程/" rel="prev" title="git使用的步骤与流程">
+                git使用的步骤与流程 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -664,7 +671,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -735,7 +742,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置-GitHub-SSH-Key"><span class="nav-number">1.</span> <span class="nav-text">配置 GitHub (SSH Key)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git的配置与使用"><span class="nav-number">2.</span> <span class="nav-text">Git的配置与使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Git"><span class="nav-number">2.1.</span> <span class="nav-text">配置Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#只在本地使用Git"><span class="nav-number">2.2.</span> <span class="nav-text">只在本地使用Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">2.2.1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.2.2.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将本地仓库上传到-GitHub"><span class="nav-number">2.3.</span> <span class="nav-text">将本地仓库上传到 GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接在-GitHub-创建一个仓库，然后下载到本地"><span class="nav-number">2.4.</span> <span class="nav-text">直接在 GitHub 创建一个仓库，然后下载到本地</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-2"><span class="nav-number">2.4.1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结-1"><span class="nav-number">2.4.2.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何上传更新"><span class="nav-number">2.5.</span> <span class="nav-text">如何上传更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他Git命令"><span class="nav-number">2.6.</span> <span class="nav-text">其他Git命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git操作偷懒技巧"><span class="nav-number">3.</span> <span class="nav-text">git操作偷懒技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自动运行"><span class="nav-number">3.1.</span> <span class="nav-text">自动运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alias"><span class="nav-number">3.2.</span> <span class="nav-text">alias</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量"><span class="nav-number">3.3.</span> <span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-PATH"><span class="nav-number">3.4.</span> <span class="nav-text">设置 PATH</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置-GitHub-SSH-Key"><span class="nav-number">1.</span> <span class="nav-text">配置 GitHub (SSH Key)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git的配置与使用"><span class="nav-number">2.</span> <span class="nav-text">Git的配置与使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Git"><span class="nav-number">2.1.</span> <span class="nav-text">配置Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#只在本地使用Git"><span class="nav-number">2.2.</span> <span class="nav-text">只在本地使用Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">2.2.1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.2.2.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将本地仓库上传到-GitHub"><span class="nav-number">2.3.</span> <span class="nav-text">将本地仓库上传到 GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接在-GitHub-创建一个仓库，然后下载到本地"><span class="nav-number">2.4.</span> <span class="nav-text">直接在 GitHub 创建一个仓库，然后下载到本地</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-2"><span class="nav-number">2.4.1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结-1"><span class="nav-number">2.4.2.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何上传更新"><span class="nav-number">2.5.</span> <span class="nav-text">如何上传更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他Git命令"><span class="nav-number">2.6.</span> <span class="nav-text">其他Git命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git操作偷懒技巧"><span class="nav-number">3.</span> <span class="nav-text">git操作偷懒技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自动运行"><span class="nav-number">3.1.</span> <span class="nav-text">自动运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alias-简写"><span class="nav-number">3.2.</span> <span class="nav-text">alias(简写)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量"><span class="nav-number">3.3.</span> <span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-PATH"><span class="nav-number">3.4.</span> <span class="nav-text">设置 PATH</span></a></li></ol></li></ol></div>
             
 
           </div>
