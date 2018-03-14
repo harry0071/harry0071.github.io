@@ -16,7 +16,8 @@
         if(''){
             if (prompt('请输入文章密码') !== ''){
                 alert('密码错误！');
-                history.back();
+                //history.back(); 不推荐这种方法，建议使用下面的方法
+                location="//harry0071.github.io"; //返回网站，请自定义
             }
         }
     })();
@@ -112,7 +113,7 @@
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fomvzdvj74j20ij0bcab3.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fomw208dafj205i0ad3ym.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1fomw6nit3oj20fh0aygm2.jpg">
-<meta property="og:updated_time" content="2018-02-20T06:50:41.314Z">
+<meta property="og:updated_time" content="2018-03-01T11:40:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git使用的步骤与流程">
 <meta name="twitter:description" content="git的使用，包括add、commit、打标签、创建以及合并分支、push到远程仓库">
@@ -396,6 +397,7 @@
 <li><code>git status -sb</code> : 查看文件状态。红色??表示该文件还没add过。绿色A表示add过但没commit了</li>
 <li><code>git add .</code> : 将所有修改添加至暂存区。然后运行<code>git status -sb</code>查看此时的状态。绿色A表示add过但没commit了</li>
 <li><code>git commit -m &quot;描述&quot;</code> ：造一颗后悔药</li>
+<li>建议使用<code>git commit -v</code>来造后悔药<br><code>git commit -v</code>可进行多行描述，首行为title，次行开始description。<br>比如首行“做了一些更新”，次行“详细更新了xxxx和xxxx以及xxxx”</li>
 <li>组合技 <code>git add . &amp;&amp; git commit -m &quot;描述&quot;</code> ：将add和commit组合使用</li>
 <li><p><code>git log</code> : 查看后悔药的id（commit后面的代码），按↑ ↓键查看，按 Q 退出</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">commit f0d95058cd32a332b98967f6c0a701c64a00810a</div><div class="line"> Author: xxxxxx &lt;xxxxxxxx@gmail.com&gt;</div><div class="line"> Date:   Thu Sep 28 22:30:43 2017 +0800</div><div class="line"></div><div class="line">     完成第一章</div></pre></td></tr></table></figure>
@@ -597,7 +599,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -608,7 +610,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -619,7 +621,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

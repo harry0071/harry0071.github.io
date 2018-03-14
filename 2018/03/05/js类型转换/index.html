@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                //history.back(); 不推荐这种方法，建议使用下面的方法
+                location="//harry0071.github.io"; //返回网站，请自定义
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,笔记,面试题," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="js类型转换的方法6个falsy值内存图数据的引用垃圾回收深拷贝vs浅拷贝">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js类型转换，内存图，数据的引用，垃圾回收，深拷贝vs浅拷贝">
+<meta property="og:url" content="harry0071.github.io/2018/03/05/js类型转换/index.html">
+<meta property="og:site_name" content="stage's blog">
+<meta property="og:description" content="js类型转换的方法6个falsy值内存图数据的引用垃圾回收深拷贝vs浅拷贝">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1pad5ajhj20xu0bkq3u.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1pbg3s0wj210s0f4tay.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1pd2ki92j20xq0g2757.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fp1plojewyj205r0dnabu.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1fp1prdvjgtj204q0dfjsj.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fp1qnucbtij20st09wjvo.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fp1r2lbjnfj213e0nhnf7.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1re80wfbj20zt0ktq95.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1rowth0nj20s60b4jup.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1fp1ru1sv1nj20wb0dgadt.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fp1t8rnymwj20yq0i4dm2.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1fp1ugfo9z8j20zi0hsq7s.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1fp1ulftgrnj212a0ldjx9.jpg">
+<meta property="og:updated_time" content="2018-03-09T04:33:40.357Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js类型转换，内存图，数据的引用，垃圾回收，深拷贝vs浅拷贝">
+<meta name="twitter:description" content="js类型转换的方法6个falsy值内存图数据的引用垃圾回收深拷贝vs浅拷贝">
+<meta name="twitter:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1pad5ajhj20xu0bkq3u.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="harry0071.github.io/2018/03/05/js类型转换/"/>
+
+
+
+
+
+  <title>js类型转换，内存图，数据的引用，垃圾回收，深拷贝vs浅拷贝 | stage's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">stage's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="harry0071.github.io/2018/03/05/js类型转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="stage">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22497777">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="stage's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js类型转换，内存图，数据的引用，垃圾回收，深拷贝vs浅拷贝</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T09:36:57+08:00">
+                2018-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>js类型转换的方法<br>6个falsy值<br>内存图<br>数据的引用<br>垃圾回收<br>深拷贝vs浅拷贝</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="转成字符串"><a href="#转成字符串" class="headerlink" title="转成字符串"></a>转成字符串</h1><h2 id="String-x"><a href="#String-x" class="headerlink" title="String(x)"></a>String(x)</h2><p>String(x)是一个window的全局方法<br><img src="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1pad5ajhj20xu0bkq3u.jpg" alt=""></p>
+<h2 id="x-toString"><a href="#x-toString" class="headerlink" title="x.toString()"></a>x.toString()</h2><p>null和undefined没有.toString()方法</p>
+<p><img src="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1pbg3s0wj210s0f4tay.jpg" alt=""></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span>toString()  <span class="comment">//报错</span></div><div class="line"><span class="number">1.</span>.toString() <span class="comment">// '1'</span></div></pre></td></tr></table></figure>
+<h2 id="x-‘’-与空字符串相加"><a href="#x-‘’-与空字符串相加" class="headerlink" title="x + ‘’ 与空字符串相加"></a>x + ‘’ 与空字符串相加</h2><p>这种方法比较简便，推荐用这种方法转成字符串</p>
+<p><img src="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1pd2ki92j20xq0g2757.jpg" alt=""></p>
+<h1 id="转成布尔值"><a href="#转成布尔值" class="headerlink" title="转成布尔值"></a>转成布尔值</h1><h2 id="Boolean-x"><a href="#Boolean-x" class="headerlink" title="Boolean(x)"></a>Boolean(x)</h2><p>注意!空对象是true</p>
+<p><img src="http://ww4.sinaimg.cn/large/87c01ec7gy1fp1plojewyj205r0dnabu.jpg" alt=""></p>
+<h2 id="x"><a href="#x" class="headerlink" title="!!x"></a>!!x</h2><p><img src="http://ww1.sinaimg.cn/large/87c01ec7gy1fp1prdvjgtj204q0dfjsj.jpg" alt=""></p>
+<h1 id="转成数字"><a href="#转成数字" class="headerlink" title="转成数字"></a>转成数字</h1><h2 id="Number-x"><a href="#Number-x" class="headerlink" title="Number(x)"></a>Number(x)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Number</span>(<span class="string">'3'</span>) <span class="comment">//3 变成数字</span></div><div class="line"><span class="built_in">Number</span>(<span class="string">'sss'</span>) <span class="comment">//NaN NaN也是数字类型</span></div><div class="line"><span class="built_in">Number</span>(<span class="literal">true</span>) <span class="comment">//1</span></div><div class="line"><span class="built_in">Number</span>(<span class="literal">false</span>) <span class="comment">//0</span></div><div class="line"><span class="built_in">Number</span>(<span class="literal">null</span>) <span class="comment">//0</span></div><div class="line"><span class="built_in">Number</span>(<span class="literal">undefined</span>) <span class="comment">//NaN</span></div></pre></td></tr></table></figure>
+<h2 id="parseInt-x"><a href="#parseInt-x" class="headerlink" title="parseInt(x)"></a>parseInt(x)</h2><p><code>parseInt(&#39;123&#39;)</code></p>
+<h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">011</span>; <span class="comment">// a=9 js看到0开头默认转成8进制</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'011'</span>) <span class="comment">// 11 【默认转成10进制】</span></div><div class="line"></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'011'</span>,<span class="number">8</span>) <span class="comment">// 9</span></div><div class="line"></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'s'</span>) <span class="comment">// NaN</span></div><div class="line"><span class="built_in">parseInt</span>(<span class="string">'1s'</span>) <span class="comment">// 1</span></div></pre></td></tr></table></figure>
+<h2 id="parseFloat-x"><a href="#parseFloat-x" class="headerlink" title="parseFloat(x)"></a>parseFloat(x)</h2><p><code>parseFloat(3.14)</code></p>
+<h2 id="x-0-推荐这种"><a href="#x-0-推荐这种" class="headerlink" title="x - 0 推荐这种"></a>x - 0 推荐这种</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">'123'</span><span class="number">-0</span> <span class="comment">// 123</span></div><div class="line"><span class="string">'3.14'</span><span class="number">-0</span> <span class="comment">// 3.14</span></div></pre></td></tr></table></figure>
+<h2 id="x-取正"><a href="#x-取正" class="headerlink" title="+x 取正"></a>+x 取正</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">+ <span class="string">'-1'</span> <span class="comment">// -1</span></div><div class="line">+ <span class="string">'3.14'</span> <span class="comment">// 3.14</span></div></pre></td></tr></table></figure>
+<h1 id="6个falsy值"><a href="#6个falsy值" class="headerlink" title="6个falsy值"></a>6个falsy值</h1><p>0、NaN、空字符串、false、null、undefined</p>
+<p>所有对象都是true<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="literal">false</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>);</div><div class="line"><span class="keyword">if</span>(a)&#123;<span class="built_in">console</span>.log(<span class="number">1</span>)&#125;</div><div class="line"><span class="keyword">if</span>(b)&#123;<span class="built_in">console</span>.log(<span class="number">2</span>)&#125; </div><div class="line">结果是<span class="number">2</span>，因为b是个对象</div></pre></td></tr></table></figure></p>
+<h1 id="内存图"><a href="#内存图" class="headerlink" title="内存图"></a>内存图</h1><ul>
+<li>JS 引擎将内存分为代码区和数据区</li>
+</ul>
+<p><img src="http://ww4.sinaimg.cn/large/87c01ec7gy1fp1qnucbtij20st09wjvo.jpg" alt=""></p>
+<p>我们只研究数据区</p>
+<ul>
+<li>数据区又分为 Stack区（栈内存） 和 Heap区（堆内存）</li>
+<li>简单类型的数据直接存在 Stack 里</li>
+<li>复杂类型(object)把地址存到 Stack 区，把地址对应的数据存到 Heap区</li>
+</ul>
+<p><code>o2 = o</code>;并不是修改了o2在Heap的数据，而是将o2的地址修改成o的地址，因此2访问o对应的数据</p>
+<p><img src="http://ww4.sinaimg.cn/large/87c01ec7gy1fp1r2lbjnfj213e0nhnf7.jpg" alt=""></p>
+<h1 id="面试题-对象的引用"><a href="#面试题-对象的引用" class="headerlink" title="面试题-对象的引用"></a>面试题-对象的引用</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">默认已经变量提升</div><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125; <span class="comment">//先在Heap区生成数据，然后在Stack区生成a的Address指向对应的数据</span></div><div class="line"><span class="keyword">var</span> b = a <span class="comment">// 将a的地址赋给b，而不是将a的数据赋值给b</span></div><div class="line">b = &#123;<span class="attr">name</span>: <span class="string">'b'</span>&#125; <span class="comment">//在Heap区生成新的数据，然后生成b的地址指向对应的数据</span></div><div class="line">请问现在 a.name 是多少？ <span class="comment">// 'a' a的地址没变，仍旧指向a的数据</span></div><div class="line"></div><div class="line">b = &#123;<span class="attr">name</span>:<span class="string">'b'</span>&#125;并不会修改Heap区的数据，而是声明一个新的数据，</div><div class="line">然后Stack区的地址修改为新声明的数据对应的地址</div></pre></td></tr></table></figure>
+<p><img src="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1re80wfbj20zt0ktq95.jpg" alt=""></p>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">默认已经变量提升</div><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125; <span class="comment">// 先在Heap区生成数据，然后在Stack区生成a的Address指向对应的数据</span></div><div class="line"><span class="keyword">var</span> b = a <span class="comment">// 将a的地址赋给b,此时b指向a的地址对应的数据</span></div><div class="line">b.name = <span class="string">'b'</span> <span class="comment">// 修改a的地址对应的数据</span></div><div class="line">请问现在 a.name 是多少？ <span class="comment">// 'b'</span></div></pre></td></tr></table></figure>
+<p><img src="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1rowth0nj20s60b4jup.jpg" alt=""></p>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b = <span class="literal">null</span> <span class="comment">// null是简单类型，所以直接将b的STack区修改为null</span></div><div class="line">请问现在 a 是什么？ <span class="comment">// &#123;name: 'a'&#125;</span></div></pre></td></tr></table></figure>
+<p><img src="http://ww2.sinaimg.cn/large/87c01ec7gy1fp1ru1sv1nj20wb0dgadt.jpg" alt=""></p>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">n</span>:<span class="number">1</span>&#125;; <span class="comment">// heap区生成数据34，a生成地址34指向数据34</span></div><div class="line"><span class="keyword">var</span> b = a; <span class="comment">// b的地址也是34</span></div><div class="line">a.x = a = &#123;<span class="attr">n</span>:<span class="number">2</span>&#125;; <span class="comment">//此时最前面a.x是地址34的x</span></div><div class="line"><span class="comment">// a.x等于地址a，即 34里的x = 新地址54【因为后面a在heap区生成了数据54&#123;n:2&#125;】</span></div><div class="line"></div><div class="line">alert(a.x);<span class="comment">// --&gt; undefined 这里的a已经变成地址54了，54里的x是undefined</span></div><div class="line">alert(b.x);<span class="comment">// --&gt; [object Object] 由于b指向34,而34里的x = 新地址54</span></div></pre></td></tr></table></figure>
+<p><img src="http://ww4.sinaimg.cn/large/87c01ec7gy1fp1t8rnymwj20yq0i4dm2.jpg" alt=""></p>
+<h1 id="面试题-垃圾回收"><a href="#面试题-垃圾回收" class="headerlink" title="面试题-垃圾回收"></a>面试题-垃圾回收</h1><p>如果一个对象没有被引用(就是说没有地址指向它)，它就是垃圾，将会被回收</p>
+<p><img src="http://ww1.sinaimg.cn/large/87c01ec7gy1fp1ugfo9z8j20zi0hsq7s.jpg" alt=""></p>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"><span class="built_in">document</span>.body.onclick = fn;</div><div class="line">fn = <span class="literal">null</span>;</div><div class="line"></div><div class="line">请问fn是垃圾吗？</div><div class="line">不是。</div><div class="line">一开始fn的Stack区是地址<span class="number">110</span>,<span class="number">110</span>指向数据fn</div><div class="line"><span class="built_in">document</span>是个复杂类型，所以Stack区存的地址<span class="number">222</span></div><div class="line">数据<span class="number">222</span>里的body也是个复杂类型，所以body存的是地址<span class="number">333</span></div><div class="line"><span class="number">333</span>里的onclick指向一开始声明的fn</div><div class="line">fn=<span class="literal">null</span>，<span class="literal">null</span>是简单类型，因此fn的Stack区更改为<span class="literal">null</span></div><div class="line">虽然fn=<span class="literal">null</span>，但是fn被onclick引用，而onclick被body引用，body被<span class="built_in">document</span>引用</div><div class="line">因此fn不是垃圾</div><div class="line"></div><div class="line"><span class="built_in">document</span>.body.onclick = fn;</div><div class="line">此时fn是垃圾,因为没有东西引用它</div></pre></td></tr></table></figure>
+<p><img src="http://ww1.sinaimg.cn/large/87c01ec7gy1fp1ulftgrnj212a0ldjx9.jpg" alt=""></p>
+<h1 id="浅拷贝vs深拷贝"><a href="#浅拷贝vs深拷贝" class="headerlink" title="浅拷贝vs深拷贝"></a>浅拷贝vs深拷贝</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> b = a;</div><div class="line">b = <span class="number">2</span>;<span class="comment">//这个时候改变b</span></div><div class="line"><span class="built_in">console</span>.log(a);<span class="comment">// 1 【a 完全不受 b 的影响】</span></div><div class="line">把a赋值给b，当b改变时，a依然不变，这就是深拷贝</div><div class="line"></div><div class="line">对于简单类型的数据来说，赋值就是深拷贝。</div><div class="line">对于复杂类型的数据（对象）来说，才要区分浅拷贝和深拷贝。</div><div class="line"></div><div class="line">----------</div><div class="line">对象的浅拷贝：</div><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>:<span class="string">'stage'</span>&#125;; <span class="comment">//复杂类型</span></div><div class="line"><span class="keyword">var</span> b = a; <span class="comment">// b的地址就是a的地址，因此指向a的数据</span></div><div class="line">b.name = <span class="string">'xxx'</span>; <span class="comment">//修改a的地址对应的数据</span></div><div class="line"><span class="built_in">console</span>.log(a.name) <span class="comment">// 'xxx' </span></div><div class="line">把a赋值给b(复杂类型的赋值只是将Stack区的地址进行了拷贝)，当b改变时，a也改变，这就是浅拷贝</div><div class="line"></div><div class="line">对象的深拷贝：</div><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'frank'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = deepClone(a) <span class="comment">// deepClone 还不知道怎么实现</span></div><div class="line">b.name = <span class="string">'b'</span></div><div class="line">a.name === <span class="string">'a'</span> <span class="comment">// true</span></div><div class="line">对象的深拷贝就是对 Heap 区进行完全的拷贝。</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+    <div>
+      
+          <div>
+    
+        <div style="text-align:center;color: #404040;font-size:18px;margin-top:70px;">-------------本文结束<i class="fa fa-star"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/03/js里的数据类型/" rel="next" title="js里的数据类型">
+                <i class="fa fa-chevron-left"></i> js里的数据类型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/05/对象,全局函数,原型和原型链/" rel="prev" title="全局函数、原型和原型链">
+                全局函数、原型和原型链 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars3.githubusercontent.com/u/22497777"
+                alt="stage" />
+            
+              <p class="site-author-name" itemprop="name">stage</p>
+              <p class="site-description motion-element" itemprop="description">学习、记录、感悟、成长</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/harry0071" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:2015081a@sina.com" target="_blank" title="E-mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#转成字符串"><span class="nav-number">1.</span> <span class="nav-text">转成字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#String-x"><span class="nav-number">1.1.</span> <span class="nav-text">String(x)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x-toString"><span class="nav-number">1.2.</span> <span class="nav-text">x.toString()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x-‘’-与空字符串相加"><span class="nav-number">1.3.</span> <span class="nav-text">x + ‘’ 与空字符串相加</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#转成布尔值"><span class="nav-number">2.</span> <span class="nav-text">转成布尔值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Boolean-x"><span class="nav-number">2.1.</span> <span class="nav-text">Boolean(x)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x"><span class="nav-number">2.2.</span> <span class="nav-text">!!x</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#转成数字"><span class="nav-number">3.</span> <span class="nav-text">转成数字</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Number-x"><span class="nav-number">3.1.</span> <span class="nav-text">Number(x)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#parseInt-x"><span class="nav-number">3.2.</span> <span class="nav-text">parseInt(x)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#面试题"><span class="nav-number">3.2.1.</span> <span class="nav-text">面试题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#parseFloat-x"><span class="nav-number">3.3.</span> <span class="nav-text">parseFloat(x)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x-0-推荐这种"><span class="nav-number">3.4.</span> <span class="nav-text">x - 0 推荐这种</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x-取正"><span class="nav-number">3.5.</span> <span class="nav-text">+x 取正</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6个falsy值"><span class="nav-number">4.</span> <span class="nav-text">6个falsy值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存图"><span class="nav-number">5.</span> <span class="nav-text">内存图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题-对象的引用"><span class="nav-number">6.</span> <span class="nav-text">面试题-对象的引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题-垃圾回收"><span class="nav-number">7.</span> <span class="nav-text">面试题-垃圾回收</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浅拷贝vs深拷贝"><span class="nav-number">8.</span> <span class="nav-text">浅拷贝vs深拷贝</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">stage</span>
+
+  
+</div>
+
+
+  <div class="powered-by">自豪地采用 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

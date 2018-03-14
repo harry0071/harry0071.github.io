@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if('11111111'){
+            if (prompt('请输入文章密码') !== '11111111'){
+                alert('密码错误！');
+                //history.back(); 不推荐这种方法，建议使用下面的方法
+                location="//harry0071.github.io"; //返回网站，请自定义
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,笔记,面试题," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="javascript查漏补缺，一些零碎的知识点的补充">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript知识点补充">
+<meta property="og:url" content="harry0071.github.io/2018/02/27/JavaScript知识点补充/index.html">
+<meta property="og:site_name" content="stage's blog">
+<meta property="og:description" content="javascript查漏补缺，一些零碎的知识点的补充">
+<meta property="og:updated_time" content="2018-03-07T07:17:47.762Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript知识点补充">
+<meta name="twitter:description" content="javascript查漏补缺，一些零碎的知识点的补充">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="harry0071.github.io/2018/02/27/JavaScript知识点补充/"/>
+
+
+
+
+
+  <title>JavaScript知识点补充 | stage's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">stage's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="harry0071.github.io/2018/02/27/JavaScript知识点补充/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="stage">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22497777">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="stage's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaScript知识点补充</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-27T13:04:03+08:00">
+                2018-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>javascript查漏补缺，一些零碎的知识点的补充</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="sublime正则替换的用法"><a href="#sublime正则替换的用法" class="headerlink" title="sublime正则替换的用法"></a>sublime正则替换的用法</h1><h1 id="store-js的使用"><a href="#store-js的使用" class="headerlink" title="store.js的使用"></a>store.js的使用</h1><p>记得判断是否存在容器<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">website = store.get(<span class="string">'容器1'</span>) || website;</div><div class="line"><span class="comment">//从容器1中取出website,如果存在就覆盖原始的website，如果不存在就使用原始的website</span></div></pre></td></tr></table></figure></p>
+<h1 id="prompt的使用"><a href="#prompt的使用" class="headerlink" title="prompt的使用"></a>prompt的使用</h1><p>弹出一个确认框。如果点击取消，则promote返回null，所以要做判断是否点击确定还是取消</p>
+<h1 id="键盘事件要加在document身上"><a href="#键盘事件要加在document身上" class="headerlink" title="键盘事件要加在document身上"></a>键盘事件要加在document身上</h1><p>键盘事件要加在document身上<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.onkeypress = fn1;</div></pre></td></tr></table></figure></p>
+<h1 id="ev"><a href="#ev" class="headerlink" title="ev"></a>ev</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xxx.onclick= <span class="function"><span class="keyword">function</span> (<span class="params">ev</span>) </span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(ev); <span class="comment">//可以看到许多和ev有关的内容</span></div><div class="line">		&#125;</div></pre></td></tr></table></figure>
+<h2 id="ev-target"><a href="#ev-target" class="headerlink" title="ev.target"></a>ev.target</h2><h2 id="ev-key和ev-keyCode"><a href="#ev-key和ev-keyCode" class="headerlink" title="ev.key和ev.keyCode"></a>ev.key和ev.keyCode</h2><p>ev.key直接获取按下哪个键<br>ev.keyCode获取键值</p>
+<h1 id="oImg-onerror"><a href="#oImg-onerror" class="headerlink" title="oImg.onerror"></a>oImg.onerror</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">oImg.onerror = function (ev) &#123;</div><div class="line">	ev.target.src = &apos;//i.loli.net/2017/11/10/5a051fbc5e183.png&apos;;//如果网络图标下载出错就改用默认图标</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="open和location-href"><a href="#open和location-href" class="headerlink" title="open和location.href"></a>open和location.href</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">open(<span class="string">'http://www.qq.com'</span>); <span class="comment">//默认新窗口打开</span></div><div class="line">open(<span class="string">'http://www.qq.com'</span>, <span class="string">'_blank'</span>);<span class="comment">//同上</span></div><div class="line"></div><div class="line">open(<span class="string">'http://www.qq.com'</span>, <span class="string">'_self'</span>);<span class="comment">//在当前窗口打开</span></div><div class="line">location.href = <span class="string">'http://www.baidu.com'</span><span class="comment">//同上</span></div></pre></td></tr></table></figure>
+<h1 id="函数封装"><a href="#函数封装" class="headerlink" title="函数封装"></a>函数封装</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">tag</span>(<span class="params">tagName, attr</span>)</span>&#123; <span class="comment">//tag('div', &#123;id:'div1', className:'test'&#125;)</span></div><div class="line">	<span class="keyword">var</span> ele = <span class="built_in">document</span>.creatElement(tagName);</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> attr) &#123; <span class="comment">//遍历attr里的所有键值对</span></div><div class="line">		ele[key] = attr[key]; <span class="comment">//div.id=div1, div.className=test</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ele;</div></pre></td></tr></table></figure>
+<h1 id="return多个时要用json"><a href="#return多个时要用json" class="headerlink" title="return多个时要用json"></a>return多个时要用json</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> keys = [</div><div class="line">		[<span class="string">'q'</span>,<span class="string">'w'</span>,<span class="string">'e'</span>,<span class="string">'r'</span>,<span class="string">'t'</span>,<span class="string">'y'</span>,<span class="string">'u'</span>,<span class="string">'i'</span>,<span class="string">'o'</span>,<span class="string">'p'</span>],</div><div class="line">		[<span class="string">'a'</span>,<span class="string">'s'</span>,<span class="string">'d'</span>,<span class="string">'f'</span>,<span class="string">'g'</span>,<span class="string">'h'</span>,<span class="string">'j'</span>,<span class="string">'k'</span>,<span class="string">'l'</span>]</div><div class="line">	];</div><div class="line">	<span class="keyword">var</span> website = &#123;</div><div class="line">		<span class="string">'q'</span>: <span class="string">'qq.com'</span>,</div><div class="line">		<span class="string">'w'</span>: <span class="string">'weibo.com'</span></div><div class="line">	&#125;;</div><div class="line">	</div><div class="line">	<span class="keyword">return</span> &#123;</div><div class="line">		<span class="string">'keys'</span>: keys,</div><div class="line">		<span class="string">'website'</span>: website</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> keys = init().keys; <span class="comment">//或写成init()['keys']</span></div><div class="line"><span class="keyword">var</span> website = init().website; <span class="comment">//或写成init()['website']</span></div></pre></td></tr></table></figure>
+<h1 id="三元运算"><a href="#三元运算" class="headerlink" title="三元运算"></a>三元运算</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> n = <span class="number">7</span>;</div><div class="line"><span class="keyword">var</span> msg = <span class="string">'数字'</span> + n + <span class="string">'是'</span> + (n % <span class="number">2</span> === <span class="number">0</span> ? <span class="string">'偶数'</span> : <span class="string">'奇数'</span>);</div><div class="line"><span class="built_in">console</span>.log(msg);</div></pre></td></tr></table></figure>
+<h1 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h1><p>所有的变量的声明语句var，都会被提升到代码的头部，这就叫做变量提升<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a);<span class="comment">//undefined</span></div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line"></div><div class="line">等同于</div><div class="line"></div><div class="line"><span class="keyword">var</span> a; <span class="comment">//var提升到头部，此时a = undefined</span></div><div class="line"><span class="built_in">console</span>.log(a);</div><div class="line">a = <span class="number">1</span>;</div></pre></td></tr></table></figure></p>
+<h1 id="js命名规范"><a href="#js命名规范" class="headerlink" title="js命名规范"></a>js命名规范</h1><p>js对大小写敏感，所以<code>var a</code>和<code>var A</code>是不同的。<br>要求：<br>第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（$）和下划线（_）。<br>第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字0-9。<br>中文是合法的标识符，可以用作变量名。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 临时变量 = <span class="number">1</span>;</div></pre></td></tr></table></figure></p>
+<h1 id="sitch语句。"><a href="#sitch语句。" class="headerlink" title="sitch语句。"></a>sitch语句。</h1><p>多个if…else连在一起使用的时候，可以转为使用更方便的switch结构。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">switch</span> (fruit) &#123;</div><div class="line">  <span class="keyword">case</span> <span class="string">"banana"</span>:</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    <span class="keyword">break</span>;</div><div class="line">  <span class="keyword">case</span> <span class="string">"apple"</span>:</div><div class="line">    <span class="comment">// ...</span></div><div class="line">    <span class="keyword">break</span>;</div><div class="line">  <span class="keyword">default</span>:</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">每个<span class="keyword">case</span>代码块内部的<span class="keyword">break</span>语句不能少，否则会接下去执行下一个<span class="keyword">case</span>代码块</div><div class="line"></div><div class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</div><div class="line"></div><div class="line"><span class="keyword">switch</span> (x) &#123;</div><div class="line">  <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'x 等于1'</span>);</div><div class="line">  <span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'x 等于2'</span>);</div><div class="line">  <span class="keyword">default</span>:</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'x 等于其他值'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// x等于1</span></div><div class="line"><span class="comment">// x等于2</span></div><div class="line"><span class="comment">// x等于其他值</span></div><div class="line"></div><div class="line">上面代码中，<span class="keyword">case</span>代码块之中没有<span class="keyword">break</span>语句，导致一直执行下去</div></pre></td></tr></table></figure></p>
+<p>switch语句采用的是严格相等运算符（===），而不是相等运算符（==）</p>
+<h1 id="do…while-循环"><a href="#do…while-循环" class="headerlink" title="do…while 循环"></a>do…while 循环</h1><ul>
+<li>while循环句末没有分号，而do…while 循环 句末必须要有分号</li>
+<li>不管条件是否为真，do…while都会执行一次语句<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">do</span> &#123;</div><div class="line">  语句</div><div class="line">&#125; <span class="keyword">while</span> (条件);</div><div class="line"></div><div class="line">-----------------</div><div class="line"><span class="keyword">var</span> x = <span class="number">3</span>;</div><div class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line"><span class="keyword">do</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(i);</div><div class="line">  i++;</div><div class="line">&#125; <span class="keyword">while</span>(i &lt; x);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="break-语句和-continue-语句"><a href="#break-语句和-continue-语句" class="headerlink" title="break 语句和 continue 语句"></a>break 语句和 continue 语句</h1><ul>
+<li><p>break语句用于直接跳出代码块或循环、直接停止。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line">  <span class="built_in">console</span>.log(i);</div><div class="line">  <span class="keyword">if</span> (i === <span class="number">3</span>)</div><div class="line">    <span class="keyword">break</span>;  <span class="comment">//i==3时跳出去，停止该循环</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 0</span></div><div class="line"><span class="comment">// 1</span></div><div class="line"><span class="comment">// 2</span></div><div class="line"><span class="comment">// 3</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>continue语句立即终止本次循环，并直接开始下一轮循环。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="keyword">while</span> (i &lt; <span class="number">100</span>)&#123;</div><div class="line">  i++;</div><div class="line">  <span class="keyword">if</span> (i % <span class="number">2</span> === <span class="number">0</span>) <span class="keyword">continue</span>;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'i 当前为：'</span> + i);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面代码只有在i为奇数时，才会输出i的值。如果i为偶数，则直接进入下一轮循环。</p>
+<p>如果存在多重for循环，不带label的break语句和continue语句都只针对最内层循环。</p>
+<h1 id="跳转标签（label）"><a href="#跳转标签（label）" class="headerlink" title="跳转标签（label）"></a>跳转标签（label）</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">标签名:</div><div class="line">  语句</div><div class="line"></div><div class="line"> ---------------</div><div class="line"></div><div class="line"> top:</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++)&#123;</div><div class="line">      <span class="keyword">if</span> (i === <span class="number">1</span> &amp;&amp; j === <span class="number">1</span>) <span class="keyword">break</span> top;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'i='</span> + i + <span class="string">', j='</span> + j);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="comment">// i=0, j=0</span></div><div class="line"><span class="comment">// i=0, j=1</span></div><div class="line"><span class="comment">// i=0, j=2</span></div><div class="line"><span class="comment">// i=1, j=0</span></div><div class="line">上面代码为一个双重<span class="keyword">for</span>循环，<span class="keyword">break</span>命令后面加上了top标签，</div><div class="line">满足条件时，直接跳出双层循环。</div><div class="line">如果<span class="keyword">break</span>语句后面不使用标签，则只能跳出内层循环，进入下一次的外层循环。</div><div class="line"></div><div class="line"></div><div class="line">----------------------</div><div class="line"><span class="keyword">continue</span>语句也可以与标签配合使用。</div><div class="line"></div><div class="line">here:</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++)&#123;</div><div class="line">      <span class="keyword">if</span> (i === <span class="number">1</span> &amp;&amp; j === <span class="number">1</span>) <span class="keyword">continue</span> here;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'i='</span> + i + <span class="string">', j='</span> + j);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"><span class="comment">// i=0, j=0</span></div><div class="line"><span class="comment">// i=0, j=1</span></div><div class="line"><span class="comment">// i=0, j=2</span></div><div class="line"><span class="comment">// i=1, j=0</span></div><div class="line"><span class="comment">// i=2, j=0</span></div><div class="line"><span class="comment">// i=2, j=1</span></div><div class="line"><span class="comment">// i=2, j=2</span></div><div class="line"></div><div class="line">上面代码中，<span class="keyword">continue</span>命令后面有一个标签名here，</div><div class="line">满足条件时，会跳过当前循环，直接进入下一轮外层循环。</div><div class="line">如果<span class="keyword">continue</span>语句后面不使用标签，则只能进入下一轮的内层循环。</div></pre></td></tr></table></figure>
+<h1 id="null和undefined"><a href="#null和undefined" class="headerlink" title="null和undefined"></a>null和undefined</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Number</span>(<span class="literal">null</span>) <span class="comment">// 0</span></div><div class="line"><span class="number">5</span> + <span class="literal">null</span> <span class="comment">// 5</span></div><div class="line"><span class="literal">null</span>是一个表示“空”的对象，<span class="literal">null</span>转为数字时，自动变成<span class="number">0</span>。</div><div class="line"></div><div class="line">---------------</div><div class="line"></div><div class="line"><span class="built_in">Number</span>(<span class="literal">undefined</span>) <span class="comment">// NaN</span></div><div class="line"><span class="number">5</span> + <span class="literal">undefined</span> <span class="comment">// NaN</span></div><div class="line"><span class="literal">undefined</span>是一个表示”此处无定义”的原始值，转为数值时为<span class="literal">NaN</span></div></pre></td></tr></table></figure>
+<h1 id="空数组（-）和空对象（-）对应的布尔值，都是true"><a href="#空数组（-）和空对象（-）对应的布尔值，都是true" class="headerlink" title="空数组（[]）和空对象（{}）对应的布尔值，都是true"></a>空数组（[]）和空对象（{}）对应的布尔值，都是true</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> ([]) &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'true'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> (&#123;&#125;) &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'true'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// true</span></div></pre></td></tr></table></figure>
+<h1 id="js中的科学计数法"><a href="#js中的科学计数法" class="headerlink" title="js中的科学计数法"></a>js中的科学计数法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="number">123e3</span> <span class="comment">// 123000</span></div><div class="line"><span class="number">123e-3</span> <span class="comment">// 0.123</span></div><div class="line"><span class="number">-3.1e+12</span> <span class="comment">//-3100000000000</span></div><div class="line"><span class="number">.1e-23</span> <span class="comment">//1e-24</span></div><div class="line">小数点后紧跟<span class="number">5</span>个以上的零，</div><div class="line">就自动转为科学计数法</div><div class="line"><span class="number">0.0000003</span> <span class="comment">// 3e-7</span></div></pre></td></tr></table></figure>
+<h1 id="js会自动进制转换"><a href="#js会自动进制转换" class="headerlink" title="js会自动进制转换"></a>js会自动进制转换</h1><p>默认情况下，JavaScript 内部会自动将八进制、十六进制、二进制转为十进制。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="number">0xff</span> <span class="comment">// 255</span></div><div class="line"><span class="number">0o377</span> <span class="comment">// 255</span></div><div class="line"><span class="number">0b11</span> <span class="comment">// 3</span></div><div class="line"></div><div class="line"></div><div class="line">----------</div><div class="line"></div><div class="line">有前导<span class="number">0</span>的数值会被视为八进制，</div><div class="line">但是如果前导<span class="number">0</span>后面有数字<span class="number">8</span>和<span class="number">9</span>，则该数值被视为十进制。</div><div class="line"></div><div class="line"><span class="number">0888</span> <span class="comment">// 888</span></div><div class="line"><span class="number">0777</span> <span class="comment">// 511</span></div></pre></td></tr></table></figure></p>
+<h1 id="判断浏览器是否支持标签的某个属性"><a href="#判断浏览器是否支持标签的某个属性" class="headerlink" title="判断浏览器是否支持标签的某个属性"></a>判断浏览器是否支持标签的某个属性</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">判断浏览器是否支持a标签的download属性</div><div class="line"></div><div class="line"><span class="string">"download"</span> <span class="keyword">in</span> <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);<span class="comment">//true or false</span></div></pre></td></tr></table></figure>
+<h1 id="获取移动端坐标"><a href="#获取移动端坐标" class="headerlink" title="获取移动端坐标"></a>获取移动端坐标</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ev = ev.touches[<span class="number">0</span>];<span class="comment">//获取第一个触摸点</span></div><div class="line"><span class="keyword">var</span> x = ev.clientX;</div><div class="line">由于触摸屏支持多点触控，有好几个touches,所以不能通过ev.clientX获取坐标</div></pre></td></tr></table></figure>
+<h1 id="移动端必须在ontouchstart时，ev-preventDefault-阻止屏幕的滚动"><a href="#移动端必须在ontouchstart时，ev-preventDefault-阻止屏幕的滚动" class="headerlink" title="移动端必须在ontouchstart时，ev.preventDefault();阻止屏幕的滚动"></a>移动端必须在ontouchstart时，ev.preventDefault();阻止屏幕的滚动</h1><h1 id="btoa将字符串转成base64"><a href="#btoa将字符串转成base64" class="headerlink" title="btoa将字符串转成base64"></a><code>btoa</code>将字符串转成base64</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">btoa(<span class="string">'stage'</span>); <span class="comment">// c3RhZ2U=</span></div><div class="line"></div><div class="line">atob将base64转回字符串</div><div class="line">atob(<span class="string">'c3RhZ2U='</span>); <span class="comment">// stage</span></div><div class="line"></div><div class="line">不支持中文，要把中文转成base64，必须加入<span class="built_in">encodeURI</span>()转码环节</div><div class="line">btoa(<span class="string">'你好'</span>) <span class="comment">//报错</span></div><div class="line">btoa(<span class="built_in">encodeURI</span>(<span class="string">'你好'</span>)) <span class="comment">// JUU0JUJEJUEwJUU1JUE1JUJE</span></div><div class="line"></div><div class="line">base64还原成中文需要<span class="built_in">decodeURI</span>()解码</div><div class="line"><span class="built_in">decodeURI</span>(atob(<span class="string">'JUU0JUJEJUEwJUU1JUE1JUJE'</span>)) <span class="comment">//你好</span></div><div class="line">注意，encode在中间环节，decode在最终环节</div></pre></td></tr></table></figure>
+<h1 id="ev-target-和-ev-currentTarget"><a href="#ev-target-和-ev-currentTarget" class="headerlink" title="ev.target 和 ev.currentTarget"></a>ev.target 和 ev.currentTarget</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;a href="#" id="a"&gt;</div><div class="line">  &lt;span&gt;111&lt;/span&gt;</div><div class="line">&lt;/a&gt;</div><div class="line"></div><div class="line">a.onclick = function(ev)&#123;</div><div class="line">  console.log(ev.target) // &lt;a href="#" id="a"&gt;&lt;span&gt;111&lt;/span&gt;&lt;/a&gt;</div><div class="line">  console.log(ev.currentTarget) // &lt;span&gt;111&lt;/span&gt;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="a-href-和-a-getAttribute-‘href’"><a href="#a-href-和-a-getAttribute-‘href’" class="headerlink" title="a.href 和 a.getAttribute(‘href’)"></a>a.href 和 a.getAttribute(‘href’)</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)  </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(a.href);<span class="comment">//自动添加http协议</span></div><div class="line">  <span class="built_in">console</span>.log(a.getAttribute(<span class="string">'href'</span>));<span class="comment">// #about</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<script async src="//jsfiddle.net/20170808/c10gk075/3/embed/result,js,html/"></script>
+
+<h1 id="ele-offsetTop-和-window-scrollTo-x-y"><a href="#ele-offsetTop-和-window-scrollTo-x-y" class="headerlink" title="ele.offsetTop() 和 window.scrollTo(x,y)"></a>ele.offsetTop() 和 window.scrollTo(x,y)</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> posY = ele.offsetTop;</div><div class="line"><span class="built_in">window</span>.scrollTo(<span class="number">0</span>,posY);</div></pre></td></tr></table></figure>
+<h1 id="缓动效果"><a href="#缓动效果" class="headerlink" title="缓动效果"></a>缓动效果</h1><script async src="//jsfiddle.net/20170808/5zn85g1n/5/embed/result,js/"></script>
+      
+    </div>
+    
+    
+    
+    <div>
+      
+          <div>
+    
+        <div style="text-align:center;color: #404040;font-size:18px;margin-top:70px;">-------------本文结束<i class="fa fa-star"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/25/数据结构/" rel="next" title="数据结构">
+                <i class="fa fa-chevron-left"></i> 数据结构
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/28/学习canvas/" rel="prev" title="学习canvas">
+                学习canvas <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars3.githubusercontent.com/u/22497777"
+                alt="stage" />
+            
+              <p class="site-author-name" itemprop="name">stage</p>
+              <p class="site-description motion-element" itemprop="description">学习、记录、感悟、成长</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/harry0071" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:2015081a@sina.com" target="_blank" title="E-mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sublime正则替换的用法"><span class="nav-number">1.</span> <span class="nav-text">sublime正则替换的用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#store-js的使用"><span class="nav-number">2.</span> <span class="nav-text">store.js的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#prompt的使用"><span class="nav-number">3.</span> <span class="nav-text">prompt的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#键盘事件要加在document身上"><span class="nav-number">4.</span> <span class="nav-text">键盘事件要加在document身上</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ev"><span class="nav-number">5.</span> <span class="nav-text">ev</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ev-target"><span class="nav-number">5.1.</span> <span class="nav-text">ev.target</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ev-key和ev-keyCode"><span class="nav-number">5.2.</span> <span class="nav-text">ev.key和ev.keyCode</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#oImg-onerror"><span class="nav-number">6.</span> <span class="nav-text">oImg.onerror</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#open和location-href"><span class="nav-number">7.</span> <span class="nav-text">open和location.href</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数封装"><span class="nav-number">8.</span> <span class="nav-text">函数封装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#return多个时要用json"><span class="nav-number">9.</span> <span class="nav-text">return多个时要用json</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三元运算"><span class="nav-number">10.</span> <span class="nav-text">三元运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量提升"><span class="nav-number">11.</span> <span class="nav-text">变量提升</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js命名规范"><span class="nav-number">12.</span> <span class="nav-text">js命名规范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sitch语句。"><span class="nav-number">13.</span> <span class="nav-text">sitch语句。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#do…while-循环"><span class="nav-number">14.</span> <span class="nav-text">do…while 循环</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#break-语句和-continue-语句"><span class="nav-number">15.</span> <span class="nav-text">break 语句和 continue 语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#跳转标签（label）"><span class="nav-number">16.</span> <span class="nav-text">跳转标签（label）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null和undefined"><span class="nav-number">17.</span> <span class="nav-text">null和undefined</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#空数组（-）和空对象（-）对应的布尔值，都是true"><span class="nav-number">18.</span> <span class="nav-text">空数组（[]）和空对象（{}）对应的布尔值，都是true</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js中的科学计数法"><span class="nav-number">19.</span> <span class="nav-text">js中的科学计数法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js会自动进制转换"><span class="nav-number">20.</span> <span class="nav-text">js会自动进制转换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断浏览器是否支持标签的某个属性"><span class="nav-number">21.</span> <span class="nav-text">判断浏览器是否支持标签的某个属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取移动端坐标"><span class="nav-number">22.</span> <span class="nav-text">获取移动端坐标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#移动端必须在ontouchstart时，ev-preventDefault-阻止屏幕的滚动"><span class="nav-number">23.</span> <span class="nav-text">移动端必须在ontouchstart时，ev.preventDefault();阻止屏幕的滚动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#btoa将字符串转成base64"><span class="nav-number">24.</span> <span class="nav-text">btoa将字符串转成base64</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ev-target-和-ev-currentTarget"><span class="nav-number">25.</span> <span class="nav-text">ev.target 和 ev.currentTarget</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#a-href-和-a-getAttribute-‘href’"><span class="nav-number">26.</span> <span class="nav-text">a.href 和 a.getAttribute(‘href’)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ele-offsetTop-和-window-scrollTo-x-y"><span class="nav-number">27.</span> <span class="nav-text">ele.offsetTop() 和 window.scrollTo(x,y)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#缓动效果"><span class="nav-number">28.</span> <span class="nav-text">缓动效果</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">stage</span>
+
+  
+</div>
+
+
+  <div class="powered-by">自豪地采用 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

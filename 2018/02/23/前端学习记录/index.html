@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if('11111111'){
+            if (prompt('请输入文章密码') !== '11111111'){
+                alert('密码错误！');
+                //history.back(); 不推荐这种方法，建议使用下面的方法
+                location="//harry0071.github.io"; //返回网站，请自定义
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="笔记,面试题," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端学习记录">
+<meta property="og:url" content="harry0071.github.io/2018/02/23/前端学习记录/index.html">
+<meta property="og:site_name" content="stage's blog">
+<meta property="og:description" content="-">
+<meta property="og:updated_time" content="2018-03-14T05:46:37.902Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端学习记录">
+<meta name="twitter:description" content="-">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="harry0071.github.io/2018/02/23/前端学习记录/"/>
+
+
+
+
+
+  <title>前端学习记录 | stage's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">stage's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="harry0071.github.io/2018/02/23/前端学习记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="stage">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22497777">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="stage's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端学习记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-23T12:37:13+08:00">
+                2018-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>-<br><a id="more"></a></p>
+<h1 id="9-HTML-续"><a href="#9-HTML-续" class="headerlink" title="9.HTML 续"></a>9.HTML 续</h1><h2 id="http-server的安装"><a href="#http-server的安装" class="headerlink" title="http-server的安装"></a>http-server的安装</h2><p>视频iframe和a这一节有介绍</p>
+<h1 id="10-入门css"><a href="#10-入门css" class="headerlink" title="10.入门css"></a>10.入门css</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ol>
+<li>如何做横向布局（float + clearfix）</li>
+</ol>
+<ul>
+<li>继承样式inherit</li>
+<li>四种引入 CSS 的方式：行间样式、内部样式、外部样式、@import</li>
+</ul>
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p>完成简历的logo和top-navbar</p>
+<h1 id="11-CSS-布局与定位"><a href="#11-CSS-布局与定位" class="headerlink" title="11.CSS 布局与定位"></a>11.CSS 布局与定位</h1><h2 id="知识点-1"><a href="#知识点-1" class="headerlink" title="知识点"></a>知识点</h2><ol>
+<li>尽量不要设置width和height，通过调节padding来自适应.</li>
+</ol>
+<ul>
+<li>用max-width代替width，这样当屏幕小于这个width时会自适应缩放</li>
+<li>高度是由什么决定的</li>
+<li>什么是文档流【文档内元素流动的方向】</li>
+<li>内联元素 与 块级元素</li>
+<li>line-box 是啥</li>
+<li>box 是啥（盒模型）</li>
+<li>宽度是有什么决定的</li>
+<li>position 的 5 个取值</li>
+<li>脱离文档流</li>
+<li>background-size:cover</li>
+<li>z-index</li>
+</ul>
+<h2 id="作业-1"><a href="#作业-1" class="headerlink" title="作业"></a>作业</h2><ol>
+<li>大背景图</li>
+</ol>
+<ul>
+<li>大名片card</li>
+</ul>
+<h1 id="12-CSS-布局与定位续"><a href="#12-CSS-布局与定位续" class="headerlink" title="12.CSS 布局与定位续"></a>12.CSS 布局与定位续</h1><h2 id="知识点-2"><a href="#知识点-2" class="headerlink" title="知识点"></a>知识点</h2><ol>
+<li>太极图<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">线性渐变<span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">bottom</span>, <span class="selector-tag">white</span> 0%,<span class="selector-tag">white</span> 50%,<span class="selector-tag">black</span> 50%,<span class="selector-tag">black</span> 100%);</div><div class="line"><span class="selector-pseudo">:before</span>,<span class="selector-pseudo">:after</span>伪元素</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<iframe width="100%" height="300" src="//jsfiddle.net/20170808/xh4bs4w0/1/embedded/result,html,css/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h2 id="作业-2"><a href="#作业-2" class="headerlink" title="作业"></a>作业</h2><ol>
+<li>制作下载按钮</li>
+</ol>
+<ul>
+<li>技能百分比条</li>
+<li>非线性布局<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">设置<span class="selector-tag">dib</span>后，一定要加上<span class="selector-tag">vat</span></div><div class="line"></div><div class="line"><span class="selector-tag">display</span>: <span class="selector-tag">inline-block</span>;</div><div class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">top</span>;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="13-命令行-HTTP-Node-js-HTML-CSS-小结"><a href="#13-命令行-HTTP-Node-js-HTML-CSS-小结" class="headerlink" title="13.命令行 HTTP Node.js HTML CSS 小结"></a>13.命令行 HTTP Node.js HTML CSS 小结</h1><h2 id="命令行复习"><a href="#命令行复习" class="headerlink" title="命令行复习"></a>命令行复习</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">pwd   progress working dir</div><div class="line">cd    change dir</div><div class="line">mkdir make dir</div><div class="line">touch </div><div class="line">echo &quot;hi&quot; &gt; 1.txt</div><div class="line">echo &quot;hi&quot; &gt;&gt; 1.txt</div><div class="line">echo &quot;hi&quot; &gt;! 1.txt</div><div class="line">cp -r</div><div class="line">rm -rf</div><div class="line">mv</div><div class="line">tree </div><div class="line">git init</div><div class="line">git add</div><div class="line">git commit -m &quot;hi&quot;</div><div class="line">git pull</div><div class="line">git push</div><div class="line">git clone</div><div class="line"></div><div class="line">curl -L http://baidu.com</div><div class="line">curl -s -v -- http://baidu.com</div><div class="line"></div><div class="line">ping qq.com</div><div class="line"></div><div class="line">hexo init</div><div class="line">hexo g</div><div class="line">hexo server</div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+<h2 id="HTTP请求与响应复习"><a href="#HTTP请求与响应复习" class="headerlink" title="HTTP请求与响应复习"></a>HTTP请求与响应复习</h2><ol>
+<li>请求包括 GET(获取) POST(上传) PUT(整体更新) PATCH(局部更新) DELETE(删除) HEAD OPTIONS等</li>
+</ol>
+<ul>
+<li>能够手写http请求，能够手写http响应</li>
+<li>Content-Type: application/x-www-form-urlencoded : 应用数据/还没有写入规范的格式-万维网-表单-用urlencode形式压缩</li>
+<li>知道状态码的含义</li>
+</ul>
+<h2 id="TCP-IP协议-Node-jsServer"><a href="#TCP-IP协议-Node-jsServer" class="headerlink" title="TCP/IP协议 Node.jsServer"></a>TCP/IP协议 Node.jsServer</h2><h1 id="14-算法初级"><a href="#14-算法初级" class="headerlink" title="14.算法初级"></a>14.算法初级</h1><ul>
+<li>排序算法列表 <a href="https://zh.wikipedia.org/wiki/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95#排序算法列表" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95#排序算法列表</a></li>
+<li>冒泡排序 <a href="http://bubkoo.com/2014/01/12/sort-algorithm/bubble-sort/" target="_blank" rel="external">http://bubkoo.com/2014/01/12/sort-algorithm/bubble-sort/</a></li>
+<li>插入排序 <a href="http://bubkoo.com/2014/01/14/sort-algorithm/insertion-sort/" target="_blank" rel="external">http://bubkoo.com/2014/01/14/sort-algorithm/insertion-sort/</a></li>
+<li>桶排序 <a href="http://bubkoo.com/2014/01/15/sort-algorithm/bucket-sort/" target="_blank" rel="external">http://bubkoo.com/2014/01/15/sort-algorithm/bucket-sort/</a></li>
+<li>其他排序：<a href="http://bubkoo.com/tags/algorithm/" target="_blank" rel="external">http://bubkoo.com/tags/algorithm/</a></li>
+<li>快排、随机快排</li>
+</ul>
+<h2 id="排序算法js代码"><a href="#排序算法js代码" class="headerlink" title="排序算法js代码"></a>排序算法js代码</h2><p><a href="https://www.cnblogs.com/Unknw/p/6346681.html" target="_blank" rel="external">https://www.cnblogs.com/Unknw/p/6346681.html</a></p>
+<h1 id="15-数据结构"><a href="#15-数据结构" class="headerlink" title="15.数据结构"></a>15.数据结构</h1><p>哈希、队列、栈(stack)、链表、数(tree)  </p>
+<ul>
+<li>计数排序(有多少个数就有多少个桶)与桶排序(自定义一个范围桶)与基数排序(始终10个桶)</li>
+<li>队列：先进先出，arr.shift()</li>
+<li>栈：先进后出，arr.pop()</li>
+<li><p>链表，可以用来删除数组中间的某个数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;</div><div class="line"><span class="attr">value</span>:<span class="number">0</span>,</div><div class="line"> <span class="attr">next</span>:&#123;</div><div class="line">  <span class="attr">value</span>:<span class="number">2</span>,</div><div class="line">  <span class="attr">next</span>:&#123;</div><div class="line">   <span class="attr">value</span>:<span class="number">1</span>,</div><div class="line">   <span class="attr">next</span>:<span class="literal">undefined</span></div><div class="line">  &#125;</div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>树<br>堆排序:<a href="https://www.cs.usfca.edu/~galles/visualization/HeapSort.html" target="_blank" rel="external">https://www.cs.usfca.edu/~galles/visualization/HeapSort.html</a></p>
+</li>
+</ul>
+<h1 id="16-JavaScript-初体验"><a href="#16-JavaScript-初体验" class="headerlink" title="16.JavaScript 初体验"></a>16.JavaScript 初体验</h1><p>做一个<a href="http://www.36start.com/" target="_blank" rel="external">键盘导航</a><br>代码和预览：<a href="https://github.com/FrankFang/nav-demo" target="_blank" rel="external">https://github.com/FrankFang/nav-demo</a>     </p>
+<h2 id="text-transform-uppercase"><a href="#text-transform-uppercase" class="headerlink" title="text-transform: uppercase"></a>text-transform: uppercase</h2><p>将字母变成大写</p>
+<h2 id="sublime正则替换的用法"><a href="#sublime正则替换的用法" class="headerlink" title="sublime正则替换的用法"></a>sublime正则替换的用法</h2><h2 id="for循环创建div"><a href="#for循环创建div" class="headerlink" title="for循环创建div"></a>for循环创建div</h2><h2 id="store-js的使用"><a href="#store-js的使用" class="headerlink" title="store.js的使用"></a>store.js的使用</h2><p>记得判断是否存在容器<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">website = store.get(<span class="string">'容器1'</span>) || website;</div><div class="line"><span class="comment">//从容器1中取出website,如果存在就覆盖原始的website，如果不存在就使用原始的website</span></div></pre></td></tr></table></figure></p>
+<h2 id="create元素和append元素"><a href="#create元素和append元素" class="headerlink" title="create元素和append元素"></a>create元素和append元素</h2><h2 id="prompt的使用"><a href="#prompt的使用" class="headerlink" title="prompt的使用"></a>prompt的使用</h2><p>如果点击取消，则promote返回null，所以要做判断是否点击确定还是取消</p>
+<h2 id="键盘事件要加在document身上"><a href="#键盘事件要加在document身上" class="headerlink" title="键盘事件要加在document身上"></a>键盘事件要加在document身上</h2><p>这个事件加在document身上<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.onkeypress = fn1;</div></pre></td></tr></table></figure></p>
+<h2 id="ev"><a href="#ev" class="headerlink" title="ev"></a>ev</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xxx.onclick= <span class="function"><span class="keyword">function</span> (<span class="params">ev</span>) </span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(ev); <span class="comment">//可以看到许多和ev有关的内容</span></div><div class="line">		&#125;</div></pre></td></tr></table></figure>
+<h3 id="ev-target"><a href="#ev-target" class="headerlink" title="ev.target"></a>ev.target</h3><h3 id="ev-key和ev-keyCode"><a href="#ev-key和ev-keyCode" class="headerlink" title="ev.key和ev.keyCode"></a>ev.key和ev.keyCode</h3><p>ev.key直接获取按下哪个键<br>ev.keyCode获取键值</p>
+<h2 id="open和location-href"><a href="#open和location-href" class="headerlink" title="open和location.href"></a>open和location.href</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">open(<span class="string">'http://www.qq.com'</span>); <span class="comment">//默认新窗口打开</span></div><div class="line">open(<span class="string">'http://www.qq.com'</span>, <span class="string">'_blank'</span>);<span class="comment">//同上</span></div><div class="line"></div><div class="line">open(<span class="string">'http://www.qq.com'</span>, <span class="string">'_self'</span>);<span class="comment">//在当前窗口打开</span></div><div class="line">location.href = <span class="string">'http://www.baidu.com'</span><span class="comment">//同上</span></div></pre></td></tr></table></figure>
+<h1 id="17-第一个-JS-作品"><a href="#17-第一个-JS-作品" class="headerlink" title="17.第一个 JS 作品"></a>17.第一个 JS 作品</h1><h2 id="完善上一节课的键盘导航"><a href="#完善上一节课的键盘导航" class="headerlink" title="完善上一节课的键盘导航"></a>完善上一节课的键盘导航</h2><p>键盘参考：<a href="http://mcdlr.com/key-sheet/" target="_blank" rel="external">http://mcdlr.com/key-sheet/</a><br>代码参考：<a href="https://github.com/FrankFang/nav-demo/" target="_blank" rel="external">https://github.com/FrankFang/nav-demo/</a>    </p>
+<h2 id="知识点-3"><a href="#知识点-3" class="headerlink" title="知识点"></a>知识点</h2><h3 id="渐变色"><a href="#渐变色" class="headerlink" title="渐变色"></a>渐变色</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">background</span>: <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">to</span> <span class="selector-tag">bottom</span>,<span class="selector-id">#292929</span>,<span class="selector-id">#111</span>);</div></pre></td></tr></table></figure>
+<h3 id="利用box-shadow实现多层边框-立体感"><a href="#利用box-shadow实现多层边框-立体感" class="headerlink" title="利用box-shadow实现多层边框(立体感)"></a>利用box-shadow实现多层边框(立体感)</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">box-shadow</span>: 向左 向下 模糊程度 一个不模糊的边框 内阴影<span class="selector-tag">inset</span>;</div><div class="line"><span class="selector-tag">box-shadow</span>: 0 0 0 1<span class="selector-tag">px</span> <span class="selector-id">#1a1b1c</span>, 0 0 0 2<span class="selector-tag">px</span> <span class="selector-id">#1f2020</span>, 0 3<span class="selector-tag">px</span> 0 1<span class="selector-tag">px</span> <span class="selector-id">#080808</span>;</div></pre></td></tr></table></figure>
+<h3 id="100vh使元素的高度占满可视区高度"><a href="#100vh使元素的高度占满可视区高度" class="headerlink" title="100vh使元素的高度占满可视区高度"></a>100vh使元素的高度占满可视区高度</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;<span class="attribute">height</span>: <span class="number">100vh</span>&#125;</div><div class="line">再利用<span class="selector-tag">flex</span>就可以使元素内的<span class="selector-tag">item</span>相对于可视区居中</div></pre></td></tr></table></figure>
+<h3 id="ico图标"><a href="#ico图标" class="headerlink" title="ico图标"></a>ico图标</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">将favicon.ico放在根目录下</div><div class="line">如果要获取其他网站的icon，可以通过 //该网站根目录/favicon.ico</div><div class="line">比如 //www.qq.com/favicon.ico  就可以获得qq的icon</div></pre></td></tr></table></figure>
+<h3 id="oImg-onerror"><a href="#oImg-onerror" class="headerlink" title="oImg.onerror"></a>oImg.onerror</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">oImg.onerror = function (ev) &#123;</div><div class="line">	ev.target.src = &apos;//i.loli.net/2017/11/10/5a051fbc5e183.png&apos;;//如果网络图标下载出错就改用默认图标</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="函数封装"><a href="#函数封装" class="headerlink" title="函数封装"></a>函数封装</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">tag</span>(<span class="params">tagName, attr</span>)</span>&#123; <span class="comment">//tag('div', &#123;id:'div1', className:'test'&#125;)</span></div><div class="line">	<span class="keyword">var</span> ele = <span class="built_in">document</span>.creatElement(tagName);</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> attr) &#123; <span class="comment">//遍历attr里的所有键值对</span></div><div class="line">		ele[key] = attr[key]; <span class="comment">//div.id=div1, div.className=test</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ele;</div></pre></td></tr></table></figure>
+<h3 id="return多个时要用json"><a href="#return多个时要用json" class="headerlink" title="return多个时要用json"></a>return多个时要用json</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> keys = [</div><div class="line">		[<span class="string">'q'</span>,<span class="string">'w'</span>,<span class="string">'e'</span>,<span class="string">'r'</span>,<span class="string">'t'</span>,<span class="string">'y'</span>,<span class="string">'u'</span>,<span class="string">'i'</span>,<span class="string">'o'</span>,<span class="string">'p'</span>],</div><div class="line">		[<span class="string">'a'</span>,<span class="string">'s'</span>,<span class="string">'d'</span>,<span class="string">'f'</span>,<span class="string">'g'</span>,<span class="string">'h'</span>,<span class="string">'j'</span>,<span class="string">'k'</span>,<span class="string">'l'</span>]</div><div class="line">	];</div><div class="line">	<span class="keyword">var</span> website = &#123;</div><div class="line">		<span class="string">'q'</span>: <span class="string">'qq.com'</span>,</div><div class="line">		<span class="string">'w'</span>: <span class="string">'weibo.com'</span></div><div class="line">	&#125;;</div><div class="line">	</div><div class="line">	<span class="keyword">return</span> &#123;</div><div class="line">		<span class="string">'keys'</span>: keys,</div><div class="line">		<span class="string">'website'</span>: website</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> keys = init().keys; <span class="comment">//或写成init()['keys']</span></div><div class="line"><span class="keyword">var</span> website = init().website; <span class="comment">//或写成init()['website']</span></div></pre></td></tr></table></figure>
+<h1 id="18-Canvas画板"><a href="#18-Canvas画板" class="headerlink" title="18.Canvas画板"></a>18.Canvas画板</h1><h2 id="知识点-4"><a href="#知识点-4" class="headerlink" title="知识点"></a>知识点</h2><h3 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.onmousemove = fn1;</div><div class="line"><span class="built_in">document</span>.onmousedown = fn1;</div><div class="line"><span class="built_in">document</span>.onmouseup = fn1;</div></pre></td></tr></table></figure>
+<h3 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h3><ul>
+<li>canvas设置宽高时，由于它是inline元素，所以先要设置display:block或者vertical-align: top;；然后修改它的属性宽高，而不是css的宽高</li>
+</ul>
+<h1 id="19-手机端画板"><a href="#19-手机端画板" class="headerlink" title="19.手机端画板"></a>19.手机端画板</h1><h2 id="添加viewport"><a href="#添加viewport" class="headerlink" title="添加viewport"></a>添加viewport</h2><p>方法:<code>meta:vp</code> + <kbd>tab</kbd></p>
+<h2 id="touch方法"><a href="#touch方法" class="headerlink" title="touch方法"></a>touch方法</h2><ul>
+<li><p>手机端没有鼠标，所以不能用<code>onmouse</code>方法，而应该用<code>ontouch</code>方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">元素.ontouchstart = fn;</div><div class="line">元素.ontouchmove = fn;</div><div class="line">元素.ontouchend = fn;</div></pre></td></tr></table></figure>
+</li>
+<li><p>判断是否支持touch方法(特性检测)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.body.ontouchstart !== <span class="literal">undefined</span>) &#123;</div><div class="line">	<span class="comment">//是触屏设备</span></div><div class="line"></div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	<span class="comment">//是非触屏设备</span></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="判断浏览器是否支持标签的某个属性"><a href="#判断浏览器是否支持标签的某个属性" class="headerlink" title="判断浏览器是否支持标签的某个属性"></a>判断浏览器是否支持标签的某个属性</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">判断浏览器是否支持a标签的download属性</div><div class="line"></div><div class="line"><span class="string">"download"</span> <span class="keyword">in</span> <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);<span class="comment">//true or false</span></div></pre></td></tr></table></figure>
+<h2 id="判断是否是移动设备"><a href="#判断是否是移动设备" class="headerlink" title="判断是否是移动设备"></a>判断是否是移动设备</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">在w3school上看到可以这样来判断平台：</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkStation</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> info = navigator.userAgent;</div><div class="line">	<span class="keyword">if</span>(info.indexOf(<span class="string">"iPod"</span>)!=<span class="number">-1</span> || info.indexOf(<span class="string">"iPad"</span>)!=<span class="number">-1</span> || info.indexOf(<span class="string">"iPhone"</span>)!=<span class="number">-1</span> || info.indexOf(<span class="string">"Android"</span>)!=<span class="number">-1</span>)&#123;</div><div class="line">		alert(<span class="string">"平板"</span>);</div><div class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		alert(<span class="string">"电脑"</span>);</div><div class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>获取触摸坐标<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ev = ev.touches[<span class="number">0</span>];<span class="comment">//获取第一个触摸点</span></div><div class="line"><span class="keyword">var</span> x = ev.clientX;</div><div class="line">由于触摸屏支持多点触控，有好几个touches,所以不能通过ev.clientX获取坐标</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="移动端必须在ontouchstart时，ev-preventDefault-阻止屏幕的滚动"><a href="#移动端必须在ontouchstart时，ev-preventDefault-阻止屏幕的滚动" class="headerlink" title="移动端必须在ontouchstart时，ev.preventDefault();阻止屏幕的滚动"></a>移动端必须在ontouchstart时，ev.preventDefault();阻止屏幕的滚动</h2><h2 id="iconfont的使用"><a href="#iconfont的使用" class="headerlink" title="iconfont的使用"></a>iconfont的使用</h2><ul>
+<li>批量去色<br>有些icon有默认色，为了icon颜色统一，建议批量去色<br>选择完icon并<code>添加至项目</code>后，选择<code>批量操作</code>里的<code>批量去色</code></li>
+</ul>
+<h2 id="局域网调试"><a href="#局域网调试" class="headerlink" title="局域网调试"></a>局域网调试</h2><p>利用http-server进行局域网调试</p>
+<h1 id="20-JS里的7种数据"><a href="#20-JS里的7种数据" class="headerlink" title="20.JS里的7种数据"></a>20.JS里的7种数据</h1><ul>
+<li>number </li>
+<li>string </li>
+<li>boolean </li>
+<li>symbol </li>
+<li>undefined </li>
+<li>null </li>
+<li>object</li>
+</ul>
+<h1 id="21-类型转换"><a href="#21-类型转换" class="headerlink" title="21.类型转换"></a>21.类型转换</h1><h2 id="btoa将字符串转为base64"><a href="#btoa将字符串转为base64" class="headerlink" title="btoa将字符串转为base64"></a>btoa将字符串转为base64</h2><h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><h2 id="5个falsy值"><a href="#5个falsy值" class="headerlink" title="5个falsy值"></a>5个falsy值</h2><h2 id="内存图"><a href="#内存图" class="headerlink" title="内存图"></a>内存图</h2><h2 id="面试题-对象的引用"><a href="#面试题-对象的引用" class="headerlink" title="面试题-对象的引用"></a>面试题-对象的引用</h2><h2 id="面试题-垃圾回收"><a href="#面试题-垃圾回收" class="headerlink" title="面试题-垃圾回收"></a>面试题-垃圾回收</h2><h2 id="面试题-深拷贝vs浅拷贝"><a href="#面试题-深拷贝vs浅拷贝" class="headerlink" title="面试题-深拷贝vs浅拷贝"></a>面试题-深拷贝vs浅拷贝</h2><h1 id="22-JS里的对象"><a href="#22-JS里的对象" class="headerlink" title="22.JS里的对象"></a>22.JS里的对象</h1><h2 id="全局函数"><a href="#全局函数" class="headerlink" title="全局函数"></a>全局函数</h2><p>1.Number<br>var n = new Number(1) 创建一个 Number 对象<br><code>1</code> 与 <code>new Number(1)</code> 的区别是什么？看内存图<br>2.String<br>var s = new String(‘hello’) 创建一个 String 对象<br>‘hello’ 与 new String(‘hello’) 的区别是什么？看内存图<br>3.Boolean<br>var b = new Boolean(true) 创建一个 Boolean 对象<br>true 与 new Boolean(true) 的区别是什么？看内存图<br>4.Object<br>var o1 = {}<br>var o2 = new Object()<br>o1 和 o2 没区别</p>
+<h2 id="原型prototype"><a href="#原型prototype" class="headerlink" title="原型prototype"></a>原型prototype</h2><p>var 对象 = new 全局函数() //函数包括Number(123)/String(‘123’)等全局函数<br>对象.<strong>proto</strong> === 全局函数.prototype </p>
+<h1 id="23-给简历加-JS"><a href="#23-给简历加-JS" class="headerlink" title="23.给简历加 JS"></a>23.给简历加 JS</h1><ul>
+<li>loading 动画</li>
+<li>会变的navbar ， sticky navbar 鼠标滚动后导航栏黏着</li>
+<li>会动的二级菜单menu</li>
+<li>点击导航栏自己滚动到对应那一块 auto scroll smoothy</li>
+</ul>
+<h2 id="chrome控制动画速度"><a href="#chrome控制动画速度" class="headerlink" title="chrome控制动画速度"></a>chrome控制动画速度</h2><p>选中动画元素Elements → 点击三个点(更多) → More tools → Animations里控制动画的速度</p>
+<h2 id="scrollY"><a href="#scrollY" class="headerlink" title="scrollY"></a>scrollY</h2><p>var y = scrollY;//window.scrollY,window可省略</p>
+<h2 id="字体颜色inherit"><a href="#字体颜色inherit" class="headerlink" title="字体颜色inherit"></a>字体颜色inherit</h2><h2 id="ev-target-和-ev-currentTarget"><a href="#ev-target-和-ev-currentTarget" class="headerlink" title="ev.target 和 ev.currentTarget"></a>ev.target 和 ev.currentTarget</h2><h2 id="xxx-tagName-toLowerCase"><a href="#xxx-tagName-toLowerCase" class="headerlink" title="xxx.tagName.toLowerCase()"></a>xxx.tagName.toLowerCase()</h2><p>if (xxx.tagNamea.toLowerCase() == ‘ul’)</p>
+<h2 id="a-href-和-a-getAttribute-‘href’"><a href="#a-href-和-a-getAttribute-‘href’" class="headerlink" title="a.href 和 a.getAttribute(‘href’)"></a>a.href 和 a.getAttribute(‘href’)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)  </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(a.href);<span class="comment">//自动补充完整http协议</span></div><div class="line">  <span class="built_in">console</span>.log(a.getAttribute(<span class="string">'href'</span>));<span class="comment">// #about</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<script async src="//jsfiddle.net/20170808/c10gk075/3/embed/result,js,html/"></script>
+
+<h2 id="ele-offsetTop-和-window-scrollTo-x-y"><a href="#ele-offsetTop-和-window-scrollTo-x-y" class="headerlink" title="ele.offsetTop() 和 window.scrollTo(x,y)"></a>ele.offsetTop() 和 window.scrollTo(x,y)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> posY = ele.offsetTop;</div><div class="line"><span class="built_in">window</span>.scrollTo(<span class="number">0</span>,posY);</div></pre></td></tr></table></figure>
+<h1 id="24-给简历加-JS（续）"><a href="#24-给简历加-JS（续）" class="headerlink" title="24.给简历加 JS（续）"></a>24.给简历加 JS（续）</h1><h2 id="平滑滚动smooth-scroll"><a href="#平滑滚动smooth-scroll" class="headerlink" title="平滑滚动smooth scroll"></a>平滑滚动smooth scroll</h2><script async src="//jsfiddle.net/20170808/5zn85g1n/5/embed/result,js/"></script>
+
+<h2 id="tween-js"><a href="#tween-js" class="headerlink" title="tween.js"></a>tween.js</h2><h2 id="滚动监听scrollspy"><a href="#滚动监听scrollspy" class="headerlink" title="滚动监听scrollspy"></a>滚动监听scrollspy</h2><h2 id="检测元素出现在可视区"><a href="#检测元素出现在可视区" class="headerlink" title="检测元素出现在可视区"></a>检测元素出现在可视区</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"a"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"b"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"c"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="keyword">var</span> viewport = <span class="built_in">document</span>.documentElement.clientHeight;</div><div class="line">	<span class="keyword">var</span> eles = <span class="built_in">document</span>.querySelectorAll(<span class="string">'div'</span>);</div><div class="line">	<span class="built_in">window</span>.onscroll = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; eles.length; i++) &#123;</div><div class="line">			<span class="keyword">var</span> eleCurrentTop = eles[i].getBoundingClientRect().top;<span class="comment">//必须放在for循环里！</span></div><div class="line">			<span class="keyword">if</span>(eleCurrentTop &lt; viewport<span class="number">-100</span>)&#123;</div><div class="line">			<span class="comment">//alert('出现在可视区');</span></div><div class="line">				eles[i].classList.add(<span class="string">'active'</span>);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="技能条加载动画"><a href="#技能条加载动画" class="headerlink" title="技能条加载动画"></a>技能条加载动画</h2><h1 id="25-JS-数组Array"><a href="#25-JS-数组Array" class="headerlink" title="25.JS 数组Array"></a>25.JS 数组Array</h1><h2 id="数据类型new不new的区别"><a href="#数据类型new不new的区别" class="headerlink" title="数据类型new不new的区别"></a>数据类型new不new的区别</h2><h2 id="伪数组"><a href="#伪数组" class="headerlink" title="伪数组"></a>伪数组</h2><h2 id="数组的操作-api"><a href="#数组的操作-api" class="headerlink" title="数组的操作(api)"></a>数组的操作(api)</h2><h1 id="26-函数Function"><a href="#26-函数Function" class="headerlink" title="26.函数Function"></a>26.函数Function</h1><h2 id="函数的声明方法"><a href="#函数的声明方法" class="headerlink" title="函数的声明方法"></a>函数的声明方法</h2><h2 id="eval"><a href="#eval" class="headerlink" title="eval()"></a>eval()</h2><h2 id="函数的调用"><a href="#函数的调用" class="headerlink" title="函数的调用"></a>函数的调用</h2><h2 id="call、this、arguments面试题"><a href="#call、this、arguments面试题" class="headerlink" title="call、this、arguments面试题"></a>call、this、arguments面试题</h2><h2 id="call-stack调用栈"><a href="#call-stack调用栈" class="headerlink" title="call stack调用栈"></a>call stack调用栈</h2><h2 id="作用域面试题"><a href="#作用域面试题" class="headerlink" title="作用域面试题"></a>作用域面试题</h2><h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h1 id="27-DOM-API"><a href="#27-DOM-API" class="headerlink" title="27.DOM API"></a>27.DOM API</h1><p>文档对象模型</p>
+<h2 id="DOM各种api的操作"><a href="#DOM各种api的操作" class="headerlink" title="DOM各种api的操作"></a>DOM各种api的操作</h2><h1 id="28-jQuery-不过如此"><a href="#28-jQuery-不过如此" class="headerlink" title="28.jQuery 不过如此"></a>28.jQuery 不过如此</h1><h2 id="三等号"><a href="#三等号" class="headerlink" title="三等号"></a>三等号</h2><p><code>===</code>三等号</p>
+<p>NaN永远不等于NaN<br>对象永远不等于对象，因为他们在stack区的Address地址不一样</p>
+<h2 id="封装自己的js库"><a href="#封装自己的js库" class="headerlink" title="封装自己的js库"></a>封装自己的js库</h2><h2 id="jquery原理"><a href="#jquery原理" class="headerlink" title="jquery原理"></a>jquery原理</h2><h1 id="29-用-jQuery-做个轮播吧"><a href="#29-用-jQuery-做个轮播吧" class="headerlink" title="29.用 jQuery 做个轮播吧"></a>29.用 jQuery 做个轮播吧</h1>
+      
+    </div>
+    
+    
+    
+    <div>
+      
+          <div>
+    
+        <div style="text-align:center;color: #404040;font-size:18px;margin-top:70px;">-------------本文结束<i class="fa fa-star"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/22/空标签与可替换标签/" rel="next" title="空元素与可替换元素">
+                <i class="fa fa-chevron-left"></i> 空元素与可替换元素
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/23/css知识点补充/" rel="prev" title="css知识点补充">
+                css知识点补充 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars3.githubusercontent.com/u/22497777"
+                alt="stage" />
+            
+              <p class="site-author-name" itemprop="name">stage</p>
+              <p class="site-description motion-element" itemprop="description">学习、记录、感悟、成长</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/harry0071" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:2015081a@sina.com" target="_blank" title="E-mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#9-HTML-续"><span class="nav-number">1.</span> <span class="nav-text">9.HTML 续</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#http-server的安装"><span class="nav-number">1.1.</span> <span class="nav-text">http-server的安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-入门css"><span class="nav-number">2.</span> <span class="nav-text">10.入门css</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点"><span class="nav-number">2.1.</span> <span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作业"><span class="nav-number">2.2.</span> <span class="nav-text">作业</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-CSS-布局与定位"><span class="nav-number">3.</span> <span class="nav-text">11.CSS 布局与定位</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-1"><span class="nav-number">3.1.</span> <span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作业-1"><span class="nav-number">3.2.</span> <span class="nav-text">作业</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-CSS-布局与定位续"><span class="nav-number">4.</span> <span class="nav-text">12.CSS 布局与定位续</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-2"><span class="nav-number">4.1.</span> <span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作业-2"><span class="nav-number">4.2.</span> <span class="nav-text">作业</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-命令行-HTTP-Node-js-HTML-CSS-小结"><span class="nav-number">5.</span> <span class="nav-text">13.命令行 HTTP Node.js HTML CSS 小结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行复习"><span class="nav-number">5.1.</span> <span class="nav-text">命令行复习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP请求与响应复习"><span class="nav-number">5.2.</span> <span class="nav-text">HTTP请求与响应复习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP协议-Node-jsServer"><span class="nav-number">5.3.</span> <span class="nav-text">TCP/IP协议 Node.jsServer</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-算法初级"><span class="nav-number">6.</span> <span class="nav-text">14.算法初级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#排序算法js代码"><span class="nav-number">6.1.</span> <span class="nav-text">排序算法js代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-数据结构"><span class="nav-number">7.</span> <span class="nav-text">15.数据结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-JavaScript-初体验"><span class="nav-number">8.</span> <span class="nav-text">16.JavaScript 初体验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#text-transform-uppercase"><span class="nav-number">8.1.</span> <span class="nav-text">text-transform: uppercase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sublime正则替换的用法"><span class="nav-number">8.2.</span> <span class="nav-text">sublime正则替换的用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for循环创建div"><span class="nav-number">8.3.</span> <span class="nav-text">for循环创建div</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#store-js的使用"><span class="nav-number">8.4.</span> <span class="nav-text">store.js的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create元素和append元素"><span class="nav-number">8.5.</span> <span class="nav-text">create元素和append元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#prompt的使用"><span class="nav-number">8.6.</span> <span class="nav-text">prompt的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#键盘事件要加在document身上"><span class="nav-number">8.7.</span> <span class="nav-text">键盘事件要加在document身上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ev"><span class="nav-number">8.8.</span> <span class="nav-text">ev</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ev-target"><span class="nav-number">8.8.1.</span> <span class="nav-text">ev.target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ev-key和ev-keyCode"><span class="nav-number">8.8.2.</span> <span class="nav-text">ev.key和ev.keyCode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#open和location-href"><span class="nav-number">8.9.</span> <span class="nav-text">open和location.href</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-第一个-JS-作品"><span class="nav-number">9.</span> <span class="nav-text">17.第一个 JS 作品</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#完善上一节课的键盘导航"><span class="nav-number">9.1.</span> <span class="nav-text">完善上一节课的键盘导航</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-3"><span class="nav-number">9.2.</span> <span class="nav-text">知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#渐变色"><span class="nav-number">9.2.1.</span> <span class="nav-text">渐变色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#利用box-shadow实现多层边框-立体感"><span class="nav-number">9.2.2.</span> <span class="nav-text">利用box-shadow实现多层边框(立体感)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#100vh使元素的高度占满可视区高度"><span class="nav-number">9.2.3.</span> <span class="nav-text">100vh使元素的高度占满可视区高度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ico图标"><span class="nav-number">9.2.4.</span> <span class="nav-text">ico图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#oImg-onerror"><span class="nav-number">9.2.5.</span> <span class="nav-text">oImg.onerror</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数封装"><span class="nav-number">9.2.6.</span> <span class="nav-text">函数封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#return多个时要用json"><span class="nav-number">9.2.7.</span> <span class="nav-text">return多个时要用json</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18-Canvas画板"><span class="nav-number">10.</span> <span class="nav-text">18.Canvas画板</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点-4"><span class="nav-number">10.1.</span> <span class="nav-text">知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#鼠标事件"><span class="nav-number">10.1.1.</span> <span class="nav-text">鼠标事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#canvas"><span class="nav-number">10.1.2.</span> <span class="nav-text">canvas</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19-手机端画板"><span class="nav-number">11.</span> <span class="nav-text">19.手机端画板</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加viewport"><span class="nav-number">11.1.</span> <span class="nav-text">添加viewport</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#touch方法"><span class="nav-number">11.2.</span> <span class="nav-text">touch方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断浏览器是否支持标签的某个属性"><span class="nav-number">11.3.</span> <span class="nav-text">判断浏览器是否支持标签的某个属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断是否是移动设备"><span class="nav-number">11.4.</span> <span class="nav-text">判断是否是移动设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端必须在ontouchstart时，ev-preventDefault-阻止屏幕的滚动"><span class="nav-number">11.5.</span> <span class="nav-text">移动端必须在ontouchstart时，ev.preventDefault();阻止屏幕的滚动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iconfont的使用"><span class="nav-number">11.6.</span> <span class="nav-text">iconfont的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局域网调试"><span class="nav-number">11.7.</span> <span class="nav-text">局域网调试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20-JS里的7种数据"><span class="nav-number">12.</span> <span class="nav-text">20.JS里的7种数据</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#21-类型转换"><span class="nav-number">13.</span> <span class="nav-text">21.类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#btoa将字符串转为base64"><span class="nav-number">13.1.</span> <span class="nav-text">btoa将字符串转为base64</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换"><span class="nav-number">13.2.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5个falsy值"><span class="nav-number">13.3.</span> <span class="nav-text">5个falsy值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存图"><span class="nav-number">13.4.</span> <span class="nav-text">内存图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面试题-对象的引用"><span class="nav-number">13.5.</span> <span class="nav-text">面试题-对象的引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面试题-垃圾回收"><span class="nav-number">13.6.</span> <span class="nav-text">面试题-垃圾回收</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面试题-深拷贝vs浅拷贝"><span class="nav-number">13.7.</span> <span class="nav-text">面试题-深拷贝vs浅拷贝</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#22-JS里的对象"><span class="nav-number">14.</span> <span class="nav-text">22.JS里的对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局函数"><span class="nav-number">14.1.</span> <span class="nav-text">全局函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型prototype"><span class="nav-number">14.2.</span> <span class="nav-text">原型prototype</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#23-给简历加-JS"><span class="nav-number">15.</span> <span class="nav-text">23.给简历加 JS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chrome控制动画速度"><span class="nav-number">15.1.</span> <span class="nav-text">chrome控制动画速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scrollY"><span class="nav-number">15.2.</span> <span class="nav-text">scrollY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体颜色inherit"><span class="nav-number">15.3.</span> <span class="nav-text">字体颜色inherit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ev-target-和-ev-currentTarget"><span class="nav-number">15.4.</span> <span class="nav-text">ev.target 和 ev.currentTarget</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xxx-tagName-toLowerCase"><span class="nav-number">15.5.</span> <span class="nav-text">xxx.tagName.toLowerCase()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a-href-和-a-getAttribute-‘href’"><span class="nav-number">15.6.</span> <span class="nav-text">a.href 和 a.getAttribute(‘href’)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ele-offsetTop-和-window-scrollTo-x-y"><span class="nav-number">15.7.</span> <span class="nav-text">ele.offsetTop() 和 window.scrollTo(x,y)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#24-给简历加-JS（续）"><span class="nav-number">16.</span> <span class="nav-text">24.给简历加 JS（续）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#平滑滚动smooth-scroll"><span class="nav-number">16.1.</span> <span class="nav-text">平滑滚动smooth scroll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tween-js"><span class="nav-number">16.2.</span> <span class="nav-text">tween.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#滚动监听scrollspy"><span class="nav-number">16.3.</span> <span class="nav-text">滚动监听scrollspy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检测元素出现在可视区"><span class="nav-number">16.4.</span> <span class="nav-text">检测元素出现在可视区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技能条加载动画"><span class="nav-number">16.5.</span> <span class="nav-text">技能条加载动画</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#25-JS-数组Array"><span class="nav-number">17.</span> <span class="nav-text">25.JS 数组Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型new不new的区别"><span class="nav-number">17.1.</span> <span class="nav-text">数据类型new不new的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伪数组"><span class="nav-number">17.2.</span> <span class="nav-text">伪数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的操作-api"><span class="nav-number">17.3.</span> <span class="nav-text">数组的操作(api)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#26-函数Function"><span class="nav-number">18.</span> <span class="nav-text">26.函数Function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的声明方法"><span class="nav-number">18.1.</span> <span class="nav-text">函数的声明方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#eval"><span class="nav-number">18.2.</span> <span class="nav-text">eval()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的调用"><span class="nav-number">18.3.</span> <span class="nav-text">函数的调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#call、this、arguments面试题"><span class="nav-number">18.4.</span> <span class="nav-text">call、this、arguments面试题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#call-stack调用栈"><span class="nav-number">18.5.</span> <span class="nav-text">call stack调用栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域面试题"><span class="nav-number">18.6.</span> <span class="nav-text">作用域面试题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">18.7.</span> <span class="nav-text">闭包</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#27-DOM-API"><span class="nav-number">19.</span> <span class="nav-text">27.DOM API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM各种api的操作"><span class="nav-number">19.1.</span> <span class="nav-text">DOM各种api的操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#28-jQuery-不过如此"><span class="nav-number">20.</span> <span class="nav-text">28.jQuery 不过如此</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三等号"><span class="nav-number">20.1.</span> <span class="nav-text">三等号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封装自己的js库"><span class="nav-number">20.2.</span> <span class="nav-text">封装自己的js库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jquery原理"><span class="nav-number">20.3.</span> <span class="nav-text">jquery原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#29-用-jQuery-做个轮播吧"><span class="nav-number">21.</span> <span class="nav-text">29.用 jQuery 做个轮播吧</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">stage</span>
+
+  
+</div>
+
+
+  <div class="powered-by">自豪地采用 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
