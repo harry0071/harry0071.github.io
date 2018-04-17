@@ -91,13 +91,13 @@
 
 <meta name="description" content="css知识点查漏补缺，知识点补充，比较零碎">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css知识点补充">
+<meta property="og:title" content="🔒 css知识点补充">
 <meta property="og:url" content="harry0071.github.io/2018/02/23/css知识点补充/index.html">
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="css知识点查漏补缺，知识点补充，比较零碎">
-<meta property="og:updated_time" content="2018-03-03T14:20:28.000Z">
+<meta property="og:updated_time" content="2018-04-11T03:34:05.260Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css知识点补充">
+<meta name="twitter:title" content="🔒 css知识点补充">
 <meta name="twitter:description" content="css知识点查漏补缺，知识点补充，比较零碎">
 
 
@@ -134,7 +134,7 @@
 
 
 
-  <title>css知识点补充 | stage's blog</title>
+  <title>🔒 css知识点补充 | stage's blog</title>
   
 
 
@@ -292,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">css知识点补充</h1>
+          <h1 class="post-title" itemprop="name headline">🔒 css知识点补充</h1>
         
 
         <div class="post-meta">
@@ -386,7 +386,29 @@
 <h1 id="利用box-shadow实现多层边框-立体感"><a href="#利用box-shadow实现多层边框-立体感" class="headerlink" title="利用box-shadow实现多层边框(立体感)"></a>利用box-shadow实现多层边框(立体感)</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">box-shadow</span>: 向左 向下 模糊程度 一个不模糊的边框 内阴影<span class="selector-tag">inset</span>;</div><div class="line"><span class="selector-tag">box-shadow</span>: 0 0 0 1<span class="selector-tag">px</span> <span class="selector-id">#1a1b1c</span>, 0 0 0 2<span class="selector-tag">px</span> <span class="selector-id">#1f2020</span>, 0 3<span class="selector-tag">px</span> 0 1<span class="selector-tag">px</span> <span class="selector-id">#080808</span>;</div></pre></td></tr></table></figure>
 <h1 id="100vh使元素的高度占满可视区高度"><a href="#100vh使元素的高度占满可视区高度" class="headerlink" title="100vh使元素的高度占满可视区高度"></a>100vh使元素的高度占满可视区高度</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;<span class="attribute">height</span>: <span class="number">100vh</span>&#125;</div><div class="line">再利用<span class="selector-tag">flex</span>就可以使元素内的<span class="selector-tag">item</span>相对于可视区居中</div></pre></td></tr></table></figure>
 <h1 id="icon图标"><a href="#icon图标" class="headerlink" title="icon图标"></a>icon图标</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">将favicon.ico放在根目录下</div><div class="line">如果要获取其他网站的icon，可以通过 //该网站根目录/favicon.ico</div><div class="line">比如 //www.qq.com/favicon.ico  就可以获得qq的icon</div></pre></td></tr></table></figure>
-<h1 id="overflow-hidden别给老子出现滚动条！"><a href="#overflow-hidden别给老子出现滚动条！" class="headerlink" title="overflow:hidden别给老子出现滚动条！"></a>overflow:hidden别给老子出现滚动条！</h1>
+<h1 id="overflow-hidden别给老子出现滚动条！"><a href="#overflow-hidden别给老子出现滚动条！" class="headerlink" title="overflow:hidden别给老子出现滚动条！"></a>overflow:hidden别给老子出现滚动条！</h1><h1 id="当元素设置了-absolute-后，默认就不是100-的宽度了，而是内容多宽就是多宽"><a href="#当元素设置了-absolute-后，默认就不是100-的宽度了，而是内容多宽就是多宽" class="headerlink" title="当元素设置了  absolute  后，默认就不是100%的宽度了，而是内容多宽就是多宽"></a>当元素设置了  absolute  后，默认就不是100%的宽度了，而是内容多宽就是多宽</h1><p>当元素设置了  absolute  后，默认就不是100%的宽度了，而是内容多宽就是多宽<br>如果希望absolute 以后的元素依然和父容器一样是的100% 宽度<br>有两个方法：     </p>
+<ol>
+<li>给子级设置 width:100%</li>
+</ol>
+<ul>
+<li>给子级设置left:0px;right:0px;<iframe width="100%" height="600" src="//jsfiddle.net/20170808/t84nty3m/3/embedded/html,result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+</li>
+</ul>
+<h1 id="min-width和max-width"><a href="#min-width和max-width" class="headerlink" title="min-width和max-width"></a>min-width和max-width</h1><p><code>min-width</code>:无论如何，都不会小于这个宽度<br><code>max-width</code>:无论如何，都不会比这个宽度大</p>
+<h1 id="多色border"><a href="#多色border" class="headerlink" title="多色border"></a>多色border</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">border</span>:<span class="number">50px</span> solid red;</div><div class="line">  <span class="attribute">width</span>:<span class="number">0</span>;</div><div class="line">  <span class="attribute">height</span>:<span class="number">0</span>;</div><div class="line">  <span class="attribute">border-color</span>:red yellow green blue</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<iframe width="100%" height="600" src="http://js.jirengu.com/lufefukoji/1/edit?css,output" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h1 id="多色三角形变形"><a href="#多色三角形变形" class="headerlink" title="多色三角形变形"></a>多色三角形变形</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">border</span>:<span class="number">50px</span> solid red;</div><div class="line">  <span class="attribute">width</span>:<span class="number">0</span>;</div><div class="line">  <span class="attribute">height</span>:<span class="number">0</span>;</div><div class="line">  <span class="attribute">border-color</span>:red yellow green blue;</div><div class="line">  <span class="attribute">border-width</span>:<span class="number">10px</span> <span class="number">30px</span> <span class="number">50px</span> <span class="number">80px</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<iframe width="100%" height="600" src="http://js.jirengu.com/qebeqovotu/1/edit?css,output" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h2 id="扇形"><a href="#扇形" class="headerlink" title="扇形"></a>扇形</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">border</span>:<span class="number">50px</span> solid black;</div><div class="line">  <span class="attribute">width</span>:<span class="number">0</span>;</div><div class="line">  <span class="attribute">height</span>:<span class="number">0</span>;</div><div class="line">  <span class="attribute">border-color</span>:red yellow green blue;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<iframe width="100%" height="600" src="http://js.jirengu.com/qigegocese/1/edit?css,output" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h1 id="渐变动画加载图"><a href="#渐变动画加载图" class="headerlink" title="渐变动画加载图"></a>渐变动画加载图</h1><iframe width="100%" height="600" src="http://js.jirengu.com/lipawesoxo/1/edit?css,output" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>利用<code>background-size: 200% auto</code>将背景在x轴扩大，然后改变<code>background-position</code>的位置达到渐变动画的效果          </p>
+<iframe width="100%" height="600" src="http://js.jirengu.com/vakolapitu/1/edit?css,output" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
       
     </div>
     
@@ -428,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/23/前端学习记录/" rel="next" title="前端学习记录">
-                <i class="fa fa-chevron-left"></i> 前端学习记录
+              <a href="/2018/02/23/前端学习记录/" rel="next" title="🔒 前端学习记录">
+                <i class="fa fa-chevron-left"></i> 🔒 前端学习记录
               </a>
             
           </div>
@@ -521,7 +543,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -532,7 +554,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -543,7 +565,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -592,7 +614,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文档流"><span class="nav-number">1.</span> <span class="nav-text">文档流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#块级元素"><span class="nav-number">2.</span> <span class="nav-text">块级元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#块级元素的高度"><span class="nav-number">2.1.</span> <span class="nav-text">块级元素的高度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块级元素居中"><span class="nav-number">2.2.</span> <span class="nav-text">块级元素居中</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内联元素的高度"><span class="nav-number">3.</span> <span class="nav-text">内联元素的高度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多个内联元素以baseline对齐"><span class="nav-number">4.</span> <span class="nav-text">多个内联元素以baseline对齐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#渐变gradient"><span class="nav-number">5.</span> <span class="nav-text">渐变gradient</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置dib后，一定要加上vat"><span class="nav-number">6.</span> <span class="nav-text">设置dib后，一定要加上vat</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#text-transform-uppercase"><span class="nav-number">7.</span> <span class="nav-text">text-transform: uppercase</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#利用box-shadow实现多层边框-立体感"><span class="nav-number">8.</span> <span class="nav-text">利用box-shadow实现多层边框(立体感)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#100vh使元素的高度占满可视区高度"><span class="nav-number">9.</span> <span class="nav-text">100vh使元素的高度占满可视区高度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#icon图标"><span class="nav-number">10.</span> <span class="nav-text">icon图标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#overflow-hidden别给老子出现滚动条！"><span class="nav-number">11.</span> <span class="nav-text">overflow:hidden别给老子出现滚动条！</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文档流"><span class="nav-number">1.</span> <span class="nav-text">文档流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#块级元素"><span class="nav-number">2.</span> <span class="nav-text">块级元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#块级元素的高度"><span class="nav-number">2.1.</span> <span class="nav-text">块级元素的高度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块级元素居中"><span class="nav-number">2.2.</span> <span class="nav-text">块级元素居中</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内联元素的高度"><span class="nav-number">3.</span> <span class="nav-text">内联元素的高度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多个内联元素以baseline对齐"><span class="nav-number">4.</span> <span class="nav-text">多个内联元素以baseline对齐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#渐变gradient"><span class="nav-number">5.</span> <span class="nav-text">渐变gradient</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置dib后，一定要加上vat"><span class="nav-number">6.</span> <span class="nav-text">设置dib后，一定要加上vat</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#text-transform-uppercase"><span class="nav-number">7.</span> <span class="nav-text">text-transform: uppercase</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#利用box-shadow实现多层边框-立体感"><span class="nav-number">8.</span> <span class="nav-text">利用box-shadow实现多层边框(立体感)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#100vh使元素的高度占满可视区高度"><span class="nav-number">9.</span> <span class="nav-text">100vh使元素的高度占满可视区高度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#icon图标"><span class="nav-number">10.</span> <span class="nav-text">icon图标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#overflow-hidden别给老子出现滚动条！"><span class="nav-number">11.</span> <span class="nav-text">overflow:hidden别给老子出现滚动条！</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#当元素设置了-absolute-后，默认就不是100-的宽度了，而是内容多宽就是多宽"><span class="nav-number">12.</span> <span class="nav-text">当元素设置了  absolute  后，默认就不是100%的宽度了，而是内容多宽就是多宽</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#min-width和max-width"><span class="nav-number">13.</span> <span class="nav-text">min-width和max-width</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多色border"><span class="nav-number">14.</span> <span class="nav-text">多色border</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多色三角形变形"><span class="nav-number">15.</span> <span class="nav-text">多色三角形变形</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#扇形"><span class="nav-number">15.1.</span> <span class="nav-text">扇形</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#渐变动画加载图"><span class="nav-number">16.</span> <span class="nav-text">渐变动画加载图</span></a></li></ol></div>
             
 
           </div>

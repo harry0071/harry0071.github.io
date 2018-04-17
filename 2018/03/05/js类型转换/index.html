@@ -108,7 +108,7 @@
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fp1t8rnymwj20yq0i4dm2.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1fp1ugfo9z8j20zi0hsq7s.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1fp1ulftgrnj212a0ldjx9.jpg">
-<meta property="og:updated_time" content="2018-03-09T04:33:40.357Z">
+<meta property="og:updated_time" content="2018-03-23T01:20:00.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js类型转换，内存图，数据的引用，垃圾回收，深拷贝vs浅拷贝">
 <meta name="twitter:description" content="js类型转换的方法6个falsy值内存图数据的引用垃圾回收深拷贝vs浅拷贝">
@@ -385,7 +385,7 @@
 <h1 id="转成字符串"><a href="#转成字符串" class="headerlink" title="转成字符串"></a>转成字符串</h1><h2 id="String-x"><a href="#String-x" class="headerlink" title="String(x)"></a>String(x)</h2><p>String(x)是一个window的全局方法<br><img src="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1pad5ajhj20xu0bkq3u.jpg" alt=""></p>
 <h2 id="x-toString"><a href="#x-toString" class="headerlink" title="x.toString()"></a>x.toString()</h2><p>null和undefined没有.toString()方法</p>
 <p><img src="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1pbg3s0wj210s0f4tay.jpg" alt=""></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span>toString()  <span class="comment">//报错</span></div><div class="line"><span class="number">1.</span>.toString() <span class="comment">// '1'</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span>toString()  <span class="comment">//报错</span></div><div class="line">解析器不知道第一个点应该理解成小数点，还是应该理解成调用方法，因此报错</div><div class="line"></div><div class="line"><span class="number">1.</span>.toString() <span class="comment">// '1' 第一个点表示小数点，第二个点表示调用方法</span></div><div class="line"><span class="number">1.0</span>.toString() <span class="comment">// '1'</span></div><div class="line"><span class="number">1</span> .toString() <span class="comment">// '1'</span></div><div class="line">(<span class="number">1</span>).toString() <span class="comment">// '1'</span></div></pre></td></tr></table></figure>
 <h2 id="x-‘’-与空字符串相加"><a href="#x-‘’-与空字符串相加" class="headerlink" title="x + ‘’ 与空字符串相加"></a>x + ‘’ 与空字符串相加</h2><p>这种方法比较简便，推荐用这种方法转成字符串</p>
 <p><img src="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1pd2ki92j20xq0g2757.jpg" alt=""></p>
 <h1 id="转成布尔值"><a href="#转成布尔值" class="headerlink" title="转成布尔值"></a>转成布尔值</h1><h2 id="Boolean-x"><a href="#Boolean-x" class="headerlink" title="Boolean(x)"></a>Boolean(x)</h2><p>注意!空对象是true</p>
@@ -398,7 +398,7 @@
 <h2 id="x-0-推荐这种"><a href="#x-0-推荐这种" class="headerlink" title="x - 0 推荐这种"></a>x - 0 推荐这种</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">'123'</span><span class="number">-0</span> <span class="comment">// 123</span></div><div class="line"><span class="string">'3.14'</span><span class="number">-0</span> <span class="comment">// 3.14</span></div></pre></td></tr></table></figure>
 <h2 id="x-取正"><a href="#x-取正" class="headerlink" title="+x 取正"></a>+x 取正</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">+ <span class="string">'-1'</span> <span class="comment">// -1</span></div><div class="line">+ <span class="string">'3.14'</span> <span class="comment">// 3.14</span></div></pre></td></tr></table></figure>
 <h1 id="6个falsy值"><a href="#6个falsy值" class="headerlink" title="6个falsy值"></a>6个falsy值</h1><p>0、NaN、空字符串、false、null、undefined</p>
-<p>所有对象都是true<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="literal">false</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>);</div><div class="line"><span class="keyword">if</span>(a)&#123;<span class="built_in">console</span>.log(<span class="number">1</span>)&#125;</div><div class="line"><span class="keyword">if</span>(b)&#123;<span class="built_in">console</span>.log(<span class="number">2</span>)&#125; </div><div class="line">结果是<span class="number">2</span>，因为b是个对象</div></pre></td></tr></table></figure></p>
+<p>所有对象的falsy值都是true<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="literal">false</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>);</div><div class="line"><span class="keyword">if</span>(a)&#123;<span class="built_in">console</span>.log(<span class="number">1</span>)&#125;</div><div class="line"><span class="keyword">if</span>(b)&#123;<span class="built_in">console</span>.log(<span class="number">2</span>)&#125; </div><div class="line">结果是<span class="number">2</span>，因为b是个对象</div></pre></td></tr></table></figure></p>
 <h1 id="内存图"><a href="#内存图" class="headerlink" title="内存图"></a>内存图</h1><ul>
 <li>JS 引擎将内存分为代码区和数据区</li>
 </ul>
@@ -406,8 +406,8 @@
 <p>我们只研究数据区</p>
 <ul>
 <li>数据区又分为 Stack区（栈内存） 和 Heap区（堆内存）</li>
-<li>简单类型的数据直接存在 Stack 里</li>
-<li>复杂类型(object)把地址存到 Stack 区，把地址对应的数据存到 Heap区</li>
+<li>简单类型的数据直接存在 Stack栈内存 里</li>
+<li>复杂类型(object)把地址存到 Stack栈内存 区，把地址对应的数据存到 Heap堆内存 区</li>
 </ul>
 <p><code>o2 = o</code>;并不是修改了o2在Heap的数据，而是将o2的地址修改成o的地址，因此2访问o对应的数据</p>
 <p><img src="http://ww4.sinaimg.cn/large/87c01ec7gy1fp1r2lbjnfj213e0nhnf7.jpg" alt=""></p>
@@ -479,8 +479,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/05/对象,全局函数,原型和原型链/" rel="prev" title="全局函数、原型和原型链">
-                全局函数、原型和原型链 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/05/对象,全局函数,原型和原型链/" rel="prev" title="构造函数、原型和原型链">
+                构造函数、原型和原型链 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -562,7 +562,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -573,7 +573,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -584,7 +584,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

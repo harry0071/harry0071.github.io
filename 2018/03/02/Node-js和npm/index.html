@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="node.js的常用命令npm的配置及使用">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1foyeoqhbz0j20sx06hmxh.jpg">
-<meta property="og:updated_time" content="2018-03-03T14:13:49.000Z">
+<meta property="og:updated_time" content="2018-04-13T04:20:22.277Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js和npm">
 <meta name="twitter:description" content="node.js的常用命令npm的配置及使用">
@@ -372,18 +372,21 @@
 <a id="more"></a>
 <h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><p>从<a href="https://nodejs.org/" target="_blank" rel="external">官网</a>下载node.js<br><kbd>shift</kbd> + 鼠标右键，选择<code>在此处打开命令窗口</code></p>
 <h2 id="Node-js相关命令"><a href="#Node-js相关命令" class="headerlink" title="Node.js相关命令"></a>Node.js相关命令</h2><ul>
-<li><code>where node</code> ：查看node安装位置</li>
-<li><code>where npm</code> ：查看npm安装位置</li>
+<li><code>where node</code> ：查看node.exe的安装路径</li>
+<li><code>where npm</code> ：查看npm安装路径</li>
 <li><code>node -v</code>：查看版本号</li>
 <li><code>npm -v</code></li>
 <li><code>exit</code>：退出</li>
 </ul>
-<h1 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h1><h2 id="配置npm"><a href="#配置npm" class="headerlink" title="配置npm"></a>配置npm</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">npm config set registry https://registry.npm.taobao.org/</div><div class="line">npm config set loglevel http</div><div class="line">npm config set progress false</div><div class="line">npm config set strict-ssl false</div><div class="line"></div><div class="line">---------------</div><div class="line">npm config，可以看到config可以简写为c</div><div class="line">所以上面的4句话可以简写为</div><div class="line"></div><div class="line">npm c set registry https://registry.npm.taobao.org/</div><div class="line">npm c set loglevel http</div><div class="line">npm c set progress false</div><div class="line">npm c set strict-ssl false</div></pre></td></tr></table></figure>
+<h1 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h1><p>npm常用命令及使用步骤：<a href="https://www.cnblogs.com/wdlhao/p/5900360.html" target="_blank" rel="external">https://www.cnblogs.com/wdlhao/p/5900360.html</a><br>npm 常用命令详解：<a href="https://www.cnblogs.com/itlkNote/p/6830682.html" target="_blank" rel="external">https://www.cnblogs.com/itlkNote/p/6830682.html</a></p>
+<h2 id="配置npm"><a href="#配置npm" class="headerlink" title="配置npm"></a>配置npm</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">npm config set registry https://registry.npm.taobao.org/</div><div class="line">npm config set loglevel http</div><div class="line">npm config set progress false</div><div class="line">npm config set strict-ssl false</div><div class="line"></div><div class="line">---------------</div><div class="line">npm config，可以看到config可以简写为c</div><div class="line">所以上面的4句话可以简写为</div><div class="line"></div><div class="line">npm c set registry https://registry.npm.taobao.org/</div><div class="line">npm c set loglevel http</div><div class="line">npm c set progress false</div><div class="line">npm c set strict-ssl false</div></pre></td></tr></table></figure>
 <p>npm 的配置被存储在 <code>~/.npmrc</code>，你可以随时通过<code>npm c edit</code>查看修改。</p>
-<h2 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h2><h3 id="http-server"><a href="#http-server" class="headerlink" title="http-server"></a>http-server</h3><p><code>npm i http-server -g</code><br>(默认安装在C:\Users\Administrator\AppData\Roaming\npm\node_modules)</p>
+<h2 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h2><p>在使用node的时候，用npm安装了很多软件，过一段时间没有使用就会忘记，怎么查看自己全局安装过的包，用命令<br><code>npm list -g --depth 0</code></p>
+<h3 id="http-server"><a href="#http-server" class="headerlink" title="http-server"></a>http-server</h3><p>安装：<code>npm i http-server -g</code><br>(默认安装在C:\Users\Administrator\AppData\Roaming\npm\node_modules)</p>
 <p><img src="http://ww4.sinaimg.cn/large/87c01ec7gy1foyeoqhbz0j20sx06hmxh.jpg" alt=""></p>
 <p>然后就可以使用 <code>http-server</code> 或者 <code>hs</code> 来启动http-server了<br><kbd>ctrl</kbd> + <kbd>C</kbd>退出http-server</p>
-<p>http-server的使用:</p>
+<p>卸载：<code>npm uninstall http-server -g</code>，简写<code>npm un http-server -g</code></p>
+<p><strong>http-server的使用</strong>:</p>
 <p>输入 <code>hs 文件路径 参数</code> 启用，默认localhost:8080<br>如果直接 <code>hs -c-1</code> 就是在当前目录启用,禁止缓存,自动打开浏览器<br>如果<code>hhs D:\饥人谷\resume -c-1 -o</code> 就是在指定的路径启用,禁止缓存,自动打开浏览器</p>
 <p>如果想改变端口和地址采用这个方式：<code>http-server &lt;文件路径&gt; -a hostip -p 端口号</code>。<br>参数-a是监听地址，而参数-p是修改监听端口。</p>
 <p>-o 启动服务器后打开浏览器窗口<br>-c 设置缓存控制max-age头的缓存时间（以秒为单位），例如-c10 10秒（默认为’3600’）。<br><strong>要禁用缓存，请使用-c-1</strong>，因为有时候修改代码后重启服务页面不一定立刻生效，所以禁用缓存<br>-p 要使用的端口（默认为8080）<br>-a 要使用的地址（默认为0.0.0.0）<br>-d 显示目录列表（默认为“True”）<br>-s或<code>--silent</code>从输出中抑制日志消息:这个意思就是你输入之后，日志消息不会显示     </p>
@@ -521,7 +524,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -532,7 +535,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -543,7 +546,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="面试题,HTTP,请求与响应,状态码," />
+  <meta name="keywords" content="面试题,http,请求与响应,状态码," />
 
 
 
@@ -89,39 +89,19 @@
 
 
 
-<meta name="description" content="Server + Client + HTTP
-
-浏览器负责发起请求
-服务器在 80 端口接收请求
-服务器负责返回内容（响应）
-浏览器负责下载响应内容
-
-HTTP 的作用就是指导浏览器和服务器如何进行沟通。资料：菜鸟教程 - 学习HTTP">
+<meta name="description" content="状态码请求与响应参考菜鸟教程资料什么是HTTPS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTP请求与响应">
 <meta property="og:url" content="harry0071.github.io/2018/02/21/HTTP请求与响应/index.html">
 <meta property="og:site_name" content="stage's blog">
-<meta property="og:description" content="Server + Client + HTTP
-
-浏览器负责发起请求
-服务器在 80 端口接收请求
-服务器负责返回内容（响应）
-浏览器负责下载响应内容
-
-HTTP 的作用就是指导浏览器和服务器如何进行沟通。资料：菜鸟教程 - 学习HTTP">
+<meta property="og:description" content="状态码请求与响应参考菜鸟教程资料什么是HTTPS">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1fq9p91y7tvj20hk0acwi5.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1foo05ywm42j21700k0dng.jpg">
-<meta property="og:updated_time" content="2018-02-25T07:02:32.000Z">
+<meta property="og:updated_time" content="2018-04-15T14:12:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP请求与响应">
-<meta name="twitter:description" content="Server + Client + HTTP
-
-浏览器负责发起请求
-服务器在 80 端口接收请求
-服务器负责返回内容（响应）
-浏览器负责下载响应内容
-
-HTTP 的作用就是指导浏览器和服务器如何进行沟通。资料：菜鸟教程 - 学习HTTP">
-<meta name="twitter:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1foo05ywm42j21700k0dng.jpg">
+<meta name="twitter:description" content="状态码请求与响应参考菜鸟教程资料什么是HTTPS">
+<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1fq9p91y7tvj20hk0acwi5.jpg">
 
 
 
@@ -350,8 +330,8 @@ HTTP 的作用就是指导浏览器和服务器如何进行沟通。资料：菜
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTTP/" itemprop="url" rel="index">
-                    <span itemprop="name">HTTP</span>
+                  <a href="/categories/http/" itemprop="url" rel="index">
+                    <span itemprop="name">http</span>
                   </a>
                 </span>
 
@@ -387,7 +367,11 @@ HTTP 的作用就是指导浏览器和服务器如何进行沟通。资料：菜
       
 
       
-        <h1 id="Server-Client-HTTP"><a href="#Server-Client-HTTP" class="headerlink" title="Server + Client + HTTP"></a>Server + Client + HTTP</h1><p><img src="http://ww3.sinaimg.cn/large/87c01ec7gy1foo05ywm42j21700k0dng.jpg" alt=""></p>
+        <blockquote>
+<p>状态码<br><img src="http://ww2.sinaimg.cn/large/87c01ec7gy1fq9p91y7tvj20hk0acwi5.jpg" alt=""><br>请求与响应<br><a href="http://www.runoob.com/http/http-tutorial.html" target="_blank" rel="external">参考菜鸟教程资料</a><br>什么是HTTPS</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="Server-Client-HTTP"><a href="#Server-Client-HTTP" class="headerlink" title="Server + Client + HTTP"></a>Server + Client + HTTP</h1><p><img src="http://ww3.sinaimg.cn/large/87c01ec7gy1foo05ywm42j21700k0dng.jpg" alt=""></p>
 <ul>
 <li>浏览器负责发起请求</li>
 <li>服务器在 80 端口接收请求</li>
@@ -395,14 +379,13 @@ HTTP 的作用就是指导浏览器和服务器如何进行沟通。资料：菜
 <li>浏览器负责下载响应内容</li>
 </ul>
 <p>HTTP 的作用就是指导浏览器和服务器如何进行沟通。<br>资料：<a href="http://www.runoob.com/http/http-tutorial.html" target="_blank" rel="external">菜鸟教程 - 学习HTTP</a></p>
-<a id="more"></a>
 <h1 id="重点-面试题"><a href="#重点-面试题" class="headerlink" title="重点 面试题"></a>重点 面试题</h1><ol>
 <li>请求包括 GET(获取) POST(上传) PUT(整体更新) PATCH(局部更新) DELETE(删除) HEAD OPTIONS等</li>
 </ol>
 <ul>
 <li>能够手写http请求，能够手写http响应</li>
 <li>Content-Type: application/x-www-form-urlencoded : 应用数据/还没有写入规范的格式-万维网-表单-用urlencode形式压缩</li>
-<li>知道状态码的含义:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">200 OK:GET时返回，表示成功</div><div class="line">201 created:POST时返回，表示创建成功</div><div class="line"></div><div class="line">301 Moved Permanently:请求的资源已被永久的移动到新URI</div><div class="line">302 Found:临时移走了</div><div class="line">304 未修改Not Modified：所请求的资源未修改，使用缓存的文档</div><div class="line"></div><div class="line">404 Not Found ：无法找到这个网页</div><div class="line">403	Forbidden ：服务器拒绝执行此请求</div><div class="line"></div><div class="line">500	Internal Server Error：服务器内部错误，无法完成请求</div><div class="line">502 Bad Gateway ：充当网关或代理的服务器，从远端服务器接收到了一个无效的请求（比如服务器关了）</div></pre></td></tr></table></figure>
+<li>知道状态码的含义:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">200 OK:GET时返回，表示响应成功</div><div class="line">201 created:POST时返回，表示创建成功</div><div class="line"></div><div class="line">301 Moved Permanently:请求的资源已被永久的移动到新URI</div><div class="line">302 Found:请求的资源被临时移走了</div><div class="line">304 未修改Not Modified：所请求的资源未修改，使用缓存的文档</div><div class="line"></div><div class="line">404 Not Found ：无法找到这个网页</div><div class="line">403	Forbidden ：服务器拒绝执行此请求</div><div class="line"></div><div class="line">500	Internal Server Error：服务器内部错误，无法完成请求</div><div class="line">502 Bad Gateway ：充当网关或代理的服务器，从远端服务器接收到了一个无效的请求（比如服务器关了）</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h1><h2 id="发起GET请求"><a href="#发起GET请求" class="headerlink" title="发起GET请求"></a>发起GET请求</h2><ul>
@@ -424,7 +407,7 @@ HTTP 的作用就是指导浏览器和服务器如何进行沟通。资料：菜
 <ul>
 <li>第三部分永远都是一个回车（<code>\n</code>，作为第2部分与第4部分的分界线</li>
 <li>动词有 GET POST PUT PATCH DELETE HEAD OPTIONS 等</li>
-<li>这里的路径包括「查询参数」，但不包括「锚点」比如<code>GET /s?wd=javascript HTTP/1.1</code></li>
+<li>这里的路径可以包括「查询参数」，但不包括「锚点」比如<code>GET /s?wd=javascript HTTP/1.1</code></li>
 <li>如果你没有写路径，那么路径默认为 / :<code>GET / HTTP/1.1</code></li>
 <li>第 2 部分中的 Content-Type 标注了第 4 部分的格式</li>
 </ul>
@@ -465,6 +448,12 @@ HTTP 的作用就是指导浏览器和服务器如何进行沟通。资料：菜
 </ul>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h2 id="http请求与响应的格式"><a href="#http请求与响应的格式" class="headerlink" title="http请求与响应的格式"></a>http请求与响应的格式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">GET 请求 </div><div class="line"></div><div class="line">GET / HTTP/1.1  //GET /?w=xxx HTTP/1.1 查询参数为?w=xxx</div><div class="line">Host: baidu.com</div><div class="line">Accept: text/html  //请求html格式的文件</div><div class="line"></div><div class="line">响应</div><div class="line"></div><div class="line">HTTP/1.1 200 OK</div><div class="line">Content-Type: text/html; charset=utf-8  //响应给我html文件</div><div class="line">Content-Length: 10000</div><div class="line"></div><div class="line">&lt;!DOCTYPE&gt;    //html格式的文件</div><div class="line">&lt;html&gt;......&lt;/html&gt;</div><div class="line"></div><div class="line">--------------------------</div><div class="line"></div><div class="line">POST 请求</div><div class="line"></div><div class="line">POST /login?w=xxx HTTP/1.1</div><div class="line">Host: baidu.com</div><div class="line">Accept: application/json  //请求一个json格式的页面</div><div class="line">Content-Type: application/x-www-form-urlencoded</div><div class="line">Content-Length: 10</div><div class="line"></div><div class="line">username=fangfang&amp;password=mima</div><div class="line"></div><div class="line">响应</div><div class="line"></div><div class="line">HTTP/1.1 403 Forbidden</div><div class="line">Content-Type: application/json //返回json格式</div><div class="line">Content-Length: 200</div><div class="line"></div><div class="line">&#123;&quot;erroc&quot;:&quot;错误&quot;&#125;  //返回json文件</div></pre></td></tr></table></figure>
 <h2 id="比喻版"><a href="#比喻版" class="headerlink" title="比喻版"></a>比喻版</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">工资请求</div><div class="line"></div><div class="line">GET 11月工资 工资协议/1.1</div><div class="line">Host: 百度公司</div><div class="line">Accept: 现金 (or 支付宝转账, or 银行汇款)</div><div class="line"></div><div class="line">工资响应</div><div class="line"></div><div class="line">工资协议/1.1 200 OK</div><div class="line">类型: 现金</div><div class="line">现金张数: 10</div><div class="line"></div><div class="line">10000</div></pre></td></tr></table></figure>
+<h1 id="https"><a href="#https" class="headerlink" title="https"></a>https</h1><p>HTTP缺点：通信不加密内容会被窃听</p>
+<p>不验证通信方的身份，遭遇伪装</p>
+<p>无法证明报名完整性，可能回被篡改</p>
+<p>所以引入HTTPS</p>
+<p>HTTP+加密+认证+完整性保护=HTTPS</p>
+
       
     </div>
     
@@ -491,7 +480,7 @@ HTTP 的作用就是指导浏览器和服务器如何进行沟通。资料：菜
           
             <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
           
-            <a href="/tags/HTTP/" rel="tag"><i class="fa fa-tag"></i> HTTP</a>
+            <a href="/tags/http/" rel="tag"><i class="fa fa-tag"></i> http</a>
           
             <a href="/tags/请求与响应/" rel="tag"><i class="fa fa-tag"></i> 请求与响应</a>
           
@@ -601,7 +590,7 @@ HTTP 的作用就是指导浏览器和服务器如何进行沟通。资料：菜
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -612,7 +601,7 @@ HTTP 的作用就是指导浏览器和服务器如何进行沟通。资料：菜
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -623,7 +612,7 @@ HTTP 的作用就是指导浏览器和服务器如何进行沟通。资料：菜
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -672,7 +661,7 @@ HTTP 的作用就是指导浏览器和服务器如何进行沟通。资料：菜
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Server-Client-HTTP"><span class="nav-number">1.</span> <span class="nav-text">Server + Client + HTTP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重点-面试题"><span class="nav-number">2.</span> <span class="nav-text">重点 面试题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP请求"><span class="nav-number">3.</span> <span class="nav-text">HTTP请求</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#发起GET请求"><span class="nav-number">3.1.</span> <span class="nav-text">发起GET请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发起POST请求"><span class="nav-number">3.2.</span> <span class="nav-text">发起POST请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发起带data的POST请求"><span class="nav-number">3.3.</span> <span class="nav-text">发起带data的POST请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请求的格式"><span class="nav-number">3.4.</span> <span class="nav-text">请求的格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用-Chrome-发请求"><span class="nav-number">3.5.</span> <span class="nav-text">用 Chrome 发请求</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#响应"><span class="nav-number">4.</span> <span class="nav-text">响应</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对GET的响应"><span class="nav-number">4.1.</span> <span class="nav-text">对GET的响应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对POST的响应"><span class="nav-number">4.2.</span> <span class="nav-text">对POST的响应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应的格式"><span class="nav-number">4.3.</span> <span class="nav-text">响应的格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用-Chrome-查看响应"><span class="nav-number">4.4.</span> <span class="nav-text">用 Chrome 查看响应</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#http请求与响应的格式"><span class="nav-number">5.1.</span> <span class="nav-text">http请求与响应的格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比喻版"><span class="nav-number">5.2.</span> <span class="nav-text">比喻版</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Server-Client-HTTP"><span class="nav-number">1.</span> <span class="nav-text">Server + Client + HTTP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重点-面试题"><span class="nav-number">2.</span> <span class="nav-text">重点 面试题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP请求"><span class="nav-number">3.</span> <span class="nav-text">HTTP请求</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#发起GET请求"><span class="nav-number">3.1.</span> <span class="nav-text">发起GET请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发起POST请求"><span class="nav-number">3.2.</span> <span class="nav-text">发起POST请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发起带data的POST请求"><span class="nav-number">3.3.</span> <span class="nav-text">发起带data的POST请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请求的格式"><span class="nav-number">3.4.</span> <span class="nav-text">请求的格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用-Chrome-发请求"><span class="nav-number">3.5.</span> <span class="nav-text">用 Chrome 发请求</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#响应"><span class="nav-number">4.</span> <span class="nav-text">响应</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对GET的响应"><span class="nav-number">4.1.</span> <span class="nav-text">对GET的响应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对POST的响应"><span class="nav-number">4.2.</span> <span class="nav-text">对POST的响应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应的格式"><span class="nav-number">4.3.</span> <span class="nav-text">响应的格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用-Chrome-查看响应"><span class="nav-number">4.4.</span> <span class="nav-text">用 Chrome 查看响应</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#http请求与响应的格式"><span class="nav-number">5.1.</span> <span class="nav-text">http请求与响应的格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比喻版"><span class="nav-number">5.2.</span> <span class="nav-text">比喻版</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#https"><span class="nav-number">6.</span> <span class="nav-text">https</span></a></li></ol></div>
             
 
           </div>

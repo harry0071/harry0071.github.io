@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                //history.back(); 不推荐这种方法，建议使用下面的方法
+                location="//harry0071.github.io"; //返回网站，请自定义
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="笔记,面试题,ajax,json,jsonp," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="阮一峰：浏览器同源政策及其规避方法同源政策:同协议、同域名、同端口阮一峰：ajax教程ajax用XMLHttpRequest向后端发送请求，但是AJAX无法跨源json语法；通过JSON.parse(string)将后端返回的字符串转换成JS对象jsonp实现跨域，但jsonp只能发送GET请求CORS跨域，支持所有请求">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ajax基础知识">
+<meta property="og:url" content="harry0071.github.io/2018/03/21/ajax/index.html">
+<meta property="og:site_name" content="stage's blog">
+<meta property="og:description" content="阮一峰：浏览器同源政策及其规避方法同源政策:同协议、同域名、同端口阮一峰：ajax教程ajax用XMLHttpRequest向后端发送请求，但是AJAX无法跨源json语法；通过JSON.parse(string)将后端返回的字符串转换成JS对象jsonp实现跨域，但jsonp只能发送GET请求CORS跨域，支持所有请求">
+<meta property="og:updated_time" content="2018-03-22T05:53:59.133Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ajax基础知识">
+<meta name="twitter:description" content="阮一峰：浏览器同源政策及其规避方法同源政策:同协议、同域名、同端口阮一峰：ajax教程ajax用XMLHttpRequest向后端发送请求，但是AJAX无法跨源json语法；通过JSON.parse(string)将后端返回的字符串转换成JS对象jsonp实现跨域，但jsonp只能发送GET请求CORS跨域，支持所有请求">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="harry0071.github.io/2018/03/21/ajax/"/>
+
+
+
+
+
+  <title>ajax基础知识 | stage's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">stage's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="harry0071.github.io/2018/03/21/ajax/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="stage">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22497777">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="stage's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ajax基础知识</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-21T10:05:31+08:00">
+                2018-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ajax/" itemprop="url" rel="index">
+                    <span itemprop="name">ajax</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p><a href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html" target="_blank" rel="external">阮一峰：浏览器同源政策及其规避方法</a><br>同源政策:同协议、同域名、同端口<br><a href="http://javascript.ruanyifeng.com/bom/ajax.html" target="_blank" rel="external">阮一峰：ajax教程</a><br>ajax用XMLHttpRequest向后端发送请求，但是AJAX无法跨源<br>json语法；通过JSON.parse(string)将后端返回的字符串转换成JS对象<br>jsonp实现跨域，但jsonp只能发送GET请求<br>CORS跨域，支持所有请求</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="json"><a href="#json" class="headerlink" title="json"></a>json</h1><p>JSON 指的是 JavaScript 对象表示法（JavaScript Object Notation）<br>JSON 使用 Javascript语法来描述数据对象    </p>
+<ul>
+<li>json是道格拉斯抄袭js的语言</li>
+<li>JS 是一门语言，JSON 是另一门语言</li>
+<li>道格拉斯还写了本《javascript语言精粹》，俗称蝴蝶书，来吐槽js中垃圾的地方</li>
+</ul>
+<h2 id="json铁轨图"><a href="#json铁轨图" class="headerlink" title="json铁轨图"></a>json铁轨图</h2><p><a href="http://json.org" target="_blank" rel="external">http://json.org</a></p>
+<h2 id="json语法"><a href="#json语法" class="headerlink" title="json语法"></a>json语法</h2><p>json里的字符串必须用双引号，不能用单引号！！<br>| js数据 | json数据  |<br>| :—-: |:———:|<br>| ‘stage’| “stage” |<br>| [‘a’, ‘b’] | [“a”, “b”] |<br>| {name: ‘stage’} | {“name”: “stage”} |<br>| null | null |<br>| undefined| json没有undefined |</p>
+<h1 id="浏览器同源策略"><a href="#浏览器同源策略" class="headerlink" title="浏览器同源策略"></a>浏览器同源策略</h1><ul>
+<li>同协议</li>
+<li>同域名</li>
+<li>同端口</li>
+</ul>
+<p>举例来说，<code>http://www.example.com/d/page.html</code>这个网址，<br>协议是<code>http://</code>，<br>域名是<code>www.example.com</code>，<br>端口是<code>80</code>（默认端口80可以省略）。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">http://www.example.com/d2/other.html // 同源</div><div class="line">http://example.com/d/other.html // 不同源（域名不同）</div><div class="line">http://v2.www.example.com/d/other.html // 不同源（域名不同）</div><div class="line">http://www.example.com:81/d/other.html // 不同源（端口不同）</div><div class="line">https://www.example.com // 不同源（协议不同）</div></pre></td></tr></table></figure></p>
+<h1 id="不刷新页面，使用xhr发送请求局部更新数据：AJAX"><a href="#不刷新页面，使用xhr发送请求局部更新数据：AJAX" class="headerlink" title="不刷新页面，使用xhr发送请求局部更新数据：AJAX"></a>不刷新页面，使用xhr发送请求局部更新数据：AJAX</h1><p>AJAX - 异步的 JavaScript 和 XML<br>AJAX就是使用XMLHttpRequest技术向服务端发送请求<br>AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。<br>AJAX 最大的优点是在不重新加载整个页面的情况下，可以与服务器交换数据并更新部分网页内容。      </p>
+<ul>
+<li>使用 <code>XMLHttpRequest</code> 发请求</li>
+<li>服务器返回 <code>JSON</code> 格式的<strong>字符串</strong>(后来人们不用XML，改用JSON了)</li>
+<li>JS 解析 <code>JSON</code>(通过JSON.parse(字符串) 将JSON格式的字符串转成JS对象)，并更新局部页面<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">xhr.open(<span class="string">'GET'</span>, <span class="string">'/'</span>, <span class="literal">true</span>);</div><div class="line">xhr.send();</div><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.readyState == <span class="number">4</span>) &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.status &gt;= <span class="number">200</span> &amp;&amp; <span class="keyword">this</span>.status &lt; <span class="number">400</span>) &#123;</div><div class="line">      <span class="comment">// 成功!</span></div><div class="line">      <span class="keyword">var</span> string = <span class="keyword">this</span>.responseText;</div><div class="line">      <span class="keyword">var</span> obj = <span class="built_in">JSON</span>.parse(string);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="comment">// 失败 _(:з」∠)_ </span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="AJAX无法跨域"><a href="#AJAX无法跨域" class="headerlink" title="AJAX无法跨域"></a>AJAX无法跨域</h2><p>同源政策规定，AJAX请求只能发给同源的网址，否则就报错。<br>只有 协议 + 域名 + 端口 完全一模一样才能发AJAX请求<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">http://www.baidu.com 不可以向 http://baidu.com 发AJAX请求</div><div class="line">http://www.baidu.com:80 不可以向 http://www.baidu.com:81 发AJAX请求</div></pre></td></tr></table></figure></p>
+<p>如何解决AJAX无法跨域的问题？↓↓↓</p>
+<h1 id="跨域方法：jsonp"><a href="#跨域方法：jsonp" class="headerlink" title="跨域方法：jsonp"></a>跨域方法：jsonp</h1><p>由于同源策略，我们无法从别的域名(网站)那获取数据，用jsonp可以解决这个问题。<br>JsonP(JSON with Padding) 是 json 的一种”使用模式”，可以让网页从别的域名（网站）那获取数据，即跨域读取数据。<br>它的基本思想是，网页通过动态添加<code>&lt;script&gt;</code>标签，<code>&lt;script&gt;</code>标签的<code>src</code>向跨域服务器请求JSON数据，同时传一个查询参数<code>callback=随机名&amp;时间戳</code>,这种做法不受同源政策限制；服务器收到请求后，将数据放在一个指定名字的回调函数里传回来。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> 添加<span class="title">script</span>标签(<span class="params">src</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">  script.setAttribute(<span class="string">"type"</span>,<span class="string">"text/javascript"</span>);</div><div class="line">  script.src = src;</div><div class="line">  <span class="built_in">document</span>.body.appendChild(script);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  添加script标签(<span class="string">'http://example.com/ip?callback=JQuery173625173837'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">JQuery173625173837</span>(<span class="params">data</span>) </span>&#123;<span class="comment">//服务器收到这个请求以后，会将数据放在回调函数的参数位置(data)返回。</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'你的ip地址是: '</span> + data.ip);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//后端：</span></div><div class="line">$&#123;callback&#125;(&#123;<span class="string">"ip"</span>: <span class="string">"8.8.8.8"</span>&#125;);</div></pre></td></tr></table></figure></p>
+<p>上面代码通过动态添加<code>&lt;script&gt;</code>标签，向服务器<code>example.com</code>发出请求。注意，该请求的查询字符串有一个callback参数，用来指定回调函数的名字(一般用随机数),这对于JSONP是<strong>必需</strong>的。此外还需要加一个时间戳，防止浏览器的缓存。</p>
+<p>由于<code>&lt;script&gt;</code>标签请求的<strong>脚本</strong>会直接作为代码运行。这时，只要浏览器定义了名字为随机数的函数，该函数就会立即调用。于是请求方就能获得他要的数据。</p>
+<h2 id="jsonp面试题"><a href="#jsonp面试题" class="headerlink" title="jsonp面试题"></a>jsonp面试题</h2><ul>
+<li>什么是jsonp</li>
+</ul>
+<p>JSONP(JSON with Padding) 是 json 的一种”使用模式”，可以让网页从别的域名（网站）那获取数据，即跨域读取数据。<br>它的基本思想是：</p>
+<ol>
+<li>网页通过动态添加<code>&lt;script&gt;</code>标签，<code>&lt;script&gt;</code>标签的<code>src</code>向服务器请求数据，同时传一个查询参数<code>callback=随机名&amp;时间戳</code>给服务器,这种做法不受同源政策限制</li>
+</ol>
+<ul>
+<li>服务器收到请求后，将数据放在一个指定名字的回调函数里传回来。</li>
+<li>由于<code>&lt;script&gt;</code>标签请求的脚本会直接作为代码运行。这时，只要浏览器定义了对应名字的函数，该函数就会立即调用。</li>
+<li>于是请求方就能获得他要的数据。</li>
+</ul>
+<ul>
+<li>jsonp为什么不支持post方法</li>
+</ul>
+<p>因为jsonp是通过动态创建<code>&lt;script&gt;</code>标签实现的，而script只能通过GET请求数据，不能POST</p>
+<p><strong>由于jsonp只能发GET请求，于是又有了CORS跨域</strong><br>↓↓↓</p>
+<h1 id="CORS跨源AJAX请求"><a href="#CORS跨源AJAX请求" class="headerlink" title="CORS跨源AJAX请求"></a>CORS跨源AJAX请求</h1><p>CORS是跨源资源分享（Cross-Origin Resource Sharing）的缩写。它是W3C标准，是跨域AJAX请求的根本解决方法。<br>CORS允许浏览器向跨源服务器，发出<code>XMLHttpRequest</code>请求，从而克服了AJAX只能同源使用的限制。<br>相比JSONP只能发<code>GET</code>请求，CORS允许任何类型的请求。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">后端程序员加上这句响应头：</div><div class="line">response.setHeader(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'http://stage.com:8000'</span>)</div><div class="line">告诉浏览器，http:<span class="comment">//stage.com:8000可以向我方服务器发送ajax请求</span></div></pre></td></tr></table></figure>
+<h1 id="chrome调试"><a href="#chrome调试" class="headerlink" title="chrome调试"></a>chrome调试</h1><p>在用submit提交数据时，页面会刷新，因此：chrome开发者工具 → Network → Network → 点击preserve log(页面刷新时不清楚日志)</p>
+
+      
+    </div>
+    
+    
+    
+    <div>
+      
+          <div>
+    
+        <div style="text-align:center;color: #404040;font-size:18px;margin-top:70px;">-------------本文结束<i class="fa fa-star"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
+          
+            <a href="/tags/ajax/" rel="tag"><i class="fa fa-tag"></i> ajax</a>
+          
+            <a href="/tags/json/" rel="tag"><i class="fa fa-tag"></i> json</a>
+          
+            <a href="/tags/jsonp/" rel="tag"><i class="fa fa-tag"></i> jsonp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/18/期中考试/" rel="next" title="期中考试">
+                <i class="fa fa-chevron-left"></i> 期中考试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/22/封装ajax/" rel="prev" title="封装$.ajax">
+                封装$.ajax <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars3.githubusercontent.com/u/22497777"
+                alt="stage" />
+            
+              <p class="site-author-name" itemprop="name">stage</p>
+              <p class="site-description motion-element" itemprop="description">学习、记录、感悟、成长</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/harry0071" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:2015081a@sina.com" target="_blank" title="E-mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#json"><span class="nav-number">1.</span> <span class="nav-text">json</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#json铁轨图"><span class="nav-number">1.1.</span> <span class="nav-text">json铁轨图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#json语法"><span class="nav-number">1.2.</span> <span class="nav-text">json语法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器同源策略"><span class="nav-number">2.</span> <span class="nav-text">浏览器同源策略</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不刷新页面，使用xhr发送请求局部更新数据：AJAX"><span class="nav-number">3.</span> <span class="nav-text">不刷新页面，使用xhr发送请求局部更新数据：AJAX</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX无法跨域"><span class="nav-number">3.1.</span> <span class="nav-text">AJAX无法跨域</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#跨域方法：jsonp"><span class="nav-number">4.</span> <span class="nav-text">跨域方法：jsonp</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#jsonp面试题"><span class="nav-number">4.1.</span> <span class="nav-text">jsonp面试题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CORS跨源AJAX请求"><span class="nav-number">5.</span> <span class="nav-text">CORS跨源AJAX请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#chrome调试"><span class="nav-number">6.</span> <span class="nav-text">chrome调试</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">stage</span>
+
+  
+</div>
+
+
+  <div class="powered-by">自豪地采用 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

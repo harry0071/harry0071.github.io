@@ -91,13 +91,13 @@
 
 <meta name="description" content="jquery相关知识点补充">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jquery知识点补充">
+<meta property="og:title" content="🔒 jquery知识点补充">
 <meta property="og:url" content="harry0071.github.io/2018/03/07/jquery知识点补充/index.html">
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="jquery相关知识点补充">
-<meta property="og:updated_time" content="2018-03-14T07:57:50.748Z">
+<meta property="og:updated_time" content="2018-03-30T06:30:12.464Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jquery知识点补充">
+<meta name="twitter:title" content="🔒 jquery知识点补充">
 <meta name="twitter:description" content="jquery相关知识点补充">
 
 
@@ -134,7 +134,7 @@
 
 
 
-  <title>jquery知识点补充 | stage's blog</title>
+  <title>🔒 jquery知识点补充 | stage's blog</title>
   
 
 
@@ -292,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">jquery知识点补充</h1>
+          <h1 class="post-title" itemprop="name headline">🔒 jquery知识点补充</h1>
         
 
         <div class="post-meta">
@@ -368,11 +368,31 @@
 <p>jquery相关知识点补充</p>
 </blockquote>
 <a id="more"></a>
+<h1 id="production，development版本的区别"><a href="#production，development版本的区别" class="headerlink" title="production，development版本的区别"></a>production，development版本的区别</h1><p>production生产版，代码经过混淆压缩，用在生产环境(放在服务器上给客户用)<br>development开发版，原始未混淆压缩的代码，给自己用</p>
+<h1 id="jQuery的原型"><a href="#jQuery的原型" class="headerlink" title="jQuery的原型"></a>jQuery的原型</h1><p>jQuery的原型（公共属性）是:<code>$.fn</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$.fn = jQuery.fn = jQuery.prototype</div></pre></td></tr></table></figure></p>
 <h1 id="点击导航缓动到相应位置"><a href="#点击导航缓动到相应位置" class="headerlink" title="点击导航缓动到相应位置"></a>点击导航缓动到相应位置</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">	&lt;nav style="position: fixed;top: 0;"&gt;</div><div class="line">	&lt;a href="#a"&gt;a&lt;/a&gt;</div><div class="line">	&lt;a href="#b"&gt;b&lt;/a&gt;</div><div class="line">	&lt;a href="#c"&gt;c&lt;/a&gt;&lt;/nav&gt;</div><div class="line">	&lt;div id="a" style="width: 100px;height: 100px;background: green;margin-top: 500px;"&gt;aaaa&lt;/div&gt;</div><div class="line">	&lt;div id="b" style="width: 100px;height: 100px;background: green;margin-top: 500px;"&gt;bbb&lt;/div&gt;</div><div class="line">	&lt;div id="c" style="width: 100px;height: 100px;background: green;margin-top: 500px;margin-bottom: 500px;"&gt;ccc&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;</div><div class="line">&lt;script&gt;</div><div class="line">	$('a').click(function(event) &#123;</div><div class="line">		event.preventDefault();</div><div class="line">		var eleId = $(this).attr('href');</div><div class="line">		$('html,body').animate(&#123;scrollTop: $(eleId).offset().top&#125;, 800);</div><div class="line">	&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<h1 id="addClass-function-index"><a href="#addClass-function-index" class="headerlink" title="addClass(function(index){})"></a>addClass(function(index){})</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> colors = [<span class="string">'red'</span>, <span class="string">'yellow'</span>, <span class="string">'blue'</span>, <span class="string">'green'</span>];</div><div class="line">$(<span class="string">'li'</span>).addClass(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> colors[i];</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h1 id="addClass-function-index"><a href="#addClass-function-index" class="headerlink" title="addClass(function(index){})"></a>addClass(function(index){})</h1><p>根据条件，将数组中的class按需添加<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> colors = [<span class="string">'red'</span>, <span class="string">'yellow'</span>, <span class="string">'blue'</span>, <span class="string">'green'</span>];</div><div class="line">$(<span class="string">'li'</span>).addClass(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> colors[i];</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p><a class="jsbin-embed" href="http://js.jirengu.com/cosuziyexu/1/embed" target="_blank" rel="external">JS Bin</a><script src="http://js.jirengu.com/js/embed.js"></script></p>
-<h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div id=x&gt;&lt;/div&gt;</div><div class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">'x'</span>)</div><div class="line"><span class="keyword">var</span> $div = $(<span class="string">'#x'</span>)</div></pre></td></tr></table></figure>
+<h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div id=x&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">'x'</span>)</div><div class="line"><span class="keyword">var</span> $div = $(<span class="string">'#x'</span>)</div></pre></td></tr></table></figure>
 <p>请说出 div 和 $div 的联系和区别。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">div 和 $div 的联系是：</div><div class="line">把 div 变成 $div ： $(div)</div><div class="line">把 $div 变成 div :  </div><div class="line">由于$div是一个伪数组，所以要取得他，需要用get()从数组中取出来</div><div class="line">$(div).get(0) 或者简写为$(div)[0]</div><div class="line"></div><div class="line">div 和 $div 的区别是：</div><div class="line">$div是JQuery对象，可以使用jq的api。</div><div class="line">而div是DOM对象，可以使用DOM的api</div><div class="line">两者可以调用的属性和方法不一样</div></pre></td></tr></table></figure></p>
+<h1 id="removeClass-移除元素的所有class"><a href="#removeClass-移除元素的所有class" class="headerlink" title="removeClass()移除元素的所有class"></a>removeClass()移除元素的所有class</h1><p>removeClass()没有参数则移除所有class<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'div'</span>).removeClass();</div><div class="line"><span class="comment">//如果不传入参数，则默认将div的所有class移除</span></div></pre></td></tr></table></figure></p>
+<p>或者使用<code>removeAttr(&#39;class&#39;)</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'div'</span>).removeAttr(<span class="string">'class'</span>);</div><div class="line"><span class="comment">//移除div的class属性</span></div></pre></td></tr></table></figure></p>
+<h1 id="触发器trigger"><a href="#触发器trigger" class="headerlink" title="触发器trigger"></a>触发器trigger</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'btn1'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	$(<span class="string">'#div1'</span>).trigger(<span class="string">'click'</span>); <span class="comment">// 触发#div1的click事件</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="transitionend过渡完成后执行某个函数"><a href="#transitionend过渡完成后执行某个函数" class="headerlink" title="transitionend过渡完成后执行某个函数"></a>transitionend过渡完成后执行某个函数</h1><p><code>transitionend</code>事件<br>该事件在 CSS 完成过渡后触发。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> $div1 = $(<span class="string">"#div1"</span>);</div><div class="line">$div1.on(<span class="string">'transitionend'</span>, fn);</div></pre></td></tr></table></figure></p>
+<h1 id="animationend动画结束后执行某个函数"><a href="#animationend动画结束后执行某个函数" class="headerlink" title="animationend动画结束后执行某个函数"></a>animationend动画结束后执行某个函数</h1><p><code>animationend</code>事件<br>该事件在 CSS 动画结束播放时触发<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$div1.on(<span class="string">"animationend"</span>, fn);</div></pre></td></tr></table></figure></p>
+<p>animationiteration    该事件在 CSS 动画重复播放时触发<br>animationstart    该事件在 CSS 动画开始播放时触发</p>
+<h1 id="return-false取消冒泡和默认行为"><a href="#return-false取消冒泡和默认行为" class="headerlink" title="return false取消冒泡和默认行为"></a>return false取消冒泡和默认行为</h1><p><a href="http://www.berlinix.com/js/jquery-return-false.php" target="_blank" rel="external">http://www.berlinix.com/js/jquery-return-false.php</a></p>
+<p><a href="http://caibaojian.com/javascript-stoppropagation-preventdefault.html" target="_blank" rel="external">http://caibaojian.com/javascript-stoppropagation-preventdefault.html</a></p>
+<p><code>return false</code>实际完成了3件事：<br>1.event.preventDefault() //阻止默认行为</p>
+<ul>
+<li>event.stopPropagation() //阻止冒泡</li>
+<li>停止回调函数执行并立即返回。</li>
+</ul>
+<h1 id="点击页面其他地方关闭弹出层"><a href="#点击页面其他地方关闭弹出层" class="headerlink" title="点击页面其他地方关闭弹出层"></a>点击页面其他地方关闭弹出层</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#btn'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    $(<span class="string">'#popover'</span>).show();</div><div class="line">    $(<span class="built_in">document</span>).one(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//在click事件里，给父级加上了另一个事件，这个事件会被立刻执行，因此需要给wrapper阻断冒泡，让它在被点击时才执行</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="number">1</span>); <span class="comment">//只有弹出层show出来后，才会触发document的click事件，且只触发一次</span></div><div class="line">        $(<span class="string">'#popover'</span>).hide();</div><div class="line">    &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//document的click事件加在了btn函数内部，它会在冒泡阶段直接执行，即使不点击document也会直接执行</span></div><div class="line">因此需要阻断冒泡</div><div class="line">$(<span class="string">'#wrapper'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</div><div class="line">    ev.stopPropagation();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<iframe width="100%" height="600" src="//jsfiddle.net/20170808/33Lwhv5t/1/embedded/js,result/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h1 id="on-向动态创建的子元素添加事件处理程序"><a href="#on-向动态创建的子元素添加事件处理程序" class="headerlink" title=".on()向动态创建的子元素添加事件处理程序"></a>.on()向动态创建的子元素添加事件处理程序</h1><p><code>$(&#39;&#39;).on(&#39;click&#39;,未来的子元素,function)</code>向未来的子元素添加事件处理函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"ul"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"&lt;li&gt;创建li&lt;/li&gt;"</span>).insertAfter(<span class="string">"ul"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">$(<span class="string">"ul"</span>).on(<span class="string">"click"</span>,<span class="string">"li"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="keyword">this</span>).hide(); <span class="comment">//给动态创建的li绑定事件处理函数</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><a href="http://www.runoob.com/try/try.php?filename=tryjquery_event_on_newel" target="_blank" rel="external">http://www.runoob.com/try/try.php?filename=tryjquery_event_on_newel</a></p>
 
       
     </div>
@@ -415,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/05/对象,全局函数,原型和原型链/" rel="next" title="全局函数、原型和原型链">
-                <i class="fa fa-chevron-left"></i> 全局函数、原型和原型链
+              <a href="/2018/03/05/对象,全局函数,原型和原型链/" rel="next" title="构造函数、原型和原型链">
+                <i class="fa fa-chevron-left"></i> 构造函数、原型和原型链
               </a>
             
           </div>
@@ -508,7 +528,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -519,7 +539,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -530,7 +550,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -579,7 +599,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#点击导航缓动到相应位置"><span class="nav-number">1.</span> <span class="nav-text">点击导航缓动到相应位置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#addClass-function-index"><span class="nav-number">2.</span> <span class="nav-text">addClass(function(index){})</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题"><span class="nav-number">3.</span> <span class="nav-text">面试题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#production，development版本的区别"><span class="nav-number">1.</span> <span class="nav-text">production，development版本的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery的原型"><span class="nav-number">2.</span> <span class="nav-text">jQuery的原型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#点击导航缓动到相应位置"><span class="nav-number">3.</span> <span class="nav-text">点击导航缓动到相应位置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#addClass-function-index"><span class="nav-number">4.</span> <span class="nav-text">addClass(function(index){})</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题"><span class="nav-number">5.</span> <span class="nav-text">面试题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#removeClass-移除元素的所有class"><span class="nav-number">6.</span> <span class="nav-text">removeClass()移除元素的所有class</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#触发器trigger"><span class="nav-number">7.</span> <span class="nav-text">触发器trigger</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#transitionend过渡完成后执行某个函数"><span class="nav-number">8.</span> <span class="nav-text">transitionend过渡完成后执行某个函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#animationend动画结束后执行某个函数"><span class="nav-number">9.</span> <span class="nav-text">animationend动画结束后执行某个函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#return-false取消冒泡和默认行为"><span class="nav-number">10.</span> <span class="nav-text">return false取消冒泡和默认行为</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#点击页面其他地方关闭弹出层"><span class="nav-number">11.</span> <span class="nav-text">点击页面其他地方关闭弹出层</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#on-向动态创建的子元素添加事件处理程序"><span class="nav-number">12.</span> <span class="nav-text">.on()向动态创建的子元素添加事件处理程序</span></a></li></ol></div>
             
 
           </div>
