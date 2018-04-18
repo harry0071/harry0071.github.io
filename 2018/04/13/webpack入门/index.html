@@ -95,7 +95,7 @@
 <meta property="og:url" content="harry0071.github.io/2018/04/13/webpack入门/index.html">
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="前端工程化：自动化(用命令行自动转译)、模块化、性能优化模块自动化构建工具：webpack">
-<meta property="og:updated_time" content="2018-04-14T14:09:37.000Z">
+<meta property="og:updated_time" content="2018-04-18T08:30:37.296Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack入门">
 <meta name="twitter:description" content="前端工程化：自动化(用命令行自动转译)、模块化、性能优化模块自动化构建工具：webpack">
@@ -378,14 +378,76 @@
 <li>用Bable命令行将es6语法自动转成es5</li>
 <li>用Autoprefixer命令行将css3自动加上浏览器私有前缀</li>
 </ul>
-<h1 id="webpack模块自动化构建工具"><a href="#webpack模块自动化构建工具" class="headerlink" title="webpack模块自动化构建工具"></a>webpack模块自动化构建工具</h1><p>前端工程化遇到的问题：             </p>
+<h1 id="webpack模块自动化构建工具"><a href="#webpack模块自动化构建工具" class="headerlink" title="webpack模块自动化构建工具"></a>webpack模块自动化构建工具</h1><p>什么是模块？在 webpack 下，所有类型的文件都可以是模块，包括 CSS、图片、JSON，等等。</p>
+<p>前端工程化遇到的问题：             </p>
 <ol>
 <li>Less、Babel、Autoprefixer等必须全部开着命令行监控文件的变化，才能实时自动转译。</li>
 <li>前端发展很快，html–&gt;pug–&gt;slim, css–&gt;less–&gt;sass–&gt;scss–&gt;stylus, js–&gt;es6–&gt;Typescript   </li>
 </ol>
 <p>能不能不要开那么多命令行窗口呢？并且根据文件后缀名自动转成标准的前端文件呢？<br>用模块自动化构建工具(打包工具)！</p>
 <h2 id="模块自动化构建工具-打包工具-发展史"><a href="#模块自动化构建工具-打包工具-发展史" class="headerlink" title="模块自动化构建工具(打包工具)发展史"></a>模块自动化构建工具(打包工具)发展史</h2><p>Grunt  –&gt; Gulp –&gt; Webpack –&gt; Parcel</p>
-<h1 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">|</div><div class="line">|</div><div class="line">|-- src <span class="comment">//source，未经转译过的源文件</span></div><div class="line">|    |-- imgs <span class="comment">//图片放这里</span></div><div class="line">|    |-- js  <span class="comment">//原始js代码放这里</span></div><div class="line">|    |-- style <span class="comment">//原始样式代码(.less,.scss,.sass)放这里</span></div><div class="line">|    |-- index.html</div><div class="line">|</div><div class="line">|-- dist <span class="comment">//distribution，转译后的代码</span></div><div class="line">|</div><div class="line">|-- node_modules <span class="comment">//通过npm下载的第三方库</span></div><div class="line">|</div><div class="line">|-- vendors <span class="comment">//自己找的第三方库</span></div></pre></td></tr></table></figure>
+<h1 id="项目目录结构"><a href="#项目目录结构" class="headerlink" title="项目目录结构"></a>项目目录结构</h1><ul>
+<li>.bin:binary,可执行的</li>
+<li>dist:distributable,可分发的</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">|</div><div class="line">|</div><div class="line">|-- src <span class="comment">//source，未经转译过的源文件</span></div><div class="line">|    |-- imgs <span class="comment">//图片放这里</span></div><div class="line">|    |-- js  <span class="comment">//原始js代码放这里</span></div><div class="line">|    |-- style <span class="comment">//原始样式代码(.less,.scss,.sass)放这里</span></div><div class="line">|</div><div class="line">|-- dist <span class="comment">//distribution，转译后的代码</span></div><div class="line">|    |-- index.html</div><div class="line">|</div><div class="line">|-- node_modules <span class="comment">//通过npm下载的第三方库</span></div><div class="line">|</div><div class="line">|-- vendors <span class="comment">//自己找的第三方库</span></div></pre></td></tr></table></figure>
+<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ul>
+<li>退出vim：esc +：+ w + q</li>
+<li>$ node_modules/.bin/webpack –watch   //监听变动并自动打包</li>
+<li>$ node_modules/.bin/webpack -p    //压缩混淆脚本，这个非常非常重要！</li>
+<li>$ npm list -g –depth=0 查看所有全局安装</li>
+</ul>
+<ol>
+<li>先全局安装[不推荐全局安装 webpack。这会将你项目中的 webpack 锁定到指定版本，并且在使用不同的 webpack 版本的项目中，可能会导致构建失败。]<code>npm i webpack webpack-cli -g</code> 进行全局安装【如果出现npm install出现”Unexpected end of JSON input while parsing near”错误,执行<code>npm cache clean --force</code>】</li>
+</ol>
+<ul>
+<li>在项目目录下打开命令行，<code>npm init -y</code>初始化模块，生成package.json</li>
+<li><code>npm i webpack webpack-cli -D</code>（<code>-D</code>表示<code>--save-dev</code>），安装webpack到当前目录(局部安装)</li>
+<li>webpack装在了node_modules文件夹下一个<code>.bin</code>文件夹里(binary:可执行的)</li>
+<li>创建./src/index.js</li>
+<li><p>打开package.json并添加            </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>: &#123;</div><div class="line">	<span class="string">"dev"</span>: <span class="string">"webpack --mode development"</span>,</div><div class="line">	<span class="string">"build"</span>: <span class="string">"webpack --mode production"</span> </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>这样，在执行<code>npm run dev</code>时吐出未压缩的包，执行<code>npm run build</code>时吐出压缩后的包</p>
+</li>
+</ul>
+<h1 id="webpack4"><a href="#webpack4" class="headerlink" title="webpack4"></a>webpack4</h1><h2 id="默认入口和出口"><a href="#默认入口和出口" class="headerlink" title="默认入口和出口"></a>默认入口和出口</h2><ul>
+<li>创建文件./src/index.js</li>
+<li>从webpack 4开始，不需要定义入口点：它会将./src/index.js作为默认值！【可以创建webpack.config.js进行修改】</li>
+<li>打开package.json并添加一个构建脚本：”scripts”: { “build”: “webpack”}保存并关闭文件</li>
+<li>执行<code>npm run build</code>，默认在 ./dist/main.js中获得该软件包。webpack4会查找./src/index.js作为默认入口点。 而且，它默认会在./dist/main.js中吐出这个包。</li>
+<li>创建./dist/index.html,并引入main.js</li>
+</ul>
+<h3 id="配置入口和出口"><a href="#配置入口和出口" class="headerlink" title="配置入口和出口"></a>配置入口和出口</h3><p>如果不想要默认配置，可以自定义配置           </p>
+<ul>
+<li>新建<code>webpack.config.js</code>（这个配置文件可以拷贝官方文档）                <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./src/a.js'</span>  <span class="comment">//入口 a.js可以简写成a</span></div><div class="line">  output: &#123; <span class="comment">//出口</span></div><div class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>), <span class="comment">//__dirname表示当前目录,后面的参数表示文件夹名</span></div><div class="line">    filename: <span class="string">'bundle.js'</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这样，我们只需要执行<code>npm run build</code>，就可以将src下的a.js打包到dist下的bundle.js(压缩模式)</p>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">多入口，多出口配置</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: &#123;</div><div class="line">  	<span class="attr">home</span>: <span class="string">'./src/home.js'</span>  <span class="comment">//home.js可以简写成home</span></div><div class="line">  	,<span class="attr">signup</span>: <span class="string">'./src/signup.js'</span></div><div class="line">  	&#125;,</div><div class="line">  <span class="attr">output</span>: &#123; <span class="comment">//出口</span></div><div class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>), <span class="comment">//__dirname表示当前目录,后面的参数表示文件夹名</span></div><div class="line">    filename: <span class="string">'[name].bundle.js'</span> <span class="comment">//生成home.bundle.js和signup.bundle.js</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="生产模式production和开发模式development"><a href="#生产模式production和开发模式development" class="headerlink" title="生产模式production和开发模式development"></a>生产模式production和开发模式development</h2><p>生产模式build：压缩，体积小<br>开发模式dev：未压缩，体积大        </p>
+<p>事实上，如果你注意<code>npm run build</code>的输出，你会看到一个很好的警告：           </p>
+<blockquote>
+<p>The ‘mode’ option has not been set. Set ‘mode’ option to ‘development’ or ‘production’ to enable defaults for this environment.（“mode”选项尚未设置。 将“mode”选项设置为“development”或“production”以启用此环境的默认值。）</p>
+</blockquote>
+<p>打开package.json并添加<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>: &#123;</div><div class="line">	<span class="string">"dev"</span>: <span class="string">"webpack --mode development"</span>,</div><div class="line">	<span class="string">"build"</span>: <span class="string">"webpack --mode production"</span> </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样，在执行<code>npm run dev</code>时吐出未压缩的包，执行<code>npm run build</code>时吐出压缩后的包</p>
+<h2 id="文件实时更新【会自动更新mian-js】"><a href="#文件实时更新【会自动更新mian-js】" class="headerlink" title="文件实时更新【会自动更新mian.js】"></a>文件实时更新【会自动更新mian.js】</h2><p>打开package.json并添加<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>: &#123;</div><div class="line">	<span class="string">"watch"</span>: <span class="string">"webpack --mode development --watch"</span> </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样，执行<code>npm run watch</code>就可以实时监控文件，一旦文件有变化就自动更新</p>
+<h2 id="自动刷新浏览器【更新的文件保存在缓存中】"><a href="#自动刷新浏览器【更新的文件保存在缓存中】" class="headerlink" title="自动刷新浏览器【更新的文件保存在缓存中】"></a>自动刷新浏览器【更新的文件保存在缓存中】</h2><p>webpack-dev-server 为你提供了一个简单的 web 服务器，并且能够实时重新加载(live reloading)。<br>安装：<code>npm i webpack-dev-server -D</code><br>打开package.json并添加<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>: &#123;</div><div class="line">	<span class="string">"start"</span>: <span class="string">"webpack-dev-server --mode development --content-base ./dist --open"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样，在执行<code>npm start</code>就会看到浏览器自动加载页面。 </p>
+<p>注意：你启动webpack-dev-server后，你在<br>./dist/main.js中是看不到编译后的文件的,实时编译后的文件都保存到了浏览器内存当中。因此很多同学使用webpack-dev-server进行开发的时候都看不到编译后的文件<br>【解决办法】多开一个命令行串口，用<code>npm watch</code>实时监控文件变动随时编译就行了。<br>webpack-dev-server的端口怎么修改?<br>【解决方法】用–port来制定参数，比如<code>webpack-dev-server --port 8888</code></p>
+<h2 id="LOADER"><a href="#LOADER" class="headerlink" title="LOADER"></a>LOADER</h2><p>Webpack 本身只能处理 JavaScript 模块，如果要处理其他类型的文件(ES6,less,sass,scss等)，就需要使用 loader 进行转换。</p>
+<h3 id="css相关loader"><a href="#css相关loader" class="headerlink" title="css相关loader"></a>css相关loader</h3><p>css-loader 会遍历 CSS 文件，然后找到 url() 表达式然后处理他们<br>style-loader 会把原来的 CSS 代码插入页面中的一个 style 标签中。</p>
+<h1 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h1><p>用npx可以自动找到命令行工具所在位置，比如<code>npx webpack --mode development --watch</code>等同于<code>./node_modules/.bin/webpack --mode development --watch</code><br>这样就不需要安装到global全局也能使用，比如原本http-server要安装到全局，然后才能<code>http-server -c-1 -o</code>，现在可以不安装到全局，直接<code>npx http-server -c-1 -o</code>打开</p>
+<ul>
+<li><code>npx webpack -v</code>：查看webpack版本号</li>
+<li>npm run dev 不压缩文件</li>
+<li>npm run build 压缩文件</li>
+<li>npm run watch启动watch监视</li>
+</ul>
+
       
     </div>
     
@@ -522,7 +584,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -533,7 +595,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -544,7 +606,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -593,7 +655,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前端工程化"><span class="nav-number">1.</span> <span class="nav-text">前端工程化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自动化-命令行自动实时转译"><span class="nav-number">1.1.</span> <span class="nav-text">自动化(命令行自动实时转译)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack模块自动化构建工具"><span class="nav-number">2.</span> <span class="nav-text">webpack模块自动化构建工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模块自动化构建工具-打包工具-发展史"><span class="nav-number">2.1.</span> <span class="nav-text">模块自动化构建工具(打包工具)发展史</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目结构"><span class="nav-number">3.</span> <span class="nav-text">项目结构</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前端工程化"><span class="nav-number">1.</span> <span class="nav-text">前端工程化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自动化-命令行自动实时转译"><span class="nav-number">1.1.</span> <span class="nav-text">自动化(命令行自动实时转译)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack模块自动化构建工具"><span class="nav-number">2.</span> <span class="nav-text">webpack模块自动化构建工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模块自动化构建工具-打包工具-发展史"><span class="nav-number">2.1.</span> <span class="nav-text">模块自动化构建工具(打包工具)发展史</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目目录结构"><span class="nav-number">3.</span> <span class="nav-text">项目目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用步骤"><span class="nav-number">3.1.</span> <span class="nav-text">使用步骤</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack4"><span class="nav-number">4.</span> <span class="nav-text">webpack4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#默认入口和出口"><span class="nav-number">4.1.</span> <span class="nav-text">默认入口和出口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置入口和出口"><span class="nav-number">4.1.1.</span> <span class="nav-text">配置入口和出口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生产模式production和开发模式development"><span class="nav-number">4.2.</span> <span class="nav-text">生产模式production和开发模式development</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件实时更新【会自动更新mian-js】"><span class="nav-number">4.3.</span> <span class="nav-text">文件实时更新【会自动更新mian.js】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动刷新浏览器【更新的文件保存在缓存中】"><span class="nav-number">4.4.</span> <span class="nav-text">自动刷新浏览器【更新的文件保存在缓存中】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LOADER"><span class="nav-number">4.5.</span> <span class="nav-text">LOADER</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#css相关loader"><span class="nav-number">4.5.1.</span> <span class="nav-text">css相关loader</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用指令"><span class="nav-number">5.</span> <span class="nav-text">常用指令</span></a></li></ol></div>
             
 
           </div>

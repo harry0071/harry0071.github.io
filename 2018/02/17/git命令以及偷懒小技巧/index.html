@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fojttae5rvj215o106agj.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1fojtu8nw2zj21k210u44b.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1fojtypznvyj20qc0gcq50.jpg">
-<meta property="og:updated_time" content="2018-04-13T03:07:01.560Z">
+<meta property="og:updated_time" content="2018-04-18T03:29:31.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git命令以及偷懒小技巧">
 <meta name="twitter:description" content="本文简单介绍了git与github的配置，以及如何将本地仓库与github连接起来。还介绍了git常用的一些命令，以及如何简化git命令参考资料: 饥人谷菜鸟教程：Git教程">
@@ -494,7 +494,7 @@
 <li>git log 查看变更历史</li>
 </ul>
 <h2 id="如何上传更新"><a href="#如何上传更新" class="headerlink" title="如何上传更新"></a>如何上传更新</h2><p>你在本地目录有任何变动，只需按照以下顺序就能上传到github：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git add 文件路径</div><div class="line">git commit -m &quot;信息&quot;</div><div class="line">git pull （相信我，你一定会忘记这一个命令）获取远程仓库最新文件</div><div class="line">git push</div></pre></td></tr></table></figure></p>
-<p>下面是例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cd git-demo-1</div><div class="line">touch index2.html</div><div class="line">git add index2.html</div><div class="line">git commit -m &quot;新建 index2.html&quot;</div><div class="line">git pull</div><div class="line">退出vim: esc + : + q + !</div><div class="line">git push</div></pre></td></tr></table></figure></p>
+<p>下面是例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cd git-demo-1</div><div class="line">touch index2.html</div><div class="line">git add index2.html</div><div class="line">git commit -m &quot;新建 index2.html&quot;</div><div class="line">git pull</div><div class="line">退出vim: esc + : + w + q</div><div class="line">git push</div></pre></td></tr></table></figure></p>
 <p>然后你去 git-demo-1 的 GitHub 页面，就能看到 index2.html 出现在里面了。是不是很……简……单……呢……</p>
 <h2 id="其他Git命令"><a href="#其他Git命令" class="headerlink" title="其他Git命令"></a>其他Git命令</h2><ul>
 <li>git remote add origin git@github.com:xxxxxxx.git 将本地仓库与远程仓库关联</li>
@@ -670,7 +670,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -681,7 +681,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -692,7 +692,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
