@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="js,面试题,css,jq,html," />
+  <meta name="keywords" content="面试题,js,css,html,jq," />
 
 
 
@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="总结了一些前端的相关面试题">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fpdbcbit86j20xc0ien4p.jpg">
-<meta property="og:updated_time" content="2018-04-04T05:46:45.653Z">
+<meta property="og:updated_time" content="2018-04-19T04:54:06.491Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="🔒 前端面试题">
 <meta name="twitter:description" content="总结了一些前端的相关面试题">
@@ -370,6 +370,7 @@
 <p>总结了一些前端的相关面试题</p>
 </blockquote>
 <a id="more"></a>
+<p><a href="http://ovenzeze.coding.me/" target="_blank" rel="external">http://ovenzeze.coding.me/</a></p>
 <h1 id="谈谈内容，样式，行为的分离"><a href="#谈谈内容，样式，行为的分离" class="headerlink" title="谈谈内容，样式，行为的分离"></a>谈谈内容，样式，行为的分离</h1><p>html负责内容<br>css负责样式<br>js负责行为<br>为什么这三者要分离？（反过来回答：如果不分离会导致……）<br>如果用html负责样式<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">bgcolor</span>=<span class="string">green</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">center</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span> <span class="attr">size</span>=<span class="string">20</span>&gt;</span>文字居中<span class="tag">&lt;/<span class="name">font</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">center</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>这样会使得html的标签有些是用来表示内容的，有些是用来表示样式的，导致html结构很复杂，很难区分这些标签的逻辑结构      </p>
 <p>如果用css负责内容<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">div:after&#123;</div><div class="line">	content:'我是内容';</div><div class="line">&#125;</div><div class="line">```    </div><div class="line">这样会导致用户无法选中内容；js也无法取到     </div><div class="line"></div><div class="line">如果用js负责样式</div><div class="line">```javascript</div><div class="line">$('#div1').show(); // 这会导致原本的display修改为block</div></pre></td></tr></table></figure></p>
@@ -403,15 +404,15 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
-          
             <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
           
             <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
           
-            <a href="/tags/jq/" rel="tag"><i class="fa fa-tag"></i> jq</a>
-          
             <a href="/tags/html/" rel="tag"><i class="fa fa-tag"></i> html</a>
+          
+            <a href="/tags/jq/" rel="tag"><i class="fa fa-tag"></i> jq</a>
           
         </div>
       
@@ -517,7 +518,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

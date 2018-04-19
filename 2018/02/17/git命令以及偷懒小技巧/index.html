@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fojttae5rvj215o106agj.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1fojtu8nw2zj21k210u44b.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1fojtypznvyj20qc0gcq50.jpg">
-<meta property="og:updated_time" content="2018-04-18T03:29:31.115Z">
+<meta property="og:updated_time" content="2018-04-19T06:17:35.325Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git命令以及偷懒小技巧">
 <meta name="twitter:description" content="本文简单介绍了git与github的配置，以及如何将本地仓库与github连接起来。还介绍了git常用的一些命令，以及如何简化git命令参考资料: 饥人谷菜鸟教程：Git教程">
@@ -403,7 +403,8 @@
 <p>五句话，依次运行。不执行的话，电脑可能会爆炸你信不信。</p>
 <p><code>git config -l</code> : 查看配置</p>
 <hr>
-<h2 id="只在本地使用Git"><a href="#只在本地使用Git" class="headerlink" title="只在本地使用Git"></a>只在本地使用Git</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<h2 id="只在本地使用Git"><a href="#只在本地使用Git" class="headerlink" title="只在本地使用Git"></a>只在本地使用Git</h2><p><code>git --version</code>查看git Bash版本号</p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
 <li>创建目录作为我们的项目目录：<code>mkdir git-demo-1</code></li>
 <li>进入目录 <code>cd git-demo-1</code></li>
 <li><code>git init</code>，初始化这句命令会在 git-demo-1 里创建一个 .git 目录</li>
@@ -467,13 +468,15 @@
 <li>在 GitHub 上New一个repository，名称随意，一般跟本地目录名一致<br><img src="http://ww1.sinaimg.cn/large/87c01ec7gy1fojthg14lzj21980zegso.jpg" alt=""><br>按照截图所示，除了仓库名，其他的什么都别改，其他的什么都别改，其他的什么都别改，其他的什么都别改，这样你才能创建一个空仓库</li>
 <li>点击创建按钮之后，GitHub 就会把后续的操作全告诉你，如图<br><img src="http://ww1.sinaimg.cn/large/87c01ec7gy1fojtiusz8vj21ja10kdow.jpg" alt=""></li>
 <li>看图，点击 SSH 按钮，点击 SSH 按钮，点击 SSH 按钮，我想你现在肯定不会忘了点击 SSH 按钮了吧~~~~如果不点击这个按钮，你就会使用默认的 HTTPS 地址。但是千万不要使用 HTTPS 地址，因为 HTTPS 地址使用起来特别麻烦，每次都要输入密码，而 SSH 不用输入用户名密码。<br>为什么 SSH 不用密码呢，因为你已经上传了 SSH public key。还记得吗？如果不记得，翻到本文第一部分「配置 GitHub」章节。</li>
-<li>由于我们上之前创建过本地仓库了，所以看图，图中下面半部分就是你需要的命令，我们一行一行拷贝过来执行</li>
+<li>由于我们上之前创建过本地仓库了，所以看图，图中下面半部分就是你需要的命令，我们一行一行拷贝过来执行<ol>
+<li>找到图中的「…or push an existing repository from the command line」这一行，你会看到 <code>git remote add origin https://github.com/xxxxxxxxxx/git-demo-1.git</code>， 如果你发现这个地址是 https 开头的，那你就做错了，还记得吗，我们要使用 SSH 地址，GitHub 的 SSH 地址是以 git@github.com 开头的。</li>
+<li>再次点击 SSH 按钮，不管我强调多少遍，总会有人忘记点击 SSH 按钮，为什么呢？我也不知道，为了防止你忘了点击 SSH 按钮，我最后再说一遍，「点击 SSH按钮」，点击之后，整个世界就会变得美好起来。</li>
+<li>得到新的命令 <code>git remote add origin git@github.com:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/git-demo-1.git</code>，复制并运行它</li>
+<li>复制第二行 <code>git push -u origin master</code>，运行它</li>
+<li>刷新当前页面，你的仓库就上传到 GitHub 了！是不是特别简单？只要你按照我说的做，一丝不苟，即可。</li>
 </ol>
-<p>4.1 找到图中的「…or push an existing repository from the command line」这一行，你会看到 <code>git remote add origin https://github.com/xxxxxxxxxx/git-demo-1.git</code>， 如果你发现这个地址是 https 开头的，那你就做错了，还记得吗，我们要使用 SSH 地址，GitHub 的 SSH 地址是以 git@github.com 开头的。</p>
-<p>4.2 再次点击 SSH 按钮，不管我强调多少遍，总会有人忘记点击 SSH 按钮，为什么呢？我也不知道，为了防止你忘了点击 SSH 按钮，我最后再说一遍，「点击 SSH按钮」，点击之后，整个世界就会变得美好起来。</p>
-<p>4.3 得到新的命令 <code>git remote add origin git@github.com:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/git-demo-1.git</code>，复制并运行它</p>
-<p>4.4 复制第二行 <code>git push -u origin master</code>，运行它</p>
-<p>4.5 刷新当前页面，你的仓库就上传到 GitHub 了！是不是特别简单？只要你按照我说的做，一丝不苟，即可。</p>
+</li>
+</ol>
 <h2 id="直接在-GitHub-创建一个仓库，然后下载到本地"><a href="#直接在-GitHub-创建一个仓库，然后下载到本地" class="headerlink" title="直接在 GitHub 创建一个仓库，然后下载到本地"></a>直接在 GitHub 创建一个仓库，然后下载到本地</h2><h3 id="步骤-2"><a href="#步骤-2" class="headerlink" title="步骤"></a>步骤</h3><ol>
 <li>在GitHub 上新建一个仓库 git-demo-2，这次就不创建空仓库了，而是自带 README 和 Lisence 的仓库，创建截图如下：<br><img src="http://ww4.sinaimg.cn/large/87c01ec7gy1fojttae5rvj215o106agj.jpg" alt=""><br>请按图中所示，填写一模一样的内容，然后点击创建按钮。</li>
 <li>这样一来，这个仓库就会自动拥有三个文件：<br><img src="http://ww1.sinaimg.cn/large/87c01ec7gy1fojtu8nw2zj21k210u44b.jpg" alt=""></li>
@@ -587,8 +590,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/17/git命令以及偷懒小技巧-冲突-stage/" rel="prev" title="git命令以及偷懒小技巧">
-                git命令以及偷懒小技巧 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/18/gitbash完整操作流程/" rel="prev" title="git bash完整操作流程">
+                git bash完整操作流程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -670,7 +673,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
