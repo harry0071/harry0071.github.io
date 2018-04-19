@@ -92,7 +92,7 @@
 <meta name="description" content="本文简单介绍了git与github的配置，以及如何将本地仓库与github连接起来。还介绍了git常用的一些命令，以及如何简化git命令参考资料: 饥人谷菜鸟教程：Git教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git命令以及偷懒小技巧">
-<meta property="og:url" content="harry0071.github.io/2018/02/17/git命令以及偷懒小技巧/index.html">
+<meta property="og:url" content="harry0071.github.io/2018/02/17/git命令以及偷懒小技巧-冲突-stage/index.html">
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="本文简单介绍了git与github的配置，以及如何将本地仓库与github连接起来。还介绍了git常用的一些命令，以及如何简化git命令参考资料: 饥人谷菜鸟教程：Git教程">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fojqpe9xaqj20o403cmxm.jpg">
@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fojttae5rvj215o106agj.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1fojtu8nw2zj21k210u44b.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1fojtypznvyj20qc0gcq50.jpg">
-<meta property="og:updated_time" content="2018-04-18T03:29:31.115Z">
+<meta property="og:updated_time" content="2018-04-17T11:55:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git命令以及偷懒小技巧">
 <meta name="twitter:description" content="本文简单介绍了git与github的配置，以及如何将本地仓库与github连接起来。还介绍了git常用的一些命令，以及如何简化git命令参考资料: 饥人谷菜鸟教程：Git教程">
@@ -135,7 +135,7 @@
 
 
 
-  <link rel="canonical" href="harry0071.github.io/2018/02/17/git命令以及偷懒小技巧/"/>
+  <link rel="canonical" href="harry0071.github.io/2018/02/17/git命令以及偷懒小技巧-冲突-stage/"/>
 
 
 
@@ -282,7 +282,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="harry0071.github.io/2018/02/17/git命令以及偷懒小技巧/">
+    <link itemprop="mainEntityOfPage" href="harry0071.github.io/2018/02/17/git命令以及偷懒小技巧-冲突-stage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="stage">
@@ -403,7 +403,8 @@
 <p>五句话，依次运行。不执行的话，电脑可能会爆炸你信不信。</p>
 <p><code>git config -l</code> : 查看配置</p>
 <hr>
-<h2 id="只在本地使用Git"><a href="#只在本地使用Git" class="headerlink" title="只在本地使用Git"></a>只在本地使用Git</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<h2 id="只在本地使用Git"><a href="#只在本地使用Git" class="headerlink" title="只在本地使用Git"></a>只在本地使用Git</h2><p><code>git --version</code>查看git Bash版本号</p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
 <li>创建目录作为我们的项目目录：<code>mkdir git-demo-1</code></li>
 <li>进入目录 <code>cd git-demo-1</code></li>
 <li><code>git init</code>，初始化这句命令会在 git-demo-1 里创建一个 .git 目录</li>
@@ -494,7 +495,7 @@
 <li>git log 查看变更历史</li>
 </ul>
 <h2 id="如何上传更新"><a href="#如何上传更新" class="headerlink" title="如何上传更新"></a>如何上传更新</h2><p>你在本地目录有任何变动，只需按照以下顺序就能上传到github：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git add 文件路径</div><div class="line">git commit -m &quot;信息&quot;</div><div class="line">git pull （相信我，你一定会忘记这一个命令）获取远程仓库最新文件</div><div class="line">git push</div></pre></td></tr></table></figure></p>
-<p>下面是例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cd git-demo-1</div><div class="line">touch index2.html</div><div class="line">git add index2.html</div><div class="line">git commit -m &quot;新建 index2.html&quot;</div><div class="line">git pull</div><div class="line">退出vim: esc + : + w + q</div><div class="line">git push</div></pre></td></tr></table></figure></p>
+<p>下面是例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cd git-demo-1</div><div class="line">touch index2.html</div><div class="line">git add index2.html</div><div class="line">git commit -m &quot;新建 index2.html&quot;</div><div class="line">git pull</div><div class="line">退出vim: esc + : + q + !</div><div class="line">git push</div></pre></td></tr></table></figure></p>
 <p>然后你去 git-demo-1 的 GitHub 页面，就能看到 index2.html 出现在里面了。是不是很……简……单……呢……</p>
 <h2 id="其他Git命令"><a href="#其他Git命令" class="headerlink" title="其他Git命令"></a>其他Git命令</h2><ul>
 <li>git remote add origin git@github.com:xxxxxxx.git 将本地仓库与远程仓库关联</li>
@@ -577,8 +578,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/16/命令行基础及常用命令/" rel="next" title="命令行(CLI)基础及常用命令">
-                <i class="fa fa-chevron-left"></i> 命令行(CLI)基础及常用命令
+              <a href="/2018/02/17/git命令以及偷懒小技巧/" rel="next" title="git命令以及偷懒小技巧">
+                <i class="fa fa-chevron-left"></i> git命令以及偷懒小技巧
               </a>
             
           </div>
@@ -587,8 +588,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/17/git命令以及偷懒小技巧-冲突-stage/" rel="prev" title="git命令以及偷懒小技巧">
-                git命令以及偷懒小技巧 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/18/gitbash完整操作流程/" rel="prev" title="git bash完整操作流程">
+                git bash完整操作流程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
