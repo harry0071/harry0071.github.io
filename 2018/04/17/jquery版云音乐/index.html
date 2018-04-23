@@ -99,7 +99,7 @@
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fqfiq64b39j21aa0qidlp.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fqfngbx5uqj209t04eq37.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fqfomyauuhj20v10fgt9g.jpg">
-<meta property="og:updated_time" content="2018-04-18T08:30:39.553Z">
+<meta property="og:updated_time" content="2018-04-23T05:33:09.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="🔒 JQuery版云音乐">
 <meta name="twitter:description" content="云音乐需求分析利用LeanCloud用来存取数据利用七牛云存储保存静态文件(图片、mp3、视频、js文件、css文件)">
@@ -413,7 +413,7 @@
 <ul>
 <li><code>创建应用</code>(等同于创建了个数据库)</li>
 <li>点开，选择<code>创建Class</code>,<code>User</code>用来存管理员信息，<code>Song</code>用来存歌曲信息，<code>Playlist</code>用来存歌单信息</li>
-<li><a href="https://leancloud.cn/docs/sdk_setup-js.html" target="_blank" rel="external">使用 npm 的包管理工具安装 SDK</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> # 存储服务（包括推送和统计）</div><div class="line">$ npm install leancloud-storage --save</div></pre></td></tr></table></figure>
+<li><a href="https://leancloud.cn/docs/sdk_setup-js.html" target="_blank" rel="external">使用 npm 的包管理工具安装 SDK</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> # 存储服务（包括推送和统计）</div><div class="line">$ npm install leancloud-storage --save</div><div class="line">等同于</div><div class="line">$ npm i leancloud-storage -S</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="Git-Bash创建本地仓库"><a href="#Git-Bash创建本地仓库" class="headerlink" title="Git Bash创建本地仓库"></a>Git Bash创建本地仓库</h2><p><code>git --version</code>：查看git Bash 版本号<br><code>ll -a</code>:罗列当前目录下的文件，包括隐藏的<br><code>tree</code>:展开当前目录下所有文件<br><code>cd ..</code>:返回上一级目录</p>
@@ -437,6 +437,12 @@
 <p><a href="https://leancloud.cn/docs/sdk_setup-js.html#hash1262261" target="_blank" rel="external">验证</a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">测试代码：</div><div class="line"><span class="comment">//在数据库中创建Class，名为TestObject</span></div><div class="line"><span class="keyword">var</span> TestObject = AV.Object.extend(<span class="string">'TestObject'</span>);</div><div class="line"></div><div class="line"><span class="comment">//获取名为TestObject的Class</span></div><div class="line"><span class="keyword">var</span> testObject = <span class="keyword">new</span> TestObject();</div><div class="line">testObject.save(&#123;</div><div class="line">	<span class="comment">//保存 words: 'Hello World!'到该Class中</span></div><div class="line">  words: <span class="string">'Hello World!'</span></div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">object</span>) </span>&#123;</div><div class="line">  alert(<span class="string">'LeanCloud Rocks!'</span>);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 <p><img src="http://ww4.sinaimg.cn/large/87c01ec7gy1fqfomyauuhj20v10fgt9g.jpg" alt=""></p>
 <h1 id="用七牛云存储存文件"><a href="#用七牛云存储存文件" class="headerlink" title="用七牛云存储存文件"></a>用七牛云存储存文件</h1><p>利用七牛云存储保存静态文件(图片、mp3、视频、js文件、css文件)</p>
+<ol>
+<li>创建存储空间：打开<a href="https://www.qiniu.com" target="_blank" rel="external">七牛</a> –&gt; 管理控制台 –&gt; 对象存储 –&gt; 新建存储空间 –&gt; 存储空间名称:cloud_music –&gt; 如果超过免费访问量时，就将访问控制改成“私有空间” –&gt; 确定创建</li>
+</ol>
+<ul>
+<li>点击SDK（软件开发套件）&amp;工具 –&gt; javascript SDK</li>
+</ul>
 
       
     </div>
