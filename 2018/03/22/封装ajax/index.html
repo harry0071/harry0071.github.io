@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="笔记,面试题,ajax,jq," />
+  <meta name="keywords" content="面试题,笔记,ajax,jq," />
 
 
 
@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="ajax设置请求头的四部分ajax获取响应头的四部分封装$.ajax使用ES6解构赋值进行优化Promise的使用">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1fplil51i3tj209y04fjra.jpg">
-<meta property="og:updated_time" content="2018-03-29T03:40:28.900Z">
+<meta property="og:updated_time" content="2018-05-07T13:48:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="封装$.ajax">
 <meta name="twitter:description" content="ajax设置请求头的四部分ajax获取响应头的四部分封装$.ajax使用ES6解构赋值进行优化Promise的使用">
@@ -391,7 +391,7 @@
 <hr>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.jQuery = &#123;&#125;;</div><div class="line"><span class="built_in">window</span>.jQuery.ajax = <span class="function">(<span class="params">&#123;method, url ,data, headers&#125;<span class="regexp">/*es6解构赋值*/</span></span>) =&gt;</span> &#123;</div><div class="line"></div><div class="line"> <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;<span class="comment">//如果一切都正常，则调用 resolve解析，否则调用 reject拒绝</span></div><div class="line">	<span class="keyword">const</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">	xhr.open(method, url, <span class="literal">true</span>);</div><div class="line">	</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> headers) &#123;</div><div class="line">		xhr.setRequestHeader(key, headers[key]);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	xhr.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">	  <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span>) &#123;</div><div class="line">	    <span class="keyword">if</span> (xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">400</span>) &#123;<span class="comment">//用了箭头函数，this就不是xhr了，而是window</span></div><div class="line">	      resolve(xhr); <span class="comment">//不需要取名字success了</span></div><div class="line">	    &#125; <span class="keyword">else</span> &#123;</div><div class="line">	      reject(xhr); <span class="comment">//不需要取名字fail了</span></div><div class="line">	    &#125;</div><div class="line">	  &#125;</div><div class="line">	&#125;;</div><div class="line">	xhr.send(data);</div><div class="line"> &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">window</span>.$ = <span class="built_in">window</span>.jQuery;</div></pre></td></tr></table></figure>
 <h2 id="Promise总结"><a href="#Promise总结" class="headerlink" title="Promise总结"></a>Promise总结</h2><p>原始函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;<span class="attr">success</span>:fn1, <span class="attr">fail</span>:fn2&#125;);</div></pre></td></tr></table></figure></p>
-<p>Promise方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$.ajax().then(fn1, fn2);<span class="comment">//成功则调用fn1，失败调用fn2</span></div><div class="line"></div><div class="line">$.ajax().then(fn1).then(fn3); <span class="comment">//fn1调用完后，再调用fn3</span></div></pre></td></tr></table></figure></p>
+<p>Promise方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$.ajax().then(fn1, fn2);<span class="comment">//成功则调用fn1，失败调用fn2</span></div><div class="line"><span class="comment">//$.ajax().then((data)=&gt;console.log(data),(error)=&gt;&#123;console.log(error);document.write(error.responseText)&#125;)</span></div><div class="line"></div><div class="line">$.ajax().then(fn1).then(fn3); <span class="comment">//fn1调用完后，再调用fn3</span></div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -417,9 +417,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
-          
             <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
+          
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
           
             <a href="/tags/ajax/" rel="tag"><i class="fa fa-tag"></i> ajax</a>
           
@@ -529,7 +529,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -551,7 +551,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

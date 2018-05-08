@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="笔记,面试题,ajax,json,jsonp," />
+  <meta name="keywords" content="面试题,笔记,ajax,json,jsonp," />
 
 
 
@@ -95,7 +95,7 @@
 <meta property="og:url" content="harry0071.github.io/2018/03/21/ajax,jsonp/index.html">
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="阮一峰：浏览器同源政策及其规避方法同源政策:同协议、同域名、同端口阮一峰：ajax教程ajax用XMLHttpRequest向后端发送请求，但是AJAX无法跨源json语法；通过JSON.parse(string)将后端返回的字符串转换成JS对象jsonp动态添加script标签实现跨域请求，但jsonp只能发送GET请求CORS跨域，支持所有请求">
-<meta property="og:updated_time" content="2018-04-11T02:55:00.770Z">
+<meta property="og:updated_time" content="2018-05-05T12:00:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ajax,jsonp">
 <meta name="twitter:description" content="阮一峰：浏览器同源政策及其规避方法同源政策:同协议、同域名、同端口阮一峰：ajax教程ajax用XMLHttpRequest向后端发送请求，但是AJAX无法跨源json语法；通过JSON.parse(string)将后端返回的字符串转换成JS对象jsonp动态添加script标签实现跨域请求，但jsonp只能发送GET请求CORS跨域，支持所有请求">
@@ -376,7 +376,8 @@
 <li>道格拉斯还写了本《javascript语言精粹》，俗称蝴蝶书，来吐槽js中垃圾的地方</li>
 </ul>
 <h2 id="json铁轨图"><a href="#json铁轨图" class="headerlink" title="json铁轨图"></a>json铁轨图</h2><p><a href="http://json.org" target="_blank" rel="external">http://json.org</a></p>
-<h2 id="json语法"><a href="#json语法" class="headerlink" title="json语法"></a>json语法</h2><p>json里的【字符串】必须用双引号，不能用单引号！！<br>json没有<code>undefined</code>和<code>function</code><br>| js数据 | json数据  |<br>| :—-: |:———:|<br>| 123| 123 |<br>| ‘stage’| “stage” |<br>| true| true |<br>| [‘a’, ‘b’] | [“a”, “b”] |<br>| {name: ‘stage’} | {“name”: “stage”} |<br>| null | null |<br>| undefined| json没有undefined |<br>| function fn(){}| json没有function |</p>
+<h2 id="json语法"><a href="#json语法" class="headerlink" title="json语法"></a>json语法</h2><p><code>{&quot;a&quot;:1,&quot;name&quot;:&quot;stage&quot;,&quot;age&quot;:24}</code></p>
+<p>json里的【字符串】必须用双引号，不能用单引号！！<br>json没有<code>undefined</code>和<code>function</code><br>| js数据 | json数据  |<br>| :—-: |:———:|<br>| 123| 123 |<br>| ‘stage’| “stage” |<br>| true| true |<br>| [‘a’, ‘b’] | [“a”, “b”] |<br>| {name: ‘stage’} | {“name”: “stage”} |<br>| null | null |<br>| undefined| json没有undefined |<br>| function fn(){}| json没有function |</p>
 <h1 id="浏览器同源策略"><a href="#浏览器同源策略" class="headerlink" title="浏览器同源策略"></a>浏览器同源策略</h1><ul>
 <li>同协议</li>
 <li>同域名</li>
@@ -412,8 +413,10 @@
 </ul>
 <p>因为jsonp是通过动态创建<code>&lt;script&gt;</code>标签实现的，而script只能通过GET请求数据，不能POST</p>
 <p><strong>由于jsonp只能发GET请求，于是又有了CORS跨域</strong><br>↓↓↓</p>
-<h1 id="CORS跨源AJAX请求"><a href="#CORS跨源AJAX请求" class="headerlink" title="CORS跨源AJAX请求"></a>CORS跨源AJAX请求</h1><p>CORS是跨源资源分享（Cross-Origin Resource Sharing）的缩写。它是W3C标准，是跨域AJAX请求的根本解决方法。<br>CORS允许浏览器向跨源服务器，发出<code>XMLHttpRequest</code>请求，从而克服了AJAX只能同源使用的限制。<br>相比JSONP只能发<code>GET</code>请求，CORS允许任何类型的请求。</p>
+<h1 id="CORS跨源AJAX请求"><a href="#CORS跨源AJAX请求" class="headerlink" title="CORS跨源AJAX请求"></a>CORS跨源AJAX请求</h1><p>当使用ajax访问远程服务器时，请求失败，浏览器报<code>No &#39;Access-Control-Allow-Origin&#39; header</code><br>解决方案:后端程序员添加<code>response.setHeader(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);</code></p>
+<p>CORS是跨源资源分享（Cross-Origin Resource Sharing）的缩写。它是W3C标准，是跨域AJAX请求的根本解决方法。<br>CORS允许浏览器向跨源服务器，发出<code>XMLHttpRequest</code>请求，从而克服了AJAX只能同源使用的限制。<br>相比JSONP只能发<code>GET</code>请求，CORS允许任何类型的请求。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">后端程序员加上这句响应头：</div><div class="line">response.setHeader(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'http://stage.com:8000'</span>)</div><div class="line">告诉浏览器，http:<span class="comment">//stage.com:8000可以向我方服务器发送ajax请求</span></div></pre></td></tr></table></figure>
+<p>或者前端程序员设置将ajax请求中的dataType属性设置为“jsonp”，jsonp是专门用来解决跨域访问而诞生的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</div><div class="line">      <span class="keyword">var</span> url = <span class="string">'http://*****/index'</span>;</div><div class="line">      $.ajax(url, &#123;</div><div class="line">        <span class="attr">data</span>: &#123;</div><div class="line">          <span class="string">'cityname'</span>: <span class="string">'成都'</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">dataType</span>: <span class="string">'jsonp'</span>,</div><div class="line">        <span class="attr">crossDomain</span>: <span class="literal">true</span>,</div><div class="line">        <span class="attr">success</span>: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">          <span class="keyword">if</span>(data &amp;&amp; data.resultcode == <span class="string">'200'</span>)&#123;</div><div class="line">            <span class="built_in">console</span>.log(data.result.today);</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">      &#125;);</div></pre></td></tr></table></figure></p>
 <h1 id="chrome调试"><a href="#chrome调试" class="headerlink" title="chrome调试"></a>chrome调试</h1><p>在用submit提交数据时，页面会刷新，因此：chrome开发者工具 → Network → Network → 点击preserve log(页面刷新时不清楚日志)</p>
 
       
@@ -440,9 +443,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
-          
             <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
+          
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
           
             <a href="/tags/ajax/" rel="tag"><i class="fa fa-tag"></i> ajax</a>
           
@@ -554,7 +557,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -576,7 +579,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

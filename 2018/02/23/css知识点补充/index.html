@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="笔记,面试题,css," />
+  <meta name="keywords" content="面试题,笔记,css," />
 
 
 
@@ -95,7 +95,7 @@
 <meta property="og:url" content="harry0071.github.io/2018/02/23/css知识点补充/index.html">
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="css知识点查漏补缺，知识点补充，比较零碎">
-<meta property="og:updated_time" content="2018-04-11T03:34:05.260Z">
+<meta property="og:updated_time" content="2018-04-23T12:01:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="🔒 css知识点补充">
 <meta name="twitter:description" content="css知识点查漏补缺，知识点补充，比较零碎">
@@ -409,6 +409,9 @@
 
 <p>利用<code>background-size: 200% auto</code>将背景在x轴扩大，然后改变<code>background-position</code>的位置达到渐变动画的效果          </p>
 <iframe width="100%" height="600" src="http://js.jirengu.com/vakolapitu/1/edit?css,output" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<h1 id="文字显示两行，超出两行部分显示省略号"><a href="#文字显示两行，超出两行部分显示省略号" class="headerlink" title="文字显示两行，超出两行部分显示省略号"></a>文字显示两行，超出两行部分显示省略号</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">display</span>: -webkit-box;</div><div class="line">  <span class="attribute">-webkit-line-clamp</span>: <span class="number">2</span>;</div><div class="line">  <span class="attribute">-webkit-box-orient</span>: vertical;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<iframe width="100%" height="300" src="//jsfiddle.net/20170808/vvhtjhmr/embedded/result,html,css/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
       
     </div>
     
@@ -433,9 +436,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
-          
             <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
+          
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
           
             <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
           
@@ -543,7 +546,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">56</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -565,7 +568,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -614,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文档流"><span class="nav-number">1.</span> <span class="nav-text">文档流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#块级元素"><span class="nav-number">2.</span> <span class="nav-text">块级元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#块级元素的高度"><span class="nav-number">2.1.</span> <span class="nav-text">块级元素的高度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块级元素居中"><span class="nav-number">2.2.</span> <span class="nav-text">块级元素居中</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内联元素的高度"><span class="nav-number">3.</span> <span class="nav-text">内联元素的高度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多个内联元素以baseline对齐"><span class="nav-number">4.</span> <span class="nav-text">多个内联元素以baseline对齐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#渐变gradient"><span class="nav-number">5.</span> <span class="nav-text">渐变gradient</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置dib后，一定要加上vat"><span class="nav-number">6.</span> <span class="nav-text">设置dib后，一定要加上vat</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#text-transform-uppercase"><span class="nav-number">7.</span> <span class="nav-text">text-transform: uppercase</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#利用box-shadow实现多层边框-立体感"><span class="nav-number">8.</span> <span class="nav-text">利用box-shadow实现多层边框(立体感)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#100vh使元素的高度占满可视区高度"><span class="nav-number">9.</span> <span class="nav-text">100vh使元素的高度占满可视区高度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#icon图标"><span class="nav-number">10.</span> <span class="nav-text">icon图标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#overflow-hidden别给老子出现滚动条！"><span class="nav-number">11.</span> <span class="nav-text">overflow:hidden别给老子出现滚动条！</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#当元素设置了-absolute-后，默认就不是100-的宽度了，而是内容多宽就是多宽"><span class="nav-number">12.</span> <span class="nav-text">当元素设置了  absolute  后，默认就不是100%的宽度了，而是内容多宽就是多宽</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#min-width和max-width"><span class="nav-number">13.</span> <span class="nav-text">min-width和max-width</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多色border"><span class="nav-number">14.</span> <span class="nav-text">多色border</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多色三角形变形"><span class="nav-number">15.</span> <span class="nav-text">多色三角形变形</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#扇形"><span class="nav-number">15.1.</span> <span class="nav-text">扇形</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#渐变动画加载图"><span class="nav-number">16.</span> <span class="nav-text">渐变动画加载图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文档流"><span class="nav-number">1.</span> <span class="nav-text">文档流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#块级元素"><span class="nav-number">2.</span> <span class="nav-text">块级元素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#块级元素的高度"><span class="nav-number">2.1.</span> <span class="nav-text">块级元素的高度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块级元素居中"><span class="nav-number">2.2.</span> <span class="nav-text">块级元素居中</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内联元素的高度"><span class="nav-number">3.</span> <span class="nav-text">内联元素的高度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多个内联元素以baseline对齐"><span class="nav-number">4.</span> <span class="nav-text">多个内联元素以baseline对齐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#渐变gradient"><span class="nav-number">5.</span> <span class="nav-text">渐变gradient</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置dib后，一定要加上vat"><span class="nav-number">6.</span> <span class="nav-text">设置dib后，一定要加上vat</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#text-transform-uppercase"><span class="nav-number">7.</span> <span class="nav-text">text-transform: uppercase</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#利用box-shadow实现多层边框-立体感"><span class="nav-number">8.</span> <span class="nav-text">利用box-shadow实现多层边框(立体感)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#100vh使元素的高度占满可视区高度"><span class="nav-number">9.</span> <span class="nav-text">100vh使元素的高度占满可视区高度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#icon图标"><span class="nav-number">10.</span> <span class="nav-text">icon图标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#overflow-hidden别给老子出现滚动条！"><span class="nav-number">11.</span> <span class="nav-text">overflow:hidden别给老子出现滚动条！</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#当元素设置了-absolute-后，默认就不是100-的宽度了，而是内容多宽就是多宽"><span class="nav-number">12.</span> <span class="nav-text">当元素设置了  absolute  后，默认就不是100%的宽度了，而是内容多宽就是多宽</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#min-width和max-width"><span class="nav-number">13.</span> <span class="nav-text">min-width和max-width</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多色border"><span class="nav-number">14.</span> <span class="nav-text">多色border</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多色三角形变形"><span class="nav-number">15.</span> <span class="nav-text">多色三角形变形</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#扇形"><span class="nav-number">15.1.</span> <span class="nav-text">扇形</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#渐变动画加载图"><span class="nav-number">16.</span> <span class="nav-text">渐变动画加载图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文字显示两行，超出两行部分显示省略号"><span class="nav-number">17.</span> <span class="nav-text">文字显示两行，超出两行部分显示省略号</span></a></li></ol></div>
             
 
           </div>
