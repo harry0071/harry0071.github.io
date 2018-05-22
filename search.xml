@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[vue的组件通信]]></title>
     <url>%2F2018%2F05%2F22%2Fvue%E7%9A%84%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%2F</url>
-    <content type="text"><![CDATA[父子组件通信爷孙组件通信兄弟组件通信 JS Bin on jsbin.com 父子组件通信 父传子父组件使用 props 传递数据给子组件123&lt;div id="app"&gt; &lt;message msg="父亲说:xxx"&gt;&lt;/message&gt;&lt;/div&gt; 12345678Vue.component('message',&#123; props:['msg'], template:`&lt;p :title="msg"&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;`,&#125;);new Vue(&#123; el:'#app',&#125;); 子传父子组件无法直接修改父组件的数据，必须通过$emit()通知父组件，让父组件修改父组件的数据1234&lt;div id="app"&gt; &lt;child-say @say="doSomethig"&gt;&lt;/child-say&gt; &lt;div v-if="seen"&gt;&#123;&#123;msg&#125;&#125;&lt;/div&gt;&lt;/div&gt; 12345678910111213141516171819202122Vue.component('child-say',&#123; template:`&lt;button @click="handleClick"&gt;儿子说&lt;/button&gt;`, methods:&#123; handleClick()&#123; this.$emit('say',&#123;a:'hello',b:'world'&#125;); &#125;, &#125;,&#125;);new Vue(&#123; el:'#app', data:&#123; seen:false, msg:'' &#125;, methods:&#123; doSomethig(data)&#123; this.seen = !this.seen; this.msg=data.a+' '+data.b &#125;, &#125;,&#125;); 爷孙通信 爷孙之间无法直接通信 爷爷必须先通过props将数据传给父组件，然后靠父组件将数据传给孙组件 孙组件必须先通过$emit通知父组件，然后靠父组件将数据传回给爷组件 12345&lt;div id="grandfather"&gt; 我是爷爷 &lt;button @click="seen=true"&gt;打开孙子&lt;/button&gt; &lt;father :seen="seen" @close="seen=false"&gt;&lt;/father&gt;&lt;/div&gt; 123456789101112131415161718Vue.component('father',&#123; props:['seen'], template:`&lt;div&gt;我是父亲 &lt;child v-show="seen" @close="$emit('close')"&gt;&lt;/child&gt;&lt;/div&gt;`,&#125;);Vue.component('child',&#123; template:`&lt;div&gt;我是孙子&lt;button @click="$emit('close')"&gt;关闭&lt;/button&gt;&lt;/div&gt;`, &#125;);new Vue(&#123; el:'#grandfather', data:&#123; seen:false, &#125;,&#125;); 兄弟组件通信利用eventHub实现兄弟组件通信通过使用事件中心，允许组件自由交流，无论组件处于组件树的哪一层。由于 Vue 实例实现了一个事件分发接口，你可以通过实例化一个空的 Vue 实例来实现这个目的。 1234&lt;div id="app"&gt; &lt;gege&gt;&lt;/gege&gt; &lt;didi&gt;&lt;/didi&gt;&lt;/div&gt; 123456789101112131415161718192021222324252627282930313233var eventHub = new Vue();//事件管理中心Vue.component('gege',&#123; template:`&lt;div&gt;哥哥说：&lt;input @keyup="handleKeyup" type="text" v-model="gege_say"&gt;&lt;/div&gt;`, data()&#123; return &#123; gege_say:'', &#125; &#125;, methods:&#123; handleKeyup()&#123; eventHub.$emit('gegeSay',this.gege_say); &#125;, &#125;,&#125;);Vue.component('didi',&#123; template:`&lt;div&gt;我是弟弟，我的哥哥他说：&#123;&#123;msg&#125;&#125;&lt;/div&gt;`, data()&#123; return &#123; msg:'', &#125; &#125;, created()&#123; eventHub.$on('gegeSay',data=&gt;&#123; this.msg=data; &#125;); &#125;,&#125;);new Vue(&#123; el:'#app',&#125;); Vuex对于大多数复杂情况，更推荐使用一个专用的状态管理层：Vuex。]]></content>
+    <content type="text"><![CDATA[父子组件通信爷孙组件通信兄弟组件通信 父子组件通信 JS Bin on jsbin.com 父传子父组件使用 props 传递数据给子组件123&lt;div id="app"&gt; &lt;message msg="父亲说:xxx"&gt;&lt;/message&gt;&lt;/div&gt; 12345678Vue.component('message',&#123; props:['msg'], template:`&lt;p :title="msg"&gt;&#123;&#123;msg&#125;&#125;&lt;/p&gt;`,&#125;);new Vue(&#123; el:'#app',&#125;); 子传父子组件无法直接修改父组件的数据，必须通过$emit()通知父组件，让父组件修改父组件的数据1234&lt;div id="app"&gt; &lt;child-say @say="doSomethig"&gt;&lt;/child-say&gt; &lt;div v-if="seen"&gt;&#123;&#123;msg&#125;&#125;&lt;/div&gt;&lt;/div&gt; 12345678910111213141516171819202122Vue.component('child-say',&#123; template:`&lt;button @click="handleClick"&gt;儿子说&lt;/button&gt;`, methods:&#123; handleClick()&#123; this.$emit('say',&#123;a:'hello',b:'world'&#125;); &#125;, &#125;,&#125;);new Vue(&#123; el:'#app', data:&#123; seen:false, msg:'' &#125;, methods:&#123; doSomethig(data)&#123; this.seen = !this.seen; this.msg=data.a+' '+data.b &#125;, &#125;,&#125;); 爷孙通信 爷孙之间无法直接通信 爷爷必须先通过props将数据传给父组件，然后靠父组件将数据传给孙组件 孙组件必须先通过$emit通知父组件，然后靠父组件将数据传回给爷组件 12345&lt;div id="grandfather"&gt; 我是爷爷 &lt;button @click="seen=true"&gt;打开孙子&lt;/button&gt; &lt;father :seen="seen" @close="seen=false"&gt;&lt;/father&gt;&lt;/div&gt; 123456789101112131415161718Vue.component('father',&#123; props:['seen'], template:`&lt;div&gt;我是父亲 &lt;child v-show="seen" @close="$emit('close')"&gt;&lt;/child&gt;&lt;/div&gt;`,&#125;);Vue.component('child',&#123; template:`&lt;div&gt;我是孙子&lt;button @click="$emit('close')"&gt;关闭&lt;/button&gt;&lt;/div&gt;`, &#125;);new Vue(&#123; el:'#grandfather', data:&#123; seen:false, &#125;,&#125;); 兄弟组件通信利用eventHub实现兄弟组件通信通过使用事件中心，允许组件自由交流，无论组件处于组件树的哪一层。由于 Vue 实例实现了一个事件分发接口，你可以通过实例化一个空的 Vue 实例来实现这个目的。 1234&lt;div id="app"&gt; &lt;gege&gt;&lt;/gege&gt; &lt;didi&gt;&lt;/didi&gt;&lt;/div&gt; 123456789101112131415161718192021222324252627282930313233var eventHub = new Vue();//事件管理中心Vue.component('gege',&#123; template:`&lt;div&gt;哥哥说：&lt;input @keyup="handleKeyup" type="text" v-model="gege_say"&gt;&lt;/div&gt;`, data()&#123; return &#123; gege_say:'', &#125; &#125;, methods:&#123; handleKeyup()&#123; eventHub.$emit('gegeSay',this.gege_say); &#125;, &#125;,&#125;);Vue.component('didi',&#123; template:`&lt;div&gt;我是弟弟，我的哥哥他说：&#123;&#123;msg&#125;&#125;&lt;/div&gt;`, data()&#123; return &#123; msg:'', &#125; &#125;, created()&#123; eventHub.$on('gegeSay',data=&gt;&#123; this.msg=data; &#125;); &#125;,&#125;);new Vue(&#123; el:'#app',&#125;); Vuex对于大多数复杂情况，更推荐使用一个专用的状态管理层：Vuex。]]></content>
       <categories>
         <category>vue</category>
       </categories>
@@ -337,9 +337,9 @@
       </categories>
       <tags>
         <tag>js</tag>
+        <tag>dom</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
-        <tag>dom</tag>
       </tags>
   </entry>
   <entry>
@@ -351,9 +351,9 @@
       </categories>
       <tags>
         <tag>js</tag>
-        <tag>es6</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>es6</tag>
       </tags>
   </entry>
   <entry>
@@ -406,9 +406,9 @@
       </categories>
       <tags>
         <tag>js</tag>
+        <tag>dom</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
-        <tag>dom</tag>
       </tags>
   </entry>
   <entry>
