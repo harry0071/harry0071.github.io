@@ -97,7 +97,7 @@
 <meta property="og:description" content="MVC模式一个事件发生的过程（通信单向流动）：1、用户在视图 V 上与应用程序交互2、控制器 C 触发相应的事件，要求模型 M 改变状态（读写数据）3、模型 M 将数据发送到视图 V ，更新数据，展现给用户">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fptpglaucij20xf0kz4a5.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fptpglaucij20xf0kz4a5.jpg">
-<meta property="og:updated_time" content="2018-04-07T07:56:18.000Z">
+<meta property="og:updated_time" content="2018-05-22T06:25:08.511Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MVC模型视图控制器">
 <meta name="twitter:description" content="MVC模式一个事件发生的过程（通信单向流动）：1、用户在视图 V 上与应用程序交互2、控制器 C 触发相应的事件，要求模型 M 改变状态（读写数据）3、模型 M 将数据发送到视图 V ，更新数据，展现给用户">
@@ -394,6 +394,13 @@
 <li>Controller得到数据后，更新View</li>
 <li>Controller不直接访问服务器，而是专门由Model来负责</li>
 </ul>
+<p>参考答案：                    </p>
+<ul>
+<li>Model 操作数据</li>
+<li>View 表示视图</li>
+<li>Controller 是控制器</li>
+</ul>
+<p>Model 和服务器交互，Model 将得到的数据交给 Controller，Controller 把数据填入 View，并监听 View<br>用户操作 View，如点击按钮，Controller 就会接受到点击事件，Controller 这时会去调用 Model，Model 会与服务器交互，得到数据后返回给 Controller，Controller 得到数据就去更新 View</p>
 
       
     </div>
