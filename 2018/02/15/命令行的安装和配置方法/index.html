@@ -89,18 +89,18 @@
 
 
 
-<meta name="description" content="归纳总结了下 git、git bash、node、npm 的安装和配置方法.
+<meta name="description" content="归纳总结了下 git、git bash、node、npm 的安装和配置方法.nrm
 参考资料: 饥人谷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="命令行(CLI)的安装和配置方法">
 <meta property="og:url" content="harry0071.github.io/2018/02/15/命令行的安装和配置方法/index.html">
 <meta property="og:site_name" content="stage's blog">
-<meta property="og:description" content="归纳总结了下 git、git bash、node、npm 的安装和配置方法.
+<meta property="og:description" content="归纳总结了下 git、git bash、node、npm 的安装和配置方法.nrm
 参考资料: 饥人谷">
-<meta property="og:updated_time" content="2018-04-19T05:16:02.138Z">
+<meta property="og:updated_time" content="2018-05-28T02:37:35.016Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="命令行(CLI)的安装和配置方法">
-<meta name="twitter:description" content="归纳总结了下 git、git bash、node、npm 的安装和配置方法.
+<meta name="twitter:description" content="归纳总结了下 git、git bash、node、npm 的安装和配置方法.nrm
 参考资料: 饥人谷">
 
 
@@ -368,7 +368,7 @@
 
       
         <blockquote>
-<p>归纳总结了下 git、git bash、node、npm 的安装和配置方法.</p>
+<p>归纳总结了下 git、git bash、node、npm 的安装和配置方法.<br>nrm</p>
 <p>参考资料: <a href="https://jirengu.com" target="_blank" rel="external">饥人谷</a></p>
 </blockquote>
 <a id="more"></a>
@@ -389,7 +389,7 @@
 <p>关闭git bash: <code>ctrl + D</code> 或者输入 <code>exit</code></p>
 <p>进入node模式: <code>node</code></p>
 <p>进入npm模式: <code>npm</code></p>
-<h1 id="Node-js的使用"><a href="#Node-js的使用" class="headerlink" title="Node.js的使用"></a>Node.js的使用</h1><p>从<a href="https://nodejs.org/" target="_blank" rel="external">官网</a>下载node.js</p>
+<h1 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h1><p>从<a href="https://nodejs.org/" target="_blank" rel="external">官网</a>下载node.js<br>然后查看高级系统设置 –&gt; 环境变量 –&gt; 系统变量 –&gt; PATH –&gt; 编辑，可以看到里面有nodejs</p>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="第一种使用方法"><a href="#第一种使用方法" class="headerlink" title="第一种使用方法"></a>第一种使用方法</h3><ol>
 <li>进入 Git Bash</li>
 <li>输入 <code>node</code>，回车，就可以进入 node 运行环境，这个时候我们就可以写 JS 了</li>
@@ -410,6 +410,13 @@
 <h2 id="npm的使用"><a href="#npm的使用" class="headerlink" title="npm的使用"></a>npm的使用</h2><p>我们可以用 npm 的翻译工具做一个随时可用的小字典，这个小工具的名字叫做 fanyi。</p>
 <p>打开Git Bash，运行 <code>npm i -g fanyi</code> 即可安装 fanyi，安装完成之后，输入 <code>fanyi frontend</code> 就可以看到对应的中文释义了！</p>
 <p>是不是很帅呢？！</p>
+<h1 id="使用nrm切换镜像仓库"><a href="#使用nrm切换镜像仓库" class="headerlink" title="使用nrm切换镜像仓库"></a>使用nrm切换镜像仓库</h1><p><a href="https://github.com/pana/nrm" target="_blank" rel="external">github:nrm</a></p>
+<h2 id="安装nrm"><a href="#安装nrm" class="headerlink" title="安装nrm"></a>安装nrm</h2><p><code>npm install -g nrm</code></p>
+<h2 id="使用nrm"><a href="#使用nrm" class="headerlink" title="使用nrm"></a>使用nrm</h2><ul>
+<li><code>nrm ls</code>:查看有哪些镜像仓库</li>
+<li><code>nrm test</code>：测试速度</li>
+<li><code>nrm use taobao</code>：使用taobao镜像</li>
+</ul>
 <h1 id="Git的配置和使用"><a href="#Git的配置和使用" class="headerlink" title="Git的配置和使用"></a>Git的配置和使用</h1><h2 id="配置-1"><a href="#配置-1" class="headerlink" title="配置"></a>配置</h2><p>请在命令行运行这五句话！！！一定要运行这五句话，不然 git 就不能用了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git config --global user.name xxx #方便产品经理找（怼）你</div><div class="line">git config --global user.email yyy #方便产品经理找（怼）你</div><div class="line">git config --global push.default simple # 本来我写的是 matching，不过想了想可能 simple 更好</div><div class="line">git config --global core.quotepath false #防止文件名变成数字</div><div class="line">git config --global core.editor &quot;vim&quot; # 使用vim编辑提交信息</div></pre></td></tr></table></figure></p>
 <p><code>git config -l</code> : 查看配置信息</p>
 <p>这样就可以愉快地使用git了~</p>
@@ -563,7 +570,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -574,7 +581,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -585,7 +592,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -634,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-Bash的使用"><span class="nav-number">1.</span> <span class="nav-text">Git Bash的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一种使用方式"><span class="nav-number">1.1.</span> <span class="nav-text">第一种使用方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二种使用方式"><span class="nav-number">1.2.</span> <span class="nav-text">第二种使用方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux常用命令"><span class="nav-number">1.3.</span> <span class="nav-text">Linux常用命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-js的使用"><span class="nav-number">2.</span> <span class="nav-text">Node.js的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">2.1.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一种使用方法"><span class="nav-number">2.1.1.</span> <span class="nav-text">第一种使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node的另一种使用方法"><span class="nav-number">2.1.2.</span> <span class="nav-text">node的另一种使用方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#npm的配置和使用"><span class="nav-number">3.</span> <span class="nav-text">npm的配置和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">3.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm的使用"><span class="nav-number">3.2.</span> <span class="nav-text">npm的使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git的配置和使用"><span class="nav-number">4.</span> <span class="nav-text">Git的配置和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-1"><span class="nav-number">4.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git的使用使用"><span class="nav-number">4.2.</span> <span class="nav-text">Git的使用使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">4.3.</span> <span class="nav-text">常用命令</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-Bash的使用"><span class="nav-number">1.</span> <span class="nav-text">Git Bash的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一种使用方式"><span class="nav-number">1.1.</span> <span class="nav-text">第一种使用方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二种使用方式"><span class="nav-number">1.2.</span> <span class="nav-text">第二种使用方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux常用命令"><span class="nav-number">1.3.</span> <span class="nav-text">Linux常用命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Node-js"><span class="nav-number">2.</span> <span class="nav-text">安装Node.js</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">2.1.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一种使用方法"><span class="nav-number">2.1.1.</span> <span class="nav-text">第一种使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node的另一种使用方法"><span class="nav-number">2.1.2.</span> <span class="nav-text">node的另一种使用方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#npm的配置和使用"><span class="nav-number">3.</span> <span class="nav-text">npm的配置和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">3.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm的使用"><span class="nav-number">3.2.</span> <span class="nav-text">npm的使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用nrm切换镜像仓库"><span class="nav-number">4.</span> <span class="nav-text">使用nrm切换镜像仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装nrm"><span class="nav-number">4.1.</span> <span class="nav-text">安装nrm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用nrm"><span class="nav-number">4.2.</span> <span class="nav-text">使用nrm</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git的配置和使用"><span class="nav-number">5.</span> <span class="nav-text">Git的配置和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-1"><span class="nav-number">5.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git的使用使用"><span class="nav-number">5.2.</span> <span class="nav-text">Git的使用使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">5.3.</span> <span class="nav-text">常用命令</span></a></li></ol></li></ol></div>
             
 
           </div>

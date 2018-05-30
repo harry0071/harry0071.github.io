@@ -95,7 +95,7 @@
 <meta property="og:url" content="harry0071.github.io/2018/05/03/面向对象初级知识/index.html">
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="面向对象基础知识(概念、特点)构造函数用new命令构造函数的缺陷(浪费内存) –&amp;gt; 解决方法：公有方法放到原型prototype上原则上，构造函数内放私有属性，原型上放公有方法如果在构造函数内找不到，就会自动顺着原型链找【test.age === test.proto.age === Person.prototype.age】">
-<meta property="og:updated_time" content="2018-05-04T08:16:56.899Z">
+<meta property="og:updated_time" content="2018-05-25T06:53:14.002Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="🔒 面向对象初级知识">
 <meta name="twitter:description" content="面向对象基础知识(概念、特点)构造函数用new命令构造函数的缺陷(浪费内存) –&amp;gt; 解决方法：公有方法放到原型prototype上原则上，构造函数内放私有属性，原型上放公有方法如果在构造函数内找不到，就会自动顺着原型链找【test.age === test.proto.age === Person.prototype.age】">
@@ -389,6 +389,12 @@
 <p>构造函数生成实例对象的时候，必须使用new命令。</p>
 <h1 id="new"><a href="#new" class="headerlink" title="new"></a>new</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> v = <span class="keyword">new</span> Vehicle();</div><div class="line">v.price <span class="comment">// 1000</span></div></pre></td></tr></table></figure>
 <p>用new命令时，默认给构造函数的起始位置加上<code>var this = {}</code>，结尾默认<code>return this</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">x(); <span class="comment">//window</span></div><div class="line"><span class="keyword">new</span> x(); <span class="comment">//对象&#123;&#125;</span></div></pre></td></tr></table></figure></p>
+<h2 id="new做了些什么"><a href="#new做了些什么" class="headerlink" title="new做了些什么"></a>new做了些什么</h2><ol>
+<li><code>var this = {}</code> 产生一个空对象，且this指向这个空对象</li>
+<li>this.<strong>proto</strong> = 构造函数.prototype【举例：var stage = new Human(‘stage’)，则stage.<strong>proto</strong> === Human.prototype】</li>
+<li>执行<code>构造函数.call(this,参数1,参数2...)</code></li>
+<li>return this(生成的对象)</li>
+</ol>
 <h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式()"></a>工厂模式()</h2><ul>
 <li>原料</li>
 <li>加工</li>
@@ -544,7 +550,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -555,7 +561,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -566,7 +572,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -615,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象的概念"><span class="nav-number">1.</span> <span class="nav-text">面向对象的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象编程-OOP"><span class="nav-number">1.1.</span> <span class="nav-text">面向对象编程(OOP)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this"><span class="nav-number">2.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造函数-大写"><span class="nav-number">3.</span> <span class="nav-text">构造函数(大写)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#new"><span class="nav-number">4.</span> <span class="nav-text">new</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工厂模式"><span class="nav-number">4.1.</span> <span class="nav-text">工厂模式()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型对象prototype"><span class="nav-number">5.</span> <span class="nav-text">原型对象prototype</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如果构造函数里找不到，就会顺着原型链一步步找下去"><span class="nav-number">6.</span> <span class="nav-text">如果构造函数里找不到，就会顺着原型链一步步找下去</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类与实例对象"><span class="nav-number">7.</span> <span class="nav-text">类与实例对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象的概念"><span class="nav-number">1.</span> <span class="nav-text">面向对象的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象编程-OOP"><span class="nav-number">1.1.</span> <span class="nav-text">面向对象编程(OOP)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this"><span class="nav-number">2.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造函数-大写"><span class="nav-number">3.</span> <span class="nav-text">构造函数(大写)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#new"><span class="nav-number">4.</span> <span class="nav-text">new</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#new做了些什么"><span class="nav-number">4.1.</span> <span class="nav-text">new做了些什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工厂模式"><span class="nav-number">4.2.</span> <span class="nav-text">工厂模式()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型对象prototype"><span class="nav-number">5.</span> <span class="nav-text">原型对象prototype</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如果构造函数里找不到，就会顺着原型链一步步找下去"><span class="nav-number">6.</span> <span class="nav-text">如果构造函数里找不到，就会顺着原型链一步步找下去</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类与实例对象"><span class="nav-number">7.</span> <span class="nav-text">类与实例对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>

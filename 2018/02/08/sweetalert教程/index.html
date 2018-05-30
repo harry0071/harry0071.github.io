@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="SweetAlert可以替代JavaScript原生的alert和confirm等函数呈现的弹出提示框，它将提示框进行了美化，并且允许自定义，支持设置提示框标题、提示类型、内容展示图片、确认取消按钮文本、点击后回调函数等。官方网站: https://sweetalert.js.org/Github: https://github.com/t4t5/sweetalert中文教程站: http:/">
 <meta property="og:image" content="https://raw.githubusercontent.com/t4t5/sweetalert/e3c2085473a0eb5a6b022e43eb22e746380bb955/assets/swal.gif">
-<meta property="og:updated_time" content="2018-04-13T02:53:58.406Z">
+<meta property="og:updated_time" content="2018-05-24T06:24:01.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="漂亮的弹窗插件 —— SweetAlert教程">
 <meta name="twitter:description" content="SweetAlert可以替代JavaScript原生的alert和confirm等函数呈现的弹出提示框，它将提示框进行了美化，并且允许自定义，支持设置提示框标题、提示类型、内容展示图片、确认取消按钮文本、点击后回调函数等。官方网站: https://sweetalert.js.org/Github: https://github.com/t4t5/sweetalert中文教程站: http:/">
@@ -386,6 +386,11 @@
 <iframe width="100%" height="600" src="//jsfiddle.net/20170808/ddxbvdkn/2/embedded/result,js,html/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 <h2 id="更多详情"><a href="#更多详情" class="headerlink" title="更多详情"></a>更多详情</h2><p>可以去中文教程站查看更多详情,里面包括了各种配置和方法，以及示例<br><strong>中文教程站: <a href="http://mishengqiang.com/sweetalert/" target="_blank" rel="external">http://mishengqiang.com/sweetalert/</a></strong></p>
+<h1 id="sweetalert2"><a href="#sweetalert2" class="headerlink" title="sweetalert2"></a>sweetalert2</h1><p><a href="https://github.com/sweetalert2/sweetalert2" target="_blank" rel="external">https://github.com/sweetalert2/sweetalert2</a></p>
+<p>直接引入<code>https://cdn.bootcss.com/limonte-sweetalert2/7.20.5/sweetalert2.all.min.js</code>，不需要分别引入css和js了</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">swal(&#123;</div><div class="line">  <span class="attr">title</span>:<span class="string">'下面是您的预览链接'</span>,</div><div class="line">  <span class="attr">input</span>: <span class="string">'textarea'</span>,</div><div class="line">  <span class="attr">inputValue</span>:<span class="string">'123'</span>,</div><div class="line">  <span class="attr">confirmButtonText</span>:<span class="string">`&lt;a style="color:white;" href="//www.baidu.com"&gt;预览&lt;/a&gt;`</span>,</div><div class="line">  <span class="attr">showCancelButton</span>: <span class="literal">true</span>,</div><div class="line">  <span class="attr">cancelButtonText</span>:<span class="string">'确定'</span>,</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><a class="jsbin-embed" href="http://js.jirengu.com/deqejosufo/1/embed" target="_blank" rel="external">【点击查看例子】</a><script src="http://js.jirengu.com/js/embed.js"></script></p>
+<p>上面的例子也可以用then<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">swal(&#123;</div><div class="line">    ..........</div><div class="line">&#125;).then(<span class="function">(<span class="params">result</span>)=&gt;</span>&#123;</div><div class="line">    <span class="keyword">if</span>(result.value)&#123;</div><div class="line">        open(<span class="string">'//www.baidu.com'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -523,7 +528,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -534,7 +539,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -545,7 +550,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -594,7 +599,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">1.</span> <span class="nav-text">使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-引入-我用的CDN引入"><span class="nav-number">1.1.</span> <span class="nav-text">1.引入(我用的CDN引入)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-使用简称函数swal调用sweetAlert"><span class="nav-number">1.2.</span> <span class="nav-text">2.使用简称函数swal调用sweetAlert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-举个栗子"><span class="nav-number">1.3.</span> <span class="nav-text">3.举个栗子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多详情"><span class="nav-number">2.</span> <span class="nav-text">更多详情</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">1.</span> <span class="nav-text">使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-引入-我用的CDN引入"><span class="nav-number">1.1.</span> <span class="nav-text">1.引入(我用的CDN引入)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-使用简称函数swal调用sweetAlert"><span class="nav-number">1.2.</span> <span class="nav-text">2.使用简称函数swal调用sweetAlert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-举个栗子"><span class="nav-number">1.3.</span> <span class="nav-text">3.举个栗子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多详情"><span class="nav-number">2.</span> <span class="nav-text">更多详情</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sweetalert2"><span class="nav-number"></span> <span class="nav-text">sweetalert2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#例子"><span class="nav-number">1.</span> <span class="nav-text">例子</span></a></li></ol></div>
             
 
           </div>

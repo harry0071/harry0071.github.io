@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="link标签的media属性script标签的charset属性使用svg标签画图">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1fq9p91y7tvj20hk0acwi5.jpg">
-<meta property="og:updated_time" content="2018-04-12T06:48:00.663Z">
+<meta property="og:updated_time" content="2018-05-27T04:42:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="🔒 期中考试">
 <meta name="twitter:description" content="link标签的media属性script标签的charset属性使用svg标签画图">
@@ -438,6 +438,7 @@
 <li>改变this对象的指向问题不仅有call，apply，bind方法，也可以使用that变量来固定this的指向。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</div><div class="line"><span class="keyword">var</span> obj=&#123;<span class="attr">a</span>:<span class="number">3</span>, <span class="attr">b</span>:<span class="number">4</span>&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x,y</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.a*x + <span class="keyword">this</span>.b*y;</div><div class="line">&#125;</div><div class="line">add(<span class="number">5</span>,<span class="number">6</span>); <span class="comment">// 1*5+2*6=17</span></div><div class="line">add.call(<span class="literal">null</span>,<span class="number">5</span>,<span class="number">6</span>) <span class="comment">// 1*5+2*6=17, this指向window</span></div><div class="line">add.call(obj,<span class="number">5</span>,<span class="number">6</span>) <span class="comment">// 3*5+4*6=39 ,this指向obj</span></div><div class="line">add.apply(obj,[<span class="number">5</span>,<span class="number">6</span>]) <span class="comment">// 3*5+4*6=39 ,this指向obj，apply的参数以数组形式传入</span></div><div class="line">add.bind(obj,<span class="number">5</span>,<span class="number">6</span>)() <span class="comment">// 3*5+4*6=39 ,this指向obj，bind方法并非立即执行一个函数，需要再次调用</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
+<p><a href="https://www.zhihu.com/question/40892203/answer/93261099" target="_blank" rel="external">关于javascript的call，apply，bind，bind()与前两种的区别？</a><br><a href="http://xu-li.cn/2017/js-this/" target="_blank" rel="external">js中的bind、call、apply组合使用</a></p>
 <hr>
 <h1 id="HTTP-状态码"><a href="#HTTP-状态码" class="headerlink" title="HTTP 状态码"></a>HTTP 状态码</h1><p><a href="https://earthsplitter.github.io/2017/03/31/2017%E8%85%BE%E8%AE%AF%E5%AE%9E%E4%B9%A0%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" target="_blank" rel="external">2017年腾讯前端实习面试题（二面）</a>：<br>请说出至少 8 个 HTTP 状态码，并描述各状态码的意义。<br>参考菜鸟教程资料：<a href="http://www.runoob.com/http/http-tutorial.html" target="_blank" rel="external">http://www.runoob.com/http/http-tutorial.html</a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">200 OK:请求成功</div><div class="line">201 created:已创建。成功请求并创建了新的资源。一般POST时返回该状态码</div><div class="line"></div><div class="line">301 Moved Permanently:请求的资源(网页)已被永久的转移到其他URI</div><div class="line">302 Found:请求的资源被临时移走了</div><div class="line">304 未修改Not Modified：所请求的资源在上次请求之后没有任何修改（这通常用于浏览器的缓存机制，使用GET请求时尤其需要注意）。服务器返回此状态码时不会返回任何资源。</div><div class="line"></div><div class="line">400：无法找到请求的资源。</div><div class="line">401：访问资源的权限不够。 一般登陆时用户名和密码不对会返回401</div><div class="line">404 Not Found ：请求的资源(网页)不存在。</div><div class="line">403	Forbidden ：没有权限访问资源。</div><div class="line">405：需要访问的资源被禁止。</div><div class="line">407：访问的资源需要代理身份验证。</div><div class="line">414：请求的URL太长。</div><div class="line"></div><div class="line">500	Internal Server Error：服务器内部错误，无法完成请求</div><div class="line">502 Bad Gateway ：充当网关或代理的服务器，从远端服务器接收到了一个无效的请求（比如服务器关了）</div></pre></td></tr></table></figure></p>
 <p><img src="http://ww2.sinaimg.cn/large/87c01ec7gy1fq9p91y7tvj20hk0acwi5.jpg" alt=""></p>
@@ -469,14 +470,14 @@
 <h1 id="一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？"><a href="#一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？" class="headerlink" title="一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？"></a>一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？</h1><p>这一题是在挖掘你的知识边界，所以你知道多少就要答多少。<br>可以先查阅一些资料再查，但是不要把自己不懂的东西放在答案里，面试官会追问的。<br>答：     </p>
 <ol>
 <li>输入URL地址</li>
-<li>浏览器根据域名查找对应的 IP 地址(比如www.baidu.com（百度域名） 的其中一个IP地址是 220.181.112.244)</li>
-<li>建立连接 —— TCP三次握手<br>知道了服务器的 IP 地址，下面便开始与服务器建立TCP连接了。建立需要经历以下三个过程：<br>浏览器向服务器发送一个建立连接的请求（你好，我可以连你吗？）；<br>服务器接到请求后发送同意连接的信号（好的，你来连我吧）；<br>浏览器接到同意连接的信号后，再次向服务器发送了确认信号（那我连你咯！），自此，浏览器与服务器两者建立了连接。</li>
-<li><p>当服务器与浏览器建立了连接之后，浏览器向 web 服务器发送一个 HTTP 请求<br>4.1 请求最多包含四部分，最少包含三部分。（也就是说第四部分可以为空）<br>4.2 第三部分永远都是一个回车<br>4.3 第4部分是要上传的数据<br>4.4 第 2 部分中的 Content-Type 标注了第 4 部分的格式              </p>
+<li>DNS查询：浏览器根据域名查找对应的 IP 地址(比如www.baidu.com（百度域名） 的其中一个IP地址是 220.181.112.244)</li>
+<li>建立TCP连接 —— TCP三次握手<br>知道了服务器的 IP 地址，下面便开始与服务器建立TCP连接了。建立需要经历以下三个过程：<br>浏览器向服务器发送一个建立连接的请求（你好，我可以连你吗？）；<br>服务器接到请求后发送同意连接的信号（好的，你来连我吧）；<br>浏览器接到同意连接的信号后，再次向服务器发送了确认信号（那我连你咯！），自此，浏览器与服务器两者建立了连接。</li>
+<li><p>当TCP连接建立完成以后，浏览器向服务器发送 HTTP 请求<br>4.1 请求最多包含四部分，最少包含三部分。（也就是说第四部分可以为空）<br>4.2 第三部分永远都是一个回车<br>4.3 第4部分是要上传的数据<br>4.4 第 2 部分中的 Content-Type 标注了第 4 部分的格式              </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1 POST / HTTP/1.1</div><div class="line">2 Host: www.baidu.com</div><div class="line">2 User-Agent: curl/7.54.0</div><div class="line">2 Accept: */*</div><div class="line">2 Content-Type: application/x-www-form-urlencoded</div><div class="line">3 </div><div class="line">4 1234567890</div></pre></td></tr></table></figure>
 </li>
 <li><p>服务器处理请求</p>
 </li>
-<li><p>服务器返回一个 HTTP 响应，响应由4部分组成<br>6.1 第1部分表示 协议/版本号 状态码 状态解释<br>6.2 第 2 部分中的 Content-Type 标注了第 4 部分的格式<br>6.3 第3部分永远是个回车<br>6.4 第4部分是要下载的HTML文件内容           </p>
+<li><p>服务器返回 HTTP 响应，响应由4部分组成<br>6.1 第1部分表示 协议/版本号 状态码 状态解释<br>6.2 第 2 部分中的 Content-Type 标注了第 4 部分的格式<br>6.3 第3部分永远是个回车<br>6.4 第4部分是要下载的HTML文件内容           </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1 HTTP/1.1 200 OK</div><div class="line">2 Content-Type: text/html</div><div class="line">2 Content-Length: 17931</div><div class="line">3</div><div class="line">4 &lt;!DOCTYPE html&gt;</div><div class="line">&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt; 后面太长，省略了……</div></pre></td></tr></table></figure>
 </li>
 <li><p>服务器将 HTML 文件发送给浏览器</p>
@@ -636,7 +637,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -647,7 +648,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -658,7 +659,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

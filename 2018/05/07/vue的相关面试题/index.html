@@ -95,7 +95,7 @@
 <meta property="og:url" content="harry0071.github.io/2018/05/07/vue的相关面试题/index.html">
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="vue的相关面试题">
-<meta property="og:updated_time" content="2018-05-22T08:39:59.372Z">
+<meta property="og:updated_time" content="2018-05-23T05:11:18.800Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="🔒 vue的相关面试题">
 <meta name="twitter:description" content="vue的相关面试题">
@@ -370,8 +370,14 @@
 <a id="more"></a>
 <h1 id="响应式原理"><a href="#响应式原理" class="headerlink" title="响应式原理"></a>响应式原理</h1><p>官方文档-深入响应式原理</p>
 <h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><h1 id="什么是组件化"><a href="#什么是组件化" class="headerlink" title="什么是组件化"></a>什么是组件化</h1><p><a href="https://cn.vuejs.org/v2/guide/index.html#%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BA%94%E7%94%A8%E6%9E%84%E5%BB%BA" target="_blank" rel="external">组件化应用构建</a><br>一个页面可能会有页头、侧边栏、内容区等界面，将这些界面抽象为一个个小型、独立和通常可复用的组件。<br>通过 Prop 向子组件传递数据<br>使用$emit事件向父组件抛出一个值<br>举例子：</p>
-<h1 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h1><p>路由就是，你给我一个路径，我返回给你对应的页面   </p>
+<h1 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h1><p>路由就是，根据地址栏的路径，返回对应的页面   </p>
 <h2 id="后端路由"><a href="#后端路由" class="headerlink" title="后端路由"></a>后端路由</h2><p>node.js写法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(path === <span class="string">'/'</span>)&#123;</div><div class="line">	返回主页</div><div class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(path===<span class="string">'/page1'</span>)&#123;</div><div class="line">	返回page1</div><div class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(path===<span class="string">'/page2'</span>)&#123;</div><div class="line">	返回page2</div><div class="line">&#125;<span class="keyword">else</span> &#123;</div><div class="line">	返回<span class="number">404</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="前端路由"><a href="#前端路由" class="headerlink" title="前端路由"></a>前端路由</h2><p>vue-router写法        </p>
+<pre><code class="javascript"><span class="keyword">const</span> routes = [
+  { <span class="attr">path</span>: <span class="string">'/page1'</span>, <span class="attr">component</span>: Page1 },
+  { <span class="attr">path</span>: <span class="string">'/page2'</span>, <span class="attr">component</span>: Page2 }
+]
+</code></pre>
 
       
     </div>
@@ -505,7 +511,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -516,7 +522,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -527,7 +533,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -576,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#响应式原理"><span class="nav-number">1.</span> <span class="nav-text">响应式原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生命周期"><span class="nav-number">2.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是组件化"><span class="nav-number">3.</span> <span class="nav-text">什么是组件化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由"><span class="nav-number">4.</span> <span class="nav-text">路由</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#后端路由"><span class="nav-number">4.1.</span> <span class="nav-text">后端路由</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#响应式原理"><span class="nav-number">1.</span> <span class="nav-text">响应式原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生命周期"><span class="nav-number">2.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是组件化"><span class="nav-number">3.</span> <span class="nav-text">什么是组件化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由"><span class="nav-number">4.</span> <span class="nav-text">路由</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#后端路由"><span class="nav-number">4.1.</span> <span class="nav-text">后端路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端路由"><span class="nav-number">4.2.</span> <span class="nav-text">前端路由</span></a></li></ol></li></ol></div>
             
 
           </div>

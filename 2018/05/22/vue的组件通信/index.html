@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="面试题,vue," />
+  <meta name="keywords" content="笔记,面试题,vue," />
 
 
 
@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="父子组件通信爷孙组件通信兄弟组件通信">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1frjydtd72mj20ho0ewafr.jpg">
-<meta property="og:updated_time" content="2018-05-23T01:42:56.652Z">
+<meta property="og:updated_time" content="2018-05-29T06:25:19.984Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue的组件通信">
 <meta name="twitter:description" content="父子组件通信爷孙组件通信兄弟组件通信">
@@ -369,15 +369,19 @@
         <blockquote>
 <p>父子组件通信<br>爷孙组件通信<br>兄弟组件通信</p>
 </blockquote>
-<iframe style="width: 100%; height: 300px" src="http://sandbox.runjs.cn/show/sy5zakx3" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
 <a id="more"></a>
 <h1 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h1><p><img src="http://ww1.sinaimg.cn/large/87c01ec7gy1frjydtd72mj20ho0ewafr.jpg" alt=""></p>
 <h2 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h2><p><a href="https://cn.vuejs.org/v2/guide/components.html#%E9%80%9A%E8%BF%87-Prop-%E5%90%91%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE" target="_blank" rel="external">父组件使用 props 传递数据给子组件</a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">message</span> <span class="attr">msg</span>=<span class="string">"hello world"</span>&gt;</span><span class="tag">&lt;/<span class="name">message</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'message'</span>,&#123;</div><div class="line">  <span class="attr">props</span>:[<span class="string">'msg'</span>],</div><div class="line">  <span class="attr">template</span>:<span class="string">`&lt;div&gt;&lt;p :title="msg"&gt;我是儿子，我的父亲说&lt;b&gt;&#123;&#123;msg&#125;&#125;&lt;/h1&gt;&lt;b&gt;&lt;/div&gt;`</span>,</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>:<span class="string">'#app'</span>,</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <iframe width="100%" height="600" src="//jsfiddle.net/20170808/cu0ybu7w/2/embedded/result,js,html/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-<h2 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h2><p><a href="https://cn.vuejs.org/v2/guide/components.html#%E9%80%9A%E8%BF%87%E4%BA%8B%E4%BB%B6%E5%90%91%E7%88%B6%E7%BA%A7%E7%BB%84%E4%BB%B6%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF" target="_blank" rel="external">子组件无法直接修改父组件的数据，必须通过$emit()通知父组件，让父组件修改父组件的数据</a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">child-say</span> @<span class="attr">say</span>=<span class="string">"doSomethig"</span>&gt;</span><span class="tag">&lt;/<span class="name">child-say</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"seen"</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h2><p>父组件是使用 props 传递数据给子组件，但如果子组件要把数据传递回去，就需要使用自定义事件！</p>
+<p>我们可以使用 v-on 绑定自定义事件, 每个 Vue 实例都实现了事件接口(Events interface)，即：</p>
+<ul>
+<li>使用 $on(eventName) 监听事件</li>
+<li>使用 $emit(eventName) 触发事件</li>
+</ul>
+<p><a href="https://cn.vuejs.org/v2/guide/components.html#%E9%80%9A%E8%BF%87%E4%BA%8B%E4%BB%B6%E5%90%91%E7%88%B6%E7%BA%A7%E7%BB%84%E4%BB%B6%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF" target="_blank" rel="external">子组件无法直接修改父组件的数据，必须通过$emit()通知父组件，让父组件修改父组件的数据</a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">child-say</span> @<span class="attr">say</span>=<span class="string">"doSomethig"</span>&gt;</span><span class="tag">&lt;/<span class="name">child-say</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"seen"</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'child-say'</span>,&#123;</div><div class="line">  <span class="attr">template</span>:<span class="string">`&lt;button @click="handleClick"&gt;儿子说&lt;/button&gt;`</span>,</div><div class="line">  <span class="attr">methods</span>:&#123;</div><div class="line">    handleClick()&#123;</div><div class="line">      <span class="keyword">this</span>.$emit(<span class="string">'say'</span>,&#123;<span class="attr">a</span>:<span class="string">'hello'</span>,<span class="attr">b</span>:<span class="string">'world'</span>&#125;);</div><div class="line">    &#125;,</div><div class="line">  &#125;,</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">	<span class="attr">el</span>:<span class="string">'#app'</span>,</div><div class="line">  <span class="attr">data</span>:&#123;</div><div class="line">    <span class="attr">seen</span>:<span class="literal">false</span>,</div><div class="line">    <span class="attr">msg</span>:<span class="string">''</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">methods</span>:&#123;</div><div class="line">    doSomethig(data)&#123;</div><div class="line">      <span class="keyword">this</span>.seen = !<span class="keyword">this</span>.seen;</div><div class="line">      <span class="keyword">this</span>.msg=data.a+<span class="string">' '</span>+data.b</div><div class="line">    &#125;,</div><div class="line">  &#125;,</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <iframe width="100%" height="600" src="//jsfiddle.net/20170808/Lwnphtnd/1/embedded/result,js,html/" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
@@ -422,6 +426,8 @@
       
         <div class="post-tags">
           
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
             <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
           
             <a href="/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
@@ -446,6 +452,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/23/vue-router使用记录/" rel="prev" title="vue-router使用记录">
+                vue-router使用记录 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -526,7 +536,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">60</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -537,7 +547,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -548,7 +558,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
