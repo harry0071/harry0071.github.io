@@ -89,16 +89,16 @@
 
 
 
-<meta name="description" content="vue的相关面试题">
+<meta name="description" content="vue的相关面试题vue中文文档合集印记中文docschina">
 <meta property="og:type" content="article">
 <meta property="og:title" content="🔒 vue的相关面试题">
 <meta property="og:url" content="harry0071.github.io/2018/05/07/vue的相关面试题/index.html">
 <meta property="og:site_name" content="stage's blog">
-<meta property="og:description" content="vue的相关面试题">
-<meta property="og:updated_time" content="2018-05-23T05:11:18.800Z">
+<meta property="og:description" content="vue的相关面试题vue中文文档合集印记中文docschina">
+<meta property="og:updated_time" content="2018-06-04T07:03:50.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="🔒 vue的相关面试题">
-<meta name="twitter:description" content="vue的相关面试题">
+<meta name="twitter:description" content="vue的相关面试题vue中文文档合集印记中文docschina">
 
 
 
@@ -365,19 +365,24 @@
 
       
         <blockquote>
-<p>vue的相关面试题</p>
+<p>vue的相关面试题<br><a href="https://github.com/vuejs/vue-docs-zh-cn" target="_blank" rel="external">vue中文文档合集</a><br><a href="https://docschina.org/" target="_blank" rel="external">印记中文docschina</a></p>
 </blockquote>
 <a id="more"></a>
 <h1 id="响应式原理"><a href="#响应式原理" class="headerlink" title="响应式原理"></a>响应式原理</h1><p>官方文档-深入响应式原理</p>
-<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><h1 id="什么是组件化"><a href="#什么是组件化" class="headerlink" title="什么是组件化"></a>什么是组件化</h1><p><a href="https://cn.vuejs.org/v2/guide/index.html#%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BA%94%E7%94%A8%E6%9E%84%E5%BB%BA" target="_blank" rel="external">组件化应用构建</a><br>一个页面可能会有页头、侧边栏、内容区等界面，将这些界面抽象为一个个小型、独立和通常可复用的组件。<br>通过 Prop 向子组件传递数据<br>使用$emit事件向父组件抛出一个值<br>举例子：</p>
-<h1 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h1><p>路由就是，根据地址栏的路径，返回对应的页面   </p>
-<h2 id="后端路由"><a href="#后端路由" class="headerlink" title="后端路由"></a>后端路由</h2><p>node.js写法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(path === <span class="string">'/'</span>)&#123;</div><div class="line">	返回主页</div><div class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(path===<span class="string">'/page1'</span>)&#123;</div><div class="line">	返回page1</div><div class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(path===<span class="string">'/page2'</span>)&#123;</div><div class="line">	返回page2</div><div class="line">&#125;<span class="keyword">else</span> &#123;</div><div class="line">	返回<span class="number">404</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="前端路由"><a href="#前端路由" class="headerlink" title="前端路由"></a>前端路由</h2><p>vue-router写法        </p>
-<pre><code class="javascript"><span class="keyword">const</span> routes = [
-  { <span class="attr">path</span>: <span class="string">'/page1'</span>, <span class="attr">component</span>: Page1 },
-  { <span class="attr">path</span>: <span class="string">'/page2'</span>, <span class="attr">component</span>: Page2 }
-]
-</code></pre>
+<p>视频讲解：<a href="https://jirengu.com/app/album/92" target="_blank" rel="external">https://jirengu.com/app/album/92</a></p>
+<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><h2 id="生命周期钩子函数"><a href="#生命周期钩子函数" class="headerlink" title="生命周期钩子函数"></a>生命周期钩子函数</h2><h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><p><a href="https://cn.vuejs.org/v2/guide/index.html#%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BA%94%E7%94%A8%E6%9E%84%E5%BB%BA" target="_blank" rel="external">组件化应用构建</a><br>一个页面可能会有页头、侧边栏、内容区等界面，将这些界面抽象为一个个小型、独立和通常可复用的组件。<br>通过 Prop 向子组件传递数据<br>使用$emit事件向父组件抛出一个值<br>举例子：</p>
+<h1 id="查看官方示例源码"><a href="#查看官方示例源码" class="headerlink" title="查看官方示例源码"></a>查看官方示例源码</h1><p>查看<a href="https://cn.vuejs.org/v2/examples/todomvc.html" target="_blank" rel="external">todoMVC示例</a>,并能够自己写出来<br><a href="https://github.com/vuejs/vue/tree/dev/examples" target="_blank" rel="external">源码</a></p>
+<h1 id="单文件组件-vue"><a href="#单文件组件-vue" class="headerlink" title="单文件组件.vue"></a>单文件组件.vue</h1><p><a href="https://cn.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="external">单文件组件</a></p>
+<p>单文件组件必须要有<code>&lt;template&gt;</code>；<code>&lt;style&gt;</code>可以有多个</p>
+<h2 id="vue-loader"><a href="#vue-loader" class="headerlink" title="vue-loader"></a>vue-loader</h2><p><a href="https://vue-loader.vuejs.org/zh-cn/" target="_blank" rel="external">vue-loader</a></p>
+<h1 id="路由vue-router"><a href="#路由vue-router" class="headerlink" title="路由vue-router"></a>路由vue-router</h1><p><a href="https://router.vuejs.org/zh-cn/" target="_blank" rel="external">vue-router</a></p>
+<h1 id="状态管理vuex"><a href="#状态管理vuex" class="headerlink" title="状态管理vuex"></a>状态管理vuex</h1><p><a href="https://vuex.vuejs.org/zh-cn/" target="_blank" rel="external">vuex</a></p>
+<h1 id="vue的相关工具"><a href="#vue的相关工具" class="headerlink" title="vue的相关工具"></a>vue的相关工具</h1><ul>
+<li><a href="https://github.com/vuejs/vue-cli" target="_blank" rel="external">github:vue-cli</a></li>
+<li><a href="https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/README.md#%E4%BB%8B%E7%BB%8D" target="_blank" rel="external">vue-cli中文文档</a></li>
+<li><a href="https://github.com/vuejs/vue-devtools" target="_blank" rel="external">vue-devtools</a></li>
+<li><a href="https://athena0304.gitbooks.io/vue-template-webpack-cn/content/" target="_blank" rel="external">vue-webpack模板文档</a></li>
+</ul>
 
       
     </div>
@@ -582,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#响应式原理"><span class="nav-number">1.</span> <span class="nav-text">响应式原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生命周期"><span class="nav-number">2.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是组件化"><span class="nav-number">3.</span> <span class="nav-text">什么是组件化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由"><span class="nav-number">4.</span> <span class="nav-text">路由</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#后端路由"><span class="nav-number">4.1.</span> <span class="nav-text">后端路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端路由"><span class="nav-number">4.2.</span> <span class="nav-text">前端路由</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#响应式原理"><span class="nav-number">1.</span> <span class="nav-text">响应式原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生命周期"><span class="nav-number">2.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期钩子函数"><span class="nav-number">2.1.</span> <span class="nav-text">生命周期钩子函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件化"><span class="nav-number">3.</span> <span class="nav-text">组件化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看官方示例源码"><span class="nav-number">4.</span> <span class="nav-text">查看官方示例源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单文件组件-vue"><span class="nav-number">5.</span> <span class="nav-text">单文件组件.vue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-loader"><span class="nav-number">5.1.</span> <span class="nav-text">vue-loader</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由vue-router"><span class="nav-number">6.</span> <span class="nav-text">路由vue-router</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#状态管理vuex"><span class="nav-number">7.</span> <span class="nav-text">状态管理vuex</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue的相关工具"><span class="nav-number">8.</span> <span class="nav-text">vue的相关工具</span></a></li></ol></div>
             
 
           </div>
