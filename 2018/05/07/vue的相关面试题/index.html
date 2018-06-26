@@ -95,7 +95,7 @@
 <meta property="og:url" content="harry0071.github.io/2018/05/07/vue的相关面试题/index.html">
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="vue的相关面试题vue中文文档合集印记中文docschina">
-<meta property="og:updated_time" content="2018-06-04T07:03:50.040Z">
+<meta property="og:updated_time" content="2018-06-14T06:52:15.128Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="🔒 vue的相关面试题">
 <meta name="twitter:description" content="vue的相关面试题vue中文文档合集印记中文docschina">
@@ -374,6 +374,7 @@
 <h1 id="查看官方示例源码"><a href="#查看官方示例源码" class="headerlink" title="查看官方示例源码"></a>查看官方示例源码</h1><p>查看<a href="https://cn.vuejs.org/v2/examples/todomvc.html" target="_blank" rel="external">todoMVC示例</a>,并能够自己写出来<br><a href="https://github.com/vuejs/vue/tree/dev/examples" target="_blank" rel="external">源码</a></p>
 <h1 id="单文件组件-vue"><a href="#单文件组件-vue" class="headerlink" title="单文件组件.vue"></a>单文件组件.vue</h1><p><a href="https://cn.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="external">单文件组件</a></p>
 <p>单文件组件必须要有<code>&lt;template&gt;</code>；<code>&lt;style&gt;</code>可以有多个</p>
+<h2 id="style"><a href="#style" class="headerlink" title="style"></a>style</h2><p>可以通过@import将样式引入进单vue文件的style里<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="css"></span></div><div class="line">  @<span class="keyword">import</span> <span class="string">'./member_base.css'</span>;</div><div class="line">  @<span class="keyword">import</span> <span class="string">'./member.css'</span>;</div><div class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <h2 id="vue-loader"><a href="#vue-loader" class="headerlink" title="vue-loader"></a>vue-loader</h2><p><a href="https://vue-loader.vuejs.org/zh-cn/" target="_blank" rel="external">vue-loader</a></p>
 <h1 id="路由vue-router"><a href="#路由vue-router" class="headerlink" title="路由vue-router"></a>路由vue-router</h1><p><a href="https://router.vuejs.org/zh-cn/" target="_blank" rel="external">vue-router</a></p>
 <h1 id="状态管理vuex"><a href="#状态管理vuex" class="headerlink" title="状态管理vuex"></a>状态管理vuex</h1><p><a href="https://vuex.vuejs.org/zh-cn/" target="_blank" rel="external">vuex</a></p>
@@ -516,7 +517,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -538,7 +539,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -587,7 +588,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#响应式原理"><span class="nav-number">1.</span> <span class="nav-text">响应式原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生命周期"><span class="nav-number">2.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期钩子函数"><span class="nav-number">2.1.</span> <span class="nav-text">生命周期钩子函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件化"><span class="nav-number">3.</span> <span class="nav-text">组件化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看官方示例源码"><span class="nav-number">4.</span> <span class="nav-text">查看官方示例源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单文件组件-vue"><span class="nav-number">5.</span> <span class="nav-text">单文件组件.vue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-loader"><span class="nav-number">5.1.</span> <span class="nav-text">vue-loader</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由vue-router"><span class="nav-number">6.</span> <span class="nav-text">路由vue-router</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#状态管理vuex"><span class="nav-number">7.</span> <span class="nav-text">状态管理vuex</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue的相关工具"><span class="nav-number">8.</span> <span class="nav-text">vue的相关工具</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#响应式原理"><span class="nav-number">1.</span> <span class="nav-text">响应式原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生命周期"><span class="nav-number">2.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期钩子函数"><span class="nav-number">2.1.</span> <span class="nav-text">生命周期钩子函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件化"><span class="nav-number">3.</span> <span class="nav-text">组件化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看官方示例源码"><span class="nav-number">4.</span> <span class="nav-text">查看官方示例源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单文件组件-vue"><span class="nav-number">5.</span> <span class="nav-text">单文件组件.vue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#style"><span class="nav-number">5.1.</span> <span class="nav-text">style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-loader"><span class="nav-number">5.2.</span> <span class="nav-text">vue-loader</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由vue-router"><span class="nav-number">6.</span> <span class="nav-text">路由vue-router</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#状态管理vuex"><span class="nav-number">7.</span> <span class="nav-text">状态管理vuex</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue的相关工具"><span class="nav-number">8.</span> <span class="nav-text">vue的相关工具</span></a></li></ol></div>
             
 
           </div>

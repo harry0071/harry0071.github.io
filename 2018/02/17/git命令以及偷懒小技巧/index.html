@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fojttae5rvj215o106agj.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1fojtu8nw2zj21k210u44b.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1fojtypznvyj20qc0gcq50.jpg">
-<meta property="og:updated_time" content="2018-04-19T06:17:35.325Z">
+<meta property="og:updated_time" content="2018-06-20T05:46:37.496Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git命令以及偷懒小技巧">
 <meta name="twitter:description" content="本文简单介绍了git与github的配置，以及如何将本地仓库与github连接起来。还介绍了git常用的一些命令，以及如何简化git命令参考资料: 饥人谷菜鸟教程：Git教程">
@@ -534,6 +534,14 @@
 <li>这样一来，你的 Git 操作就会简单很多：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ga 1.txt</div><div class="line">ga .</div><div class="line">gc 1.txt</div><div class="line">gc.</div><div class="line">gst</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<h2 id="永久alias"><a href="#永久alias" class="headerlink" title="永久alias"></a>永久alias</h2><p>上面的方法需要每次运行<code>source ~/.bashrc</code>,改用bash_profile可以配置永久alias </p>
+<ul>
+<li>touch ~/.bash_profile</li>
+<li>start ~/.bash_profile</li>
+<li>用编辑器打开<code>.bash_profile</code></li>
+<li>填入alias</li>
+</ul>
+<p>!注意：等于号两边不能有空格<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">alias</span> gi=<span class="string">'git init'</span></div><div class="line"><span class="built_in">alias</span> gac=<span class="string">'git add . &amp;&amp; git commit -m'</span></div><div class="line"><span class="built_in">alias</span> gst=<span class="string">'git status -sb'</span></div><div class="line"><span class="built_in">alias</span> gpp=<span class="string">'git pull &amp;&amp; git push --progress'</span></div><div class="line"><span class="built_in">alias</span> gl=<span class="string">'git log --oneline'</span></div><div class="line"><span class="built_in">alias</span> gc=<span class="string">'git commit -m'</span></div><div class="line"><span class="built_in">alias</span> gdist=<span class="string">'git subtree push --prefix=dist origin gh-pages'</span></div></pre></td></tr></table></figure></p>
 <h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>还可以在 ~/.bashrc 里面设置一些环境变量，比如你可以在 ~/.bashrc 里面添加一行</p>
 <p><code>export SASS_BINARY_SITE=&quot;https://npm.taobao.org/mirrors/node-sass&quot;</code><br>那么以后你安装 node-sass 的时候就不会因为被墙而报错了。以后会用到的，现在先说一下。</p>
 <h2 id="设置-PATH"><a href="#设置-PATH" class="headerlink" title="设置 PATH"></a>设置 PATH</h2><p><code>export PATH=&quot;目录的绝对路径:$PATH&quot;</code><br>可以在 PATH 里添加一个目录，不要运行，等用到的时候再来查。</p>
@@ -590,8 +598,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/18/gitbash完整操作流程/" rel="prev" title="git bash完整操作流程">
-                git bash完整操作流程 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/18/git到github完整操作流程/" rel="prev" title="git到github的完整操作流程">
+                git到github的完整操作流程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -673,7 +681,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -695,7 +703,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -744,7 +752,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置-GitHub-SSH-Key"><span class="nav-number">1.</span> <span class="nav-text">配置 GitHub (SSH Key)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git的配置与使用"><span class="nav-number">2.</span> <span class="nav-text">Git的配置与使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Git"><span class="nav-number">2.1.</span> <span class="nav-text">配置Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#只在本地使用Git"><span class="nav-number">2.2.</span> <span class="nav-text">只在本地使用Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">2.2.1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.2.2.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将本地仓库上传到-GitHub"><span class="nav-number">2.3.</span> <span class="nav-text">将本地仓库上传到 GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接在-GitHub-创建一个仓库，然后下载到本地"><span class="nav-number">2.4.</span> <span class="nav-text">直接在 GitHub 创建一个仓库，然后下载到本地</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-2"><span class="nav-number">2.4.1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结-1"><span class="nav-number">2.4.2.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何上传更新"><span class="nav-number">2.5.</span> <span class="nav-text">如何上传更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他Git命令"><span class="nav-number">2.6.</span> <span class="nav-text">其他Git命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git操作偷懒技巧"><span class="nav-number">3.</span> <span class="nav-text">git操作偷懒技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自动运行"><span class="nav-number">3.1.</span> <span class="nav-text">自动运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alias-简写"><span class="nav-number">3.2.</span> <span class="nav-text">alias(简写)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量"><span class="nav-number">3.3.</span> <span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-PATH"><span class="nav-number">3.4.</span> <span class="nav-text">设置 PATH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">3.5.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置-GitHub-SSH-Key"><span class="nav-number">1.</span> <span class="nav-text">配置 GitHub (SSH Key)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git的配置与使用"><span class="nav-number">2.</span> <span class="nav-text">Git的配置与使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Git"><span class="nav-number">2.1.</span> <span class="nav-text">配置Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#只在本地使用Git"><span class="nav-number">2.2.</span> <span class="nav-text">只在本地使用Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">2.2.1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.2.2.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将本地仓库上传到-GitHub"><span class="nav-number">2.3.</span> <span class="nav-text">将本地仓库上传到 GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接在-GitHub-创建一个仓库，然后下载到本地"><span class="nav-number">2.4.</span> <span class="nav-text">直接在 GitHub 创建一个仓库，然后下载到本地</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-2"><span class="nav-number">2.4.1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结-1"><span class="nav-number">2.4.2.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何上传更新"><span class="nav-number">2.5.</span> <span class="nav-text">如何上传更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他Git命令"><span class="nav-number">2.6.</span> <span class="nav-text">其他Git命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git操作偷懒技巧"><span class="nav-number">3.</span> <span class="nav-text">git操作偷懒技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自动运行"><span class="nav-number">3.1.</span> <span class="nav-text">自动运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alias-简写"><span class="nav-number">3.2.</span> <span class="nav-text">alias(简写)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#永久alias"><span class="nav-number">3.3.</span> <span class="nav-text">永久alias</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量"><span class="nav-number">3.4.</span> <span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-PATH"><span class="nav-number">3.5.</span> <span class="nav-text">设置 PATH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">3.6.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
             
 
           </div>

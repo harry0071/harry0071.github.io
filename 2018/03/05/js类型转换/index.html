@@ -108,7 +108,7 @@
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fp1t8rnymwj20yq0i4dm2.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1fp1ugfo9z8j20zi0hsq7s.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1fp1ulftgrnj212a0ldjx9.jpg">
-<meta property="og:updated_time" content="2018-03-23T01:20:00.490Z">
+<meta property="og:updated_time" content="2018-06-12T03:04:39.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js类型转换，内存图，数据的引用，垃圾回收，深拷贝vs浅拷贝">
 <meta name="twitter:description" content="js类型转换的方法6个falsy值内存图数据的引用垃圾回收深拷贝vs浅拷贝">
@@ -399,6 +399,7 @@
 <h2 id="x-取正"><a href="#x-取正" class="headerlink" title="+x 取正"></a>+x 取正</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">+ <span class="string">'-1'</span> <span class="comment">// -1</span></div><div class="line">+ <span class="string">'3.14'</span> <span class="comment">// 3.14</span></div></pre></td></tr></table></figure>
 <h1 id="6个falsy值"><a href="#6个falsy值" class="headerlink" title="6个falsy值"></a>6个falsy值</h1><p>0、NaN、空字符串、false、null、undefined</p>
 <p>所有对象的falsy值都是true<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="literal">false</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>);</div><div class="line"><span class="keyword">if</span>(a)&#123;<span class="built_in">console</span>.log(<span class="number">1</span>)&#125;</div><div class="line"><span class="keyword">if</span>(b)&#123;<span class="built_in">console</span>.log(<span class="number">2</span>)&#125; </div><div class="line">结果是<span class="number">2</span>，因为b是个对象</div></pre></td></tr></table></figure></p>
+<p>!注意:<code>{}</code>是true值，因为<code>{}</code>是空对象，所有对象都是true！！</p>
 <h1 id="内存图"><a href="#内存图" class="headerlink" title="内存图"></a>内存图</h1><ul>
 <li>JS 引擎将内存分为代码区和数据区</li>
 </ul>
@@ -562,7 +563,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -584,7 +585,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
