@@ -103,9 +103,9 @@
         <category>js</category>
       </categories>
       <tags>
+        <tag>es6</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
-        <tag>es6</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
@@ -238,7 +238,7 @@
   <entry>
     <title><![CDATA[axios的使用教程]]></title>
     <url>%2F2018%2F04%2F14%2Faxios%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[axios中文文档axios发送GET、POST请求axios拦截器的使用 安装npm i axios 用axios代替ajaxAxios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。axios中文文档 基础用法1234567891011121314151617181920212223242526272829303132// 发送 GET 请求axios(&#123; method: 'get', url: '/user', params: &#123; ID: 12345, &#125;&#125;) .then(function (response) &#123; console.log(response); &#125;) .catch(function (error) &#123; console.log(error); &#125;);;// 发送 POST 请求【data属性只能用于POST】axios(&#123; method: 'post', url: '/user', data: &#123; firstName: 'Fred', lastName: 'Flintstone' &#125;&#125;) .then(function (response) &#123; console.log(response); &#125;) .catch(function (error) &#123; console.log(error); &#125;);; 执行GET请求123456789101112131415161718192021// 为给定 ID 的 user 创建请求axios.get('/user?ID=12345') .then(function (response) &#123; console.log(response); &#125;) .catch(function (error) &#123; console.log(error); &#125;);// 可选地，上面的请求可以这样做axios.get('/user', &#123; params: &#123; ID: 12345 &#125; &#125;) .then(function (response) &#123; console.log(response); &#125;) .catch(function (error) &#123; console.log(error); &#125;); 带查询参数的GET请求1234567891011axios.get('/user', &#123; params: &#123; ID: 12345 &#125; &#125;) .then(res =&gt; &#123; console.log(res); &#125;) .catch(error =&gt; &#123; console.log(error); &#125;); 执行POST请求12345678910axios.post('/user', &#123; firstName: 'Fred', lastName: 'Flintstone' &#125;) .then(function (response) &#123; console.log(response); &#125;) .catch(function (error) &#123; console.log(error); &#125;); 拦截响应，返回自定义假数据123456789101112131415161718192021// 添加响应拦截器axios.interceptors.response.use(function (response) &#123; // 对响应数据做点什么 let &#123;config:&#123;url,method,data&#125;&#125; = response; //↑ 分解成let url = response.config.url; if (url === '/book/1' &amp;&amp; method === 'get') &#123; response.data = &#123; name: stage, &#125; &#125; else if (url === '/books/1' &amp;&amp; method === 'put') &#123; data = JSON.parse(data) Object.assign(book, data) response.data = book &#125; return response; &#125;, function (error) &#123; // 对响应错误做点什么 return Promise.reject(error); &#125;);]]></content>
+    <content type="text"><![CDATA[axios中文文档axios发送GET、POST请求axios拦截器的使用 安装npm i axios -S 用axios代替ajaxAxios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。axios中文文档 基础用法1234567891011121314151617181920212223242526272829303132// 发送 GET 请求axios(&#123; method: 'get', url: '/user', params: &#123; ID: 12345, &#125;&#125;) .then(function (response) &#123; console.log(response); &#125;) .catch(function (error) &#123; console.log(error); &#125;);;// 发送 POST 请求【data属性只能用于POST】axios(&#123; method: 'post', url: '/user', data: &#123; firstName: 'Fred', lastName: 'Flintstone' &#125;&#125;) .then(function (response) &#123; console.log(response); &#125;) .catch(function (error) &#123; console.log(error); &#125;);; 执行GET请求123456789101112131415161718192021// 为给定 ID 的 user 创建请求axios.get('/user?ID=12345') .then(function (response) &#123; console.log(response); &#125;) .catch(function (error) &#123; console.log(error); &#125;);// 可选地，上面的请求可以这样做axios.get('/user', &#123; params: &#123; ID: 12345 &#125; &#125;) .then(function (response) &#123; console.log(response); &#125;) .catch(function (error) &#123; console.log(error); &#125;); 带查询参数的GET请求1234567891011axios.get('/user', &#123; params: &#123; ID: 12345 &#125; &#125;) .then(res =&gt; &#123; console.log(res); &#125;) .catch(error =&gt; &#123; console.log(error); &#125;); 执行POST请求12345678910axios.post('/user', &#123; firstName: 'Fred', lastName: 'Flintstone' &#125;) .then(function (response) &#123; console.log(response); &#125;) .catch(function (error) &#123; console.log(error); &#125;); 拦截响应，返回自定义假数据123456789101112131415161718192021// 添加响应拦截器axios.interceptors.response.use(function (response) &#123; // 对响应数据做点什么 let &#123;config:&#123;url,method,data&#125;&#125; = response; //↑ 分解成let url = response.config.url; if (url === '/book/1' &amp;&amp; method === 'get') &#123; response.data = &#123; name: stage, &#125; &#125; else if (url === '/books/1' &amp;&amp; method === 'put') &#123; data = JSON.parse(data) Object.assign(book, data) response.data = book &#125; return response; &#125;, function (error) &#123; // 对响应错误做点什么 return Promise.reject(error); &#125;); jsonpaxios文档：关于jsonp 安装1npm i jsonp -S 使用12345678910//const jsonp = require('jsonp');import jsonp from 'jsonp'jsonp('http://www.example.com/foo', null, (err, data) =&gt; &#123; if (err) &#123; console.log(err.message); &#125; else &#123; console.log(data); &#125;&#125;);]]></content>
       <categories>
         <category>vue</category>
       </categories>
@@ -295,9 +295,9 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -308,9 +308,9 @@
         <category>http</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
         <tag>http</tag>
         <tag>请求与响应</tag>
       </tags>
@@ -323,8 +323,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -335,9 +335,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -374,9 +374,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -398,9 +398,9 @@
         <category>移动端</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
         <tag>css</tag>
         <tag>移动端</tag>
       </tags>
@@ -454,8 +454,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
         <tag>http</tag>
         <tag>css</tag>
         <tag>html</tag>
@@ -470,10 +470,10 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>js</tag>
-        <tag>dom</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
+        <tag>dom</tag>
       </tags>
   </entry>
   <entry>
@@ -484,9 +484,9 @@
         <category>es6</category>
       </categories>
       <tags>
+        <tag>es6</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
-        <tag>es6</tag>
       </tags>
   </entry>
   <entry>
@@ -510,8 +510,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
         <tag>css</tag>
         <tag>html</tag>
         <tag>jq</tag>
@@ -525,8 +525,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>笔记</tag>
+        <tag>js</tag>
         <tag>jq</tag>
       </tags>
   </entry>
@@ -538,10 +538,10 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>js</tag>
-        <tag>dom</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
+        <tag>dom</tag>
       </tags>
   </entry>
   <entry>
@@ -552,9 +552,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -565,9 +565,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -591,9 +591,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -604,9 +604,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -617,9 +617,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -642,9 +642,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -668,9 +668,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
