@@ -89,17 +89,17 @@
 
 
 
-<meta name="description" content="总结了一些前端的相关面试题">
+<meta name="description" content="总结了一些前端的相关面试题http://ovenzeze.coding.me/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="🔒 前端面试题">
 <meta property="og:url" content="harry0071.github.io/2018/03/15/前端面试题/index.html">
 <meta property="og:site_name" content="stage's blog">
-<meta property="og:description" content="总结了一些前端的相关面试题">
+<meta property="og:description" content="总结了一些前端的相关面试题http://ovenzeze.coding.me/">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fpdbcbit86j20xc0ien4p.jpg">
-<meta property="og:updated_time" content="2018-06-27T01:27:58.383Z">
+<meta property="og:updated_time" content="2018-07-02T03:20:42.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="🔒 前端面试题">
-<meta name="twitter:description" content="总结了一些前端的相关面试题">
+<meta name="twitter:description" content="总结了一些前端的相关面试题http://ovenzeze.coding.me/">
 <meta name="twitter:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fpdbcbit86j20xc0ien4p.jpg">
 
 
@@ -367,11 +367,51 @@
 
       
         <blockquote>
-<p>总结了一些前端的相关面试题</p>
+<p>总结了一些前端的相关面试题<br><a href="http://ovenzeze.coding.me/" target="_blank" rel="external">http://ovenzeze.coding.me/</a></p>
 </blockquote>
 <a id="more"></a>
-<p><a href="http://ovenzeze.coding.me/" target="_blank" rel="external">http://ovenzeze.coding.me/</a></p>
-<h1 id="谈谈内容，样式，行为的分离"><a href="#谈谈内容，样式，行为的分离" class="headerlink" title="谈谈内容，样式，行为的分离"></a>谈谈内容，样式，行为的分离</h1><p>html负责内容<br>css负责样式<br>js负责行为<br>为什么这三者要分离？（反过来回答：如果不分离会导致……）<br>如果用html负责样式<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">bgcolor</span>=<span class="string">green</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">center</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span> <span class="attr">size</span>=<span class="string">20</span>&gt;</span>文字居中<span class="tag">&lt;/<span class="name">font</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">center</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1 id="解题套路"><a href="#解题套路" class="headerlink" title="解题套路"></a>解题套路</h1><ol>
+<li>抽象的问题，通过举例子来说明</li>
+<li>遇到不会的，转移话题到会的内容，比如：不了解async/await，就和面试官说，我平时处理异步用的是Promise，然后把话题转到Promise的知识</li>
+<li>侃侃而谈，讲述这项技术的历史发展</li>
+</ol>
+<h1 id="HTML考题"><a href="#HTML考题" class="headerlink" title="HTML考题"></a>HTML考题</h1><h2 id="如何理解-HTML-语义化"><a href="#如何理解-HTML-语义化" class="headerlink" title="如何理解 HTML 语义化"></a>如何理解 HTML 语义化</h2><p>方法1 举例子：段落用 p，边栏用 aside，主要内容用 main 标签<br>方法2 将发展历史：             </p>
+<blockquote>
+<p>最开始是 PHP 后端写 HTML，不会 CSS，于是就用 table 来布局。table 使用展示表格的。严重违反了 HTML 语义化。<br>后来有了专门的写 CSS 的前端，他们会使用 DIV + CSS 布局，主要是用 float 和绝对定位布局。稍微符合了 HTML 语义化。<br>再后来，前端专业化，知道 HTML 的各个标签的用法，于是会使用恰当的标签来展示内容，而不是傻傻的全用 div，会尽量使用 h1、ul、p、main、header 等标签<br>语义化的好处是易读、有利于SEO等。</p>
+</blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/32570423" target="_blank" rel="external">知乎专栏详细答案</a></p>
+<h2 id="meta-viewport-是做什么用的，怎么写？"><a href="#meta-viewport-是做什么用的，怎么写？" class="headerlink" title="meta viewport 是做什么用的，怎么写？"></a>meta viewport 是做什么用的，怎么写？</h2><p>方法1 举例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">快捷方式 meta:vp + tab键</div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></div><div class="line">控制页面在移动端不要缩小显示。</div></pre></td></tr></table></figure></p>
+<p>方法2 侃侃而谈：         </p>
+<blockquote>
+<p>一开始，所有页面都是给PC准备的，乔布斯推出 iPhone 3GS，页面是不适应手机屏幕的，所以乔布斯的工程师想了一个办法，默认把手机模拟成 980px，页面缩小。<br>后来，智能手机普及，这个功能在部分网站不需要了，所以我们就用 meta:vp 让手机不要缩小我的网页。</p>
+</blockquote>
+<h2 id="canvas-元素是干什么的？"><a href="#canvas-元素是干什么的？" class="headerlink" title="canvas 元素是干什么的？"></a>canvas 元素是干什么的？</h2><p>把画板项目丢给他<br>看 MDN 的 canvas <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API" target="_blank" rel="external">入门手册</a></p>
+<h1 id="css考题"><a href="#css考题" class="headerlink" title="css考题"></a>css考题</h1><h2 id="说说盒模型"><a href="#说说盒模型" class="headerlink" title="说说盒模型"></a>说说盒模型</h2><ul>
+<li>一般盒模型</li>
+<li>border-box状态</li>
+</ul>
+<h2 id="css-reset-和-normalize-css-有什么区别？"><a href="#css-reset-和-normalize-css-有什么区别？" class="headerlink" title="css reset 和 normalize.css 有什么区别？"></a>css reset 和 normalize.css 有什么区别？</h2><ul>
+<li>reset 重置，之前的样式我都不要了，抛弃默认样式</li>
+<li>normalize 使标准化， 让所有浏览器的标签都跟标准规定的默认样式一致，各浏览器上的标签默认样式基本统一。</li>
+</ul>
+<h2 id="如何居中"><a href="#如何居中" class="headerlink" title="如何居中"></a>如何居中</h2><h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><ul>
+<li>块元素：爸爸身上写 text-align:center;</li>
+<li>inline元素：margin:0 auto;</li>
+</ul>
+<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><p><a href="https://jscode.me/t/topic/1936" target="_blank" rel="external">https://jscode.me/t/topic/1936</a></p>
+<h2 id="css选择器的优先级如何确定？"><a href="#css选择器的优先级如何确定？" class="headerlink" title="css选择器的优先级如何确定？"></a>css选择器的优先级如何确定？</h2><p>看笔记<br>同样优先级，写在后面的覆盖前面的。<br>color: red !important; 优先级最高。</p>
+<h2 id="BFC-是什么？"><a href="#BFC-是什么？" class="headerlink" title="BFC 是什么？"></a>BFC 是什么？</h2><p>举例子：</p>
+<ul>
+<li>overflow:hidden 清除浮动。（但我平常总是用 .clearfix 清除浮动)</li>
+<li>overflow:hidden 取消父子 margin 合并(给儿子设置margin-top时，爸爸也会被顶下去)</li>
+</ul>
+<h2 id="如何清除浮动？"><a href="#如何清除浮动？" class="headerlink" title="如何清除浮动？"></a>如何清除浮动？</h2><p>看笔记</p>
+<ul>
+<li>overflow:hidden</li>
+<li>给父级加上class=”clearfix”          <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</div><div class="line">  <span class="attribute">content</span>:<span class="string">''</span>;</div><div class="line">  <span class="attribute">display</span>:block;</div><div class="line">  <span class="attribute">clear</span>:both;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clearfix</span>&#123;</div><div class="line">  <span class="attribute">zoom</span>:<span class="number">1</span>; <span class="comment">/*兼容低版本IE*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="js考题"><a href="#js考题" class="headerlink" title="js考题"></a>js考题</h1><h1 id="谈谈内容，样式，行为的分离"><a href="#谈谈内容，样式，行为的分离" class="headerlink" title="谈谈内容，样式，行为的分离"></a>谈谈内容，样式，行为的分离</h1><p>html负责内容<br>css负责样式<br>js负责行为<br>为什么这三者要分离？（反过来回答：如果不分离会导致……）<br>如果用html负责样式<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">bgcolor</span>=<span class="string">green</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">center</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">red</span> <span class="attr">size</span>=<span class="string">20</span>&gt;</span>文字居中<span class="tag">&lt;/<span class="name">font</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">center</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>这样会使得html的标签有些是用来表示内容的，有些是用来表示样式的，导致html结构很复杂，很难区分这些标签的逻辑结构      </p>
 <p>如果用css负责内容<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">div:after&#123;</div><div class="line">	content:'我是内容';</div><div class="line">&#125;</div><div class="line">```    </div><div class="line">这样会导致用户无法选中内容；js也无法取到     </div><div class="line"></div><div class="line">如果用js负责样式</div><div class="line">```javascript</div><div class="line">$('#div1').show(); // 这会导致原本的display修改为block</div></pre></td></tr></table></figure></p>
 <p>建议设置css,然后通过addClass和removeClass来切换样式<br><img src="http://ww3.sinaimg.cn/large/87c01ec7gy1fpdbcbit86j20xc0ien4p.jpg" alt=""></p>
@@ -532,7 +572,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-count">73</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -603,7 +643,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#谈谈内容，样式，行为的分离"><span class="nav-number">1.</span> <span class="nav-text">谈谈内容，样式，行为的分离</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于性能优化"><span class="nav-number">2.</span> <span class="nav-text">关于性能优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异步与回调"><span class="nav-number">3.</span> <span class="nav-text">异步与回调</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#异步"><span class="nav-number">3.1.</span> <span class="nav-text">异步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回调"><span class="nav-number">3.2.</span> <span class="nav-text">回调</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this"><span class="nav-number">4.</span> <span class="nav-text">this</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#this的指向"><span class="nav-number">4.1.</span> <span class="nav-text">this的指向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#箭头函数的this"><span class="nav-number">4.2.</span> <span class="nav-text">箭头函数的this</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#new一个实例对象-this指向这个实例对象"><span class="nav-number">5.</span> <span class="nav-text">new一个实例对象,this指向这个实例对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定时器"><span class="nav-number">6.</span> <span class="nav-text">定时器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#解题套路"><span class="nav-number">1.</span> <span class="nav-text">解题套路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML考题"><span class="nav-number">2.</span> <span class="nav-text">HTML考题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何理解-HTML-语义化"><span class="nav-number">2.1.</span> <span class="nav-text">如何理解 HTML 语义化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#meta-viewport-是做什么用的，怎么写？"><span class="nav-number">2.2.</span> <span class="nav-text">meta viewport 是做什么用的，怎么写？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#canvas-元素是干什么的？"><span class="nav-number">2.3.</span> <span class="nav-text">canvas 元素是干什么的？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#css考题"><span class="nav-number">3.</span> <span class="nav-text">css考题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#说说盒模型"><span class="nav-number">3.1.</span> <span class="nav-text">说说盒模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-reset-和-normalize-css-有什么区别？"><span class="nav-number">3.2.</span> <span class="nav-text">css reset 和 normalize.css 有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何居中"><span class="nav-number">3.3.</span> <span class="nav-text">如何居中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#水平居中"><span class="nav-number">3.3.1.</span> <span class="nav-text">水平居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直居中"><span class="nav-number">3.3.2.</span> <span class="nav-text">垂直居中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css选择器的优先级如何确定？"><span class="nav-number">3.4.</span> <span class="nav-text">css选择器的优先级如何确定？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFC-是什么？"><span class="nav-number">3.5.</span> <span class="nav-text">BFC 是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何清除浮动？"><span class="nav-number">3.6.</span> <span class="nav-text">如何清除浮动？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#js考题"><span class="nav-number">4.</span> <span class="nav-text">js考题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#谈谈内容，样式，行为的分离"><span class="nav-number">5.</span> <span class="nav-text">谈谈内容，样式，行为的分离</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于性能优化"><span class="nav-number">6.</span> <span class="nav-text">关于性能优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异步与回调"><span class="nav-number">7.</span> <span class="nav-text">异步与回调</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#异步"><span class="nav-number">7.1.</span> <span class="nav-text">异步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回调"><span class="nav-number">7.2.</span> <span class="nav-text">回调</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this"><span class="nav-number">8.</span> <span class="nav-text">this</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#this的指向"><span class="nav-number">8.1.</span> <span class="nav-text">this的指向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#箭头函数的this"><span class="nav-number">8.2.</span> <span class="nav-text">箭头函数的this</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#new一个实例对象-this指向这个实例对象"><span class="nav-number">9.</span> <span class="nav-text">new一个实例对象,this指向这个实例对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定时器"><span class="nav-number">10.</span> <span class="nav-text">定时器</span></a></li></ol></div>
             
 
           </div>

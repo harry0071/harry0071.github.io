@@ -95,7 +95,7 @@
 <meta property="og:url" content="harry0071.github.io/2018/05/08/vue简历编辑器实战总结/index.html">
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="用vue做一个项目的详细步骤总结">
-<meta property="og:updated_time" content="2018-05-22T05:12:26.679Z">
+<meta property="og:updated_time" content="2018-07-05T02:42:29.899Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="🔒 vue简历编辑器实战总结">
 <meta name="twitter:description" content="用vue做一个项目的详细步骤总结">
@@ -374,7 +374,7 @@
 <ul>
 <li>引入LeanCloud</li>
 </ul>
-
+<h1 id="eval的替代方法"><a href="#eval的替代方法" class="headerlink" title="eval的替代方法"></a>eval的替代方法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">evil</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> Fn = <span class="built_in">Function</span>;  <span class="comment">//一个变量指向Function，防止有些前端编译工具报错</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Fn(<span class="string">'return '</span> + str)();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//测试↓</span></div><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;;</div><div class="line">evil(<span class="string">'obj.a'</span>); <span class="comment">// 1</span></div></pre></td></tr></table></figure>
       
     </div>
     
@@ -509,7 +509,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-count">73</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -580,7 +580,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化项目"><span class="nav-number">1.</span> <span class="nav-text">初始化项目</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初始化项目"><span class="nav-number">1.</span> <span class="nav-text">初始化项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#eval的替代方法"><span class="nav-number">2.</span> <span class="nav-text">eval的替代方法</span></a></li></ol></div>
             
 
           </div>

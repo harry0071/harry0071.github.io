@@ -95,10 +95,15 @@
 <meta property="og:url" content="harry0071.github.io/2018/05/07/vue的相关面试题/index.html">
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="vue的相关面试题vue中文文档合集印记中文docschina">
-<meta property="og:updated_time" content="2018-06-14T06:52:15.128Z">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1ft5p93alw6j218g0nm404.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fsyt76z4pgj21gs1iku0b.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fsytlpr83kj20vl2517g0.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fsytnwf64aj20ka0z20vd.jpg">
+<meta property="og:updated_time" content="2018-07-11T14:54:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="🔒 vue的相关面试题">
 <meta name="twitter:description" content="vue的相关面试题vue中文文档合集印记中文docschina">
+<meta name="twitter:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1ft5p93alw6j218g0nm404.jpg">
 
 
 
@@ -368,9 +373,52 @@
 <p>vue的相关面试题<br><a href="https://github.com/vuejs/vue-docs-zh-cn" target="_blank" rel="external">vue中文文档合集</a><br><a href="https://docschina.org/" target="_blank" rel="external">印记中文docschina</a></p>
 </blockquote>
 <a id="more"></a>
-<h1 id="响应式原理"><a href="#响应式原理" class="headerlink" title="响应式原理"></a>响应式原理</h1><p>官方文档-深入响应式原理</p>
+<h1 id="请简述MVVM"><a href="#请简述MVVM" class="headerlink" title="请简述MVVM"></a>请简述MVVM</h1><p>MVVM是Model-View-ViewModel的缩写<br><img src="http://ww2.sinaimg.cn/large/87c01ec7gy1ft5p93alw6j218g0nm404.jpg" alt="vue-MVVM图">          </p>
+<ul>
+<li>view：HTML页面</li>
+<li>ViewModel：业务逻辑层(一切js可以看作业务逻辑，比如表单提交、自定义事件的注册和处理逻辑都在vm里面负责监控两边的数据)</li>
+<li>model：数据层，用于对数据的处理(比如增删改查)</li>
+</ul>
+<p>在MVVM架构下，View 和 Model 之间并没有直接的联系，而是通过ViewModel进行交互，Model 和 ViewModel 之间的交互是双向的， 因此View 数据的变化会同步到Model中，而Model 数据的变化也会立即反应到View 上。</p>
+<p>ViewModel 通过双向数据绑定把 View 层和 Model 层连接了起来，而View 和 Model 之间的同步工作完全是自动的，因此开发者不需要关注DOM操作了。</p>
+<p>DOM Listeners和Data Bindings是实现双向绑定的关键。<br>DOM Listeners监听页面所有View层DOM元素的变化，当发生变化，Model层的数据随之变化<br>Data Bindings监听Model层的数据，当数据发生变化，View层的DOM元素随之变化。</p>
+<p><a href="https://blog.csdn.net/qq_33834489/article/details/80439937" target="_blank" rel="external">MVVM详细的实现</a></p>
+<h2 id="mvvm和mvc区别"><a href="#mvvm和mvc区别" class="headerlink" title="mvvm和mvc区别"></a>mvvm和mvc区别</h2><p>主要就是mvc中Controller演变成mvvm中的viewModel。mvvm主要解决了mvc中大量的DOM 操作使页面渲染性能降低，加载速度变慢，影响用户体验。</p>
+<p>区别：vue数据驱动，通过数据来显示视图层而不是节点操作。<br>场景：数据操作比较多的场景，更加便捷</p>
+<h1 id="vue-js的优点"><a href="#vue-js的优点" class="headerlink" title="vue.js的优点"></a>vue.js的优点</h1><ul>
+<li>简洁： HTML 模板 + JSON 数据，再创建一个 Vue 实例，就这么简单。</li>
+<li>数据驱动： 自动追踪依赖的模板表达式和计算属性。</li>
+<li>组件化： 用解耦、可复用的组件来构造界面。</li>
+<li>轻量： ~24kb min+gzip，无依赖。</li>
+<li>快速： 精确有效的异步批量 DOM 更新。</li>
+</ul>
+<p>另一种答案：</p>
+<ul>
+<li>低耦合。视图（View）可以独立于Model变化和修改，一个ViewModel可以绑定到不同的”View”上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。</li>
+<li>可重用性。你可以把一些视图逻辑放在一个ViewModel里面，让很多view重用这段视图逻辑。</li>
+<li>独立开发。开发人员可以专注于业务逻辑和数据的开发（ViewModel），设计人员可以专注于页面设计。</li>
+<li>可测试。界面素来是比较难于测试的，而现在测试可以针对ViewModel来写<br>易用灵活高效</li>
+</ul>
+<h1 id="vue与react和angular的对比"><a href="#vue与react和angular的对比" class="headerlink" title="vue与react和angular的对比"></a>vue与react和angular的对比</h1><h1 id="响应式原理"><a href="#响应式原理" class="headerlink" title="响应式原理"></a>响应式原理</h1><p>官方文档-深入响应式原理</p>
 <p>视频讲解：<a href="https://jirengu.com/app/album/92" target="_blank" rel="external">https://jirengu.com/app/album/92</a></p>
-<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><h2 id="生命周期钩子函数"><a href="#生命周期钩子函数" class="headerlink" title="生命周期钩子函数"></a>生命周期钩子函数</h2><h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><p><a href="https://cn.vuejs.org/v2/guide/index.html#%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BA%94%E7%94%A8%E6%9E%84%E5%BB%BA" target="_blank" rel="external">组件化应用构建</a><br>一个页面可能会有页头、侧边栏、内容区等界面，将这些界面抽象为一个个小型、独立和通常可复用的组件。<br>通过 Prop 向子组件传递数据<br>使用$emit事件向父组件抛出一个值<br>举例子：</p>
+<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><p><img src="http://ww3.sinaimg.cn/large/87c01ec7gy1fsyt76z4pgj21gs1iku0b.jpg" alt="生命周期中文注解图"></p>
+<h2 id="生命周期钩子函数"><a href="#生命周期钩子函数" class="headerlink" title="生命周期钩子函数"></a>生命周期钩子函数</h2><p><img src="http://ww4.sinaimg.cn/large/87c01ec7gy1fsytlpr83kj20vl2517g0.jpg" alt=""><br>Vue提供的可以注册的钩子都在上图片的红色框标注。 他们分别是：</p>
+<ol>
+<li>beforeCreate：在实例初始化之后，数据观测(data observer) 和 event/watcher 事件配置之前被调用。</li>
+<li>created：实例创建完成之后被调用。在这一步，实例已完成以下的配置：数据观测(data observer)，属性和方法的运算， watch/event 事件回调。然而，尚未挂载到DOM上，$el 还不可用。</li>
+<li>beforeMount：在挂载开始之前被调用：相关的 render 函数首次被调用。</li>
+<li>mounted：el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子。如果 root 实例挂载了一个文档内元素，当 mounted 被调用时 vm.$el 也在文档内。</li>
+<li>beforeUpdate：数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。 你可以在这个钩子中进一步地更改状态，这不会触发附加的重渲染过程。</li>
+<li>updated：由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。然而在大多数情况下，你应该避免在此期间更改状态，因为这可能会导致更新无限循环。该钩子在服务器端渲染期间不被调用。</li>
+<li>beforeDestroy：实例销毁之前调用。在这一步，实例仍然完全可用。</li>
+<li>destroyed：Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。 该钩子在服务器端渲染期间不被调用。</li>
+</ol>
+<p><img src="http://ww4.sinaimg.cn/large/87c01ec7gy1fsytnwf64aj20ka0z20vd.jpg" alt="生命周期黑白简图"><br>| 钩子函数        | 描述   | 例子 |<br>| ——–   | ——  | ——— |<br>| beforeCreate  | 实例初始化，$el 与 data 都未初始化 | 此时无法获取到this(data和methods) |<br>| created  | 实例创建完成，data 配置完成但挂载还未开始 $el 仍未初始化 | 此时可以获取到this(data和methods)，一般用于异步数据的请求/初始化(将$bus绑定到this.prototype、读取localStorage等) |<br>| beforeMount |挂载开始前，render 函数被调用，$el 和 data 配置完成，但数据未在 DOM 上渲染 |<br>| mounted | 挂载完成，el 被新创建的 vm.$el 替换并挂载到实例上去，data里的初始数据在 DOM 上渲染完毕 | 此时可以获取由data里初始数据渲染后的DOM节点 |<br>| beforeUpdate | 数据更新时调用，但不进行 DOM 重新渲染 |<br>| updated | 数据更新并且 DOM 重新渲染，此时可执行依赖于 DOM 的操作 | 此时可以获取到异步请求的数据替换初始数据渲染后的DOM节点 |<br>| beforeDertroy | 实例销毁前 |<br>| destroyed | 实例销毁后 |</p>
+<p>日期<code>new Date()</code>不能放在<code>data:{time:new Date()}</code>，这样日期不会实时变化，可以放在<code>created</code>或者<code>mounted</code>这两个生命周期函数内<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mounted()&#123;</div><div class="line">  timer = setInterval(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">    <span class="keyword">this</span>.time = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">  &#125;,<span class="number">1000</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a class="jsbin-embed" href="http://js.jirengu.com/tojujaxuvo/1/embed?html,js,output" target="_blank" rel="external">【时间与生命周期函数】</a><script src="http://js.jirengu.com/js/embed.js"></script></p>
+<h2 id="updated和this-nextTick-callback"><a href="#updated和this-nextTick-callback" class="headerlink" title="updated和this.$nextTick(callback)"></a>updated和this.$nextTick(callback)</h2><p><a href="https://cn.vuejs.org/v2/api/#vm-nextTick" target="_blank" rel="external">api：this.$nextTick(callback)</a><br>在数据改变之后立即使用this.$nextTick，待 DOM 渲染完成之后，会执行nextTick里的callback<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">created:&#123;</div><div class="line">	<span class="comment">//异步请求</span></div><div class="line">	axios().then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">		<span class="keyword">this</span>.lists = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</div><div class="line">		<span class="keyword">this</span>.$nextTick(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">			<span class="built_in">console</span>.log(<span class="string">'第1次更新'</span>);</div><div class="line">		&#125;);</div><div class="line">	&#125;);</div><div class="line">	axios().then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">		<span class="keyword">this</span>.lists = [<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>];</div><div class="line">		<span class="keyword">this</span>.$nextTick(()=&#123;</div><div class="line">			<span class="built_in">console</span>.log(<span class="string">'第2次更新'</span>);</div><div class="line">		&#125;);</div><div class="line">	&#125;);</div><div class="line">&#125;,</div><div class="line"><span class="attr">updated</span>:&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="number">1</span>);</div><div class="line">	<span class="comment">//每次数据有变化，都会执行updated</span></div><div class="line">	<span class="comment">//由于lists更新了2次，所以会打印2次1</span></div><div class="line">	<span class="comment">//如果不希望每次数据变化都执行，或者想要执行不同的方法，可以用this.$nextTick</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果在数据变化并重新渲染DOM完成之后，要操作DOM，就用this.$nextTick<br>如果不操作DOM，那就用watch侦听器<br>updated：只要data里的任何一个数据发生变化，就会触发；watch可以侦听data里具体某个数据的变化</p>
+<h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><p><a href="https://cn.vuejs.org/v2/guide/index.html#%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BA%94%E7%94%A8%E6%9E%84%E5%BB%BA" target="_blank" rel="external">组件化应用构建</a><br>一个页面可能会有页头、侧边栏、内容区等界面，将这些界面抽象为一个个小型、独立和通常可复用的组件。<br>通过 Prop 向子组件传递数据<br>使用$emit事件向父组件抛出一个值<br>举例子：</p>
 <h1 id="查看官方示例源码"><a href="#查看官方示例源码" class="headerlink" title="查看官方示例源码"></a>查看官方示例源码</h1><p>查看<a href="https://cn.vuejs.org/v2/examples/todomvc.html" target="_blank" rel="external">todoMVC示例</a>,并能够自己写出来<br><a href="https://github.com/vuejs/vue/tree/dev/examples" target="_blank" rel="external">源码</a></p>
 <h1 id="单文件组件-vue"><a href="#单文件组件-vue" class="headerlink" title="单文件组件.vue"></a>单文件组件.vue</h1><p><a href="https://cn.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="external">单文件组件</a></p>
 <p>单文件组件必须要有<code>&lt;template&gt;</code>；<code>&lt;style&gt;</code>可以有多个</p>
@@ -384,6 +432,7 @@
 <li><a href="https://github.com/vuejs/vue-devtools" target="_blank" rel="external">vue-devtools</a></li>
 <li><a href="https://athena0304.gitbooks.io/vue-template-webpack-cn/content/" target="_blank" rel="external">vue-webpack模板文档</a></li>
 </ul>
+<h1 id="面试题资料"><a href="#面试题资料" class="headerlink" title="面试题资料"></a>面试题资料</h1><p><a href="https://www.jianshu.com/p/b1dd80f4d542" target="_blank" rel="external">https://www.jianshu.com/p/b1dd80f4d542</a><br><a href="http://www.imooc.com/article/details/id/23787" target="_blank" rel="external">http://www.imooc.com/article/details/id/23787</a></p>
 
       
     </div>
@@ -517,7 +566,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-count">73</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -588,7 +637,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#响应式原理"><span class="nav-number">1.</span> <span class="nav-text">响应式原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生命周期"><span class="nav-number">2.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期钩子函数"><span class="nav-number">2.1.</span> <span class="nav-text">生命周期钩子函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件化"><span class="nav-number">3.</span> <span class="nav-text">组件化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看官方示例源码"><span class="nav-number">4.</span> <span class="nav-text">查看官方示例源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单文件组件-vue"><span class="nav-number">5.</span> <span class="nav-text">单文件组件.vue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#style"><span class="nav-number">5.1.</span> <span class="nav-text">style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-loader"><span class="nav-number">5.2.</span> <span class="nav-text">vue-loader</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由vue-router"><span class="nav-number">6.</span> <span class="nav-text">路由vue-router</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#状态管理vuex"><span class="nav-number">7.</span> <span class="nav-text">状态管理vuex</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue的相关工具"><span class="nav-number">8.</span> <span class="nav-text">vue的相关工具</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#请简述MVVM"><span class="nav-number">1.</span> <span class="nav-text">请简述MVVM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mvvm和mvc区别"><span class="nav-number">1.1.</span> <span class="nav-text">mvvm和mvc区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue-js的优点"><span class="nav-number">2.</span> <span class="nav-text">vue.js的优点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue与react和angular的对比"><span class="nav-number">3.</span> <span class="nav-text">vue与react和angular的对比</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#响应式原理"><span class="nav-number">4.</span> <span class="nav-text">响应式原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生命周期"><span class="nav-number">5.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期钩子函数"><span class="nav-number">5.1.</span> <span class="nav-text">生命周期钩子函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#updated和this-nextTick-callback"><span class="nav-number">5.2.</span> <span class="nav-text">updated和this.$nextTick(callback)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#组件化"><span class="nav-number">6.</span> <span class="nav-text">组件化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看官方示例源码"><span class="nav-number">7.</span> <span class="nav-text">查看官方示例源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单文件组件-vue"><span class="nav-number">8.</span> <span class="nav-text">单文件组件.vue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#style"><span class="nav-number">8.1.</span> <span class="nav-text">style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-loader"><span class="nav-number">8.2.</span> <span class="nav-text">vue-loader</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#路由vue-router"><span class="nav-number">9.</span> <span class="nav-text">路由vue-router</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#状态管理vuex"><span class="nav-number">10.</span> <span class="nav-text">状态管理vuex</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vue的相关工具"><span class="nav-number">11.</span> <span class="nav-text">vue的相关工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题资料"><span class="nav-number">12.</span> <span class="nav-text">面试题资料</span></a></li></ol></div>
             
 
           </div>

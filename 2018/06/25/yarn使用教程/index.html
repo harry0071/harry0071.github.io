@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="yarn,快速、可靠、安全的依赖管理。有了npm，为什么还要用yarn？因为yarn比npm快速！">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fsn6pu77ofj21kw0pi7e4.jpg">
-<meta property="og:updated_time" content="2018-06-26T08:45:31.764Z">
+<meta property="og:updated_time" content="2018-06-30T08:30:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="yarn使用教程">
 <meta name="twitter:description" content="yarn,快速、可靠、安全的依赖管理。有了npm，为什么还要用yarn？因为yarn比npm快速！">
@@ -371,26 +371,32 @@
 <p>yarn,快速、可靠、安全的依赖管理。<br>有了npm，为什么还要用yarn？因为yarn比npm快速！</p>
 </blockquote>
 <a id="more"></a>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>方法1：<br>进入<a href="https://yarnpkg.com/zh-Hans/docs/install" target="_blank" rel="external">官网</a>进行安装<br>方法2：<br><code>npm i yarn -g</code>直接通过npm工具全局安装</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>方法1：<br>进入<a href="https://yarnpkg.com/zh-Hans/docs/install" target="_blank" rel="external">官网</a>进行安装，然后重启电脑！！！！<br>方法2：<br><code>npm i yarn -g</code>直接通过npm工具全局安装</p>
 <ul>
 <li><code>yarn -v</code> : 查看版本号</li>
+<li><code>yarn self-update</code>：更新 Yarn 到最新可用版本（该命令可能存在bug，需要手动安装更新）</li>
 <li><code>yarn -h</code> ：查看帮助</li>
 <li><code>yarn config get registry</code> : 查看当前镜像，默认<code>https://registry.yarnpkg.com</code></li>
 <li><code>yarn config set registry https://registry.npm.taobao.org</code>:切换成淘宝镜像</li>
-<li><code>nyarn config set loglevel http</code>：显示所有http请求</li>
-<li><code>nyarn config set progress false</code></li>
-<li><code>nyarn config set strict-ssl false</code></li>
+<li><code>yarn config set loglevel http</code>：显示所有http请求</li>
+<li><code>yarn config delete loglevel</code>:删除loglevel这项配置</li>
+<li><code>yarn config set progress false</code></li>
+<li><code>yarn config set strict-ssl false</code></li>
 </ul>
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><ul>
 <li><code>yarn init -y</code> : 初始化项目,生成package.json文件</li>
-<li><code>yarn</code> ：安装项目的全部依赖，相当于<code>npm i</code></li>
+<li><code>yarn</code> ：安装package.json里的全部包，相当于<code>npm i</code></li>
 <li><code>yarn add vue</code> : 添加vue，会记录在 package.json 的 dependencies 下</li>
+<li><code>yarn add vue --offline</code>:可以离线添加之前已经缓存过的包</li>
 <li><code>yarn global add vue-cli</code> : 全局安装，注意global必须接在yarn的后面！</li>
+<li><code>yarn global list</code> : 查看全局安装的包</li>
 <li><code>yarn add vue@2.3.0</code> : 指定版本号</li>
 <li><code>yarn add bable -D</code> : 添加到开发环境package.json 的 devDependencies下</li>
 <li><code>yarn remove vue</code> ： 移除vue</li>
+<li><code>yarn cache dir</code>:会打印出当前的 yarn 全局缓存在哪里</li>
 <li><code>yarn cache clean</code> : 清除缓存</li>
 <li><code>yarn run dev</code>、<code>yarn start</code>、<code>yarn run build</code>：运行package.json里script下的脚本</li>
+<li></li>
 </ul>
 <h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><p>一次添加多个库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># npm</span></div><div class="line">npm i -S vue vuex vue-router</div><div class="line"></div><div class="line"><span class="comment"># yarn</span></div><div class="line">yarn add vue vuex vue-router</div></pre></td></tr></table></figure></p>
 <p>更多<a href="https://yarnpkg.com/zh-Hans/docs/cli/" target="_blank" rel="external">命令</a>点此查看</p>
@@ -448,6 +454,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/30/移动端豆瓣电影项目笔记/" rel="prev" title="🔒 移动端豆瓣电影项目笔记">
+                🔒 移动端豆瓣电影项目笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -528,7 +538,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-count">73</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
