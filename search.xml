@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[readme的写法]]></title>
+    <title><![CDATA[MVC小例子]]></title>
+    <url>%2F2018%2F07%2F21%2FMVC%E5%B0%8F%E4%BE%8B%E5%AD%90%2F</url>
+    <content type="text"><![CDATA[一个mvc的在线小实例 MVC1&lt;div id="app"&gt;&lt;/div&gt; 1234567891011121314151617181920212223242526272829303132333435363738394041const view =&#123; el:'#app', template:'', render(lists)&#123; this.template += `&lt;ul&gt;`; $(lists).each((index,list) =&gt; &#123; this.template += `&lt;li style="border-bottom:1px solid red;&gt; &lt;div class=title&gt;$&#123;list.title&#125;&lt;/div&gt; &lt;div class=author&gt;作者:$&#123;list.author.loginname&#125;&lt;/div&gt; &lt;/li&gt;`; &#125;); this.template += `&lt;ul&gt;`; $(this.el).html(this.template); &#125;&#125;;const model = &#123; lists:[], getLists()&#123; return $.get('https://cnodejs.org/api/v1/topics',(&#123;data&#125;)=&gt;&#123;this.lists = data;&#125;); &#125;&#125;;const controller = &#123; init(view,model)&#123; this.view = view; this.model = model; this.model.getLists().then(()=&gt; this.view.render(this.model.lists)); this.bindEvents(); &#125;, bindEvents()&#123; this.handleClick(); &#125;, handleClick()&#123; $(this.view.el).on('click', '.title', ev =&gt; &#123; ev.target.style.color = 'red; &#125;); &#125;&#125;;controller.init(view,model); JS Bin【点击查看在线代码】 踩坑12&lt;div class=title&gt;$&#123;list.title&#125;&lt;/div&gt;&lt;div class=author&gt;作者:$&#123;list.author.loginname&#125;&lt;/div&gt; 在模板字符串中，写成双引号class=&quot;title&quot;会渲染成class=&quot; title&quot;,当中有个空格，不知什么原因(:з」∠)因此，建议写成没有引号class=title,或者单引号class=&#39;title&#39;]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>MVC模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2018%2F07%2F18%2FCSS%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE%2F</url>
+    <content type="text"><![CDATA[title: 🔒 CSS相关题目date: 2018-07-18 16:05:46categories: csstags: css 面试题password: 11111111 与CSS有关的面试题汇总 选择器有哪些选择器，以及选择器的权重 三栏布局编写CSS，实现三栏水平布局，其中left、right定宽，main宽度自适应。圣杯布局、双飞翼布局、Flex布局和绝对定位布局的几种经典布局的具体实现示例 圣杯布局特点：圣杯布局，为了中间div内容不被遮挡，将中间div设置了左右padding-left和padding-right后，将左右两个div用相对布局position: relative并分别配合right和left属性，以便左右两栏div移动后不遮挡中间div。 JS Bin【圣杯布局在线例子】 双飞翼布局特点：为了中间div内容不被遮挡，直接在div.mian内部创建子div.inner用于放置内容，在该子div里用margin-left和margin-right为左右两栏div留出位置。【不需要设置相对定位来解决遮挡问题】 JS Bin【双飞翼布局在线例子】 flex布局JS Bin【flex实现三栏布局在线例子】 万能的绝对定位JS Bin【绝对定位实现三栏布局在线例子】 flex布局Flex 布局教程：语法篇 box-sizing CSS3的box-sizing的取值及各值的说明 隐藏元素 通过CSS隐藏元素的方法，并说明其区别。 移动端适配方案 列出移动端适配各种屏幕尺寸的解决方案(至少3种)]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2018%2F07%2F18%2FHTML%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE%2F</url>
+    <content type="text"><![CDATA[title: 🔒 HTML相关题目date: 2018-07-18 16:02:31categories: htmltags: html 面试题password: 11111111 与HTML有关的面试题汇总 doctype(文档类型)的作用]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[🔒 readme的写法]]></title>
     <url>%2F2018%2F07%2F06%2Freadme%E7%9A%84%E5%86%99%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[在readme文件中，如何描述项目 有赞商城 基于vue.js重构有赞商城如果此开源系列对你有帮助，你可以点右上角 “star”一下，以表支持，非常感谢！ 🤞 效果演示这里改成预览图这里改成预览链接PC端建议开启chrome，然后Ctrl + Shift + I开启调试模式食用更佳 技术栈vue + vue-cli + vue-router + vuex + axios + easy-mock + mint-ui + es6 用法运行前请先到官网安装node.js然后将项目clone到本地。执行下面的命令 12345678# 首先安装依赖npm i# 然后运行项目npm start# 发布打包npm run build 插件 qs：处理查询参数，将字符串格式的查询参数转变成键值对格式 swiper：轮播图插件 velocity：动画效果 功能 [x] 底部导航 [ ] 首页index [x] 轮播图 [ ] 优店推荐 [x] 最热商品推荐 -[x]触底无限加载 [ ] 分类页category [x] 分类项目 [x] 热门品牌 [x] 热门分类 [x] 搜索商品 [ ] 购物车页cart [x] 商品全选联动 [x] 自动计算总价 [ ] 编辑功能 [x] 商品数量的加减 [x] 单个商品的删除 [x] 左滑删除功能 [ ] 个人中心页member [x] 管理收货地址 [x] 修改收货地址 [x] 新增收货地址 [ ] 商品详情页goods [x] 商品展示轮播图 [ ] 进入店铺 [x] 加入购物车功能 功能 根据模板，在线生成精美的个人简历 注册登录之后，可以将简历保存到云端，方便在不同设备之间编辑 可以生成pdf文件 可以生成在线预览链接，方便分享给他人在线预览 除了默认主题色，还支持另外3种颜色(换肤功能) 更新日志 换肤组件(ChangeSkin.vue)和登录组件(Login.vue)定义为异步组件，按需加载，从而节省首次加载的时间，提高页面打开的速度 右上角添加Github图标链接 登录框添加动画效果 添加上传头像功能 添加换肤功能 添加分享链接 &amp; 预览功能 添加打印功能 问题汇总 html对标签名和属性名(双引号外边的内容)大小写不敏感 v-on:myFn=”xxx”,这种写法是不行的，html会将双引号外面的内容全部转换成小写；不过双引号里面可以大写，比如v-on:myfn=”aBc”是可以的 :shareLink=&quot;xxx&quot;,这种写法是不行的，html会将双引号外面的内容全部转换成小写；应该写成:sharelink=&quot;xxx&quot;或者:share-link=&quot;xxx&quot;]]></content>
+    <content type="text"><![CDATA[在readme文件中，如何描述项目 有赞商城 基于vue.js重构有赞商城如果此开源系列对你有帮助，你可以点右上角 “star”一下，以表支持，非常感谢！ 🤞 效果演示这里改成预览图这里改成预览链接PC端建议使用chrome浏览器，然后快捷键Ctrl + Shift + I开启调试模式食用更佳 技术栈vue + vue-cli + vue-router + vuex + axios + easy-mock + mint-ui + es6 用法运行前请先到官网安装node.js然后将项目clone到本地。执行下面的命令 12345678# 首先安装依赖npm i# 然后运行项目npm start# 发布打包npm run build 插件 qs：处理查询参数，将字符串格式的查询参数转变成键值对格式 swiper：轮播图插件 velocity：动画效果 功能 [x] 底部导航 [ ] 首页index [x] 轮播图 [ ] 优店推荐 [x] 最热商品推荐 -[x]触底无限加载 [ ] 分类页category [x] 分类项目 [x] 热门品牌 [x] 热门分类 [x] 搜索商品 [ ] 购物车页cart [x] 商品全选联动 [x] 自动计算总价 [ ] 编辑功能 [x] 商品数量的加减 [x] 单个商品的删除 [x] 左滑删除功能 [ ] 个人中心页member [x] 管理收货地址 [x] 修改收货地址 [x] 新增收货地址 [ ] 商品详情页goods [x] 商品展示轮播图 [ ] 进入店铺 [x] 加入购物车功能 功能 根据模板，在线生成精美的个人简历 注册登录之后，可以将简历保存到云端，方便在不同设备之间编辑 可以生成pdf文件 可以生成在线预览链接，方便分享给他人在线预览 除了默认主题色，还支持另外3种颜色(换肤功能) 更新日志 换肤组件(ChangeSkin.vue)和登录组件(Login.vue)定义为异步组件，按需加载，从而节省首次加载的时间，提高页面打开的速度 右上角添加Github图标链接 登录框添加动画效果 添加上传头像功能 添加换肤功能 添加分享链接 &amp; 预览功能 添加打印功能 问题汇总 html对标签名和属性名(双引号外边的内容)大小写不敏感 v-on:myFn=”xxx”,这种写法是不行的，html会将双引号外面的内容全部转换成小写；不过双引号里面可以大写，比如v-on:myfn=”aBc”是可以的 :shareLink=&quot;xxx&quot;,这种写法是不行的，html会将双引号外面的内容全部转换成小写；应该写成:sharelink=&quot;xxx&quot;或者:share-link=&quot;xxx&quot;]]></content>
       <categories>
         <category>项目</category>
       </categories>
@@ -19,9 +40,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
-        <tag>笔记</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -38,7 +59,7 @@
   <entry>
     <title><![CDATA[yarn使用教程]]></title>
     <url>%2F2018%2F06%2F25%2Fyarn%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[yarn,快速、可靠、安全的依赖管理。有了npm，为什么还要用yarn？因为yarn比npm快速！ 安装方法1：进入官网进行安装，然后重启电脑！！！！方法2：npm i yarn -g直接通过npm工具全局安装 yarn -v : 查看版本号 yarn self-update：更新 Yarn 到最新可用版本（该命令可能存在bug，需要手动安装更新） yarn -h ：查看帮助 yarn config get registry : 查看当前镜像，默认https://registry.yarnpkg.com yarn config set registry https://registry.npm.taobao.org:切换成淘宝镜像 yarn config set loglevel http：显示所有http请求 yarn config delete loglevel:删除loglevel这项配置 yarn config set progress false yarn config set strict-ssl false 使用 yarn init -y : 初始化项目,生成package.json文件 yarn ：安装package.json里的全部包，相当于npm i yarn add vue : 添加vue，会记录在 package.json 的 dependencies 下 yarn add vue --offline:可以离线添加之前已经缓存过的包 yarn global add vue-cli : 全局安装，注意global必须接在yarn的后面！ yarn global list : 查看全局安装的包 yarn add vue@2.3.0 : 指定版本号 yarn add bable -D : 添加到开发环境package.json 的 devDependencies下 yarn remove vue ： 移除vue yarn cache dir:会打印出当前的 yarn 全局缓存在哪里 yarn cache clean : 清除缓存 yarn run dev、yarn start、yarn run build：运行package.json里script下的脚本 小技巧一次添加多个库12345# npmnpm i -S vue vuex vue-router# yarnyarn add vue vuex vue-router 更多命令点此查看 相关博文：https://blog.csdn.net/mjzhang1993/article/details/70092902 可供选择的镜像 https://registry.yarnpkg.com https://registry.npmjs.org https://r.cnpmjs.org https://registry.npm.taobao.org]]></content>
+    <content type="text"><![CDATA[yarn,快速、可靠、安全的依赖管理。有了npm，为什么还要用yarn？因为yarn比npm快速！ 安装方法1：进入官网进行安装，然后重启电脑！！！！方法2：npm i yarn -g直接通过npm工具全局安装 yarn -v : 查看版本号 yarn self-update：更新 Yarn 到最新可用版本（该命令可能存在bug，需要手动安装更新） yarn -h ：查看帮助 yarn config get registry : 查看当前镜像，默认https://registry.yarnpkg.com yarn config set registry https://registry.npm.taobao.org:切换成淘宝镜像 yarn config set loglevel http：显示所有http请求 yarn config delete loglevel:删除loglevel这项配置 yarn config set progress false yarn config set strict-ssl false 使用 yarn init -y : 初始化项目,生成package.json文件 yarn ：安装package.json里的全部包，相当于npm i yarn add vue : 添加vue，会记录在 package.json 的 dependencies 下 yarn add vue --offline:可以离线添加之前已经缓存过的包 yarn global add vue-cli : 全局安装，注意global必须接在yarn的后面！ yarn global list : 查看全局安装的包 yarn add vue@2.3.0 : 指定版本号 yarn add bable -D : 添加到开发环境package.json 的 devDependencies下 yarn remove vue ： 移除vue yarn cache dir:会打印出当前的 yarn 全局缓存在哪里 yarn cache clean : 清除缓存 yarn run dev、yarn start、yarn run build：运行package.json里script下的脚本 yarn autoclean -I：通过从依赖文件中移除不需要的文件和文件夹来释放空间 减少了 node_modules 的体积 小技巧一次添加多个库12345# npmnpm i -S vue vuex vue-router# yarnyarn add vue vuex vue-router 更多命令点此查看 相关博文：https://blog.csdn.net/mjzhang1993/article/details/70092902 可供选择的镜像 https://registry.yarnpkg.com https://registry.npmjs.org https://r.cnpmjs.org https://registry.npm.taobao.org]]></content>
       <categories>
         <category>教程</category>
       </categories>
@@ -72,7 +93,7 @@
   <entry>
     <title><![CDATA[Vuex使用教程]]></title>
     <url>%2F2018%2F06%2F21%2FVuex%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[Vuex 就是前端为了方便数据的操作而建立的一个” 前端数据库“，用来管理所有组件的数据。state 就是数据库getter 用来 获取 数据mutation 用来定义一些方法对数据进行 修改/存储actions 呢。你想呀，后端从前端拿到了数据，总要做个异步处理吧，处理完了再存到数据库中(.then( () =&gt; {异步处理完成后执行}))。其实这就是action的过程。如果是个同步操作，那么可以直接丢到数据库，所以vuex也可以在action 中直接存，就是直接mutation。 为什么使用Vuex如图所示，顶层父组件App有一个数据a:123,组件A想要获取这个数据，必须通过props一层层向下传App -&gt; G -&gt; A,B组件也想获取数据a，必须通过props一层层向下传App -&gt; E -&gt; D -&gt;B 如果B组件有个按钮，点击后想要修改a的值，则必须通过自定义事件$emit()一层层向上通知父组件B -&gt; D -&gt; E -&gt; App 如图所示，用了Vuex后，相当于建立了一个前端数据库，所有的组件都可以直接获取到Vuex里的数据，并且可以直接修改数据 使用场景 当一个项目的组件的层级有好几层，而且有些组件需要获取同一个数据时（避免数据一层层向下传递） 当不同的组件，它们有个事件是需要更改同一个数据时（避免自定义事件一层层向上传） 全局共享的数据使用vuex，比如用户信息，因为用户的权限，头像，昵称等等常常会出现在各个不同的组件中，此外，不需要实时更新的数据，都需要保存起来，减少不必要的http请求 Vuex的数据变化过程前端通过 action 进行异步处理数据后通过context.commit传递给mutation，然后通过 mutation 把数据放入数据库（state）中，哪个组件要用就通过getter 从数据库（state）中取。 更改 Vuex 的 store 中的状态的唯一方法是提交(commit) mutation 同步逻辑可以直接写到 mutation 里面，通过 this.$store.commit(&#39;xxx&#39;)进行提交 异步逻辑都应该封装到 actions 里面，通过 this.$store.dispatch(&#39;xxx&#39;) 方法调用 导出与注入123456789101112131415//store.js//使用Vueximport Vue from 'vue';import Vuex from 'vuex';Vue.use(Vuex);//实例化const store = new Vuex.Store(&#123; state: &#123;&#125;, getters: &#123;&#125;, mutations: &#123;&#125;, actions: &#123;&#125;&#125;)export default store; 将store.js导入到入口文件，挂载到Vue实例的配置项里12345678//main.jsimport Vue from 'vue'import store from './vuex/index.js';new Vue(&#123; el:'#app', store,&#125;) state 数据1234state: &#123; lists: [], count:0&#125; 在组件中获取state123456//组件computed: &#123; count()&#123; return this.$store.state.count; &#125; &#125;, 利用辅助函数mapState获取数据123computed: &#123; ...mapState(['count','firstName','lastName']),&#125; 也可以直接在html中通过$store.state获取123&lt;div id="app"&gt; &#123;&#123; $store.state.count &#125;&#125;&lt;/div&gt; mutation 变更mutation对state里的数据进行 修改/保存mutation里的方法，第一个参数始终是state，后面可以传入额外的参数文档：mutations123456mutations: &#123; getLists(state,lists)&#123; //变更状态 state.lists = lists; &#125;,&#125; 在组件中提交mutation(变更)请求如果mutations里的方法是同步操作，那么组件可以直接提交commit请求1234567//store.jsmutations: &#123; xxx(state,payload)&#123; state.count += payload.add; &#125;&#125; 1234567//组件中methods: &#123; btnClick()&#123; this.$store.commit('xxx',&#123;add:10&#125;); &#125;&#125; 你也可以直接在html中通过$store.commit提交变更请求123&lt;div id="app"&gt; &lt;p @click="$store.commit('xxx',&#123;add:10&#125;)"&gt; &#123;&#123;$store.state.count&#125;&#125;&lt;/p&gt;&lt;/div&gt; 如果mutations里的方法需要异步执行，怎么办(比如setTimeout，1秒之后才执行state.count++)？通过actions！ actions 触发文档：action在actions中，通过context.commit()来触发mutations里的方法123456789actions: &#123; getLists(context)&#123; axios.get('www.xxx.com').then((&#123;data&#125;)=&gt; &#123; //触发mutations里的init方法，并将data.lists作为参数传过去 context.commit('init',data.lists); &#125;) .catch(error =&gt; document.write(error)); &#125;,&#125; 实践中，我们会经常用到 ES2015 的 参数解构 来简化代码（特别是我们需要调用 commit 很多次的时候）：123456789actions: &#123; getLists(&#123;commit&#125;)&#123; //对象的解构赋值 axios.get('www.xxx.com').then((&#123;data&#125;)=&gt; &#123; commit('init',data.lists); &#125;) &#125;,&#125; 在组件中提交action(调用)请求在组件中,通过dispatch调用action,然后store.state.xxx获取数据文档：组件通过dispatch调用vuex里的actions组件通过this.$store.dispatch()调用store实例里面 actions里定义的方法，然后在计算属性computed里通过return this.$store.state获得state里的数据12345678910111213141516171819//组件Address.vue&lt;script&gt; export default &#123; //将getter到的数据放在计算属性里 computed: &#123; lists()&#123; return this.$store.state.lists; &#125; &#125;, created()&#123; if(!lists.length)&#123; //通过dispatch调用actions里的方法，返回想要的数据 this.$store.dispatch('getLists'); &#125; &#125; &#125;&lt;/script&gt; mapActionsmapActions 映射为 this.$store.dispatch123456789101112131415import &#123; mapActions &#125; from 'vuex'export default &#123; methods: &#123; ...mapActions([ 'addAddress', // 将 `this.addAddress()` 映射为 `this.$store.dispatch('addAddress')` // `mapActions` 也支持载荷： 'removeAddress' // 将 `this.removeAddress(xxx)` 映射为 `this.$store.dispatch('removeAddress', xxx)` ]), ...mapActions(&#123; yyy: 'getMyAddress' // 将 `this.yyy()` 映射为 `this.$store.dispatch('getMyAddress')` &#125;) &#125;&#125; mapStatemapState 映射为 this.$store.state.xxx当一个组件需要获取多个状态时候，将这些状态都声明为计算属性会有些重复和冗余。此时可以用使用 mapState 辅助函数，然后将数据放入组件的计算属性内12345678import &#123; mapState &#125; from 'vuex'export default &#123; computed: mapState(&#123; // 传字符串参数 'count' xxx: 'count', //此时，this.xxx = store.state.count &#125;)&#125; 如果映射的计算属性的名称与 state 里的名称相同时，我们也可以给 mapState 传一个字符串数组。1234computed: mapState([ // 映射 this.count 为 store.state.count 'count']) 如果该组件有自己的计算属性，怎么办？混入计算属性12345678computed: &#123; xxx() &#123; /* ... */ &#125;, // 使用对象展开运算符将store.state里的数据混入computed ...mapState(&#123; count: 'count', &#125;)&#125; 像上面这种key和value相同的情况，可以将对象写成数组的形式123computed: &#123; ...mapState(['count']),&#125; Gettergetter类似Vue中的计算属性 有时候我们需要从 store 中的 state 中派生出一些状态，例如需要将state中的a加1,这时需要定义一个计算属性123456//main.jscomputed: &#123; aPlus () &#123; return this.$store.state.a + 1; &#125;&#125; 如果有多个组件需要用到此属性，我们就得每次复制这个计算属性aPlus，Vuex 允许我们在 store 中定义“getter”（可以认为是 store 的计算属性）。123456789101112131415//store.jsconst store = new Vuex.Store(&#123; state: &#123; a:1, &#125;, getters: &#123; aPlus: state =&gt; &#123; return state.a + 1; &#125;, //或者写成下面这种写法 fullName(state)&#123; return state.firstName + ' ' + state.lastName; &#125; &#125;,&#125;) 然后，所有的组件都可以通过this.$store.getters.aPlus获取这个属性文档:Getter1234567//在子组件中computed: &#123; aPlus()&#123; return this.$store.getters.aPlus; &#125;&#125; 等同于12345//在子组件中computed:&#123; ...mapGetters(['aPlus']);&#125; !注意，store.js自身无法获取getters里面的数据；在Vue中，可以直接获取计算属性，但是在Vuex中，无法获取getters里的数据12345678910111213141516//store.jsconst store = new Vuex.Store(&#123; state: &#123; a:1, &#125;, getters: &#123; aPlus: state =&gt; &#123; return state.a + 1; &#125; &#125;, mutations: &#123; xxx(state)&#123; this.aPlus + 1; //警告！这是错误的，因为store.js只能操作state里的数据,无法操作getters里的数据 &#125;, &#125;&#125;) 其实，从mutation的第一个参数可以看出，它是通过第一个参数 state 来间接修改state里的数据；而mutation内部并没有提供getters这个参数 mapGetters文档：mapGettersmapGetters 映射为 this.$store.getters.xxx123456789101112131415import &#123; mapGetters &#125; from 'vuex'export default &#123; computed: &#123; // 使用对象展开运算符将 getter 混入 computed 对象中 ...mapGetters([ 'a', 'others', // ... ]), ...mapGetters(&#123; b:'xxx', //如果key和value不同名，数组要改写成对象的形式 &#125;) &#125;&#125; 关于辅助函数12345678910111213141516import store form './store.js' //千万别忘了把store注入到Vue实例内！！！！import &#123; mapState, mapGetters, mapMutations, mapActions &#125; from 'vuex'new Vue(&#123; el: "#app", store, computed: &#123; //state和getters放在计算属性内 ...mapState(['lists']), ...mapGetters(['aPlus']), &#125;, methods: &#123; //mutations和actions放在methods内 ...mapMutations(['add','remove']),//同步操作，可以直接通过mutation修改state里的数据，不需要借助action的commit ...mapActions(['asyncFn']),//异步操作 &#125;&#125;) 辅助函数传参参数要在html中传递过去，而不是在methods里！！！！1&lt;button @click="add(5)"&gt;+5&lt;/button&gt; 12345//组件中methods: &#123; ...mapMutations(["add"]) &#125; 12345//store.js mutations: &#123; add(state,n) &#123; state.count += n; &#125;, 参考地址：https://segmentfault.com/q/1010000011006052 另一种方式传参单独在methods里定义一个方法来调用123456methods:&#123; ...mapActions(['add']), triggerAdd()&#123; this.add(&#123;amount:100&#125;) &#125;&#125; 1&lt;button @click="triggerAdd"&gt;登录&lt;/button&gt; 参考地址：https://segmentfault.com/q/1010000009563211 module如果将所有页面的数据全部放在一个store里，会显得十分臃肿。为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、getter、mutation、action12345678910111213141516171819// src/store/index.js//新建文件夹modules，用来放模块//使用Vueximport Vue from 'vue';import Vuex from 'vuex';import user from './modules/user.js';import blog from './modules/blog.js';Vue.use(Vuex);const store = new Vuex.Store(&#123; modules: &#123; user, blog &#125;&#125;);export default store; 123456789101112131415// user.js 和 blog.js的模板如下const state = &#123;&#125;;const getters = &#123;&#125;;const mutations = &#123;&#125;;const actions = &#123;&#125;;export default &#123; state, getters, mutations, actions&#125; 从而实现，每个模块单独维护各自的数据状态 模块的局部状态对于模块内部的 mutation 和 getter，接收的第一个参数是模块的局部状态state。1234567891011121314//模块user.js// 这里的 `state` 对象是模块的局部状态const getters = &#123; doubleCount (state) &#123; return state.count * 2； &#125;&#125;;const mutations = &#123; increment (state) &#123; state.count++; &#125;&#125;; 对于模块内部的 action，局部状态通过 context.state 暴露出来，根节点状态则为 context.rootState：1234567actions: &#123; incrementIfOddOnRootSum (&#123; state, commit, rootState &#125;) &#123; if ((state.count + rootState.count) % 2 === 1) &#123; commit('increment') &#125; &#125;&#125;]]></content>
+    <content type="text"><![CDATA[Vuex 就是前端为了方便数据的操作而建立的一个” 前端数据库“，用来管理所有组件的数据。state 就是数据库getter 用来 获取 数据mutation 用来定义一些方法对数据进行 修改/存储actions 呢。你想呀，后端从前端拿到了数据，总要做个异步处理吧，处理完了再存到数据库中(.then( () =&gt; {异步处理完成后执行}))。其实这就是action的过程。如果是个同步操作，那么可以直接丢到数据库，所以vuex也可以在action 中直接存，就是直接mutation。 为什么使用Vuex如图所示，顶层父组件App有一个数据a:123,组件A想要获取这个数据，必须通过props一层层向下传App -&gt; G -&gt; A,B组件也想获取数据a，必须通过props一层层向下传App -&gt; E -&gt; D -&gt;B 如果B组件有个按钮，点击后想要修改a的值，则必须通过自定义事件$emit()一层层向上通知父组件B -&gt; D -&gt; E -&gt; App 如图所示，用了Vuex后，相当于建立了一个前端数据库，所有的组件都可以直接获取到Vuex里的数据，并且可以直接修改数据 使用场景 当一个项目的组件的层级有好几层，而且有些组件需要获取同一个数据时（避免数据一层层向下传递） 当不同的组件，它们有个事件是需要更改同一个数据时（避免自定义事件一层层向上传） 全局共享的数据使用vuex，比如用户信息，因为用户的权限，头像，昵称等等常常会出现在各个不同的组件中，此外，不需要实时更新的数据，都需要保存起来，减少不必要的http请求 Vuex的数据变化过程前端通过 action 进行异步处理数据后通过context.commit传递给mutation，然后通过 mutation 把数据放入数据库（state）中，哪个组件要用就通过getter 从数据库（state）中取。 更改 Vuex 的 store 中的状态的唯一方法是提交(commit) mutation 同步逻辑可以直接写到 mutation 里面，通过 this.$store.commit(&#39;xxx&#39;)进行提交 异步逻辑都应该封装到 actions 里面，通过 this.$store.dispatch(&#39;xxx&#39;) 方法调用 导出与注入123456789101112131415//store.js//使用Vueximport Vue from 'vue';import Vuex from 'vuex';Vue.use(Vuex);//实例化const store = new Vuex.Store(&#123; state: &#123;&#125;, getters: &#123;&#125;, mutations: &#123;&#125;, actions: &#123;&#125;&#125;)export default store; 将store.js导入到入口文件，挂载到Vue实例的配置项里12345678//main.jsimport Vue from 'vue'import store from './vuex/index.js';new Vue(&#123; el:'#app', store,&#125;) state 数据1234state: &#123; lists: [], count:0&#125; 在组件中获取state通过this.$store.state.xxx就可以获取state里的数据了123456//组件computed: &#123; count()&#123; return this.$store.state.count; &#125; &#125;, 利用辅助函数mapState获取数据123computed: &#123; ...mapState(['count','firstName','lastName']),&#125; 也可以直接在html中通过$store.state获取123&lt;div id="app"&gt; &#123;&#123; $store.state.count &#125;&#125;&lt;/div&gt; mutation 变更mutation对state里的数据进行 修改/保存mutation里的方法，第一个参数始终是state，后面可以传入额外的参数文档：mutations123456mutations: &#123; getLists(state,lists)&#123; //变更状态 state.lists = lists; &#125;,&#125; 在组件中提交mutation(变更)请求如果mutations里的方法是同步操作，那么组件可以直接提交commit请求1234567//store.jsmutations: &#123; increment(state,payload)&#123; state.count += payload.add; &#125;&#125; 1234567//组件中methods: &#123; btnClick()&#123; this.$store.commit('increment',&#123;add:10&#125;); &#125;&#125; 你也可以直接在html中通过$store.commit提交变更请求123&lt;div id="app"&gt; &lt;p @click="$store.commit('increment',&#123;add:10&#125;)"&gt; &#123;&#123;$store.state.count&#125;&#125;&lt;/p&gt;&lt;/div&gt; 如果mutations里的方法需要异步执行，怎么办(比如setTimeout，1秒之后才执行state.count++)？通过actions！ actions 调用文档：action在actions中，通过context.commit()来调用mutations里的方法123456789actions: &#123; getLists(context)&#123; axios.get('www.xxx.com').then((&#123;data&#125;)=&gt; &#123; /调用mutations里的init方法，并将data.lists作为参数传过去 context.commit('init',data.lists); &#125;) .catch(error =&gt; document.write(error)); &#125;,&#125; 实践中，我们会经常用到 ES2015 的 参数解构 来简化代码（特别是我们需要调用 commit 很多次的时候）：123456789actions: &#123; getLists(&#123;commit&#125;)&#123; //对象的解构赋值 axios.get('www.xxx.com').then((&#123;data&#125;)=&gt; &#123; commit('init',data.lists); &#125;) &#125;,&#125; 在组件中提交action(调用)请求在组件中,通过dispatch调用action,然后store.state.xxx获取数据文档：组件通过dispatch调用vuex里的actions组件通过this.$store.dispatch()调用store实例里面 actions里定义的方法，然后在计算属性computed里通过return this.$store.state获得state里的数据12345678910111213141516171819//组件Address.vue&lt;script&gt; export default &#123; //将getter到的数据放在计算属性里 computed: &#123; lists()&#123; return this.$store.state.lists; &#125; &#125;, created()&#123; if(!lists.length)&#123; //通过dispatch调用actions里的方法，返回想要的数据 this.$store.dispatch('getLists'); &#125; &#125; &#125;&lt;/script&gt; mapActionsmapActions 映射为 this.$store.dispatch123456789101112131415import &#123; mapActions &#125; from 'vuex'export default &#123; methods: &#123; ...mapActions([ 'addAddress', // 将 `this.addAddress()` 映射为 `this.$store.dispatch('addAddress')` // `mapActions` 也支持载荷： 'removeAddress' // 将 `this.removeAddress(xxx)` 映射为 `this.$store.dispatch('removeAddress', xxx)` ]), ...mapActions(&#123; yyy: 'getMyAddress' // 将 `this.yyy()` 映射为 `this.$store.dispatch('getMyAddress')` &#125;) &#125;&#125; mapStatemapState 映射为 this.$store.state.xxx当一个组件需要获取多个状态时候，将这些状态都声明为计算属性会有些重复和冗余。此时可以用使用 mapState 辅助函数，然后将数据放入组件的计算属性内12345678import &#123; mapState &#125; from 'vuex'export default &#123; computed: mapState(&#123; // 传字符串参数 'count' xxx: 'count', //此时，this.xxx = store.state.count &#125;)&#125; 如果映射的计算属性的名称与 state 里的名称相同时，我们也可以给 mapState 传一个字符串数组。1234computed: mapState([ // 映射 this.count 为 store.state.count 'count']) 如果该组件有自己的计算属性，怎么办？混入计算属性12345678computed: &#123; xxx() &#123; /* ... */ &#125;, // 使用对象展开运算符将store.state里的数据混入computed ...mapState(&#123; count: 'count', &#125;)&#125; 像上面这种key和value相同的情况，可以将对象写成数组的形式123computed: &#123; ...mapState(['count']),&#125; Gettergetter类似Vue中的计算属性 有时候我们需要从 store 中的 state 中派生出一些状态，例如需要将state中的a加1,这时需要定义一个计算属性123456//main.jscomputed: &#123; aPlus () &#123; return this.$store.state.a + 1; &#125;&#125; 如果有多个组件需要用到此属性，我们就得每次复制这个计算属性aPlus，Vuex 允许我们在 store 中定义“getter”（可以认为是 store 的计算属性）。123456789101112131415//store.jsconst store = new Vuex.Store(&#123; state: &#123; a:1, &#125;, getters: &#123; aPlus: state =&gt; &#123; return state.a + 1; &#125;, //或者写成下面这种写法 fullName(state)&#123; return state.firstName + ' ' + state.lastName; &#125; &#125;,&#125;) 然后，所有的组件都可以通过this.$store.getters.aPlus获取这个属性文档:Getter1234567//在子组件中computed: &#123; aPlus()&#123; return this.$store.getters.aPlus; &#125;&#125; 等同于12345//在子组件中computed:&#123; ...mapGetters(['aPlus']);&#125; !注意，store.js自身无法获取getters里面的数据；在Vue中，可以直接获取计算属性，但是在Vuex中，无法获取getters里的数据12345678910111213141516//store.jsconst store = new Vuex.Store(&#123; state: &#123; a:1, &#125;, getters: &#123; aPlus: state =&gt; &#123; return state.a + 1; &#125; &#125;, mutations: &#123; xxx(state)&#123; this.aPlus + 1; //警告！这是错误的，因为store.js只能操作state里的数据,无法操作getters里的数据 &#125;, &#125;&#125;) 其实，从mutation的第一个参数可以看出，它是通过第一个参数 state 来间接修改state里的数据；而mutation内部并没有提供getters这个参数 mapGetters文档：mapGettersmapGetters 映射为 this.$store.getters.xxx123456789101112131415import &#123; mapGetters &#125; from 'vuex'export default &#123; computed: &#123; // 使用对象展开运算符将 getter 混入 computed 对象中 ...mapGetters([ 'a', 'others', // ... ]), ...mapGetters(&#123; b:'xxx', //如果key和value不同名，数组要改写成对象的形式 &#125;) &#125;&#125; 关于辅助函数12345678910111213141516import store form './store.js' //千万别忘了把store注入到Vue实例内！！！！import &#123; mapState, mapGetters, mapMutations, mapActions &#125; from 'vuex'new Vue(&#123; el: "#app", store, computed: &#123; //state和getters放在计算属性内 ...mapState(['lists']), ...mapGetters(['aPlus']), &#125;, methods: &#123; //mutations和actions放在methods内 ...mapMutations(['add','remove']),//同步操作，可以直接通过mutation修改state里的数据，不需要借助action的commit ...mapActions(['asyncFn']),//异步操作 &#125;&#125;) 辅助函数传递payload载荷要在html中传递过去，而不是在methods里！！！！1&lt;button @click="add(5)"&gt;+5&lt;/button&gt; 12345//组件中methods: &#123; ...mapMutations(["add"]) &#125; 12345//store.js mutations: &#123; add(state,n) &#123; state.count += n; &#125;, 参考地址：https://segmentfault.com/q/1010000011006052 另一种方式传递payload单独在methods里定义一个方法来调用123456methods:&#123; ...mapActions(['add']), triggerAdd()&#123; this.add(&#123;amount:100&#125;) &#125;&#125; 1&lt;button @click="triggerAdd"&gt;登录&lt;/button&gt; 参考地址：https://segmentfault.com/q/1010000009563211 module如果将所有页面的数据全部放在一个store里，会显得十分臃肿。为了解决以上问题，Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 state、getter、mutation、action12345678910111213141516171819// src/store/index.js//新建文件夹modules，用来放模块//使用Vueximport Vue from 'vue';import Vuex from 'vuex';import user from './modules/user.js';import blog from './modules/blog.js';Vue.use(Vuex);const store = new Vuex.Store(&#123; modules: &#123; user, blog &#125;&#125;);export default store; 123456789101112131415// user.js 和 blog.js的模板如下const state = &#123;&#125;;const getters = &#123;&#125;;const mutations = &#123;&#125;;const actions = &#123;&#125;;export default &#123; state, getters, mutations, actions&#125; 从而实现，每个模块单独维护各自的数据状态 模块的局部状态对于模块内部的 mutation 和 getter，接收的第一个参数是模块的局部状态state。1234567891011121314//模块user.js// 这里的 `state` 对象是模块的局部状态const getters = &#123; doubleCount (state) &#123; return state.count * 2； &#125;&#125;;const mutations = &#123; increment (state) &#123; state.count++; &#125;&#125;; 对于模块内部的 action，局部状态通过 context.state 暴露出来，根节点状态则为 context.rootState：1234567actions: &#123; incrementIfOddOnRootSum (&#123; state, commit, rootState &#125;) &#123; if ((state.count + rootState.count) % 2 === 1) &#123; commit('increment') &#125; &#125;&#125;]]></content>
       <categories>
         <category>vue</category>
       </categories>
@@ -126,8 +147,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -138,9 +159,9 @@
         <category>js</category>
       </categories>
       <tags>
+        <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>es6</tag>
-        <tag>笔记</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
@@ -164,8 +185,8 @@
         <category>vue</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>vue</tag>
       </tags>
   </entry>
@@ -177,8 +198,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
@@ -198,7 +219,7 @@
   <entry>
     <title><![CDATA[🔒 vue的相关面试题]]></title>
     <url>%2F2018%2F05%2F07%2Fvue%E7%9A%84%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[vue的相关面试题vue中文文档合集印记中文docschina 请简述MVVMMVVM是Model-View-ViewModel的缩写 view：HTML页面 ViewModel：业务逻辑层(一切js可以看作业务逻辑，比如表单提交、自定义事件的注册和处理逻辑都在vm里面负责监控两边的数据) model：数据层，用于对数据的处理(比如增删改查) 在MVVM架构下，View 和 Model 之间并没有直接的联系，而是通过ViewModel进行交互，Model 和 ViewModel 之间的交互是双向的， 因此View 数据的变化会同步到Model中，而Model 数据的变化也会立即反应到View 上。 ViewModel 通过双向数据绑定把 View 层和 Model 层连接了起来，而View 和 Model 之间的同步工作完全是自动的，因此开发者不需要关注DOM操作了。 DOM Listeners和Data Bindings是实现双向绑定的关键。DOM Listeners监听页面所有View层DOM元素的变化，当发生变化，Model层的数据随之变化Data Bindings监听Model层的数据，当数据发生变化，View层的DOM元素随之变化。 MVVM详细的实现 mvvm和mvc区别主要就是mvc中Controller演变成mvvm中的viewModel。mvvm主要解决了mvc中大量的DOM 操作使页面渲染性能降低，加载速度变慢，影响用户体验。 区别：vue数据驱动，通过数据来显示视图层而不是节点操作。场景：数据操作比较多的场景，更加便捷 vue.js的优点 简洁： HTML 模板 + JSON 数据，再创建一个 Vue 实例，就这么简单。 数据驱动： 自动追踪依赖的模板表达式和计算属性。 组件化： 用解耦、可复用的组件来构造界面。 轻量： ~24kb min+gzip，无依赖。 快速： 精确有效的异步批量 DOM 更新。 另一种答案： 低耦合。视图（View）可以独立于Model变化和修改，一个ViewModel可以绑定到不同的”View”上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。 可重用性。你可以把一些视图逻辑放在一个ViewModel里面，让很多view重用这段视图逻辑。 独立开发。开发人员可以专注于业务逻辑和数据的开发（ViewModel），设计人员可以专注于页面设计。 可测试。界面素来是比较难于测试的，而现在测试可以针对ViewModel来写易用灵活高效 vue与react和angular的对比响应式原理官方文档-深入响应式原理 视频讲解：https://jirengu.com/app/album/92 生命周期 生命周期钩子函数Vue提供的可以注册的钩子都在上图片的红色框标注。 他们分别是： beforeCreate：在实例初始化之后，数据观测(data observer) 和 event/watcher 事件配置之前被调用。 created：实例创建完成之后被调用。在这一步，实例已完成以下的配置：数据观测(data observer)，属性和方法的运算， watch/event 事件回调。然而，尚未挂载到DOM上，$el 还不可用。 beforeMount：在挂载开始之前被调用：相关的 render 函数首次被调用。 mounted：el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子。如果 root 实例挂载了一个文档内元素，当 mounted 被调用时 vm.$el 也在文档内。 beforeUpdate：数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。 你可以在这个钩子中进一步地更改状态，这不会触发附加的重渲染过程。 updated：由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。然而在大多数情况下，你应该避免在此期间更改状态，因为这可能会导致更新无限循环。该钩子在服务器端渲染期间不被调用。 beforeDestroy：实例销毁之前调用。在这一步，实例仍然完全可用。 destroyed：Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。 该钩子在服务器端渲染期间不被调用。 | 钩子函数 | 描述 | 例子 || ——– | —— | ——— || beforeCreate | 实例初始化，$el 与 data 都未初始化 | 此时无法获取到this(data和methods) || created | 实例创建完成，data 配置完成但挂载还未开始 $el 仍未初始化 | 此时可以获取到this(data和methods)，一般用于异步数据的请求/初始化(将$bus绑定到this.prototype、读取localStorage等) || beforeMount |挂载开始前，render 函数被调用，$el 和 data 配置完成，但数据未在 DOM 上渲染 || mounted | 挂载完成，el 被新创建的 vm.$el 替换并挂载到实例上去，data里的初始数据在 DOM 上渲染完毕 | 此时可以获取由data里初始数据渲染后的DOM节点 || beforeUpdate | 数据更新时调用，但不进行 DOM 重新渲染 || updated | 数据更新并且 DOM 重新渲染，此时可执行依赖于 DOM 的操作 | 此时可以获取到异步请求的数据替换初始数据渲染后的DOM节点 || beforeDertroy | 实例销毁前 || destroyed | 实例销毁后 | 日期new Date()不能放在data:{time:new Date()}，这样日期不会实时变化，可以放在created或者mounted这两个生命周期函数内12345mounted()&#123; timer = setInterval(()=&gt;&#123; this.time = new Date(); &#125;,1000);&#125; 【时间与生命周期函数】 updated和this.$nextTick(callback)api：this.$nextTick(callback)在数据改变之后立即使用this.$nextTick，待 DOM 渲染完成之后，会执行nextTick里的callback123456789101112131415161718192021created:&#123; //异步请求 axios().then(()=&gt;&#123; this.lists = [4,5,6]; this.$nextTick(()=&gt;&#123; console.log('第1次更新'); &#125;); &#125;); axios().then(()=&gt;&#123; this.lists = [7,8,9,10]; this.$nextTick(()=&#123; console.log('第2次更新'); &#125;); &#125;);&#125;,updated:&#123; console.log(1); //每次数据有变化，都会执行updated //由于lists更新了2次，所以会打印2次1 //如果不希望每次数据变化都执行，或者想要执行不同的方法，可以用this.$nextTick&#125; 如果在数据变化并重新渲染DOM完成之后，要操作DOM，就用this.$nextTick如果不操作DOM，那就用watch侦听器updated：只要data里的任何一个数据发生变化，就会触发；watch可以侦听data里具体某个数据的变化 组件化组件化应用构建一个页面可能会有页头、侧边栏、内容区等界面，将这些界面抽象为一个个小型、独立和通常可复用的组件。通过 Prop 向子组件传递数据使用$emit事件向父组件抛出一个值举例子： 查看官方示例源码查看todoMVC示例,并能够自己写出来源码 单文件组件.vue单文件组件 单文件组件必须要有&lt;template&gt;；&lt;style&gt;可以有多个 style可以通过@import将样式引入进单vue文件的style里1234&lt;style scoped&gt; @import './member_base.css'; @import './member.css';&lt;/style&gt; vue-loadervue-loader 路由vue-routervue-router 状态管理vuexvuex vue的相关工具 github:vue-cli vue-cli中文文档 vue-devtools vue-webpack模板文档 面试题资料https://www.jianshu.com/p/b1dd80f4d542http://www.imooc.com/article/details/id/23787]]></content>
+    <content type="text"><![CDATA[vue的相关面试题vue中文文档合集印记中文docschina 请简述MVVMMVVM是Model-View-ViewModel的缩写 view：HTML页面 ViewModel：业务逻辑层(一切js可以看作业务逻辑，比如表单提交、自定义事件的注册和处理逻辑都在vm里面负责监控两边的数据) model：数据层，用于对数据的处理(比如增删改查) 在MVVM架构下，View 和 Model 之间并没有直接的联系，而是通过ViewModel进行交互，Model 和 ViewModel 之间的交互是双向的， 因此View 数据的变化会同步到Model中，而Model 数据的变化也会立即反应到View 上。 ViewModel 通过双向数据绑定把 View 层和 Model 层连接了起来，而View 和 Model 之间的同步工作完全是自动的，因此开发者不需要关注DOM操作了。 DOM Listeners和Data Bindings是实现双向绑定的关键。DOM Listeners监听页面所有View层DOM元素的变化，当发生变化，Model层的数据随之变化Data Bindings监听Model层的数据，当数据发生变化，View层的DOM元素随之变化。 MVVM详细的实现 mvvm和mvc区别主要就是mvc中Controller演变成mvvm中的viewModel。mvvm主要解决了mvc中大量的DOM 操作使页面渲染性能降低，加载速度变慢，影响用户体验。 区别：vue数据驱动，通过数据来显示视图层而不是节点操作。场景：数据操作比较多的场景，更加便捷 vue.js的优点 简洁： HTML 模板 + JSON 数据，再创建一个 Vue 实例，就这么简单。 数据驱动： 自动追踪依赖的模板表达式和计算属性。 组件化： 用解耦、可复用的组件来构造界面。 轻量： ~24kb min+gzip，无依赖。 快速： 精确有效的异步批量 DOM 更新。 另一种答案： 低耦合。视图（View）可以独立于Model变化和修改，一个ViewModel可以绑定到不同的”View”上，当View变化的时候Model可以不变，当Model变化的时候View也可以不变。 可重用性。你可以把一些视图逻辑放在一个ViewModel里面，让很多view重用这段视图逻辑。 独立开发。开发人员可以专注于业务逻辑和数据的开发（ViewModel），设计人员可以专注于页面设计。 可测试。界面素来是比较难于测试的，而现在测试可以针对ViewModel来写易用灵活高效 vue与react和angular的对比响应式原理官方文档-深入响应式原理 MVVM详细的实现vue源码解析当面试官问你Vue响应式原理，你可以这么回答他 深入浅出响应式原理 生命周期视频讲解：https://jirengu.com/app/album/92 生命周期钩子函数Vue提供的可以注册的钩子都在上图片的红色框标注。 他们分别是： beforeCreate：在实例初始化之后，数据观测(data observer) 和 event/watcher 事件配置之前被调用。 created：实例创建完成之后被调用。在这一步，实例已完成以下的配置：数据观测(data observer)，属性和方法的运算， watch/event 事件回调。然而，尚未挂载到DOM上，$el 还不可用。 beforeMount：在挂载开始之前被调用：相关的 render 函数首次被调用。 mounted：el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子。如果 root 实例挂载了一个文档内元素，当 mounted 被调用时 vm.$el 也在文档内。 beforeUpdate：数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。 你可以在这个钩子中进一步地更改状态，这不会触发附加的重渲染过程。 updated：由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。然而在大多数情况下，你应该避免在此期间更改状态，因为这可能会导致更新无限循环。该钩子在服务器端渲染期间不被调用。 beforeDestroy：实例销毁之前调用。在这一步，实例仍然完全可用。 destroyed：Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。 该钩子在服务器端渲染期间不被调用。 | 钩子函数 | 描述 | 例子 || ——– | —— | ——— || beforeCreate | 实例初始化，$el 与 data 都未初始化 | 此时无法获取到this(data和methods) || created | 实例创建完成，data 配置完成但挂载还未开始 $el 仍未初始化 | 此时可以获取到this(data和methods)，一般用于异步数据的请求/初始化(将$bus绑定到this.prototype、读取localStorage等) || beforeMount |挂载开始前，render 函数被调用，$el 和 data 配置完成，但数据未在 DOM 上渲染 || mounted | 挂载完成，el 被新创建的 vm.$el 替换并挂载到实例上去，data里的初始数据在 DOM 上渲染完毕 | 此时可以获取由data里初始数据渲染后的DOM节点 || beforeUpdate | 数据更新时调用，但不进行 DOM 重新渲染 || updated | 数据更新并且 DOM 重新渲染，此时可执行依赖于 DOM 的操作 | 此时可以获取到异步请求的数据替换初始数据渲染后的DOM节点 || beforeDertroy | 实例销毁前 || destroyed | 实例销毁后 | 日期new Date()不能放在data:{time:new Date()}，这样日期不会实时变化，可以放在created或者mounted这两个生命周期函数内12345mounted()&#123; timer = setInterval(()=&gt;&#123; this.time = new Date(); &#125;,1000);&#125; 【时间与生命周期函数】 updated和this.$nextTick(callback)api：this.$nextTick(callback)在数据改变之后立即使用this.$nextTick，待 DOM 渲染完成之后，会执行nextTick里的callback123456789101112131415161718192021created:&#123; //异步请求 axios().then(()=&gt;&#123; this.lists = [4,5,6]; this.$nextTick(()=&gt;&#123; console.log('第1次更新'); &#125;); &#125;); axios().then(()=&gt;&#123; this.lists = [7,8,9,10]; this.$nextTick(()=&#123; console.log('第2次更新'); &#125;); &#125;);&#125;,updated:&#123; console.log(1); //每次数据有变化，都会执行updated //由于lists更新了2次，所以会打印2次1 //如果不希望每次数据变化都执行，或者想要执行不同的方法，可以用this.$nextTick&#125; 如果在数据变化并重新渲染DOM完成之后，要操作DOM，就用this.$nextTick如果不操作DOM，那就用watch侦听器updated：只要data里的任何一个数据发生变化，就会触发；watch可以侦听data里具体某个数据的变化 组件化组件化应用构建一个页面可能会有页头、侧边栏、内容区等界面，将这些界面抽象为一个个小型、独立和通常可复用的组件。通过 Prop 向子组件传递数据使用$emit事件向父组件抛出一个值举例子： 查看官方示例源码查看todoMVC示例,并能够自己写出来源码 单文件组件.vue单文件组件 单文件组件必须要有&lt;template&gt;；&lt;style&gt;可以有多个 style可以通过@import将样式引入进单vue文件的style里1234&lt;style scoped&gt; @import './member_base.css'; @import './member.css';&lt;/style&gt; vue-loadervue-loader 路由vue-routervue-router 状态管理vuexvuex vue的相关周边 github:vue-cli vue-cli中文文档 vue-devtools vue-webpack模板文档 面试题资料https://www.jianshu.com/p/b1dd80f4d542http://www.imooc.com/article/details/id/23787]]></content>
       <categories>
         <category>vue</category>
       </categories>
@@ -215,8 +236,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
@@ -273,7 +294,7 @@
   <entry>
     <title><![CDATA[axios的使用教程]]></title>
     <url>%2F2018%2F04%2F14%2Faxios%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[axios中文文档axios发送GET、POST请求axios拦截器的使用 安装npm i axios -S 用axios代替ajaxAxios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。axios中文文档 配置默认值 配置后端host 1axios.defaults.baseURL = 'https://api.example.com'; 这样，url就不需要写成https://api.example.com/user，只需要写成/user即可 配置withCredentials 1axios.defaults.withCredentials = true; 表示跨域请求时带上凭证 基础用法1234567891011121314151617181920212223242526272829303132// 发送 GET 请求axios(&#123; method: 'get', url: '/user', params: &#123; //只有GET是用params发送参数，会显示在地址栏 ID: 12345, &#125;&#125;) .then(function (response) &#123; console.log(response); &#125;) .catch(function (error) &#123; console.log(error); &#125;);;// 发送 POST 请求【params用于GET时发送参数，会显示在地址栏；除此以外的用data发送参数，显示在开发者工具的Form Data里】axios(&#123; method: 'post', url: '/user', data: &#123; firstName: 'Fred', lastName: 'Flintstone' &#125;&#125;) .then(function (response) &#123; console.log(response); &#125;) .catch(function (error) &#123; console.log(error); &#125;);; 执行GET请求123456789101112131415161718192021// 为给定 ID 的 user 创建请求axios.get('/user?ID=12345') .then(function (response) &#123; console.log(response); &#125;) .catch(function (error) &#123; console.log(error); &#125;);// 可选地，上面的请求可以这样做axios.get('/user', &#123; params: &#123; ID: 12345 &#125; &#125;) .then(response =&gt; &#123; console.log(response); &#125;) .catch(error =&gt; &#123; console.log(error); &#125;); 带查询参数的GET请求1234567891011axios.get('/user', &#123; params: &#123; ID: 12345 &#125; &#125;) .then(res =&gt; &#123; console.log(res); &#125;) .catch(error =&gt; &#123; console.log(error); &#125;); 执行POST请求12345678910axios.post('/user', &#123; firstName: 'Fred', lastName: 'Flintstone' &#125;) .then(response =&gt; &#123; console.log(response); &#125;) .catch(error =&gt; &#123; console.log(error); &#125;); 拦截响应，返回自定义假数据123456789101112131415161718192021// 添加响应拦截器axios.interceptors.response.use(function (response) &#123; // 对响应数据做点什么 let &#123;config:&#123;url,method,data&#125;&#125; = response; //↑ 分解成let url = response.config.url; if (url === '/book/1' &amp;&amp; method === 'get') &#123; response.data = &#123; name: stage, &#125; &#125; else if (url === '/books/1' &amp;&amp; method === 'put') &#123; data = JSON.parse(data) Object.assign(book, data) response.data = book &#125; return response; &#125;, function (error) &#123; // 对响应错误做点什么 return Promise.reject(error); &#125;); 更多axios配置axios(config)12345678910111213axios(&#123; baseURL: 'https://some-domain.com/api', url: '/user', method: 'get', // 默认是 get // params 只有GET时能用，参数会显示在地址栏 params: &#123; ID: 12345 &#125;, // GET以外的方法，用data传送参数，会显示在开发者工具的Form Data里 data: &#123; firstName: 'Fred' &#125;,&#125;) 将axios添加到vue的prototype上12345import axios from 'axios';Vue.prototype.$axios = axios;//然后就可以通过this.$axios来使用axios//这样就不需要每个文件内都import axios了 vue-jsonpnpm i vue-jsonp 使用this.$jsonp(url, dataObj, timeout) 12345678910111213141516import Vue from 'vue'import VueJsonp from 'vue-jsonp'Vue.use(VueJsonp) // Use it in Vue Component. methods: &#123; getData() &#123; this.$jsonp('https://api.douban.com/data',&#123; name: 'stage', age: 24 &#125;) .then(res =&gt; &#123; // Success. &#125;) .catch(err =&gt; &#123; // Failed. &#125;) &#125; &#125;]]></content>
+    <content type="text"><![CDATA[axios中文文档axios发送GET、POST请求axios拦截器的使用 安装npm i axios -S 用axios代替ajaxAxios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。axios中文文档 配置默认值 配置后端host 1axios.defaults.baseURL = 'https://api.example.com'; 这样，url就不需要写成https://api.example.com/user，只需要写成/user即可 配置withCredentials 1axios.defaults.withCredentials = true; 表示跨域请求时带上凭证 配置POST请求格式1axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8'; 基础用法1234567891011121314151617181920212223242526272829303132// 发送 GET 请求axios(&#123; method: 'get', url: '/user', params: &#123; //只有GET是用params发送参数，会显示在地址栏 ID: 12345, &#125;&#125;) .then(function (response) &#123; console.log(response); &#125;) .catch(function (error) &#123; console.log(error); &#125;);;// 发送 POST 请求【params用于GET时发送参数，会显示在地址栏；除此以外的用data发送参数，显示在开发者工具的Form Data里】axios(&#123; method: 'post', url: '/user', data: &#123; firstName: 'Fred', lastName: 'Flintstone' &#125;&#125;) .then(function (response) &#123; console.log(response); &#125;) .catch(function (error) &#123; console.log(error); &#125;);; 执行GET请求123456789101112131415161718192021// 为给定 ID 的 user 创建请求axios.get('/user?ID=12345') .then(function (response) &#123; console.log(response); &#125;) .catch(function (error) &#123; console.log(error); &#125;);// 可选地，上面的请求可以这样做axios.get('/user', &#123; params: &#123; ID: 12345 &#125; &#125;) .then(response =&gt; &#123; console.log(response); &#125;) .catch(error =&gt; &#123; console.log(error); &#125;); 带查询参数的GET请求1234567891011axios.get('/user', &#123; params: &#123; ID: 12345 &#125; &#125;) .then(res =&gt; &#123; console.log(res); &#125;) .catch(error =&gt; &#123; console.log(error); &#125;); 执行POST请求GET请求可以直接/user?ID=12345，数据会显示在地址栏；POST请求为了安全，不能直接在url后面接数据 在axios中的post请求要非常注意两个地方： 要设置合适的请求头，一般采用x-www-form-urlencoded即可 发送的数据要用qs序列化，因为axios默认的格式是Request Payload(打开控制台的Network -&gt; Headers)。 12345678910111213141516171819import axios from 'axios';import qs from 'qs';axios.post('/user', qs.stringify(&#123; firstName: 'Fred', lastName: 'Flintstone' &#125;), &#123; headers: &#123; 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' &#125; &#125; ).then((&#123;data&#125;) =&gt; &#123; console.log(data); &#125;) .catch(error =&gt; &#123; console.log(error); &#125;); 此时，打开Network -&gt; Headers,可以看到数据在Form Data中了。 拦截响应，返回自定义假数据123456789101112131415161718192021// 添加响应拦截器axios.interceptors.response.use(function (response) &#123; // 对响应数据做点什么 let &#123;config:&#123;url,method,data&#125;&#125; = response; //↑ 分解成let url = response.config.url; if (url === '/book/1' &amp;&amp; method === 'get') &#123; response.data = &#123; name: stage, &#125; &#125; else if (url === '/books/1' &amp;&amp; method === 'put') &#123; data = JSON.parse(data) Object.assign(book, data) response.data = book &#125; return response; &#125;, function (error) &#123; // 对响应错误做点什么 return Promise.reject(error); &#125;); 更多axios配置axios(config)12345678910111213141516axios(&#123; baseURL: 'https://some-domain.com/api', url: '/user', method: 'get', // 默认是 get // params 只有GET时能用，参数会显示在地址栏 params: &#123; ID: 12345 &#125;, // GET以外的方法，用data传送参数，会显示在开发者工具的Form Data里 data: &#123; firstName: 'Fred' &#125;, headers: &#123; Content-Type:'application/x-www-form-urlencoded; charset=UTF-8' &#125;&#125;) 将axios添加到vue的prototype上12345import axios from 'axios';Vue.prototype.$axios = axios;//然后就可以通过this.$axios来使用axios//这样就不需要每个文件内都import axios了 vue-jsonpnpm i vue-jsonp 使用this.$jsonp(url, dataObj, timeout) 12345678910111213141516import Vue from 'vue'import VueJsonp from 'vue-jsonp'Vue.use(VueJsonp) // Use it in Vue Component. methods: &#123; getData() &#123; this.$jsonp('https://api.douban.com/data',&#123; name: 'stage', age: 24 &#125;) .then(res =&gt; &#123; // Success. &#125;) .catch(err =&gt; &#123; // Failed. &#125;) &#125; &#125;]]></content>
       <categories>
         <category>vue</category>
       </categories>
@@ -305,8 +326,8 @@
       </categories>
       <tags>
         <tag>js</tag>
-        <tag>教程</tag>
         <tag>css</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -317,8 +338,8 @@
         <category>http</category>
       </categories>
       <tags>
-        <tag>http</tag>
         <tag>面试题</tag>
+        <tag>http</tag>
         <tag>web前端性能优化</tag>
       </tags>
   </entry>
@@ -327,12 +348,12 @@
     <url>%2F2018%2F04%2F11%2F%E5%BC%82%E6%AD%A5%E4%B8%8E%E5%9B%9E%E8%B0%83%2F</url>
     <content type="text"><![CDATA[同步与异步的区别通过【回调】获得异步任务的结果输出结果的优先级：同步 =&gt; 异步 =&gt; 回调参考资料：方应杭：异步与回调 代码执行顺序同步优先、异步靠边、回调垫底12345console.log(1)setTimeout(function()&#123; console.log(2)&#125;,0)console.log(3) 上面代码的书写顺序是 1 -&gt; 2 -&gt; 3； 但是执行顺序是 1 -&gt; 3 -&gt; 2。 中间的 console.log(2) 就是异步执行的。 你现在知道了「代码的书写顺序和执行顺序居然可以不同！」 同步与异步的区别同步：你用饿了么点外卖，然后在楼下一直等外卖小哥，直到他把外卖送到异步：你用饿了么点外卖，然后去玩游戏，过一会外卖小哥打电话说外卖送到楼下了，你再下楼去取外卖。【其中，外卖小哥打电话通知你的这个行为称为“回调”】 同步：一定要等任务执行完了，得到结果，才执行下一个任务。123456function taskSync()&#123; return '同步任务的返回值'&#125;var result = taskSync() // 那么 result 就是同步任务的结果nextTask() // 然后执行下一个任务 异步：不等任务执行完，直接执行下一个任务。123456789function taskAsync()&#123; var result = setTimeout(function()&#123; console.log('异步任务的结果') &#125;, 3000) return result&#125;var result = taskAsync() // result 不是异步任务的结果，而是一个 timer idotherTask() // 立即执行其他任务，不等异步任务结束 我们拿到的 result 不是异步执行的结果，而是一个 timer id,那么要怎么拿到异步任务的结果呢？ 答案是用【回调】！ 回调将一个函数作为参数传递给另一个函数，作为参数的这个函数就是回调函数。 同步回调1234567891011var callback = function(arg3) &#123; console.log('cb:' + arg3) &#125;function fn(arg1, arg2, cb) &#123; var Total = arg1 + arg2; cb(Total); console.log('fn1:' + Total)&#125;fn(2, 2, callback) // 调用fn()函数，并传入2, 2, callback作为参数 上面的代码执行结果为：12cb:4fn1:4 不对啊！ 回调函数不是应该在主函数的最后执行吗？上面的例子是一个同步回调函数，函数的执行顺序依然自上而下顺序执行。那么什么是异步回调呢？ 异步回调在异步回调中，同步 =&gt; 异步 =&gt; 回调123456789101112function f2() &#123; console.log('f2 finished') &#125;function f1(cb) &#123; setTimeout(cb,1000) //用setTimeout()模拟耗时操作 console.log('f1 finished')&#125;f1(f2); //得到的结果是 f1 finished ，f2 finished 「回调」经常用于获取「异步任务」的结果:1234567891011function taskAsync(callback)&#123; var result = setTimeout(function()&#123; callback('异步任务的结果') &#125;, 3000) return result&#125;taskAsync(function(result)&#123; console.log(result) // 三秒钟后，这个 callback 函数会被执行&#125;)otherTask() // 立即执行其他任务，不等异步任务结束 回调函数的参数 将回调函数的参数作为与回调函数同等级的参数进行传递 回调函数的参数在调用回调函数内部创建]]></content>
       <categories>
-        <category>知识点</category>
+        <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
-        <tag>笔记</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -343,11 +364,11 @@
         <category>http</category>
       </categories>
       <tags>
+        <tag>js</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>http</tag>
         <tag>请求与响应</tag>
-        <tag>面试题</tag>
-        <tag>笔记</tag>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -358,8 +379,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>js</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -370,9 +391,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
-        <tag>笔记</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -383,8 +404,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
@@ -409,9 +430,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
-        <tag>笔记</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -433,9 +454,9 @@
         <category>移动端</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
-        <tag>笔记</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>css</tag>
         <tag>移动端</tag>
       </tags>
@@ -443,7 +464,7 @@
   <entry>
     <title><![CDATA[sublime使用技巧]]></title>
     <url>%2F2018%2F03%2F23%2Fsublime%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%2F</url>
-    <content type="text"><![CDATA[sublime快捷键常用插件snippet的使用 常用插件emmet前身是zencoding，作为前端界最出名（我觉得没有之一）的插件，几乎是可以稳定的提升50%的书写效率，用得多了以后的后遗症就是，好多CSS属性本来的拼法都记不清了。 emmet使用技巧 lorem可以打出一长串无意义字符串 lorem4可以打出4个字符串 jQuery主要是用来直接调出AJAX语法块，以及绑定事件响应。 SublimeGit好用到哭的git插件，妈妈再也不用担心我改出bug无法回滚了。几年前一个前辈教导我说，哪怕不做开源，自建一个本地仓库用git来管理代码也是很有必要的。一方面是能够控制代码版本，出了问题可以分步回滚，另一方面也是有一个task的概念，培养自己把软件开发任务做粒度的划分，便于估计自己的开发能力，预估工期。 JsFormat作为一个上升处女座的程序员，难以忍受凌乱的格式，更加难以忍受按无数次tab对齐代码，JsFormat可以格式化HTML，CSS和js代码。不过在写react的时候遇到很麻烦，你们懂的。目前还没有找到可以把react代码格式化做的很漂亮的插件。 a file icon根据文件类型显示不同的文件图标 其他Terminal、SideBarEnhancements、MarkdownLight、OmniMarkdownPreviewer CSSREMsublime px转rem插件：cssrem 快捷键 Esc ： 关闭搜索框，命令框等 Ctrl+D：选择单词，重复可增加选择下一个相同的单词 Alt+F3：一次性选择全部的相同文本进行同时编辑。举个栗子：快速选中所有相同的变量名、函数名等。 Ctrl+P,搜索侧边栏中的文件名 shift+end ： 选择行，从光标当前所在位置开始选中到行尾 Ctrl+L：选择整个行，重复可依次增加选择下一行 shift+home ： 从光标当前所在位置开始选中到行首 Ctrl+Shift+M ：选择括号内的内容（继续选择父括号）。举个栗子：快速选中删除函数中的代码，重写函数体代码或重写括号内里的内容。 Ctrl+M ：：光标移动至括号内结束或开始的位置。 Ctrl+F :打开底部搜索框，查找关键字。 Ctrl+shift+F :在文件夹内查找，与普通编辑器不同的地方是sublime允许添加多个文件夹进行查找，略高端，未研究。 Ctrl+P :打开搜索框。举个栗子：1、输入当前项目中的文件名，快速搜索文件，2、输入@和关键字，查找文件中函数名，3、输入：和数字，跳转到文件中该行代码，4、输入#和关键字，查找变量名。 Ctrl+G :打开搜索框，自动带：，输入数字跳转到该行代码。举个栗子：在页面代码比较长的文件中快速定位。 Ctrl+R: 打开搜索框，自动带@，输入关键字，查找文件中的函数名。举个栗子：在函数较多的页面快速查找某个函数。 Ctrl+: :打开搜索框，自动带#，输入关键字，查找文件中的变量名、属性名等。 ctrl+alt+ ↓ ： 光标选择多行进行编辑(比如可以给多行前面添加-) Ctrl+J：合并选中的多行代码为一行。举个栗子：将多行格式的CSS属性合并为一行。 Ctrl+G：跳转到第几行 Ctrl+W：关闭当前打开文件 Ctrl+F：查找内容 Ctrl+/：用//注释当前行 Ctrl+Shift+/ : 用/**/注释多行 ctrl+shift+enter： 在上一行插入新行 ctrl+[ ： 收起代码段 ctrl+] : 展开代码段 Ctrl+X ： 剪切 shift+ → ： 右移并选中 Shift+ ↑ ： 上移并选中 ctrl+shift+ → ： 光标按\w规则跳跃移动 alt+ → ： 光标按单词移动 alt+shift+ → ： 按单词移动并选择 home : 光标移到行首 end ： 光标移到行尾 ctrl+home ： 滚到文件最前面 ctrl+end ： 滚到文件最后面 Ctrl+Shift+上下键：整行移动交换位置 Ctrl+Shift+Y：选中计算表达式后按这个快捷键可以计算出结果 snippet点击工具 &gt; 插件开发 &gt; 新建代码片段 就可以创建一个新的snippet 在线生成工具：https://snippets.now.sh/1234567891011&lt;snippet&gt;&lt;!-- $&#123;1&#125;代表的是第一个光标位置，代码片会默认选中this，当按下tab之后，会选中$&#123;2&#125;中的snippet --&gt; &lt;content&gt;&lt;![CDATA[Hello, $&#123;1:this&#125; is a $&#123;2:snippet&#125;.]]&gt;&lt;/content&gt; &lt;!-- 设置关键词↓ --&gt; &lt;!-- &lt;tabTrigger&gt;hello&lt;/tabTrigger&gt; --&gt; &lt;!-- 设置生效的语言环境text.html,source.css,source.js --&gt; &lt;!-- &lt;scope&gt;source.js&lt;/scope&gt; --&gt;&lt;/snippet&gt;]]></content>
+    <content type="text"><![CDATA[sublime快捷键常用插件snippet的使用 常用插件emmet前身是zencoding，作为前端界最出名（我觉得没有之一）的插件，几乎是可以稳定的提升50%的书写效率，用得多了以后的后遗症就是，好多CSS属性本来的拼法都记不清了。 emmet使用技巧 lorem可以打出一长串无意义字符串 lorem4可以打出4个字符串 jQuery主要是用来直接调出AJAX语法块，以及绑定事件响应。 SublimeGit好用到哭的git插件，妈妈再也不用担心我改出bug无法回滚了。几年前一个前辈教导我说，哪怕不做开源，自建一个本地仓库用git来管理代码也是很有必要的。一方面是能够控制代码版本，出了问题可以分步回滚，另一方面也是有一个task的概念，培养自己把软件开发任务做粒度的划分，便于估计自己的开发能力，预估工期。 JsFormat作为一个上升处女座的程序员，难以忍受凌乱的格式，更加难以忍受按无数次tab对齐代码，JsFormat可以格式化HTML，CSS和js代码。不过在写react的时候遇到很麻烦，你们懂的。目前还没有找到可以把react代码格式化做的很漂亮的插件。 a file icon根据文件类型显示不同的文件图标 其他Terminal、SideBarEnhancements、MarkdownLight、OmniMarkdownPreviewer CSSREMsublime px转rem插件：cssrem 快捷键 Esc ： 关闭搜索框，命令框等 Ctrl+D：选择单词，重复可增加选择下一个相同的单词 Ctrl + Shift + D：复制并粘贴整行 Alt+F3：一次性选择全部的相同文本进行同时编辑。举个栗子：快速选中所有相同的变量名、函数名等。 Ctrl+P,搜索侧边栏中的文件名 shift+end ： 选择行，从光标当前所在位置开始选中到行尾 Ctrl+L：选择整个行，重复可依次增加选择下一行 shift+home ： 从光标当前所在位置开始选中到行首 Ctrl+Shift+M ：选择括号内的内容（继续选择父括号）。举个栗子：快速选中删除函数中的代码，重写函数体代码或重写括号内里的内容。 Ctrl+M ：：光标移动至括号内结束或开始的位置。 Ctrl+F :打开底部搜索框，查找关键字。 Ctrl+shift+F :在文件夹内查找，与普通编辑器不同的地方是sublime允许添加多个文件夹进行查找，略高端，未研究。 Ctrl+P :打开搜索框。举个栗子：1、输入当前项目中的文件名，快速搜索文件，2、输入@和关键字，查找文件中函数名，3、输入：和数字，跳转到文件中该行代码，4、输入#和关键字，查找变量名。 Ctrl+G :打开搜索框，自动带：，输入数字跳转到该行代码。举个栗子：在页面代码比较长的文件中快速定位。 Ctrl+R: 打开搜索框，自动带@，输入关键字，查找文件中的函数名。举个栗子：在函数较多的页面快速查找某个函数。 Ctrl+: :打开搜索框，自动带#，输入关键字，查找文件中的变量名、属性名等。 ctrl+alt+ ↓ ： 光标选择多行进行编辑(比如可以给多行前面添加-) Ctrl+J：合并选中的多行代码为一行。举个栗子：将多行格式的CSS属性合并为一行。 Ctrl+G：跳转到第几行 Ctrl+W：关闭当前打开文件 Ctrl+F：查找内容 Ctrl+/：用//注释当前行 Ctrl+Shift+/ : 用/**/注释多行 ctrl+shift+enter： 在上一行插入新行 ctrl+[ ： 收起代码段 ctrl+] : 展开代码段 Ctrl+X ： 剪切 shift+ → ： 右移并选中 Shift+ ↑ ： 上移并选中 ctrl+shift+ → ： 光标按\w规则跳跃移动 alt+ → ： 光标按单词移动 alt+shift+ → ： 按单词移动并选择 home : 光标移到行首 end ： 光标移到行尾 ctrl+home ： 滚到文件最前面 ctrl+end ： 滚到文件最后面 Ctrl+Shift+上下键：整行移动交换位置 Ctrl+Shift+Y：选中计算表达式后按这个快捷键可以计算出结果 snippet点击工具 &gt; 插件开发 &gt; 新建代码片段 就可以创建一个新的snippet 在线生成工具：https://snippets.now.sh/1234567891011&lt;snippet&gt;&lt;!-- $&#123;1&#125;代表的是第一个光标位置，代码片会默认选中this，当按下tab之后，会选中$&#123;2&#125;中的snippet --&gt; &lt;content&gt;&lt;![CDATA[Hello, $&#123;1:this&#125; is a $&#123;2:snippet&#125;.]]&gt;&lt;/content&gt; &lt;!-- 设置关键词↓ --&gt; &lt;!-- &lt;tabTrigger&gt;hello&lt;/tabTrigger&gt; --&gt; &lt;!-- 设置生效的语言环境text.html,source.css,source.js --&gt; &lt;!-- &lt;scope&gt;source.js&lt;/scope&gt; --&gt;&lt;/snippet&gt;]]></content>
       <categories>
         <category>sublime</category>
       </categories>
@@ -460,8 +481,8 @@
         <category>ajax</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>ajax</tag>
         <tag>jq</tag>
       </tags>
@@ -474,8 +495,8 @@
         <category>ajax</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>ajax</tag>
         <tag>json</tag>
         <tag>jsonp</tag>
@@ -489,9 +510,9 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>http</tag>
-        <tag>面试题</tag>
         <tag>js</tag>
+        <tag>面试题</tag>
+        <tag>http</tag>
         <tag>css</tag>
         <tag>html</tag>
         <tag>数据结构与算法</tag>
@@ -505,10 +526,10 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
-        <tag>笔记</tag>
         <tag>js</tag>
         <tag>dom</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -519,9 +540,9 @@
         <category>es6</category>
       </categories>
       <tags>
+        <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>es6</tag>
-        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -532,8 +553,8 @@
         <category>jq</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>jq</tag>
       </tags>
   </entry>
@@ -545,8 +566,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>js</tag>
+        <tag>面试题</tag>
         <tag>css</tag>
         <tag>html</tag>
         <tag>jq</tag>
@@ -560,8 +581,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
         <tag>jq</tag>
       </tags>
   </entry>
@@ -573,10 +594,10 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
-        <tag>笔记</tag>
         <tag>js</tag>
         <tag>dom</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -587,9 +608,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
-        <tag>笔记</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -600,9 +621,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
-        <tag>笔记</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -613,8 +634,8 @@
         <category>jq</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>jq</tag>
       </tags>
   </entry>
@@ -626,9 +647,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
-        <tag>笔记</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -639,22 +660,22 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
-        <tag>笔记</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[js里的数据类型]]></title>
     <url>%2F2018%2F03%2F03%2Fjs%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%2F</url>
-    <content type="text"><![CDATA[数字number字符串string布尔值booleanundefined未定义null对象object符号symbol js里的7种数据类型 number 数字 string 字符串 boolean 布尔值 symbol 符号 undefined null object 对象(数组array和函数function都是对象) typeof返回的都是字符串类型xxx 的类型stringnumberbooleansymbolundefinednullobjectfunctiontypeof xxx‘string’‘number’‘boolean’‘symbol’‘undefined’‘object’‘object’‘function’ number数字 整数和小数：1 1.1 .1 科学记数法：1.23e2 //123【表示1.23乘以10的2次方】 二进制：0b11 //3 【以0b开头的，js默认为二进制】 八进制：011（后来 ES5 添加了 0o11 语法）//3 【以0开头的默认为8进制】 十六进制：0x11 //17 【以0x开头的默认为16进制】 string字符串 空字符串：&#39;&#39; //空字符串的length=0 字符串换行： 12var s = `1234567890`; // 含换行符号,所以s.length=11 符号转义 1234567var s = '\''; // 'var s = '\n' // 回车var s = '\t' // tabvar s = '\\' // \ 用转义符转义斜杠 boolean布尔值 a &amp;&amp; b 与运算 a || b 或运算 null空对象,undefined空非对象 如果想声明一个对象，但暂且不赋值，用null表示空对象var obj = null 非对象声明，但暂且不赋值，用undefined(但是实际上你直接 var xxx 一下就行了)1234var notObj = undefined;简写为var notObj; object对象基本对象123456789101112var 王花花 = &#123; age: 18, gender: 'female', height: 168, weight: 57, married: true&#125;;王花花.age // 18等同于 王花花['age']王花花.gender // fenale等同于 王花花['gender'] 复杂对象12345678910111213141516var x = &#123; a: 1, b: 2, c: &#123; c1: 3, c2: 4, c3: &#123; d1: 5, d2: 6 &#125; &#125;&#125;;x.c // &#123;c1: 3, c2: 4&#125;x.c.c1 // 3x.c.c3.d2 // 6 对象的格式1234567891011121314151617var obj = &#123; 9a: 'hello' //报错，key不加引号，则命名需要按照变量名的命名规则，不能以数字开头&#125;; var obj = &#123; '9a': 'hello' //9a加上单引号就不报错了&#125;;-----------------var obj = &#123; '': 'hello' //空字符串可以作为key&#125;obj[''] // hellovar obj = &#123; 名字: '王花花' //可以用中文作为key名，因为在变量名的命名规则中，中文命名是合法的&#125; 操作对象12345678910111213141516171819var obj = &#123; a: 1, b: 2, c: 3&#125;;删除 delete obj.a;等同于delete obj['a'];某1个key是否存在'a' in obj;//true遍历对象for (var key in obj) &#123; console.log(key); // a,b,c console.log(obj[key]); //1,2,3&#125; 对象的相等情况1234567var a = [1,2,3];var b = [1,2,3];a===b // false,因为a和b的Address不一样var a = [1,2,3];var b = a;a===b //true,因为上一步a将自己的Address赋给了b typeof与instanceofinstanceof 运算符用来测试一个对象在其原型链中是否存在一个构造函数的 prototype 属性。123var arr = [1,2,3];arr instanceof Array; //truearr instanceof Number; //false]]></content>
+    <content type="text"><![CDATA[数字number字符串string布尔值booleanundefined未定义null符号symbol对象object js里的7种数据类型 number 数字 string 字符串 boolean 布尔值 symbol 符号 undefined null object 对象(数组array和函数function都是对象) typeof返回的都是字符串类型xxx 的类型stringnumberbooleansymbolundefinednullobjectfunctiontypeof xxx‘string’‘number’‘boolean’‘symbol’‘undefined’‘object’‘object’‘function’ number数字 整数和小数：1 1.1 .1 科学记数法：1.23e2 //123【表示1.23乘以10的2次方】 二进制：0b11 //3 【以0b开头的，js默认为二进制】 八进制：011（后来 ES5 添加了 0o11 语法）//3 【以0开头的默认为8进制】 十六进制：0x11 //17 【以0x开头的默认为16进制】 string字符串 空字符串：&#39;&#39; //空字符串的length=0 字符串换行： 12var s = `1234567890`; // 含换行符号,所以s.length=11 符号转义 1234567var s = '\''; // 'var s = '\n' // 回车var s = '\t' // tabvar s = '\\' // \ 用转义符转义斜杠 boolean布尔值 a &amp;&amp; b 与运算 a || b 或运算 null空对象,undefined非对象空值 如果想声明一个对象，但暂且不赋值，用null表示空对象var obj = null 非对象声明，但暂且不赋值，用undefined(但是实际上你直接 var xxx 一下就行了)1234var notObj = undefined;简写为var notObj; object对象基本对象123456789101112var 王花花 = &#123; age: 18, gender: 'female', height: 168, weight: 57, married: true&#125;;王花花.age // 18等同于 王花花['age']王花花.gender // fenale等同于 王花花['gender'] 复杂对象12345678910111213141516var x = &#123; a: 1, b: 2, c: &#123; c1: 3, c2: 4, c3: &#123; d1: 5, d2: 6 &#125; &#125;&#125;;x.c // &#123;c1: 3, c2: 4&#125;x.c.c1 // 3x.c.c3.d2 // 6 对象的格式1234567891011121314151617var obj = &#123; 9a: 'hello' //报错，key不加引号，则命名需要按照变量名的命名规则，不能以数字开头&#125;; var obj = &#123; '9a': 'hello' //9a加上单引号就不报错了&#125;;-----------------var obj = &#123; '': 'hello' //空字符串可以作为key&#125;obj[''] // hellovar obj = &#123; 名字: '王花花' //可以用中文作为key名，因为在变量名的命名规则中，中文命名是合法的&#125; 操作对象12345678910111213141516171819var obj = &#123; a: 1, b: 2, c: 3&#125;;删除 delete obj.a;等同于delete obj['a'];某1个key是否存在'a' in obj;//true遍历对象for (var key in obj) &#123; console.log(key); // a,b,c console.log(obj[key]); //1,2,3&#125; 对象的相等情况1234567var a = [1,2,3];var b = [1,2,3];a===b // false,因为a和b指向不同的Addressvar a = [1,2,3];var b = a;a===b //true,因为上一步a将自己的Address赋给了b typeof与instanceofinstanceof 运算符用来测试一个对象在其原型链中是否存在一个构造函数的 prototype 属性。123var arr = [1,2,3];arr instanceof Array; //truearr instanceof Number; //false]]></content>
       <categories>
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
-        <tag>笔记</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -677,9 +698,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
-        <tag>笔记</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -703,9 +724,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
-        <tag>笔记</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -740,8 +761,8 @@
         <category>css</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>css</tag>
       </tags>
   </entry>
@@ -753,8 +774,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -765,21 +786,21 @@
         <category>html</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>html</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[🔒 html知识点补充]]></title>
     <url>%2F2018%2F02%2F22%2Fhtml%E7%9F%A5%E8%AF%86%E7%82%B9%E8%A1%A5%E5%85%85%2F</url>
-    <content type="text"><![CDATA[html知识点补充，查漏补缺，比较零碎 iframe 标签嵌套页面12&lt;iframe src="https://www.baidu.com" name="qqqqq" width=100% height=200 &gt;&lt;/iframe&gt;&lt;a href="https://www.qq.com" name="qqqqq"&gt;在name=qqqqq的iframe中打开&lt;/a&gt; a 标签跳转页面（HTTP GET 请求） download属性123456&lt;a href="xxxx" download&gt;下载链接&lt;/a&gt;&lt;a href="http://www.xxx.com/3.png" download="3.png"&gt;下载图片3.png&lt;/a&gt;加上download属性，就会下载下来否则就是用浏览器打开预览文件download="文件名"用js可以操作文件名，比如a.download = imgName + '.png'; target属性12345&lt;a target="_blank|_self|_parent|_top|framename"&gt;_blank 在新窗口中打开_self 在a标签所在的页面中打开_parent 在a标签所在页面的父级窗口中打开_top 如果嵌套iframe,就在最顶层（也就是当前页面）中打开 href属性1234567891011121314151617181920212223绝对路径&lt;a href="www.qq.com"&gt;错误！！！！漏了协议&lt;/a&gt;&lt;a href="https://www.qq.com"&gt;正确，https协议&lt;/a&gt;&lt;a href="//www.qq.com"&gt;正确,自定义协议&lt;/a&gt;相对路径&lt;a href="./xxx.html"&gt;&lt;/a&gt;结果打开127.0.0.1:8080/xxx.html&lt;a href="#锚点"&gt;&lt;/a&gt;结果打开127.0.0.1:8080/index.html#锚点，锚点不发起请求&lt;a href="?name=stage"&gt;&lt;/a&gt;结果打开127.0.0.1:8080/index.html?name=stage,自动发起 ?name=stage 的GET请求&lt;a href="javascript:;"&gt;&lt;/a&gt;点击之后什么都不发生&lt;a href="#"&gt;&lt;/a&gt;点击之后不刷新，锚点变成#，滚回到顶部&lt;a href=""&gt;&lt;/a&gt;点击之后刷新当前页面 form12345678&lt;form action="index2.php" method="get"&gt; First name: &lt;input type="text" name="fname"&gt;&lt;br&gt; Last name: &lt;input type="text" name="lname"&gt;&lt;br&gt; &lt;input type="submit" value="提交"&gt;&lt;/form&gt;将fname=xxx&amp;lname=xxx提交到index2.php中文会转码 method属性 GET时，如果有提交的数据，数据会作为查询参数出现在地址栏127.0.0.1::8080/index.html?fname=xxx&amp;lname=xxx POST时，用Chrome开发者工具可以看到，数据在Form Data里 重点如果一个表单中没有input-submit时 如果有&lt;button&gt;没有写type的按钮&lt;/button&gt;，该button自动升级为type=submit，可以提交表单 如果写了type=button，则无法提交表单 label 标签1234567891011&lt;label for="male"&gt;文字&lt;/label&gt;&lt;input type="checkbox" name="male" id="male"&gt;这样点击文字也能选中复选框，请将label的for与input的id名对应---------------------简便写法：label把input包起来&lt;label&gt;文字&lt;input type="checkbox" name="male"&gt;&lt;/label&gt;这样就不用for和id名了 select 标签1234567&lt;select name=&quot;choose&quot; multiple&gt; &lt;option value=&quot;&quot;&gt; - &lt;/option&gt; &lt;option value=&quot;1&quot; selected&gt;默认&lt;/option&gt; &lt;option value=&quot;2&quot; disabled&gt;禁选&lt;/option&gt; &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt; &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;&lt;/select&gt; multiple属性该属性允许多选对于 windows：按住Ctrl按钮来选择多个选项 table 标签可以用colgroup&gt;col控制表格的样式，第一个col控制第一竖列，第二个col控制第2竖列123456789101112131415161718192021222324252627&lt;table border=&quot;1&quot;&gt;&lt;colgroup&gt; &lt;col width=200&gt; &lt;col bgcolor=red&gt;&lt;/colgroup&gt; &lt;thead&gt; &lt;tr&gt; &lt;th&gt;姓名&lt;/th&gt;&lt;th&gt;得分&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td&gt;小明&lt;/td&gt;&lt;td&gt;100&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;小红&lt;/td&gt;&lt;td&gt;80&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;tfoot&gt; &lt;tr&gt; &lt;td&gt;所有人&lt;/td&gt; &lt;td&gt;180&lt;/td&gt; &lt;/tr&gt; &lt;/tfoot&gt;&lt;/table&gt; pre和code 标签&lt;pre&gt;标签，保留多个空格和回车换行,&lt;pre&gt;显示多行代码，&lt;code&gt;显示一行代码，&lt;pre&gt;可以替代&lt;code&gt; details 标签默认是个三角形▼123456&lt;details&gt; &lt;summary&gt;点我&lt;/summary&gt; &lt;p&gt;loremxxxxxxxxxx&lt;/p&gt; &lt;p&gt;loremxxxxxxxxxx&lt;/p&gt; &lt;p&gt;loremxxxxxxxxxx&lt;/p&gt;&lt;/details&gt; hidden 属性123&lt;p hidden&gt;这是一段隐藏的文字&lt;/p&gt;js用getAttribute('hidden')/setAttribute()/removeAttribute()操作 progress标签html5:progress标签 用于进度条、技能条等的显示1&lt;progress value="22" max="100"&gt;&lt;/progress&gt;]]></content>
+    <content type="text"><![CDATA[html知识点补充，查漏补缺，比较零碎 iframe 标签嵌套页面12&lt;iframe src="https://www.baidu.com" name="qqqqq" width=100% height=200 &gt;&lt;/iframe&gt;&lt;a href="https://www.qq.com" name="qqqqq"&gt;在name=qqqqq的iframe中打开&lt;/a&gt; a 标签跳转页面（HTTP GET 请求） download属性123456&lt;a href="xxxx" download&gt;下载链接&lt;/a&gt;&lt;a href="http://www.xxx.com/3.png" download="3.png"&gt;下载图片3.png&lt;/a&gt;加上download属性，就会下载下来否则就是用浏览器打开预览文件download="文件名"用js可以操作文件名，比如a.download = imgName + '.png'; target属性12345&lt;a target="_blank|_self|_parent|_top|framename"&gt;_blank 在新窗口中打开_self 在a标签所在的页面中打开_parent 在a标签所在页面的父级窗口中打开_top 如果嵌套iframe,就在最顶层（也就是当前页面）中打开 href属性1234567891011121314151617181920212223242526绝对路径&lt;a href="www.qq.com"&gt;错误！！！！漏了协议&lt;/a&gt;&lt;a href="https://www.qq.com"&gt;正确，https协议&lt;/a&gt;&lt;a href="//www.qq.com"&gt;正确,自定义协议&lt;/a&gt;相对路径&lt;a href="./xxx.html"&gt;&lt;/a&gt;结果打开127.0.0.1:8080/xxx.html&lt;a href="#锚点"&gt;&lt;/a&gt;结果打开127.0.0.1:8080/index.html#锚点，锚点不发起请求&lt;a href="?name=stage"&gt;&lt;/a&gt;结果打开127.0.0.1:8080/index.html?name=stage,自动发起 ?name=stage 的GET请求&lt;a href="javascript:;"&gt;&lt;/a&gt;点击之后什么都不发生&lt;a href="#"&gt;&lt;/a&gt;点击之后不刷新，锚点变成#，滚回到顶部&lt;a href=""&gt;&lt;/a&gt;点击之后刷新当前页面移动端点击拨打电话&lt;a href="tel:10086"&gt;10086&lt;/a&gt; form12345678&lt;form action="index2.php" method="get"&gt; First name: &lt;input type="text" name="fname"&gt;&lt;br&gt; Last name: &lt;input type="text" name="lname"&gt;&lt;br&gt; &lt;input type="submit" value="提交"&gt;&lt;/form&gt;将fname=xxx&amp;lname=xxx提交到index2.php中文会转码 method属性 GET时，如果有提交的数据，数据会作为查询参数出现在地址栏127.0.0.1::8080/index.html?fname=xxx&amp;lname=xxx POST时，用Chrome开发者工具可以看到，数据在Form Data里 重点如果一个表单中没有input-submit时 如果有&lt;button&gt;没有写type的按钮&lt;/button&gt;，该button自动升级为type=submit，可以提交表单 如果写了type=button，则无法提交表单 label 标签1234567891011&lt;label for="male"&gt;文字&lt;/label&gt;&lt;input type="checkbox" name="male" id="male"&gt;这样点击文字也能选中复选框，请将label的for与input的id名对应---------------------简便写法：label把input包起来&lt;label&gt;文字&lt;input type="checkbox" name="male"&gt;&lt;/label&gt;这样就不用for和id名了 select 标签1234567&lt;select name=&quot;choose&quot; multiple&gt; &lt;option value=&quot;&quot;&gt; - &lt;/option&gt; &lt;option value=&quot;1&quot; selected&gt;默认&lt;/option&gt; &lt;option value=&quot;2&quot; disabled&gt;禁选&lt;/option&gt; &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt; &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;&lt;/select&gt; multiple属性该属性允许多选对于 windows：按住Ctrl按钮来选择多个选项 table 标签可以用colgroup&gt;col控制表格的样式，第一个col控制第一竖列，第二个col控制第2竖列123456789101112131415161718192021222324252627&lt;table border=&quot;1&quot;&gt;&lt;colgroup&gt; &lt;col width=200&gt; &lt;col bgcolor=red&gt;&lt;/colgroup&gt; &lt;thead&gt; &lt;tr&gt; &lt;th&gt;姓名&lt;/th&gt;&lt;th&gt;得分&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td&gt;小明&lt;/td&gt;&lt;td&gt;100&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;小红&lt;/td&gt;&lt;td&gt;80&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;tfoot&gt; &lt;tr&gt; &lt;td&gt;所有人&lt;/td&gt; &lt;td&gt;180&lt;/td&gt; &lt;/tr&gt; &lt;/tfoot&gt;&lt;/table&gt; pre和code 标签&lt;pre&gt;标签，保留多个空格和回车换行,&lt;pre&gt;显示多行代码，&lt;code&gt;显示一行代码，&lt;pre&gt;可以替代&lt;code&gt; details 标签默认是个三角形▼123456&lt;details&gt; &lt;summary&gt;点我&lt;/summary&gt; &lt;p&gt;loremxxxxxxxxxx&lt;/p&gt; &lt;p&gt;loremxxxxxxxxxx&lt;/p&gt; &lt;p&gt;loremxxxxxxxxxx&lt;/p&gt;&lt;/details&gt; hidden 属性123&lt;p hidden&gt;这是一段隐藏的文字&lt;/p&gt;js用getAttribute('hidden')/setAttribute()/removeAttribute()操作 progress标签html5:progress标签 用于进度条、技能条等的显示1&lt;progress value="22" max="100"&gt;&lt;/progress&gt;]]></content>
       <categories>
         <category>html</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>html</tag>
       </tags>
   </entry>
@@ -791,8 +812,8 @@
         <category>http</category>
       </categories>
       <tags>
-        <tag>http</tag>
         <tag>面试题</tag>
+        <tag>http</tag>
         <tag>TCP/IP</tag>
         <tag>服务器</tag>
       </tags>
@@ -805,10 +826,10 @@
         <category>http</category>
       </categories>
       <tags>
+        <tag>面试题</tag>
         <tag>http</tag>
         <tag>请求与响应</tag>
         <tag>状态码</tag>
-        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>

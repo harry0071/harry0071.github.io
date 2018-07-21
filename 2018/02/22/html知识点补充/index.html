@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="面试题,笔记,html," />
+  <meta name="keywords" content="笔记,面试题,html," />
 
 
 
@@ -95,7 +95,7 @@
 <meta property="og:url" content="harry0071.github.io/2018/02/22/html知识点补充/index.html">
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="html知识点补充，查漏补缺，比较零碎">
-<meta property="og:updated_time" content="2018-05-14T14:50:59.000Z">
+<meta property="og:updated_time" content="2018-07-18T08:20:16.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="🔒 html知识点补充">
 <meta name="twitter:description" content="html知识点补充，查漏补缺，比较零碎">
@@ -372,7 +372,7 @@
 <h1 id="a-标签"><a href="#a-标签" class="headerlink" title="a 标签"></a>a 标签</h1><p>跳转页面（HTTP GET 请求）</p>
 <h2 id="download属性"><a href="#download属性" class="headerlink" title="download属性"></a>download属性</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"xxxx"</span> <span class="attr">download</span>&gt;</span>下载链接<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.xxx.com/3.png"</span> <span class="attr">download</span>=<span class="string">"3.png"</span>&gt;</span>下载图片3.png<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">加上download属性，就会下载下来</div><div class="line">否则就是用浏览器打开预览文件</div><div class="line">download="文件名"</div><div class="line">用js可以操作文件名，比如a.download = imgName + '.png';</div></pre></td></tr></table></figure>
 <h2 id="target属性"><a href="#target属性" class="headerlink" title="target属性"></a>target属性</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">target</span>=<span class="string">"_blank|_self|_parent|_top|framename"</span>&gt;</span></div><div class="line">_blank 在新窗口中打开</div><div class="line">_self 在a标签所在的页面中打开</div><div class="line">_parent 在a标签所在页面的父级窗口中打开</div><div class="line">_top 如果嵌套iframe,就在最顶层（也就是当前页面）中打开</div></pre></td></tr></table></figure>
-<h2 id="href属性"><a href="#href属性" class="headerlink" title="href属性"></a>href属性</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">绝对路径</div><div class="line">&lt;a href="www.qq.com"&gt;错误！！！！漏了协议&lt;/a&gt;</div><div class="line">&lt;a href="https://www.qq.com"&gt;正确，https协议&lt;/a&gt;</div><div class="line">&lt;a href="//www.qq.com"&gt;正确,自定义协议&lt;/a&gt;</div><div class="line"></div><div class="line">相对路径</div><div class="line">&lt;a href="./xxx.html"&gt;&lt;/a&gt;</div><div class="line">结果打开127.0.0.1:8080/xxx.html</div><div class="line"></div><div class="line">&lt;a href="#锚点"&gt;&lt;/a&gt;</div><div class="line">结果打开127.0.0.1:8080/index.html#锚点，锚点不发起请求</div><div class="line"></div><div class="line">&lt;a href="?name=stage"&gt;&lt;/a&gt;</div><div class="line">结果打开127.0.0.1:8080/index.html?name=stage,自动发起 ?name=stage 的GET请求</div><div class="line"></div><div class="line">&lt;a href="javascript:;"&gt;&lt;/a&gt;</div><div class="line">点击之后什么都不发生</div><div class="line"></div><div class="line">&lt;a href="#"&gt;&lt;/a&gt;</div><div class="line">点击之后不刷新，锚点变成#，滚回到顶部</div><div class="line"></div><div class="line">&lt;a href=""&gt;&lt;/a&gt;</div><div class="line">点击之后刷新当前页面</div></pre></td></tr></table></figure>
+<h2 id="href属性"><a href="#href属性" class="headerlink" title="href属性"></a>href属性</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">绝对路径</div><div class="line">&lt;a href="www.qq.com"&gt;错误！！！！漏了协议&lt;/a&gt;</div><div class="line">&lt;a href="https://www.qq.com"&gt;正确，https协议&lt;/a&gt;</div><div class="line">&lt;a href="//www.qq.com"&gt;正确,自定义协议&lt;/a&gt;</div><div class="line"></div><div class="line">相对路径</div><div class="line">&lt;a href="./xxx.html"&gt;&lt;/a&gt;</div><div class="line">结果打开127.0.0.1:8080/xxx.html</div><div class="line"></div><div class="line">&lt;a href="#锚点"&gt;&lt;/a&gt;</div><div class="line">结果打开127.0.0.1:8080/index.html#锚点，锚点不发起请求</div><div class="line"></div><div class="line">&lt;a href="?name=stage"&gt;&lt;/a&gt;</div><div class="line">结果打开127.0.0.1:8080/index.html?name=stage,自动发起 ?name=stage 的GET请求</div><div class="line"></div><div class="line">&lt;a href="javascript:;"&gt;&lt;/a&gt;</div><div class="line">点击之后什么都不发生</div><div class="line"></div><div class="line">&lt;a href="#"&gt;&lt;/a&gt;</div><div class="line">点击之后不刷新，锚点变成#，滚回到顶部</div><div class="line"></div><div class="line">&lt;a href=""&gt;&lt;/a&gt;</div><div class="line">点击之后刷新当前页面</div><div class="line"></div><div class="line">移动端点击拨打电话</div><div class="line">&lt;a href="tel:10086"&gt;10086&lt;/a&gt;</div></pre></td></tr></table></figure>
 <h1 id="form"><a href="#form" class="headerlink" title="form"></a>form</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"index2.php"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></div><div class="line">  First name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"fname"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  Last name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"lname"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line">将fname=xxx&amp;lname=xxx提交到index2.php</div><div class="line">中文会转码</div></pre></td></tr></table></figure>
 <h2 id="method属性"><a href="#method属性" class="headerlink" title="method属性"></a>method属性</h2><ul>
 <li><p>GET时，如果有提交的数据，数据会作为查询参数出现在地址栏<br><code>127.0.0.1::8080/index.html?fname=xxx&amp;lname=xxx</code></p>
@@ -423,9 +423,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
-          
             <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
           
             <a href="/tags/html/" rel="tag"><i class="fa fa-tag"></i> html</a>
           
@@ -533,7 +533,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">76</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -544,7 +544,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
