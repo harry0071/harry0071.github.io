@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="js,笔记,面试题," />
+  <meta name="keywords" content="面试题,笔记,js," />
 
 
 
@@ -97,7 +97,7 @@
 <meta property="og:description" content="javascript查漏补缺，一些零碎的知识点的补充">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fpkio3v2foj208108eq2u.jpg">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/10/24/b0fc5c24128c54628cf9d6b38a5edbc3">
-<meta property="og:updated_time" content="2018-06-13T13:50:48.000Z">
+<meta property="og:updated_time" content="2018-07-23T07:56:33.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="🔒 JavaScript知识点补充">
 <meta name="twitter:description" content="javascript查漏补缺，一些零碎的知识点的补充">
@@ -464,7 +464,7 @@
 <iframe width="100%" height="600" src="http://js.jirengu.com/moluluxako/1/edit?js,output" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 <h1 id="移动端触摸touch事件"><a href="#移动端触摸touch事件" class="headerlink" title="移动端触摸touch事件"></a>移动端触摸touch事件</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">当按下手指时，触发ontouchstart；</div><div class="line">当移动手指时，触发ontouchmove；</div><div class="line">当抬起手指时，触发ontouchend。</div></pre></td></tr></table></figure>
-<h1 id="用setTimeout-延时递归实现setInterval"><a href="#用setTimeout-延时递归实现setInterval" class="headerlink" title="用setTimeout+延时递归实现setInterval"></a>用setTimeout+延时递归实现setInterval</h1><p>因为循环定时器的speed一旦设定就无法改变，如果想要实时改变定时器的速度，就要用setTimeout+延时递归实现setInterval   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> n = <span class="number">0</span>;</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">xxx</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  n++;</div><div class="line">  <span class="keyword">if</span>(n&gt;=<span class="number">10</span>) <span class="keyword">return</span>;</div><div class="line">  <span class="built_in">document</span>.body.innerHTML = n;</div><div class="line">  setTimeout(xxx,duration);</div><div class="line">&#125;,duration);</div></pre></td></tr></table></figure></p>
+<h1 id="用setTimeout-延时递归实现setInterval"><a href="#用setTimeout-延时递归实现setInterval" class="headerlink" title="用setTimeout+延时递归实现setInterval"></a>用setTimeout+延时递归实现setInterval</h1><p>因为循环定时器的speed一旦设定就无法改变，如果想要实时改变定时器的速度，就要用setTimeout+延时递归实现setInterval      <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> n = <span class="number">0</span>;</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">xxx</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  n++;</div><div class="line">  <span class="keyword">if</span>(n&gt;=<span class="number">10</span>) <span class="keyword">return</span>;</div><div class="line">  <span class="built_in">document</span>.body.innerHTML = n;</div><div class="line">  setTimeout(xxx,duration);</div><div class="line">&#125;,duration);</div></pre></td></tr></table></figure></p>
 <iframe width="100%" height="600" src="http://js.jirengu.com/seqebobaqo/1/edit?js,output" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 <h1 id="占位符的用法"><a href="#占位符的用法" class="headerlink" title="占位符的用法"></a>占位符的用法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'stage'</span>;</div><div class="line">h1.innerHTML = h1.innerHTML.replace(<span class="regexp">/&#123;&#123;name&#125;&#125;/ig</span>,name);</div></pre></td></tr></table></figure>
@@ -505,11 +505,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+            <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
           
             <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
           
-            <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
           
         </div>
       

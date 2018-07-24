@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fojttae5rvj215o106agj.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1fojtu8nw2zj21k210u44b.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1fojtypznvyj20qc0gcq50.jpg">
-<meta property="og:updated_time" content="2018-06-20T05:46:37.496Z">
+<meta property="og:updated_time" content="2018-07-22T14:53:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git命令以及偷懒小技巧">
 <meta name="twitter:description" content="本文简单介绍了git与github的配置，以及如何将本地仓库与github连接起来。还介绍了git常用的一些命令，以及如何简化git命令参考资料: 饥人谷菜鸟教程：Git教程">
@@ -399,9 +399,9 @@
 <li>如果你把 key 从电脑上删除了，重新生成一个 key 即可，替换之前的 key</li>
 </ul>
 <h1 id="Git的配置与使用"><a href="#Git的配置与使用" class="headerlink" title="Git的配置与使用"></a>Git的配置与使用</h1><h2 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h2><p><code>git --version</code> :查看当前git版本号</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git config --global user.name 你的英文名</div><div class="line">git config --global user.email 你的邮箱</div><div class="line">git config --global push.default matching</div><div class="line">git config --global core.quotepath false</div><div class="line">git config --global core.editor &quot;vim&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">git config --global user.name 你的英文名</div><div class="line">git config --global user.email 你的邮箱</div><div class="line">git config --global push.default matching</div><div class="line">git config --global core.quotepath <span class="literal">false</span></div><div class="line">git config --global core.editor <span class="string">"vim"</span></div><div class="line">git config --global http.postBuffer 524288000</div><div class="line">git config --global http.proxy http://127.0.0.1:1080 <span class="comment">#设置代理</span></div><div class="line">git config --global https.proxy http://127.0.0.1:1080</div><div class="line">git config --global --unset http.proxy <span class="comment">#删除代理</span></div></pre></td></tr></table></figure>
 <p>五句话，依次运行。不执行的话，电脑可能会爆炸你信不信。</p>
-<p><code>git config -l</code> : 查看配置</p>
+<p><code>git config -l</code> : 查看配置<br><code>git config --global -l</code>：查看全局配置</p>
 <hr>
 <h2 id="只在本地使用Git"><a href="#只在本地使用Git" class="headerlink" title="只在本地使用Git"></a>只在本地使用Git</h2><p><code>git --version</code>查看git Bash版本号</p>
 <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
