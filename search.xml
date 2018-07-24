@@ -31,8 +31,8 @@
         <category>css</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>面试题</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -66,8 +66,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
       </tags>
   </entry>
@@ -173,8 +173,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -185,9 +185,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>es6</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
@@ -211,8 +211,8 @@
         <category>vue</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>vue</tag>
       </tags>
   </entry>
@@ -224,8 +224,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
@@ -262,8 +262,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
@@ -301,8 +301,8 @@
       </categories>
       <tags>
         <tag>css</tag>
-        <tag>js</tag>
         <tag>html</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -377,8 +377,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
       </tags>
   </entry>
@@ -390,8 +390,8 @@
         <category>http</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
         <tag>http</tag>
         <tag>请求与响应</tag>
@@ -417,8 +417,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
       </tags>
   </entry>
@@ -430,8 +430,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
@@ -456,8 +456,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
       </tags>
   </entry>
@@ -480,9 +480,9 @@
         <category>移动端</category>
       </categories>
       <tags>
-        <tag>css</tag>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
+        <tag>css</tag>
         <tag>js</tag>
         <tag>移动端</tag>
       </tags>
@@ -507,8 +507,8 @@
         <category>ajax</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>ajax</tag>
         <tag>jq</tag>
       </tags>
@@ -521,8 +521,8 @@
         <category>ajax</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>ajax</tag>
         <tag>json</tag>
         <tag>jsonp</tag>
@@ -536,10 +536,10 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>面试题</tag>
-        <tag>js</tag>
+        <tag>css</tag>
         <tag>html</tag>
+        <tag>js</tag>
         <tag>http</tag>
         <tag>数据结构与算法</tag>
       </tags>
@@ -552,8 +552,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
         <tag>dom</tag>
       </tags>
@@ -566,9 +566,9 @@
         <category>es6</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>es6</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -579,23 +579,23 @@
         <category>jq</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>jq</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[🔒 前端面试题]]></title>
     <url>%2F2018%2F03%2F15%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8A%BC%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[总结了一些前端的相关面试题http://ovenzeze.coding.me/菜鸟教程前端面试题 解题套路 抽象的问题，通过举例子来说明 遇到不会的，转移话题到会的内容，比如：不了解async/await，就和面试官说，我平时处理异步用的是Promise，然后把话题转到Promise的知识 侃侃而谈，讲述这项技术的历史发展 HTML考题如何理解 HTML 语义化方法1 举例子：段落用 p，边栏用 aside，主要内容用 main 标签方法2 将发展历史： 最开始是 PHP 后端写 HTML，不会 CSS，于是就用 table 来布局。table 使用展示表格的。严重违反了 HTML 语义化。后来有了专门的写 CSS 的前端，他们会使用 DIV + CSS 布局，主要是用 float 和绝对定位布局。稍微符合了 HTML 语义化。再后来，前端专业化，知道 HTML 的各个标签的用法，于是会使用恰当的标签来展示内容，而不是傻傻的全用 div，会尽量使用 h1、ul、p、main、header 等标签语义化的好处是易读、有利于SEO等。 知乎专栏详细答案 meta viewport 是做什么用的，怎么写？方法1 举例子：123快捷方式 meta:vp + tab键&lt;meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"&gt;控制页面在移动端不要缩小显示。 方法2 侃侃而谈： 一开始，所有页面都是给PC准备的，乔布斯推出 iPhone 3GS，页面是不适应手机屏幕的，所以乔布斯的工程师想了一个办法，默认把手机模拟成 980px，页面缩小。后来，智能手机普及，这个功能在部分网站不需要了，所以我们就用 meta:vp 让手机不要缩小我的网页。 canvas 元素是干什么的？把画板项目丢给他看 MDN 的 canvas 入门手册 css考题说说盒模型盒模型包括content、padding、border、margin但width和height不包括margin 一般盒模型(https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model) content-box: width == 内容区宽度 border-box: width == 内容区宽度 + padding 宽度 + border 宽度 css reset 和 normalize.css 有什么区别？ reset 重置，之前的样式我都不要了，抛弃默认样式 normalize 使标准化， 让所有浏览器的标签都跟标准规定的默认样式一致，各浏览器上的标签默认样式基本统一。 如何居中水平居中 块元素：爸爸身上写 text-align:center; inline元素：margin:0 auto; 垂直居中https://jscode.me/t/topic/1936 css选择器的优先级如何确定？看笔记同样优先级，写在后面的覆盖前面的。color: red !important; 优先级最高。 BFC 是什么？举例子： 给爸爸overflow:hidden 清除浮动。（但我平常总是用 .clearfix 清除浮动) 给爸爸添加overflow:hidden 取消父子 margin 合并(给儿子设置margin-top时，爸爸也会被顶下去) 如何清除浮动？看笔记 方法1: overflow:hidden 方法2 给父级加上class=”clearfix” 12345678.clearfix:after&#123; content:''; display:block; clear:both;&#125;.clearfix&#123; zoom:1; /*兼容低版本IE*/&#125; css3js考题7种数据类型number，string，boolean，symbol，null，undefined，object typeof的结果 typeof (console.log(1)) //打印出1，然后类型为’undefined’ typeof 数组 //object typeof null //object，【！！null是7种数据类型之一，它不是object，这是js遗留的历史bug】 typeof 函数//function 【！！function在7种数据类型中，属于object】 typeof NaN //number 【NaN表示非数字的数字类型】 Promise的知识点Promise的3种状态Promise链式调用12$.ajax().then(成功1,失败1).then(成功2,失败2)//只要前面一个then不报错，能够执行里面的任意一个函数，就能继续执行后面then里面的函数 手写实现Promise12345678function xxx()&#123; return new Promise(function(resolve,reject)&#123; //异步操作，成功执行resolve() //失败执行reject() &#125;);&#125;xxx().then(成功,失败) ajax知识点123var xhr = new XMLHttpRequest(); //开机xhr.open('get','/xxx',true); //打开浏览器//回家补上 4种readyState(请求状态)xhr.status状态码get和post的区别 GET 的参数放在 url 的查询参数里，POST 的参数（数据）放在请求体里。 POST比GET安全 GET 的参数（url查询参数）有长度限制。POST 的参数（数据）没有长度限制 GET 请求只需要发一个包，POST 请求需要发两个以上包（因为 POST 有消息体） GET 用来读数据，POST 用来写数据，POST 不幂等（幂等的意思就是不管发多少次请求，结果都一样。） 除了get和post，还有哪些请求方式？闭包知识点闭包的概念：待补充【https://zhuanlan.zhihu.com/p/22486908】 123456789101112function add()&#123; var n = 1; return function()&#123; return n++; &#125;&#125;var plus = add();plus(); //1plus(); //2plus(); //3console.log(n) //报错，因为我们无法直接访问n this的指向 fn()的this指向window，在严格模式下为undefined a.b.c.fn()的this指向a.b.c new Fn()的this指向新生成的实例对象 箭头函数的this跟外面的 this 的值一模一样 【https://zhuanlan.zhihu.com/p/23804247】 立即执行函数作用：ES5没有块级作用域，所以只能通过 函数作用域 来防止污染全局变量123(function()&#123; var n = 1;&#125;)(); ES6可以使用块级作用域123&#123; let n = 1;&#125; async/await作用：把异步代码写成同步代码的形式 12345678910111213141516171819 function returnPromise()&#123; return new Promise( function(resolve, reject)&#123; setTimeout(()=&gt;&#123; resolve('fuck') &#125;,3000) &#125;) &#125; returnPromise().then((result)=&gt;&#123; alert(result); alert(1); &#125;) //3s后弹出fuck，接着弹出1 /* 改写成async/await */ let result = await returnPromise(); alert(result); alert(1);//等到result获取成功后，才继续执行下面的函数 深拷贝方法112var obj = &#123;a:1&#125;var copyObj = JSON.parse(JSON.stringify(obj)) 缺点：不支持拷贝 函数、undefined、正则、Date 方法2递归拷贝 数组去重123let arr = [1,1,1,2,3,4,5,1,3,6,3];let newArr = [...new Set(arr)]; //去重后的数组//原数组不变 用正则实现string.trim()去重首位空格123function trim(str)&#123; return str.replace(/^\s+|\s+$/g, '');&#125; 原型这种抽象的题目，通过举例子回答。https://zhuanlan.zhihu.com/p/23090041 var arr = [1,2,3]; 为什么arr可以使用push()方法，这个push()方法从哪得到的 arr.proto === Array.prototype 【arr是个数组，因此它的proto指向Array的原型(公共属性和方法)】 在Array的公共方法中，有push()这个方法 arr就是顺着原型链调用的push()方法 ES6的class代补充 如何实现继承ES5通过原型链ES6通过extends==与===DOM押题DOM事件模型是什么？一个事件的处理过程主要有三个阶段:捕获,目标,冒泡可以通过addEventerListener设置冒泡和捕获【默认执行冒泡】 移动端的触摸事件了解吗？touchstart touchmove touchend touchcancel 模拟 swipe 事件记录两次 touchmove 的位置差，如果后一次在前一次的右边，说明向右滑了。 事件委托/事件代理是什么？有什么好处？ 假设父元素有4个儿子，我不设置4个监听器监听4个儿子，而是只设置1个监听器监听父元素，看触发事件的元素是哪个儿子，这就是事件委托。好处：省监听器。【一个爸爸有4个儿子，他们在同一个班上上课，班主任可以分别检查4个儿子的作业完成情况，也可以委托他们的爸爸检查作业，然后将结果告诉班主任】 可以监听还没有出生的儿子（动态生成的元素）。【如果又生了一个儿子，爸爸会连同新儿子的作业一起检查】 手写实现事件委托HTTP押题从输入 URL 到页面展现中间发生了什么？301和302的区别 301 永久重定向，浏览器会记住 302 临时重定向 HTTP缓存怎么做？添加Cache-Control: max-age=300通过修改查询参数来取消缓存12http://cdn.com/1.js?v=1http://cdn.com/1.js?v=2 Cache-Control 和 Etag 的区别是什么？Cookie 是什么？Session 是什么？Cookie 服务器响应浏览器的请求时，会种下Cookie 浏览器访问指定域名时会自动带上Cookie Cookie 一般用来记录用户信息 Session Session 是服务器端的内存（数据） Session 需要通过在 Cookie 里记录 SessionID 实现 SessionID 一般是随机数 LocalStorage 和 Cookie 的区别是什么？ Cookie 会随请求被发到服务器上，而 LocalStorage 不会 Cookie 大小一般4k以下，LocalStorage 一般5Mb 左右 怎么跨域？JSONP 是什么？CORS 是什么？Vue押题Vue的生命周期钩子函数Vue的组件通信 父子通信（使用 Prop 传递数据、使用 v-on 绑定自定义事件） 爷孙通信（通过两次父子通信，爷爷先传给爸爸，爸爸再传给儿子） 兄弟通信（new Vue() 作为 eventBus） Vuex 的作用是什么？相当于本地数据库https://vuex.vuejs.org/zh-cn/intro.html Vue 的双向绑定是如何实现的？有什么缺点？看深入响应式原理 Computed 计算属性的用法？跟 Methods 的区别。https://zhuanlan.zhihu.com/p/33778594 数据结构与算法押题排序算法二分查找法安全押题什么是 XSS 攻击？如何预防？innerHTML里面不是文本，而是一段js代码，此时这段恶意js代码被执行了，就是XSS攻击 预防： 方法1：不要使用innerHTML，使用textContent 方法2：如果一定要用innerHTML，需要进行字符过滤http://www.cnblogs.com/xianshenglu/p/8324573.html1234567function html2Text(str) &#123; let div = document.createElement('div'); div.textContent = str; return div.innerHTML;&#125;html2Text('&lt;p&gt;123&lt;/p&gt;') // &amp;lt;p&amp;gt;123&amp;lt;/p&amp;gt; 什么是 CSRF 攻击？如何预防？ 过程 用户在 qq.com 登录 用户切换到 hacker.com（恶意网站） hacker.com 发送一个 qq.com/add_friend 请求，让当前用户添加 hacker 为好友。 用户在不知不觉中添加 hacker 为好友。 用户没有想发这个请求，但是 hacker 伪造了用户发请求的假象。 避免 检查 referer，qq.com 可以拒绝来自 hacker.com 的请求 使用csrf_token webpack押题转译出的文件过大怎么办？在vue单页应用中，若不做任何处理，所有vue文件会打包为一个js文件，这个js文件非常的大，造成网页在首次进入时比较缓慢。做了code split(代码分割)后，会将代码分离到不同的js中，然后进行按需加载这些js文件，能够提高页面首次进入的速度，网站性能也能够得到提升。1234import page1 from '@/page/page1.vue'//上述代码改成const page1 = () =&gt; import('@/page/page1.vue') 转译速度慢什么办？写过 webpack loader 吗？http://www.alloyteam.com/2016/01/webpack-loader-1/ 你遇到过最难的问题是什么？https://www.zhihu.com/question/35323603/answer/338796153 谈谈内容，样式，行为的分离html负责内容css负责样式js负责行为为什么这三者要分离？（反过来回答：如果不分离会导致……）如果用html负责样式12345&lt;div bgcolor=green&gt; &lt;center&gt; &lt;font color=red size=20&gt;文字居中&lt;/font&gt; &lt;/center&gt;&lt;/div&gt; 这样会使得html的标签有些是用来表示内容的，有些是用来表示样式的，导致html结构很复杂，很难区分这些标签的逻辑结构 如果用css负责内容123456789div:after&#123; content:'我是内容';&#125;``` 这样会导致用户无法选中内容；js也无法取到 如果用js负责样式```javascript$('#div1').show(); // 这会导致原本的display修改为block 建议设置css,然后通过addClass和removeClass来切换样式 关于性能优化性能优化及技巧分享 如果在图片下载下来之前就知道img的宽高，那么就把宽高写进img标签内；否则浏览器会先用一个小宽度的占位符，等到大图下载下来后，由于宽高撑大了原本的占位符，于是之后的元素的位置要往后退，这会导致重排(re-layout)，重排非常的浪费性能。 异步与回调异步异步：不等结果，直接进行下一步同步 vs 异步：同步：定时器的结果出来后，才进行下一步异步：不等定时器的结果，马上进行下一步123456789101112console.log(1);/* 这是个异步任务↓ setTimeout(function()&#123; console.log(2);&#125;,2000);*/console.log(3);先打印出1，再打印出3,两秒后打印出2 回调可以通过callback回调拿到异步结果1234567891011121314console.log(1);(function xxx()&#123; setTimeout(function()&#123; console.log(2); callback(); &#125;,2000);&#125;)();function callback()&#123; console.log('endFn');&#125;console.log(3); thisthis的指向1234567891011window.n = 'window name'let obj = &#123; n: 'obj name', sayN()&#123; console.log(this.n) &#125;&#125;let fn = obj.sayNfn() //window name,因为是window.fn(),fn这个方法属于window，所以this指向windowobj.sayN() // obj name，因为sayN这个方法属于obj，所以this指向obj 当前方法属于谁，this就是谁 箭头函数的this12345678910window.n = 'window name'let obj = &#123; n: 'obj name', sayN: () =&gt; &#123; console.log(this.n) &#125;&#125;obj.sayN()//window name 箭头函数是和父级上下文绑定在一起的！！比如这里的箭头函数中的this.n，箭头函数本身与sayN平级，sayN在对象obj中，而obj的父级上下文就是window，因此这里箭头函数的this指向window new一个实例对象,this指向这个实例对象用new命令时，默认给构造函数的起始位置加上var this = {}，this指向这个空对象12345function x()&#123; console.log(this);&#125;x(); //windownew x(); //对象&#123;&#125; 12345678910var a=11function test1()&#123; this.a=22; let b=function()&#123; console.log(this.a); &#125;; b();&#125;test1(); //22var x = new test1(); //11 分析：test1()等同于window.test1()，这个方法属于window,因此调用时，this指向window123456789var a=11function test1()&#123; this.a=22; //这里的this指向window，所以window.a从11变成了22 let b=function()&#123; console.log(this.a); // window.a此时是22 &#125;; b(); //最终输出22&#125; new test1()会在构造函数内部生成var this = {}123456789101112var a=11function test1()&#123; //var this = &#123;&#125; this.a=22; let b=function()&#123; console.log(this.a); &#125;; b();&#125;var x = new test1(); //最终结果11//此时实例对象x=&#123;a: 22&#125;,方法b不在这个实例对象里，所以this无法指向x，只能指向window 要想最终结果是22，则改写成1234567891011var a=11function test1()&#123; this.a=22; this.b=function()&#123; console.log(this.a); &#125;; this.b();&#125;var x = new test1();//此时x=&#123;a:22,b:方法&#125;因此this指向x,this.a的结果是22 定时器123456789function getSomething()&#123; setTimeout(function()&#123; return 'hello' &#125;)&#125;let something = getSomething()console.log(something)//undefined 由于定时器是异步的，所以优先执行同步代码，因此something是undefined]]></content>
+    <content type="text"><![CDATA[总结了一些前端的相关面试题http://ovenzeze.coding.me/菜鸟教程前端面试题 解题套路 抽象的问题，通过举例子来说明 遇到不会的，转移话题到会的内容，比如：不了解async/await，就和面试官说，我平时处理异步用的是Promise，然后把话题转到Promise的知识 侃侃而谈，讲述这项技术的历史发展 HTML考题如何理解 HTML 语义化方法1 举例子：段落用 p，边栏用 aside，主要内容用 main 标签方法2 将发展历史： 最开始是 PHP 后端写 HTML，不会 CSS，于是就用 table 来布局。table 使用展示表格的。严重违反了 HTML 语义化。后来有了专门的写 CSS 的前端，他们会使用 DIV + CSS 布局，主要是用 float 和绝对定位布局。稍微符合了 HTML 语义化。再后来，前端专业化，知道 HTML 的各个标签的用法，于是会使用恰当的标签来展示内容，而不是傻傻的全用 div，会尽量使用 h1、ul、p、main、header 等标签语义化的好处是易读、有利于SEO等。 知乎专栏详细答案 meta viewport 是做什么用的，怎么写？方法1 举例子：123快捷方式 meta:vp + tab键&lt;meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"&gt;控制页面在移动端不要缩小显示。 方法2 侃侃而谈： 一开始，所有页面都是给PC准备的，乔布斯推出 iPhone 3GS，页面是不适应手机屏幕的，所以乔布斯的工程师想了一个办法，默认把手机模拟成 980px，页面缩小。后来，智能手机普及，这个功能在部分网站不需要了，所以我们就用 meta:vp 让手机不要缩小我的网页。 canvas 元素是干什么的？把画板项目丢给他看 MDN 的 canvas 入门手册 css考题说说盒模型盒模型包括content、padding、border、margin但width和height不包括margin 一般盒模型(https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model) content-box: width == 内容区宽度 border-box: width == 内容区宽度 + padding 宽度 + border 宽度 css reset 和 normalize.css 有什么区别？ reset 重置，之前的样式我都不要了，抛弃默认样式 normalize 使标准化， 让所有浏览器的标签都跟标准规定的默认样式一致，各浏览器上的标签默认样式基本统一。 如何居中水平居中 块元素：爸爸身上写 text-align:center; inline元素：margin:0 auto; 垂直居中https://jscode.me/t/topic/1936 css选择器的优先级如何确定？看笔记同样优先级，写在后面的覆盖前面的。color: red !important; 优先级最高。 BFC 是什么？举例子： 给爸爸overflow:hidden 清除浮动。（但我平常总是用 .clearfix 清除浮动) 给爸爸添加overflow:hidden 取消父子 margin 合并(给儿子设置margin-top时，爸爸也会被顶下去) 如何清除浮动？看笔记 方法1: overflow:hidden 方法2 给父级加上class=”clearfix” 12345678.clearfix:after&#123; content:''; display:block; clear:both;&#125;.clearfix&#123; zoom:1; /*兼容低版本IE*/&#125; css3js考题7种数据类型number，string，boolean，symbol，null，undefined，object typeof的结果 typeof (console.log(1)) //打印出1，然后类型为’undefined’ typeof 数组 //object typeof null //object，【！！null是7种数据类型之一，它不是object，这是js遗留的历史bug】 typeof 函数//function 【！！function在7种数据类型中，属于object】 typeof NaN //number 【NaN表示非数字的数字类型】 Promise的知识点Promise的3种状态Promise链式调用12$.ajax().then(成功1,失败1).then(成功2,失败2)//只要前面一个then不报错，能够执行里面的任意一个函数，就能继续执行后面then里面的函数 手写实现Promise12345678function xxx()&#123; return new Promise(function(resolve,reject)&#123; //异步操作，成功执行resolve() //失败执行reject() &#125;);&#125;xxx().then(成功,失败) ajax知识点123var xhr = new XMLHttpRequest(); //开机xhr.open('get','/xxx',true); //打开浏览器//回家补上 4种readyState(请求状态)xhr.status状态码get和post的区别 GET 的参数放在 url 的查询参数里，POST 的参数（数据）放在请求体里。 POST比GET安全 GET 的参数（url查询参数）有长度限制。POST 的参数（数据）没有长度限制 GET 请求只需要发一个包，POST 请求需要发两个以上包（因为 POST 有消息体） GET 用来读数据，POST 用来写数据，POST 不幂等（幂等的意思就是不管发多少次请求，结果都一样。） 除了get和post，还有哪些请求方式？闭包知识点闭包的概念：待补充【https://zhuanlan.zhihu.com/p/22486908】 123456789101112function add()&#123; var n = 1; return function()&#123; return n++; &#125;&#125;var plus = add();plus(); //1plus(); //2plus(); //3console.log(n) //报错，因为我们无法直接访问n this的指向 fn()的this指向window，在严格模式下为undefined a.b.c.fn()的this指向a.b.c new Fn()的this指向新生成的实例对象 箭头函数的this跟外面的 this 的值一模一样 【https://zhuanlan.zhihu.com/p/23804247】 立即执行函数作用：ES5没有块级作用域，所以只能通过 函数作用域 来防止污染全局变量123(function()&#123; var n = 1;&#125;)(); ES6可以使用块级作用域123&#123; let n = 1;&#125; async/await作用：把异步代码写成同步代码的形式 12345678910111213141516171819 function returnPromise()&#123; return new Promise( function(resolve, reject)&#123; setTimeout(()=&gt;&#123; resolve('fuck') &#125;,3000) &#125;) &#125; returnPromise().then((result)=&gt;&#123; alert(result); alert(1); &#125;) //3s后弹出fuck，接着弹出1 /* 改写成async/await */ let result = await returnPromise(); alert(result); alert(1);//等到result获取成功后，才继续执行下面的函数 深拷贝方法112var obj = &#123;a:1&#125;var copyObj = JSON.parse(JSON.stringify(obj)) 缺点：不支持拷贝 函数、undefined、正则、Date 方法2递归拷贝 数组去重123let arr = [1,1,1,2,3,4,5,1,3,6,3];let newArr = [...new Set(arr)]; //去重后的数组//原数组不变 用正则实现string.trim()去重首位空格123function trim(str)&#123; return str.replace(/^\s+|\s+$/g, '');&#125; 原型这种抽象的题目，通过举例子回答。https://zhuanlan.zhihu.com/p/23090041 var arr = [1,2,3]; 为什么arr可以使用push()方法，这个push()方法从哪得到的 arr.proto === Array.prototype 【arr是个数组，因此它的proto指向Array的原型(公共属性和方法)】 在Array的公共方法中，有push()这个方法 arr就是顺着原型链调用的push()方法 ES6的class代补充 如何实现继承ES5通过原型链ES6通过extends==与===DOM押题DOM事件模型是什么？一个事件的处理过程主要有三个阶段:捕获,目标,冒泡可以通过addEventerListener设置冒泡和捕获【默认执行冒泡】 移动端的触摸事件了解吗？touchstart touchmove touchend touchcancel 模拟 swipe 事件记录两次 touchmove 的位置差，如果后一次在前一次的右边，说明向右滑了。 事件委托/事件代理是什么？有什么好处？ 假设父元素有4个儿子，我不设置4个监听器监听4个儿子，而是只设置1个监听器监听父元素，看触发事件的元素是哪个儿子，这就是事件委托。好处：省监听器。【一个爸爸有4个儿子，他们在同一个班上上课，班主任可以分别检查4个儿子的作业完成情况，也可以委托他们的爸爸检查作业，然后将结果告诉班主任】 可以监听还没有出生的儿子（动态生成的元素）。【如果又生了一个儿子，爸爸会连同新儿子的作业一起检查】 手写实现事件委托HTTP押题从输入 URL 到页面展现中间发生了什么？301和302的区别 301 永久重定向，浏览器会记住 302 临时重定向 HTTP缓存怎么做？添加Cache-Control: max-age=300通过修改查询参数来取消缓存12http://cdn.com/1.js?v=1http://cdn.com/1.js?v=2 Cache-Control 和 Etag 的区别是什么？Cookie 是什么？Session 是什么？Cookie 服务器响应浏览器的请求时，会种下Cookie 浏览器访问指定域名时会自动带上Cookie Cookie 一般用来记录用户信息 Session Session 是服务器端的内存（数据） Session 需要通过在 Cookie 里记录 SessionID 实现 SessionID 一般是随机数 LocalStorage 和 Cookie 的区别是什么？ Cookie 会随请求被发到服务器上，而 LocalStorage 不会 Cookie 大小一般4k以下，LocalStorage 一般5Mb 左右 怎么跨域？JSONP 是什么？CORS 是什么？Vue押题Vue的生命周期钩子函数Vue的组件通信 父子通信（使用 Prop 传递数据、使用 v-on 绑定自定义事件） 爷孙通信（通过两次父子通信，爷爷先传给爸爸，爸爸再传给儿子） 兄弟通信（new Vue() 作为 eventBus） Vuex 的作用是什么？相当于本地数据库https://vuex.vuejs.org/zh-cn/intro.html Vue 的双向绑定是如何实现的？有什么缺点？看深入响应式原理 Computed 计算属性的用法？跟 Methods 的区别。https://zhuanlan.zhihu.com/p/33778594 数据结构与算法押题排序算法二分查找法安全押题什么是 XSS 攻击？如何预防？innerHTML里面不是文本，而是一段js代码，此时这段恶意js代码被执行了，就是XSS攻击 预防： 方法1：不要使用innerHTML，使用textContent 方法2：如果一定要用innerHTML，需要进行字符过滤http://www.cnblogs.com/xianshenglu/p/8324573.html1234567function html2Text(str) &#123; let div = document.createElement('div'); div.textContent = str; return div.innerHTML;&#125;html2Text('&lt;p&gt;123&lt;/p&gt;') // &amp;lt;p&amp;gt;123&amp;lt;/p&amp;gt; 什么是 CSRF 攻击？如何预防？ 过程 用户在 qq.com 登录 用户切换到 hacker.com（恶意网站） hacker.com 发送一个 qq.com/add_friend 请求，让当前用户添加 hacker 为好友。 用户在不知不觉中添加 hacker 为好友。 用户没有想发这个请求，但是 hacker 伪造了用户发请求的假象。 避免 检查 referer，qq.com 可以拒绝来自 hacker.com 的请求 使用csrf_token webpack押题转译出的文件过大怎么办？在vue单页应用中，若不做任何处理，所有vue文件会打包为一个js文件，这个js文件非常的大，造成网页在首次进入时比较缓慢。做了code split(代码分割)后，会将代码分离到不同的js中，然后进行按需加载这些js文件，能够提高页面首次进入的速度，网站性能也能够得到提升。1234import page1 from '@/page/page1.vue'//上述代码改成const page1 = () =&gt; import('@/page/page1.vue') 转译速度慢什么办？写过 webpack loader 吗？http://www.alloyteam.com/2016/01/webpack-loader-1/ 项目中遇到过最难的技术问题是什么？这种问题讲究【一波三折】https://www.zhihu.com/question/35323603/answer/338796153 面试官问了你不会的技术问题怎么办？https://www.zhihu.com/question/266017827 第一步，重复一遍你理解的问题给面试官听，确认自己理解没错。【这个问题是在问异步操作吗？】第二步，尝试着说一下自己的看法，哪怕不懂，也要尝试一下。【async/await是为了让异步代码写的更优雅】第三步，不要浪费太多时间，告诉面试官自己不会，引导面试官转向另一个你会的问题。【具体的用法我没写过，我一般都使用Promise来写异步代码】 谈谈内容，样式，行为的分离html负责内容css负责样式js负责行为为什么这三者要分离？（反过来回答：如果不分离会导致……）如果用html负责样式12345&lt;div bgcolor=green&gt; &lt;center&gt; &lt;font color=red size=20&gt;文字居中&lt;/font&gt; &lt;/center&gt;&lt;/div&gt; 这样会使得html的标签有些是用来表示内容的，有些是用来表示样式的，导致html结构很复杂，很难区分这些标签的逻辑结构 如果用css负责内容123456789div:after&#123; content:'我是内容';&#125;``` 这样会导致用户无法选中内容；js也无法取到 如果用js负责样式```javascript$('#div1').show(); // 这会导致原本的display修改为block 建议设置css,然后通过addClass和removeClass来切换样式 关于性能优化性能优化及技巧分享 如果在图片下载下来之前就知道img的宽高，那么就把宽高写进img标签内；否则浏览器会先用一个小宽度的占位符，等到大图下载下来后，由于宽高撑大了原本的占位符，于是之后的元素的位置要往后退，这会导致重排(re-layout)，重排非常的浪费性能。 异步与回调异步异步：不等结果，直接进行下一步同步 vs 异步：同步：定时器的结果出来后，才进行下一步异步：不等定时器的结果，马上进行下一步123456789101112console.log(1);/* 这是个异步任务↓ setTimeout(function()&#123; console.log(2);&#125;,2000);*/console.log(3);先打印出1，再打印出3,两秒后打印出2 回调可以通过callback回调拿到异步结果1234567891011121314console.log(1);(function xxx()&#123; setTimeout(function()&#123; console.log(2); callback(); &#125;,2000);&#125;)();function callback()&#123; console.log('endFn');&#125;console.log(3); thisthis的指向1234567891011window.n = 'window name'let obj = &#123; n: 'obj name', sayN()&#123; console.log(this.n) &#125;&#125;let fn = obj.sayNfn() //window name,因为是window.fn(),fn这个方法属于window，所以this指向windowobj.sayN() // obj name，因为sayN这个方法属于obj，所以this指向obj 当前方法属于谁，this就是谁 箭头函数的this12345678910window.n = 'window name'let obj = &#123; n: 'obj name', sayN: () =&gt; &#123; console.log(this.n) &#125;&#125;obj.sayN()//window name 箭头函数是和父级上下文绑定在一起的！！比如这里的箭头函数中的this.n，箭头函数本身与sayN平级，sayN在对象obj中，而obj的父级上下文就是window，因此这里箭头函数的this指向window new一个实例对象,this指向这个实例对象用new命令时，默认给构造函数的起始位置加上var this = {}，this指向这个空对象12345function x()&#123; console.log(this);&#125;x(); //windownew x(); //对象&#123;&#125; 12345678910var a=11function test1()&#123; this.a=22; let b=function()&#123; console.log(this.a); &#125;; b();&#125;test1(); //22var x = new test1(); //11 分析：test1()等同于window.test1()，这个方法属于window,因此调用时，this指向window123456789var a=11function test1()&#123; this.a=22; //这里的this指向window，所以window.a从11变成了22 let b=function()&#123; console.log(this.a); // window.a此时是22 &#125;; b(); //最终输出22&#125; new test1()会在构造函数内部生成var this = {}123456789101112var a=11function test1()&#123; //var this = &#123;&#125; this.a=22; let b=function()&#123; console.log(this.a); &#125;; b();&#125;var x = new test1(); //最终结果11//此时实例对象x=&#123;a: 22&#125;,方法b不在这个实例对象里，所以this无法指向x，只能指向window 要想最终结果是22，则改写成1234567891011var a=11function test1()&#123; this.a=22; this.b=function()&#123; console.log(this.a); &#125;; this.b();&#125;var x = new test1();//此时x=&#123;a:22,b:方法&#125;因此this指向x,this.a的结果是22 定时器123456789function getSomething()&#123; setTimeout(function()&#123; return 'hello' &#125;)&#125;let something = getSomething()console.log(something)//undefined 由于定时器是异步的，所以优先执行同步代码，因此something是undefined]]></content>
       <categories>
         <category>前端</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>面试题</tag>
-        <tag>js</tag>
+        <tag>css</tag>
         <tag>html</tag>
+        <tag>js</tag>
         <tag>jq</tag>
       </tags>
   </entry>
@@ -620,8 +620,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
         <tag>dom</tag>
       </tags>
@@ -634,8 +634,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
       </tags>
   </entry>
@@ -647,8 +647,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
       </tags>
   </entry>
@@ -660,8 +660,8 @@
         <category>jq</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>jq</tag>
       </tags>
   </entry>
@@ -673,8 +673,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
       </tags>
   </entry>
@@ -686,8 +686,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
       </tags>
   </entry>
@@ -699,8 +699,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
       </tags>
   </entry>
@@ -724,8 +724,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
       </tags>
   </entry>
@@ -750,8 +750,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
       </tags>
   </entry>
@@ -787,9 +787,9 @@
         <category>css</category>
       </categories>
       <tags>
-        <tag>css</tag>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -800,8 +800,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -812,8 +812,8 @@
         <category>html</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>html</tag>
       </tags>
   </entry>
@@ -825,8 +825,8 @@
         <category>html</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>笔记</tag>
+        <tag>面试题</tag>
         <tag>html</tag>
       </tags>
   </entry>
