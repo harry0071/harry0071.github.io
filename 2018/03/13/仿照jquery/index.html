@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="笔记,js,jq," />
+  <meta name="keywords" content="js,笔记,jq," />
 
 
 
@@ -95,7 +95,7 @@
 <meta property="og:url" content="harry0071.github.io/2018/03/13/仿照jquery/index.html">
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="如何封装一个js库把封装的js库添加到自定义的接口(自定义对象)上jquery的原理">
-<meta property="og:updated_time" content="2018-04-25T05:06:38.923Z">
+<meta property="og:updated_time" content="2018-07-26T04:33:46.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="仿照jquery">
 <meta name="twitter:description" content="如何封装一个js库把封装的js库添加到自定义的接口(自定义对象)上jquery的原理">
@@ -378,7 +378,7 @@
 <h1 id="把ele放在前面的方法"><a href="#把ele放在前面的方法" class="headerlink" title="把ele放在前面的方法"></a>把ele放在前面的方法</h1><p>上面的方法每次使用都要在前面加上命名空间,比如<code>stage.xxx(ele,其他参数)</code>，这样太麻烦了</p>
 <p>如何达到以下效果，不使用命名空间：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ele.获取兄弟节点()</div><div class="line">ele.添加或删除多个<span class="class"><span class="keyword">class</span>(</span>&#123;<span class="string">'a'</span>:<span class="literal">true</span>,<span class="string">'b'</span>:<span class="literal">false</span>,<span class="string">'c'</span>:<span class="literal">true</span>&#125;);</div></pre></td></tr></table></figure></p>
 <h2 id="直接加到Node-prototype上"><a href="#直接加到Node-prototype上" class="headerlink" title="直接加到Node.prototype上"></a>直接加到Node.prototype上</h2><p>将封装的函数直接加到Node的公用属性(原型)Node.prototype上。<br>并且把传入的第一个参数去掉，函数体内改成<code>this</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">Node.prototype.获取兄弟节点 = <span class="function"><span class="keyword">function</span> </span>&#123;</div><div class="line">  <span class="keyword">var</span> parent = <span class="keyword">this</span>.parentElement;</div><div class="line">  <span class="keyword">var</span> allChildren = parent.children;</div><div class="line">  <span class="keyword">var</span> length = <span class="number">0</span>;</div><div class="line">  <span class="keyword">var</span> 伪数组=&#123;<span class="attr">length</span>:length&#125;;</div><div class="line">  </div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;allChildren.length;i++)&#123;</div><div class="line">    <span class="keyword">if</span>(allChildren[i] !== <span class="keyword">this</span>)&#123;</div><div class="line">      伪数组[length] = allChildren[i];</div><div class="line">      length++;</div><div class="line">      伪数组.length = length;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> 伪数组;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log( li7.获取兄弟节点() );<span class="comment">// 此处this就是li7</span></div></pre></td></tr></table></figure></p>
-<p><a class="jsbin-embed" href="http://js.jirengu.com/juwidukiku/2/embed?html,js,output" target="_blank" rel="external">JS Bin</a><script src="http://js.jirengu.com/js/embed.js"></script></p>
+<p><a class="jsbin-embed" href="http://js.jirengu.com/juwidukiku/2/embed?html,js,output" target="_blank" rel="external">【点击查看源码】</a><script src="http://js.jirengu.com/js/embed.js"></script></p>
 <p>但是这种方法可能会污染Node的公用属性，因此不建议直接加到Node.prototype上</p>
 <h2 id="把封装的js库添加到自定义的接口上"><a href="#把封装的js库添加到自定义的接口上" class="headerlink" title="把封装的js库添加到自定义的接口上"></a>把封装的js库添加到自定义的接口上</h2><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">var stage = function(node) &#123;</div><div class="line">  return &#123;</div><div class="line">    获取兄弟节点: function() &#123;</div><div class="line">      var parent = node.parentElement;</div><div class="line">      var allChildren = parent.children;</div><div class="line">      var length = 0;</div><div class="line">      var 伪数组 = &#123; length: length &#125;;</div><div class="line"></div><div class="line">      for (var i = 0; i &lt; allChildren.length; i++) &#123;</div><div class="line">        if (allChildren[i] !== node) &#123;</div><div class="line">          伪数组[length] = allChildren[i];</div><div class="line">          length++;</div><div class="line">          伪数组.length = length;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      return 伪数组;</div><div class="line">    &#125;,</div><div class="line">    添加或删除多个class: function(classes) &#123;</div><div class="line">      for (var key in classes) &#123;</div><div class="line">        var method = classes[key] ? 'add' : 'remove';</div><div class="line">        node.classList[method](key);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">/////////////////</div><div class="line">console.log( stage(li3).获取兄弟节点() );</div><div class="line">stage(li3).添加或删除多个class(&#123; 'a': true, 'd': true &#125;);</div></pre></td></tr></table></figure>
 <p><a class="jsbin-embed" href="http://js.jirengu.com/jiyakiteca/3/embed?html,js,output" target="_blank" rel="external">JS Bin</a><script src="http://js.jirengu.com/js/embed.js"></script></p>
@@ -418,9 +418,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
-          
             <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
           
             <a href="/tags/jq/" rel="tag"><i class="fa fa-tag"></i> jq</a>
           

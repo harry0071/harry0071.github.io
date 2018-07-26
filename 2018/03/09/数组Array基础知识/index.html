@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="笔记,面试题,js," />
+  <meta name="keywords" content="面试题,js,笔记," />
 
 
 
@@ -109,7 +109,7 @@
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1fp6msc2ylsj20fm0damxh.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1fp6npgdrwaj20eg08i74l.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fp6ns9220aj20ah08tglr.jpg">
-<meta property="og:updated_time" content="2018-07-02T01:33:42.026Z">
+<meta property="og:updated_time" content="2018-07-25T08:46:55.641Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组Array基础知识">
 <meta name="twitter:description" content="数据类型new与不new的区别伪数组数组api查看Array对象公共属性">
@@ -422,7 +422,7 @@
 <li>数组就是原型链中有 <code>Array.prototype</code> 的对象</li>
 </ul>
 <h2 id="遍历数组获取value和index用forEach"><a href="#遍历数组获取value和index用forEach" class="headerlink" title="遍历数组获取value和index用forEach"></a>遍历数组获取value和index用forEach</h2><p><code>arr.forEach(function (value,index) {执行函数体/return 返回值});</code><br><code>forEach</code>只用来操作数据,没有return返回值<br><code>map</code>可以有返回值</p>
-<p><code>forEach</code>的用法与<code>map</code>方法一致,接受三个参数：value、index、整个数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> colors = [<span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>];</div><div class="line">colors.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(value);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//箭头函数写法：colors.forEach((value) =&gt; console.log(value));</span></div><div class="line"><span class="comment">// red</span></div><div class="line"><span class="comment">// green</span></div><div class="line"><span class="comment">// blue</span></div><div class="line"></div><div class="line">-------</div><div class="line"><span class="keyword">var</span> colors = [<span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>];</div><div class="line">colors.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value,index</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(index + <span class="string">':'</span>+ value);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//0:red</span></div><div class="line"><span class="comment">//1:green</span></div><div class="line"><span class="comment">//2:blue</span></div></pre></td></tr></table></figure></p>
+<p><code>forEach</code>的用法与<code>map</code>方法一致,接受三个参数：value、index、整个数组。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> colors = [<span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>];</div><div class="line">colors.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value,index</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(value);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//箭头函数写法：colors.forEach((value,index) =&gt; console.log(value));</span></div><div class="line"><span class="comment">// red</span></div><div class="line"><span class="comment">// green</span></div><div class="line"><span class="comment">// blue</span></div><div class="line"></div><div class="line">-------</div><div class="line"><span class="keyword">var</span> colors = [<span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span>];</div><div class="line">colors.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">value,index</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(index + <span class="string">':'</span>+ value);</div><div class="line">&#125;);</div><div class="line"><span class="comment">//0:red</span></div><div class="line"><span class="comment">//1:green</span></div><div class="line"><span class="comment">//2:blue</span></div></pre></td></tr></table></figure></p>
 <p><img src="http://ww3.sinaimg.cn/large/87c01ec7gy1fp6l15mi96j20c80b8mxc.jpg" alt=""></p>
 <p><code>forEach</code>的原理：<br><img src="http://ww2.sinaimg.cn/large/87c01ec7gy1fp6msc2ylsj20fm0damxh.jpg" alt=""></p>
 <h2 id="排序sort"><a href="#排序sort" class="headerlink" title="排序sort"></a>排序sort</h2><ul>
@@ -498,11 +498,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
-          
             <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
           
             <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
           
         </div>
       
