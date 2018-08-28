@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="js,面试题,css,html,http,数据结构与算法," />
+  <meta name="keywords" content="js,面试题,html,css,http,数据结构与算法," />
 
 
 
@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="link标签的media属性script标签的charset属性使用svg标签画图">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1fq9p91y7tvj20hk0acwi5.jpg">
-<meta property="og:updated_time" content="2018-07-27T08:15:26.218Z">
+<meta property="og:updated_time" content="2018-08-06T08:44:57.359Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="🔒 期中考试">
 <meta name="twitter:description" content="link标签的media属性script标签的charset属性使用svg标签画图">
@@ -481,9 +481,9 @@
 <li><p>服务器返回 HTTP 响应，响应由4部分组成<br>6.1 第1部分表示 协议/版本号 状态码 状态解释<br>6.2 第 2 部分中的 Content-Type 标注了第 4 部分的格式<br>6.3 第3部分永远是个回车<br>6.4 第4部分是要下载的HTML文件内容           </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1 HTTP/1.1 200 OK</div><div class="line">2 Content-Type: text/html</div><div class="line">2 Content-Length: 17931</div><div class="line">3</div><div class="line">4 &lt;!DOCTYPE html&gt;</div><div class="line">&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt; 后面太长，省略了……</div></pre></td></tr></table></figure>
 </li>
-<li><p>服务器将 HTML 文件发送给浏览器</p>
+<li><p>浏览器得到 HTML 文件</p>
 </li>
-<li><p>浏览器开始加载、解析、渲染 HTML<br>8.1 加载：浏览器对一个html页面的加载顺序是从上而下的，并在加载过程并行进行解析渲染处理。<br>8.2 浏览器发送静态资源请求:在加载过程中遇到link标签、image标签、script标签时，浏览器会再次向服务器发送请求获取css文件、图片资源、js文件，并执行js代码，同步进行加载解析<br>8.3 浏览器发送异步请求（Ajax）<br>8.4 解析、渲染： 解析的过程，其实就是生成dom树。dom树是由dom元素及属性节点组成，加上css解析的样式和js解析后的动作实现。而渲染，就是将DOM树进行可视化表示。下一步就来到了绘制网页的工作阶段</p>
+<li><p>浏览器开始对 HTML文件 进行加载、解析、渲染<br>8.1 加载：浏览器对一个html页面的加载顺序是从上而下的，并在加载过程并行进行解析渲染处理。<br>8.2 浏览器发送静态资源请求:在加载过程中遇到link标签、image标签、script标签时，浏览器会再次向服务器发送请求获取css文件、图片资源、js文件，并执行js代码，同步进行加载解析<br>8.3 浏览器发送异步请求（Ajax）<br>8.4 解析、渲染： 解析的过程，其实就是生成dom树。dom树是由dom元素及属性节点组成，加上css解析的样式和js解析后的动作实现。而渲染，就是将DOM树进行可视化表示。下一步就来到了绘制网页的工作阶段</p>
 </li>
 <li><p>浏览器通过上面步骤计算得到渲染树，构建渲染树使页面以正确的顺序绘制出来，经过一系列的渲染工作，最终完成了页面展示</p>
 </li>
@@ -494,8 +494,8 @@
 <ul>
 <li>根据HTML结构生成DOM Tree</li>
 <li>根据css生成 CSSOM</li>
-<li>将DOM和CSSOM整合成RenderTree(渲染树)</li>
-<li>浏览器根据 渲染树 开始渲染和展示</li>
+<li>将DOM和CSSOM整合成Render Tree(渲染树)</li>
+<li>浏览器根据 渲染树 开始渲染(Painting)和展示(Display)</li>
 <li>遇到script标签时，浏览器会阻塞渲染【所以script要放在尾部。1.这样可以让页面先渲染出来；2.这样js才能获取到所有的元素】</li>
 <li>img发送异步请求，不会阻塞下面的代码渲染</li>
 </ul>
@@ -535,9 +535,9 @@
           
             <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
           
-            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
-          
             <a href="/tags/html/" rel="tag"><i class="fa fa-tag"></i> html</a>
+          
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
           
             <a href="/tags/http/" rel="tag"><i class="fa fa-tag"></i> http</a>
           
@@ -647,7 +647,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-count">81</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
