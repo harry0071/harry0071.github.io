@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="js,笔记,面试题,css,移动端," />
+  <meta name="keywords" content="css,面试题,笔记,js,移动端," />
 
 
 
@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="rem不是响应式方案，它只针对手机端一切尺寸以width为基准记得要加上meta:vp使html的 font-size 与 pageWidth 建立联系border和非根元素font-size建议用pxsublime插件：cssrem各家公司的rem方案">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fph5406elcj212l0o1jyl.jpg">
-<meta property="og:updated_time" content="2018-03-24T12:23:34.000Z">
+<meta property="og:updated_time" content="2018-08-28T07:28:51.045Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="手机专用的自适应方案 - 动态rem">
 <meta name="twitter:description" content="rem不是响应式方案，它只针对手机端一切尺寸以width为基准记得要加上meta:vp使html的 font-size 与 pageWidth 建立联系border和非根元素font-size建议用pxsublime插件：cssrem各家公司的rem方案">
@@ -383,7 +383,7 @@
 <p>但是百分比布局无法知道height，因此设置<code>height:20%</code>无效</p>
 <ul>
 <li>整体缩放</li>
-<li>rem<br>如果设计稿的宽度640px，其中一个元素尺寸320x320<br>我们希望在宽度320px的手机上，这个元素尺寸是160x160<br>在宽度为414px的手机上，这个元素的尺寸是207x207</li>
+<li>rem<br>如果设计稿的宽度640px，其中一个div尺寸320x320<br>我们希望在宽度320px的手机上，这个div尺寸是160x160<br>在宽度为414px的手机上，这个div的尺寸是207x207</li>
 </ul>
 <h1 id="什么是动态rem"><a href="#什么是动态rem" class="headerlink" title="什么是动态rem"></a>什么是动态rem</h1><p>动态rem不是响应式方案，它只适用于手机端，电脑和ipad不适用<br>比如<a href="https://h5.m.taobao.com/" target="_blank" rel="external">https://h5.m.taobao.com/</a> 在电脑端打开就会看起来很奇怪      </p>
 <h2 id="常用尺寸"><a href="#常用尺寸" class="headerlink" title="常用尺寸"></a>常用尺寸</h2><ul>
@@ -402,14 +402,14 @@
 <h1 id="rem的使用步骤"><a href="#rem的使用步骤" class="headerlink" title="rem的使用步骤"></a>rem的使用步骤</h1><ol>
 <li>添加meta:vp</li>
 <li>让html的font-size等于页面宽度</li>
-<li>给body添加font:size:16px;</li>
+<li>给body添加font:size:16px，从而使字体大小复原;</li>
 <li>border和非根元素font-size建议用px</li>
 </ol>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> pageWidth = <span class="built_in">document</span>.documentElement.clientWidth;</div><div class="line">    <span class="keyword">var</span> html = <span class="built_in">document</span>.documentElement;</div><div class="line">    html.style.fontSize = pageWidth+<span class="string">'px'</span>; <span class="comment">//或者pageWidth/10+'px'</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>此时，1rem = 页面宽度<br>如果设计稿中，有一个元素宽度是设计稿宽度的40%，高度是设计稿宽度的20%,margin是设计稿宽度的5%<br>那么这个元素<code>width:0.5rem</code>，<code>height:0.25rem</code>，<code>margin:0.05rem</code><br>拖动改变宽度，然后点击“run with js”查看效果         </p>
+<p>此时，1rem = 页面宽度<br>如果设计稿中，有一个元素宽度是设计稿宽度的40%，高度是设计稿宽度的20%,margin是设计稿宽度的5%<br>那么这个元素<code>width:0.4rem</code>，<code>height:0.2rem</code>，<code>margin:0.05rem</code><br>拖动改变宽度，然后再次点击“run with js”查看效果         </p>
 <iframe width="100%" height="600" src="http://js.jirengu.com/yoresozuva/1/edit?html,output" allowpaymentrequest="" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p><code>html.style.fontSize = pageWidth/10+&#39;px&#39;;</code><br>这样1rem = 页面宽度的十分之一<br>如果设计稿中，有一个元素宽度是设计稿宽度的40%，高度是设计稿宽度的20%,margin是设计稿宽度的5%<br>那么这个元素<code>width:5rem</code>，<code>height:2.5rem</code>，<code>margin:0.5rem</code><br><strong>注意，font-size不能是页面宽度的1/100,因为浏览器最小字号限制12px，假设页面宽度360px，那么字号是3.6px，会有bug</strong></p>
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p><code>html.style.fontSize = pageWidth/10+&#39;px&#39;;</code><br>这样1rem = 页面宽度的十分之一<br>如果设计稿中，有一个元素宽度是设计稿宽度的40%，高度是设计稿宽度的20%,margin是设计稿宽度的5%<br>那么这个元素<code>width:4rem</code>，<code>height:2rem</code>，<code>margin:0.5rem</code><br><strong>注意，font-size不能是页面宽度的1/100,因为浏览器最小字号限制12px，假设页面宽度360px，那么字号是3.6px，会有bug</strong></p>
 <p>border和非根元素font-size建议用px</p>
 <h1 id="px2rem"><a href="#px2rem" class="headerlink" title="px2rem"></a>px2rem</h1><p>用Less将px自动转成rem<br>假设1rem = 页面宽度的十分之一,那么<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//Less:</div><div class="line">@design:640; //设计稿的宽度</div><div class="line">@px2rem: (1/@design)*10rem; //乘以10是因为页面宽度的十分之一</div><div class="line"></div><div class="line">div &#123;</div><div class="line">  wifth:320*@px2rem;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//css结果：</div><div class="line">div &#123;</div><div class="line">  wifth: 5rem;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
@@ -437,13 +437,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
-          
-            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
           
             <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
           
-            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
           
             <a href="/tags/移动端/" rel="tag"><i class="fa fa-tag"></i> 移动端</a>
           

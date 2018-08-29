@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="js,面试题," />
+  <meta name="keywords" content="面试题,js," />
 
 
 
@@ -95,7 +95,7 @@
 <meta property="og:url" content="harry0071.github.io/2018/07/18/js相关题目/index.html">
 <meta property="og:site_name" content="stage's blog">
 <meta property="og:description" content="与javascript有关的面试题汇总">
-<meta property="og:updated_time" content="2018-08-28T01:30:19.703Z">
+<meta property="og:updated_time" content="2018-08-28T05:34:10.916Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="🔒 js相关题目">
 <meta name="twitter:description" content="与javascript有关的面试题汇总">
@@ -445,8 +445,14 @@
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> students = [<span class="string">'小明'</span>,<span class="string">'小红'</span>,<span class="string">'小花'</span>]; </div><div class="line"><span class="keyword">var</span> scores = &#123; 小明: <span class="number">59</span>, 小红: <span class="number">99</span>, 小花: <span class="number">80</span> &#125;;</div><div class="line">students.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>) </span>&#123;</div><div class="line"> <span class="keyword">return</span> scores[a]-scores[b]; <span class="comment">//按照scores从小到大排序</span></div><div class="line">&#125;);</div><div class="line"><span class="comment">//["小明", "小花", "小红"] </span></div><div class="line"></div><div class="line"><span class="comment">////////////////////////////</span></div><div class="line"></div><div class="line">[</div><div class="line">  &#123; <span class="attr">name</span>: <span class="string">"张三"</span>, <span class="attr">age</span>: <span class="number">30</span> &#125;,</div><div class="line">  &#123; <span class="attr">name</span>: <span class="string">"李四"</span>, <span class="attr">age</span>: <span class="number">24</span> &#125;,</div><div class="line">  &#123; <span class="attr">name</span>: <span class="string">"王五"</span>, <span class="attr">age</span>: <span class="number">28</span>  &#125;</div><div class="line">].sort(<span class="function"><span class="keyword">function</span> (<span class="params">o1, o2</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> o1.age - o2.age;</div><div class="line">&#125;)</div><div class="line"><span class="comment">// [</span></div><div class="line"><span class="comment">//   &#123; name: "李四", age: 24 &#125;,</span></div><div class="line"><span class="comment">//   &#123; name: "王五", age: 28  &#125;,</span></div><div class="line"><span class="comment">//   &#123; name: "张三", age: 30 &#125;</span></div><div class="line"><span class="comment">// ]</span></div></pre></td></tr></table></figure>
 <blockquote>
-<p>节流</p>
-<p>防抖</p>
+<p>节流，始终以均匀的流速出结果<br>疯狂点击，始终以每2s的速度打印出1</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn,wait</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> timer;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(!timer)&#123;</div><div class="line">      timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        fn();</div><div class="line">        timer = <span class="literal">null</span>;</div><div class="line">      &#125;,wait);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">btn.onclick=throttle(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>);</div><div class="line">&#125;,<span class="number">2000</span>)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>防抖，当有下一个事件时，前一个事件取消<br>疯狂点击，不打印出结果；不点击时才打印出结果</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn,wait</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> timer;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    timer &amp;&amp; clearTimeout(timer);</div><div class="line">    timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      fn();</div><div class="line">    &#125;,wait);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">btn.onclick=debounce(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>);</div><div class="line">&#125;,<span class="number">2000</span>)</div></pre></td></tr></table></figure>
+<blockquote>
 <p>递归实现杨辉三角<br>假设输入3，输出[[1],[1,1],[1,2,1]]</p>
 <p>用js实现一个比较APP版本号的大小的函数，版本号各市由数字和.组成。例如：1.1.0、1.10、1.2.3等。</p>
 </blockquote>
@@ -484,9 +490,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
-          
             <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
           
         </div>
       

@@ -97,7 +97,7 @@
 <meta property="og:description" content="ua-parser-js用于检测客户端信息">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fslhve0yltj203k03kmx1.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fslhmconf4j20d80bnmxp.jpg">
-<meta property="og:updated_time" content="2018-06-23T14:45:31.000Z">
+<meta property="og:updated_time" content="2018-08-28T08:40:57.848Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="检测客户端信息ua-parser-js">
 <meta name="twitter:description" content="ua-parser-js用于检测客户端信息">
@@ -374,6 +374,7 @@
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> parser = <span class="keyword">new</span> UAParser();</div><div class="line"><span class="keyword">var</span> result = parser.getResult();</div><div class="line"><span class="built_in">console</span>.log(result);</div></pre></td></tr></table></figure>
 <p><img src="http://ww4.sinaimg.cn/large/87c01ec7gy1fslhmconf4j20d80bnmxp.jpg" alt=""></p>
 <h2 id="api"><a href="#api" class="headerlink" title="api"></a>api</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> parser = <span class="keyword">new</span> UAParser();</div><div class="line"><span class="keyword">var</span> result = parser.getResult();</div><div class="line"></div><div class="line">result.browser <span class="comment">//&#123;name: "Chrome", version: "66.0.3359.139", major: "66"&#125;</span></div><div class="line">result.device <span class="comment">//&#123;vendor: "Apple", model: "iPhone", type: "mobile"&#125;</span></div><div class="line">result.os <span class="comment">//&#123;name: "iOS", version: "11.0"&#125;</span></div><div class="line">result.os.version <span class="comment">//11.0</span></div><div class="line">result.engine <span class="comment">//&#123;name: "WebKit", version: "604.1.38"&#125;</span></div><div class="line">result.cpu</div></pre></td></tr></table></figure>
+<h1 id="原生js判断浏览器信息"><a href="#原生js判断浏览器信息" class="headerlink" title="原生js判断浏览器信息"></a>原生js判断浏览器信息</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(!!<span class="built_in">window</span>.ActiveXObject || <span class="string">"ActiveXObject"</span> <span class="keyword">in</span> <span class="built_in">window</span>)&#123;</div><div class="line">    <span class="built_in">document</span>.body.innerHTML = <span class="string">'&lt;h1 style="font-size:30px;"&gt;请使用chrome浏览器打开此页！&lt;/h1&gt;'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -412,8 +413,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/21/Vuex使用教程/" rel="next" title="Vuex使用教程">
-                <i class="fa fa-chevron-left"></i> Vuex使用教程
+              <a href="/2018/06/05/tweenjs使用教程/" rel="next" title="tween.js使用教程">
+                <i class="fa fa-chevron-left"></i> tween.js使用教程
               </a>
             
           </div>
@@ -576,7 +577,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引入"><span class="nav-number">1.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#api"><span class="nav-number">2.1.</span> <span class="nav-text">api</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#引入"><span class="nav-number">1.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#api"><span class="nav-number">2.1.</span> <span class="nav-text">api</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原生js判断浏览器信息"><span class="nav-number">3.</span> <span class="nav-text">原生js判断浏览器信息</span></a></li></ol></div>
             
 
           </div>
