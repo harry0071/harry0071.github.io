@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if('11111111'){
+            if (prompt('请输入文章密码') !== '11111111'){
+                alert('密码错误！');
+                //history.back(); 不推荐这种方法，建议使用下面的方法
+                location="//harry0071.github.io"; //返回网站，请自定义
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="笔记,教程,打包工具,webpack," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前端工程化：自动化(用命令行自动转译)、模块化、性能优化模块自动化构建工具：webpack的使用postcss：自动添加浏览器私有前缀sass：sass转cssless：less转cssbabel：es6转es5extract-text-webpack-plugin：分离出独立的css文件webpack4参考教材webpack：从入门到真实项目配置关于 webpack 的面试题有哪些？简书：we">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack入门">
+<meta property="og:url" content="harry0071.github.io/2018/08/13/webpack入门/index.html">
+<meta property="og:site_name" content="stage's blog">
+<meta property="og:description" content="前端工程化：自动化(用命令行自动转译)、模块化、性能优化模块自动化构建工具：webpack的使用postcss：自动添加浏览器私有前缀sass：sass转cssless：less转cssbabel：es6转es5extract-text-webpack-plugin：分离出独立的css文件webpack4参考教材webpack：从入门到真实项目配置关于 webpack 的面试题有哪些？简书：we">
+<meta property="og:updated_time" content="2018-09-10T03:23:40.475Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack入门">
+<meta name="twitter:description" content="前端工程化：自动化(用命令行自动转译)、模块化、性能优化模块自动化构建工具：webpack的使用postcss：自动添加浏览器私有前缀sass：sass转cssless：less转cssbabel：es6转es5extract-text-webpack-plugin：分离出独立的css文件webpack4参考教材webpack：从入门到真实项目配置关于 webpack 的面试题有哪些？简书：we">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="harry0071.github.io/2018/08/13/webpack入门/"/>
+
+
+
+
+
+  <title>webpack入门 | stage's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">stage's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="harry0071.github.io/2018/08/13/webpack入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="stage">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22497777">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="stage's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">webpack入门</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T10:53:09+08:00">
+                2018-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端工程化/" itemprop="url" rel="index">
+                    <span itemprop="name">前端工程化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>前端工程化：自动化(用命令行自动转译)、模块化、性能优化<br>模块自动化构建工具：webpack的使用<br>postcss：自动添加浏览器私有前缀<br>sass：sass转css<br>less：less转css<br>babel：es6转es5<br>extract-text-webpack-plugin：分离出独立的css文件<br><a href="https://blog.zfanw.com/webpack-tutorial/" target="_blank" rel="external">webpack4参考教材</a><br><a href="https://zhuanlan.zhihu.com/p/30701816" target="_blank" rel="external">webpack：从入门到真实项目配置</a><br><a href="https://www.zhihu.com/question/266788138" target="_blank" rel="external">关于 webpack 的面试题有哪些？</a><br><a href="https://www.jianshu.com/p/ea2fa79a1c71" target="_blank" rel="external">简书：webpack4入门</a></p>
+</blockquote>
+<a id="more"></a>
+<h1 id="前端工程化"><a href="#前端工程化" class="headerlink" title="前端工程化"></a>前端工程化</h1><p>大公司里怎样开发和部署前端代码?</p>
+<ul>
+<li>个人：写html、css、js</li>
+<li>大公司：工程化(自动化、模块化、性能优化)</li>
+</ul>
+<h2 id="自动化-命令行自动实时转译"><a href="#自动化-命令行自动实时转译" class="headerlink" title="自动化(命令行自动实时转译)"></a>自动化(命令行自动实时转译)</h2><ul>
+<li>用Less命令行将less自动转成css</li>
+<li>用Bable命令行将es6语法自动转成es5</li>
+<li>用Autoprefixer命令行将css3自动加上浏览器私有前缀</li>
+</ul>
+<h1 id="webpack模块自动化构建工具"><a href="#webpack模块自动化构建工具" class="headerlink" title="webpack模块自动化构建工具"></a>webpack模块自动化构建工具</h1><p>什么是模块？在 webpack 下，所有类型的文件都可以是模块，包括 CSS、图片、JSON，等等。</p>
+<p>前端工程化遇到的问题：             </p>
+<ol>
+<li>Less、Babel、Autoprefixer等必须全部开着命令行监控文件的变化，才能实时自动转译。</li>
+<li>前端发展很快，html–&gt;pug–&gt;slim, css–&gt;less–&gt;sass–&gt;scss–&gt;stylus, js–&gt;es6–&gt;Typescript   </li>
+</ol>
+<p>能不能不要开那么多命令行窗口呢？并且根据文件后缀名自动转成标准的前端文件呢？<br>用模块自动化构建工具(打包工具)！</p>
+<h2 id="模块自动化构建工具-打包工具-发展史"><a href="#模块自动化构建工具-打包工具-发展史" class="headerlink" title="模块自动化构建工具(打包工具)发展史"></a>模块自动化构建工具(打包工具)发展史</h2><p>Grunt  –&gt; Gulp –&gt; Webpack –&gt; Parcel</p>
+<h1 id="项目目录结构"><a href="#项目目录结构" class="headerlink" title="项目目录结构"></a>项目目录结构</h1><ul>
+<li>.bin:binary,可执行的</li>
+<li>dist:distributable,可分发的</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">|</div><div class="line">|</div><div class="line">|-- src <span class="comment">//source，未经转译过的源文件</span></div><div class="line">|    |-- imgs <span class="comment">//图片放这里</span></div><div class="line">|    |-- js  <span class="comment">//原始js代码放这里</span></div><div class="line">|    |-- style <span class="comment">//原始样式代码(.less,.scss,.sass)放这里</span></div><div class="line">|</div><div class="line">|-- dist <span class="comment">//distribution，转译后的代码</span></div><div class="line">|    |-- index.html</div><div class="line">|</div><div class="line">|-- node_modules <span class="comment">//通过npm下载的第三方库</span></div><div class="line">|</div><div class="line">|-- vendors <span class="comment">//自己找的第三方库</span></div></pre></td></tr></table></figure>
+<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ul>
+<li>退出vim：esc +：+ w + q</li>
+<li>$ node_modules/.bin/webpack –watch   //监听变动并自动打包</li>
+<li>$ node_modules/.bin/webpack -p    //压缩混淆脚本，这个非常非常重要！</li>
+<li>$ npm list -g –depth=0 查看所有全局安装</li>
+</ul>
+<ol>
+<li>先全局安装[不推荐全局安装 webpack。这会将你项目中的 webpack 锁定到指定版本，并且在使用不同的 webpack 版本的项目中，可能会导致构建失败。]<code>npm i webpack webpack-cli -g</code> 进行全局安装【如果出现npm install出现”Unexpected end of JSON input while parsing near”错误,执行<code>npm cache clean --force</code>】</li>
+</ol>
+<ul>
+<li>在项目目录下打开命令行，<code>npm init -y</code>初始化模块，生成package.json</li>
+<li><code>npm i webpack webpack-cli -D</code>（<code>-D</code>表示<code>--save-dev</code>），安装webpack到当前目录(局部安装)</li>
+<li>webpack装在了node_modules文件夹下一个<code>.bin</code>文件夹里(binary:可执行的)</li>
+<li>创建./src/index.js</li>
+<li><p>打开package.json并添加            </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>: &#123;</div><div class="line">	<span class="string">"dev"</span>: <span class="string">"webpack --mode development"</span>,</div><div class="line">	<span class="string">"build"</span>: <span class="string">"webpack --mode production"</span> </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>这样，在执行<code>npm run dev</code>时吐出未压缩的包，执行<code>npm run build</code>时吐出压缩后的包</p>
+</li>
+</ul>
+<h1 id="webpack4"><a href="#webpack4" class="headerlink" title="webpack4"></a>webpack4</h1><p>参考教材：<a href="https://blog.zfanw.com/webpack-tutorial/" target="_blank" rel="external">https://blog.zfanw.com/webpack-tutorial/</a></p>
+<h2 id="默认入口和出口"><a href="#默认入口和出口" class="headerlink" title="默认入口和出口"></a>默认入口和出口</h2><ul>
+<li>创建文件./src/index.js</li>
+<li>从webpack 4开始，不需要定义入口点：它会将./src/index.js作为默认值！【可以创建webpack.config.js进行修改】</li>
+<li>打开package.json并添加一个构建脚本：”scripts”: { “build”: “webpack”}保存并关闭文件</li>
+<li>执行<code>npm run build</code>，默认在 ./dist/main.js中获得该软件包。webpack4会查找./src/index.js作为默认入口点。 而且，它默认会在./dist/main.js中吐出这个包。</li>
+<li>创建./dist/index.html,并引入main.js</li>
+</ul>
+<h3 id="配置入口和出口"><a href="#配置入口和出口" class="headerlink" title="配置入口和出口"></a>配置入口和出口</h3><p>如果不想要默认配置，可以自定义配置           </p>
+<ul>
+<li>新建<code>webpack.config.js</code>（这个配置文件可以拷贝官方文档）                <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">'./src/a.js'</span>  <span class="comment">//入口 a.js可以简写成a</span></div><div class="line">  output: &#123; <span class="comment">//出口</span></div><div class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>), <span class="comment">//__dirname表示当前目录,后面的参数表示文件夹名</span></div><div class="line">    filename: <span class="string">'bundle.js'</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这样，我们只需要执行<code>npm run build</code>，就可以将src下的a.js打包到dist下的bundle.js(压缩模式)</p>
+<hr>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">多入口，多出口配置</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: &#123;</div><div class="line">  	<span class="attr">home</span>: <span class="string">'./src/home.js'</span>,  <span class="comment">//home.js可以简写成home</span></div><div class="line">  	signup: <span class="string">'./src/signup.js'</span></div><div class="line">  	&#125;,</div><div class="line">  <span class="attr">output</span>: &#123; <span class="comment">//出口</span></div><div class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>), <span class="comment">//__dirname表示当前目录,后面的参数表示文件夹名</span></div><div class="line">    filename: <span class="string">'[name].bundle.js'</span> <span class="comment">//生成home.bundle.js和signup.bundle.js</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="生产模式production和开发模式development"><a href="#生产模式production和开发模式development" class="headerlink" title="生产模式production和开发模式development"></a>生产模式production和开发模式development</h2><p>生产模式build：压缩，体积小<br>开发模式dev：未压缩，体积大        </p>
+<p>事实上，如果你注意<code>npm run build</code>的输出，你会看到一个很好的警告：           </p>
+<blockquote>
+<p>The ‘mode’ option has not been set. Set ‘mode’ option to ‘development’ or ‘production’ to enable defaults for this environment.（“mode”选项尚未设置。 将“mode”选项设置为“development”或“production”以启用此环境的默认值。）</p>
+</blockquote>
+<p>打开package.json并添加<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>: &#123;</div><div class="line">	<span class="string">"dev"</span>: <span class="string">"webpack --mode development"</span>,</div><div class="line">	<span class="string">"build"</span>: <span class="string">"webpack --mode production"</span> </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样，在执行<code>npm run dev</code>时吐出未压缩的包，执行<code>npm run build</code>时吐出压缩后的包</p>
+<h2 id="配置环境process-env-WEBPACK-MODE"><a href="#配置环境process-env-WEBPACK-MODE" class="headerlink" title="配置环境process.env.WEBPACK_MODE"></a>配置环境process.env.WEBPACK_MODE</h2><p><a href="https://www.imooc.com/article/24738" target="_blank" rel="external">慕课网笔记：小记webpack4.x升级过程</a></p>
+<p>在webpack.config.json填入<code>set WEBPACK_ENV</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"dev"</span>: <span class="string">"set WEBPACK_MODE=development &amp;&amp; webpack --mode development</span></div></pre></td></tr></table></figure></p>
+<p>然后在webpack.config.js中就能获取到<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'process.WEBPACK_MODE : '</span>+process.env.WEBPACK_MODE)</div></pre></td></tr></table></figure></p>
+<h2 id="获取npm-run-xxx"><a href="#获取npm-run-xxx" class="headerlink" title="获取npm run xxx"></a>获取npm run xxx</h2><p>npm 提供一个npm_lifecycle_event变量，返回当前正在运行的script名称，比如<code>dev</code>、<code>build</code>、<code>watch</code>等</p>
+<p>在webpack.config.json填入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> currentTarget = process.env.npm_lifecycle_event;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'npm run : '</span>+currentTarget)</div></pre></td></tr></table></figure></p>
+<h2 id="文件实时更新【会自动更新mian-js】"><a href="#文件实时更新【会自动更新mian-js】" class="headerlink" title="文件实时更新【会自动更新mian.js】"></a>文件实时更新【会自动更新mian.js】</h2><p>打开package.json并添加<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>: &#123;</div><div class="line">	<span class="string">"watch"</span>: <span class="string">"webpack --mode development --watch"</span> </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样，执行<code>npm run watch</code>就可以实时监控文件，一旦文件有变化就自动更新</p>
+<h2 id="自动刷新浏览器【更新的文件保存在缓存中】"><a href="#自动刷新浏览器【更新的文件保存在缓存中】" class="headerlink" title="自动刷新浏览器【更新的文件保存在缓存中】"></a>自动刷新浏览器【更新的文件保存在缓存中】</h2><p>webpack-dev-server 为你提供了一个简单的 web 服务器，并且能够实时重新加载(live reloading)。<br>安装：<code>npm i webpack-dev-server -D</code><br>打开package.json并添加<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>: &#123;</div><div class="line">	<span class="string">"start"</span>: <span class="string">"webpack-dev-server --mode development --content-base ./dist --open"</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样，在执行<code>npm start</code>就会看到浏览器自动加载页面。 </p>
+<p>注意：你启动webpack-dev-server后，你在<br>./dist/main.js中是看不到编译后的文件的,实时编译后的文件都保存到了浏览器内存当中。因此很多同学使用webpack-dev-server进行开发的时候都看不到编译后的文件<br>【解决办法】多开一个命令行串口，用<code>npm watch</code>实时监控文件变动随时编译就行了。<br>webpack-dev-server的端口怎么修改?<br>【解决方法】用–port来制定参数，比如<code>webpack-dev-server --port 8888</code></p>
+<h2 id="配置命令详解"><a href="#配置命令详解" class="headerlink" title="配置命令详解"></a>配置命令详解</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"build"</span>: <span class="string">"webpack  --profile --progress --colors --display-error-details"</span>,</div><div class="line">    <span class="string">"dev"</span>: <span class="string">"webpack  --display-modules --profile --progress --colors --display-error-details"</span>,</div><div class="line">    <span class="string">"start"</span>: <span class="string">"webpack-dev-server --config"</span></div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>color 输出结果带彩色，比如：会用红色显示耗时较长的步骤</li>
+<li>profile 输出性能数据，可以看到每一步的耗时</li>
+<li>progress 输出当前编译的进度，以百分比的形式呈现</li>
+<li>display-modules 默认情况下 node_modules 下的模块会被隐藏，加上这个参数可以显示这些被隐藏的模块</li>
+<li>display-error-details 输出详细的错误信息</li>
+<li>webpack-dev-server 将会开启热更新</li>
+<li>更多请参考官网 <a href="https://webpack.github.io/docs/cli.html" target="_blank" rel="external">cli</a></li>
+</ul>
+<h2 id="LOADER转译器"><a href="#LOADER转译器" class="headerlink" title="LOADER转译器"></a>LOADER转译器</h2><p>Webpack 本身只能处理 JavaScript 模块，如果要处理其他类型的文件(ES6,less,sass,scss等)，就需要使用 loader 进行转换。</p>
+<h3 id="css相关loader"><a href="#css相关loader" class="headerlink" title="css相关loader"></a>css相关loader</h3><p>sass-loader 把sass转成css<br>css-loader 会遍历 CSS 文件，然后找到 url() 表达式然后处理他们<br>style-loader 把CSS 代码插入页面中的一个 style 标签中。           </p>
+<h4 id="sass-loader"><a href="#sass-loader" class="headerlink" title="sass-loader"></a>sass-loader</h4><p>npm i -D css-loader style-loader<br>npm i -D sass-loader node-sass<br>npm i -D less less-loader<br>npm i -D extract-text-webpack-plugin@next<br>npm i -D postcss-loader  //添加前缀<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">创建postcss.config.js</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">plugins</span>: &#123;</div><div class="line">    <span class="string">'postcss-import'</span>: &#123;&#125;,</div><div class="line">    <span class="string">'postcss-cssnext'</span>: &#123;&#125;,</div><div class="line">    <span class="string">'cssnano'</span>: &#123;&#125; <span class="comment">//压缩css代码</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="string">``</span><span class="string">`         </span></div><div class="line">在index.js中将样式表引入`<span class="keyword">import</span> ../css/style.scss<span class="string">`</span></div><div class="line"></div><div class="line">### babel-loader</div><div class="line">npm i -D babel-core babel-preset-env babel-loader</div><div class="line"></div><div class="line">在webpack.config.json填入          </div><div class="line">`<span class="string">``</span>javascript</div><div class="line"><span class="built_in">module</span>: &#123;</div><div class="line">	<span class="attr">rules</span>: [&#123;</div><div class="line">		<span class="attr">test</span>: <span class="regexp">/\.js$/</span>, <span class="comment">//以.js结尾的文件</span></div><div class="line">		exclude: <span class="regexp">/(node_modules|bower_components)/</span>, <span class="comment">//排除</span></div><div class="line">		use: &#123;</div><div class="line">			<span class="attr">loader</span>: <span class="string">'babel-loader'</span>,</div><div class="line">			<span class="attr">options</span>: &#123;</div><div class="line">				<span class="attr">presets</span>: [<span class="string">'env'</span>]</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;]</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="babel-polyfill转换es6的api"><a href="#babel-polyfill转换es6的api" class="headerlink" title="babel-polyfill转换es6的api"></a>babel-polyfill转换es6的api</h3><p>Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。举例来说，ES6在Array对象上新增了Array.from方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用<a href="https://babeljs.cn/docs/usage/polyfill" target="_blank" rel="external">babel-polyfill</a>。</p>
+<p>Babel默认不转码的API非常多，详细清单可以查看babel-plugin-transform-runtime模块的<a href="https://github.com/babel/babel/blob/master/packages/babel-plugin-transform-runtime/src/definitions.js" target="_blank" rel="external">definitions.js</a>文件。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">安装：</div><div class="line">npm i babel-polyfill -S </div><div class="line"></div><div class="line">然后需要时，在入口文件最顶部通过 <span class="keyword">import</span> 将 polyfill 引入</div><div class="line"><span class="keyword">import</span> <span class="string">"babel-polyfill"</span>;</div><div class="line"></div><div class="line">或者直接暴力在 webpack.config.js 中，将 babel-polyfill 加到你的 entry 数组中：</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: [<span class="string">"babel-polyfill"</span>, <span class="string">"./app/js"</span>]</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>上面这种方法将整个polyfill引入，会导致文件过大！</p>
+<h4 id="core-js转换es6的api"><a href="#core-js转换es6的api" class="headerlink" title="core-js转换es6的api"></a>core-js转换es6的api</h4><p>推荐手动引入core-js<br>使用方法:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">在入口文件的顶部引入</div><div class="line"><span class="keyword">import</span> <span class="string">'core-js/fn/object/assign'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'core-js/fn/string/repeat'</span>;</div><div class="line"></div><div class="line">如何就可以在自己的js文件中用<span class="built_in">Object</span>.assign、str.repeat了</div><div class="line"><span class="keyword">var</span> data = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;</div><div class="line"><span class="built_in">Object</span>.assign(data,&#123;<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">c</span>:<span class="number">3</span>&#125;);</div><div class="line"><span class="built_in">console</span>.log(data);</div><div class="line"></div><div class="line"><span class="keyword">var</span> x = <span class="string">'h'</span>.repeat(<span class="number">10</span>);</div><div class="line"><span class="built_in">console</span>.log(x);</div></pre></td></tr></table></figure></p>
+<p>参考内容：</p>
+<ul>
+<li><a href="https://blog.csdn.net/a324539017/article/details/52824189" target="_blank" rel="external">cnblog:babel不转换新API的解决办法</a></li>
+<li><a href="https://github.com/zloirock/core-js#commonjs" target="_blank" rel="external">github:core-js的用法</a></li>
+<li><a href="https://github.com/babel/babel/blob/master/packages/babel-plugin-transform-runtime/src/definitions.js" target="_blank" rel="external">github:core-js的definitions文件</a></li>
+<li><a href="https://babeljs.cn/docs/usage/polyfill" target="_blank" rel="external">babel中文官网：关于polyfill</a></li>
+</ul>
+<h3 id="purifycss去除无用css"><a href="#purifycss去除无用css" class="headerlink" title="purifycss去除无用css"></a>purifycss去除无用css</h3><p>安装：<code>npm i -D purifycss-webpack purify-css</code></p>
+<p>在webpack.config.js中配置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> glob = <span class="built_in">require</span>(<span class="string">"glob"</span>);</div><div class="line"><span class="keyword">const</span> PurifyCSSPlugin = <span class="built_in">require</span>(<span class="string">"purifycss-webpack"</span>);</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//插件:用于生产模板和各项功能</span></div><div class="line">    plugins:[</div><div class="line">        <span class="comment">//把CSS独立出来，不要打包到js文件中去里面写的就是独立出来后的路径</span></div><div class="line">        <span class="keyword">new</span> extracTextPlugin(<span class="string">"/css/index.css"</span>),</div><div class="line">        <span class="comment">//去除无用css(必须配合extract-text-webpack-plugin这个插件)</span></div><div class="line">        <span class="keyword">new</span> PurifyCSSPlugin(&#123;</div><div class="line">            <span class="attr">paths</span>:glob.sync(path.join(__dirname,<span class="string">"src/*.html"</span>))</div><div class="line">        &#125;)</div><div class="line">    ]</div></pre></td></tr></table></figure></p>
+<h1 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h1><p>用npx可以自动找到命令行工具所在位置，比如<code>npx webpack --mode development --watch</code>等同于<code>./node_modules/.bin/webpack --mode development --watch</code><br>这样就不需要安装到global全局也能使用，比如原本http-server要安装到全局，然后才能<code>http-server -c-1 -o</code>，现在可以不安装到全局，直接<code>npx http-server -c-1 -o</code>打开</p>
+<ul>
+<li><code>npx webpack -v</code>：查看webpack版本号</li>
+<li><code>npm run dev</code> 打包成不压缩的文件</li>
+<li><code>npm run build</code> 打包成压缩文件</li>
+<li><code>npm run watch</code> 启动watch监视，并实时打包成新文件</li>
+<li><code>npm run start</code> 打开本地服务器调试</li>
+</ul>
+<h1 id="导入导出modules"><a href="#导入导出modules" class="headerlink" title="导入导出modules"></a>导入导出modules</h1><h2 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">属性:<span class="built_in">module</span>.exports.age=<span class="number">12</span>;</div><div class="line">方法:<span class="built_in">module</span>.exports.sayAge=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div></pre></td></tr></table></figure>
+<p>具体如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//login.js</span></div><div class="line">&#123;</div><div class="line"></div><div class="line">  <span class="keyword">let</span> userName=<span class="string">"stage"</span>;</div><div class="line">  <span class="built_in">module</span>.exports.userName=userName;</div><div class="line">  <span class="built_in">module</span>.exports.sayName=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> userName;</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> loadsh <span class="keyword">from</span> <span class="string">'lodash'</span> <span class="comment">// 从模块目录查找</span></div><div class="line"><span class="keyword">import</span> a <span class="keyword">from</span> <span class="string">'./src/js/a.js'</span> <span class="comment">// 按相对路径查找【文件的后缀名可加可不加】</span></div></pre></td></tr></table></figure>
+<p>这里注意一下：模块查找和相对目录的查找的写法，模块查找是不需要”./“,直接写上模块名字，这里的模块一般是通过<code>npm i</code>下载到node_modules的模块。</p>
+<p>具体如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="keyword">import</span> xxx <span class="keyword">from</span> <span class="string">'./src/js/login.js'</span>;<span class="comment">//引用模块</span></div><div class="line">  alert(xxx.sayName());<span class="comment">//使用 引用模块的方法</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="去除-map文件"><a href="#去除-map文件" class="headerlink" title="去除.map文件"></a>去除.map文件</h1><p>打包时不要map文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">去config/index.js中改一个参数： </div><div class="line">productionSourceMap:false</div></pre></td></tr></table></figure></p>
+<h1 id="发布到githut"><a href="#发布到githut" class="headerlink" title="发布到githut"></a>发布到githut</h1><ul>
+<li>将config -&gt; index.js 里build配置项里的assetsPublicPath修改成这样→<code>assetsPublicPath: &#39;./&#39;,</code></li>
+</ul>
+<h1 id="关于-D和-S"><a href="#关于-D和-S" class="headerlink" title="关于-D和-S"></a>关于-D和-S</h1><p><a href="https://segmentfault.com/p/1210000009653830/read" target="_blank" rel="external">https://segmentfault.com/p/1210000009653830/read</a></p>
+<ul>
+<li><code>npm i xxx -D</code>:模块名将被添加到 devDependencies 开发依赖,在我们开发的时候会用到的一些包，只是在开发环境中调试时需要用到的包</li>
+<li><code>npm i xxx -S</code>:模块名将被添加到 dependencies</li>
+<li>npm在下载模块时，默认<code>-S</code>，所以<code>npm i xxx</code>等同于<code>npm i xxx -S</code></li>
+</ul>
+<h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><p><a href="http://ovenzeze.coding.me/" target="_blank" rel="external">http://ovenzeze.coding.me/</a></p>
+
+      
+    </div>
+    
+    
+    
+    <div>
+      
+          <div>
+    
+        <div style="text-align:center;color: #404040;font-size:18px;margin-top:70px;">-------------本文结束<i class="fa fa-star"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          
+            <a href="/tags/教程/" rel="tag"><i class="fa fa-tag"></i> 教程</a>
+          
+            <a href="/tags/打包工具/" rel="tag"><i class="fa fa-tag"></i> 打包工具</a>
+          
+            <a href="/tags/webpack/" rel="tag"><i class="fa fa-tag"></i> webpack</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/04/实现一个简单的router/" rel="next" title="实现一个简单的router">
+                <i class="fa fa-chevron-left"></i> 实现一个简单的router
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/25/面向对象之继承/" rel="prev" title="面向对象之继承">
+                面向对象之继承 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars3.githubusercontent.com/u/22497777"
+                alt="stage" />
+            
+              <p class="site-author-name" itemprop="name">stage</p>
+              <p class="site-description motion-element" itemprop="description">学习、记录、感悟、成长</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">83</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/harry0071" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:2015081a@sina.com" target="_blank" title="E-mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前端工程化"><span class="nav-number">1.</span> <span class="nav-text">前端工程化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自动化-命令行自动实时转译"><span class="nav-number">1.1.</span> <span class="nav-text">自动化(命令行自动实时转译)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack模块自动化构建工具"><span class="nav-number">2.</span> <span class="nav-text">webpack模块自动化构建工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模块自动化构建工具-打包工具-发展史"><span class="nav-number">2.1.</span> <span class="nav-text">模块自动化构建工具(打包工具)发展史</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目目录结构"><span class="nav-number">3.</span> <span class="nav-text">项目目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用步骤"><span class="nav-number">3.1.</span> <span class="nav-text">使用步骤</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack4"><span class="nav-number">4.</span> <span class="nav-text">webpack4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#默认入口和出口"><span class="nav-number">4.1.</span> <span class="nav-text">默认入口和出口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置入口和出口"><span class="nav-number">4.1.1.</span> <span class="nav-text">配置入口和出口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生产模式production和开发模式development"><span class="nav-number">4.2.</span> <span class="nav-text">生产模式production和开发模式development</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置环境process-env-WEBPACK-MODE"><span class="nav-number">4.3.</span> <span class="nav-text">配置环境process.env.WEBPACK_MODE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取npm-run-xxx"><span class="nav-number">4.4.</span> <span class="nav-text">获取npm run xxx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件实时更新【会自动更新mian-js】"><span class="nav-number">4.5.</span> <span class="nav-text">文件实时更新【会自动更新mian.js】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动刷新浏览器【更新的文件保存在缓存中】"><span class="nav-number">4.6.</span> <span class="nav-text">自动刷新浏览器【更新的文件保存在缓存中】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置命令详解"><span class="nav-number">4.7.</span> <span class="nav-text">配置命令详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LOADER转译器"><span class="nav-number">4.8.</span> <span class="nav-text">LOADER转译器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#css相关loader"><span class="nav-number">4.8.1.</span> <span class="nav-text">css相关loader</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sass-loader"><span class="nav-number">4.8.1.1.</span> <span class="nav-text">sass-loader</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#babel-polyfill转换es6的api"><span class="nav-number">4.8.2.</span> <span class="nav-text">babel-polyfill转换es6的api</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#core-js转换es6的api"><span class="nav-number">4.8.2.1.</span> <span class="nav-text">core-js转换es6的api</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#purifycss去除无用css"><span class="nav-number">4.8.3.</span> <span class="nav-text">purifycss去除无用css</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用指令"><span class="nav-number">5.</span> <span class="nav-text">常用指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#导入导出modules"><span class="nav-number">6.</span> <span class="nav-text">导入导出modules</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#导出"><span class="nav-number">6.1.</span> <span class="nav-text">导出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引入"><span class="nav-number">6.2.</span> <span class="nav-text">引入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#去除-map文件"><span class="nav-number">7.</span> <span class="nav-text">去除.map文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发布到githut"><span class="nav-number">8.</span> <span class="nav-text">发布到githut</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于-D和-S"><span class="nav-number">9.</span> <span class="nav-text">关于-D和-S</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题"><span class="nav-number">10.</span> <span class="nav-text">面试题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">stage</span>
+
+  
+</div>
+
+
+  <div class="powered-by">自豪地采用 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

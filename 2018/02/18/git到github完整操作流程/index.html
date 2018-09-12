@@ -113,7 +113,7 @@
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fomvzdvj74j20ij0bcab3.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fomw208dafj205i0ad3ym.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1fomw6nit3oj20fh0aygm2.jpg">
-<meta property="og:updated_time" content="2018-08-15T08:19:07.950Z">
+<meta property="og:updated_time" content="2018-09-05T05:46:38.091Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git到github的完整操作流程">
 <meta name="twitter:description" content="git的使用，包括add、commit、打标签、创建以及合并分支、push到远程仓库菜鸟教程：Git教程">
@@ -488,6 +488,7 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">A、B、C、D代表后悔药id</div><div class="line"></div><div class="line">A --- B --- C --- D</div><div class="line">                (HEAD)</div><div class="line"></div><div class="line">git reset --hard B</div><div class="line">git reset --soft D</div><div class="line"></div><div class="line">第一个操作执行后状态如下</div><div class="line">A --- B</div><div class="line">    (HEAD)</div><div class="line"></div><div class="line">第二个操作后状态如下</div><div class="line">A --- B --- C --- D --- B<span class="string">'</span></div><div class="line">                (HEAD)</div><div class="line"></div><div class="line">接着 git commit，得到如下状态</div><div class="line">A --- B --- C --- D --- B'</div><div class="line"></div><div class="line">然后就可以 git push 了</div></pre></td></tr></table></figure>
 <p><a href="https://zhuanlan.zhihu.com/p/34844206" target="_blank" rel="external">知乎：警惕 错误的Git版本回退姿势</a></p>
+<p>修改后，觉得不满意，想要回到之前的版本：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 撤销更改，回到之前的版本</span></div><div class="line">git checkout . &amp;&amp; git clean -xdf</div></pre></td></tr></table></figure></p>
 
       
     </div>
