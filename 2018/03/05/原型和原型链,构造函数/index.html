@@ -13,8 +13,8 @@
 <meta name="theme-color" content="#222">
 <script>
     (function(){
-        if('11111111'){
-            if (prompt('请输入文章密码') !== '11111111'){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
                 alert('密码错误！');
                 //history.back(); 不推荐这种方法，建议使用下面的方法
                 location="//harry0071.github.io"; //返回网站，请自定义
@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="面试题,笔记,面向对象," />
+  <meta name="keywords" content="面试题,js,笔记," />
 
 
 
@@ -89,16 +89,20 @@
 
 
 
-<meta name="description" content="面向对象基础知识(概念、特点)构造函数用new命令构造函数的缺陷(浪费内存) –&amp;gt; 解决方法：公有方法放到原型prototype上原则上，构造函数内放私有属性，原型上放公有方法如果在构造函数内找不到，就会自动顺着原型链找【test.age === test.proto.age === Person.prototype.age】">
+<meta name="description" content="var n=1; 与 var n=new Numer(1)的区别全局函数(构造函数)原型(prototype)和原型链对象.proto === 构造了它的全局函数.prototype (新创建的对象由对应的全局函数构造得来)全局函数.proto === Function.prototype（全局函数都是由Function构造出来的）全局函数.prototype.proto === Object.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="🔒 面向对象初级知识">
-<meta property="og:url" content="harry0071.github.io/2018/05/03/面向对象初级知识/index.html">
+<meta property="og:title" content="构造函数、原型和原型链">
+<meta property="og:url" content="harry0071.github.io/2018/03/05/原型和原型链,构造函数/index.html">
 <meta property="og:site_name" content="stage's blog">
-<meta property="og:description" content="面向对象基础知识(概念、特点)构造函数用new命令构造函数的缺陷(浪费内存) –&amp;gt; 解决方法：公有方法放到原型prototype上原则上，构造函数内放私有属性，原型上放公有方法如果在构造函数内找不到，就会自动顺着原型链找【test.age === test.proto.age === Person.prototype.age】">
-<meta property="og:updated_time" content="2018-05-25T06:53:14.002Z">
+<meta property="og:description" content="var n=1; 与 var n=new Numer(1)的区别全局函数(构造函数)原型(prototype)和原型链对象.proto === 构造了它的全局函数.prototype (新创建的对象由对应的全局函数构造得来)全局函数.proto === Function.prototype（全局函数都是由Function构造出来的）全局函数.prototype.proto === Object.">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1x86aqjhj20rc0fh41j.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/87c01ec7gy1fp1yzikk2zj212t0mm10f.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/87c01ec7gy1fp1z9ksu1rj212k0ntajd.jpg">
+<meta property="og:updated_time" content="2018-04-10T01:55:05.601Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="🔒 面向对象初级知识">
-<meta name="twitter:description" content="面向对象基础知识(概念、特点)构造函数用new命令构造函数的缺陷(浪费内存) –&amp;gt; 解决方法：公有方法放到原型prototype上原则上，构造函数内放私有属性，原型上放公有方法如果在构造函数内找不到，就会自动顺着原型链找【test.age === test.proto.age === Person.prototype.age】">
+<meta name="twitter:title" content="构造函数、原型和原型链">
+<meta name="twitter:description" content="var n=1; 与 var n=new Numer(1)的区别全局函数(构造函数)原型(prototype)和原型链对象.proto === 构造了它的全局函数.prototype (新创建的对象由对应的全局函数构造得来)全局函数.proto === Function.prototype（全局函数都是由Function构造出来的）全局函数.prototype.proto === Object.">
+<meta name="twitter:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1x86aqjhj20rc0fh41j.jpg">
 
 
 
@@ -128,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="harry0071.github.io/2018/05/03/面向对象初级知识/"/>
+  <link rel="canonical" href="harry0071.github.io/2018/03/05/原型和原型链,构造函数/"/>
 
 
 
 
 
-  <title>🔒 面向对象初级知识 | stage's blog</title>
+  <title>构造函数、原型和原型链 | stage's blog</title>
   
 
 
@@ -275,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="harry0071.github.io/2018/05/03/面向对象初级知识/">
+    <link itemprop="mainEntityOfPage" href="harry0071.github.io/2018/03/05/原型和原型链,构造函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="stage">
@@ -292,7 +296,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">🔒 面向对象初级知识</h1>
+          <h1 class="post-title" itemprop="name headline">构造函数、原型和原型链</h1>
         
 
         <div class="post-meta">
@@ -304,8 +308,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T14:58:23+08:00">
-                2018-05-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T13:30:09+08:00">
+                2018-03-05
               </time>
             
 
@@ -365,56 +369,24 @@
 
       
         <blockquote>
-<p>面向对象基础知识(概念、特点)<br>构造函数<br>用new命令<br>构造函数的缺陷(浪费内存) –&gt; 解决方法：公有方法放到原型prototype上<br>原则上，构造函数内放私有属性，原型上放公有方法<br>如果在构造函数内找不到，就会自动顺着原型链找【test.age === test.<strong>proto</strong>.age === Person.prototype.age】</p>
+<p>var n=1; 与 var n=new Numer(1)的区别<br>全局函数(构造函数)<br>原型(prototype)和原型链<br>对象.<strong>proto</strong> === 构造了它的全局函数.prototype (新创建的对象由对应的全局函数构造得来)<br>全局函数.<strong>proto</strong> === Function.prototype（全局函数都是由Function构造出来的）<br>全局函数.prototype.<strong>proto</strong> === Object.prototype （全局函数的共有属性从Object的共有属性中引用）<br>Object.prototype.<strong>proto</strong> === null （Object的共有属性引用至null）<br>原型 === 共有属性 === prototype<br>原型链：顺着<strong>proto</strong>组成的链子一直往下走，直到<strong>proto</strong> 为 null</p>
 </blockquote>
 <a id="more"></a>
-<h1 id="面向对象的概念"><a href="#面向对象的概念" class="headerlink" title="面向对象的概念"></a>面向对象的概念</h1><p>面向对象:只关心对象的使用，不关心内部的实现原理。<br>比如数组Array的.sort()方法可以对数组进行排序，我们不需要知道它的内部实现原理，只要会用它的这个方法就行了。</p>
-<p>jQuery就是面向对象。</p>
-<h2 id="面向对象编程-OOP"><a href="#面向对象编程-OOP" class="headerlink" title="面向对象编程(OOP)"></a>面向对象编程(OOP)</h2><p>特点：        </p>
-<ul>
-<li>抽象：人有许多特性，如果写一个员工管理系统，只需要将姓名、工作时长、工资等关键特性抽出来就行了；如果写一个医疗系统，就需要将身高、体重、血型等抽出来。</li>
-<li>封装：无需知道内部实现原理，就能使用对象的属性和方法</li>
-<li>继承：<code>var arr = [1,2,3]</code>继承了数组Array的所有属性和方法，Array继承了Object的所有属性和方法；因此<code>arr</code>具有Array和Object的所有属性和方法，并且arr具有自己的一些新特性<ul>
-<li>多重继承：大箱子 + 卡车 = 集装箱货车</li>
-<li>多态</li>
-</ul>
-</li>
-</ul>
-<h1 id="this"><a href="#this" class="headerlink" title="this"></a>this</h1><p>当前函数/方法属于谁，this就是谁<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">oDiv.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">onclick方法属于oDiv,所以<span class="keyword">this</span>指向oDiv</div><div class="line"></div><div class="line">------------</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">x();</div><div class="line">函数x属于<span class="built_in">window</span>【等同于<span class="built_in">window</span>.show=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(<span class="keyword">this</span>)&#125;】,所以<span class="keyword">this</span>指向<span class="built_in">window</span></div><div class="line"></div><div class="line">---------------</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  <span class="attr">a</span>:<span class="number">12</span>,</div><div class="line">  <span class="attr">show</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">obj.show(); <span class="comment">//12</span></div><div class="line">show()这个方法属于obj，所以<span class="keyword">this</span>指向obj,因此<span class="keyword">this</span>.a就是<span class="number">12</span></div></pre></td></tr></table></figure></p>
-<h1 id="构造函数-大写"><a href="#构造函数-大写" class="headerlink" title="构造函数(大写)"></a>构造函数(大写)</h1><p>典型的面向对象编程语言（比如 C++ 和 Java），都有“类”（class）这个概念。“类”就是对象的模板，对象就是“类”的实例。</p>
-<p>但是，JavaScript，不是基于“类”的，而是基于构造函数（constructor）和原型链（prototype）。</p>
-<p>JavaScript 使用构造函数（constructor）作为对象的模板。”构造函数”就是用来生成实例对象的函数。它是对象的模板，给实例对象内置一些属性和方法。一个构造函数，可以生成多个实例对象，这些实例对象都内置相同的属性和方法。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Vehicle = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.price = <span class="number">1000</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>为了与普通函数区别，构造函数名字的第一个字母通常大写。</p>
-<p>构造函数生成实例对象的时候，必须使用new命令。</p>
-<h1 id="new"><a href="#new" class="headerlink" title="new"></a>new</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> v = <span class="keyword">new</span> Vehicle();</div><div class="line">v.price <span class="comment">// 1000</span></div></pre></td></tr></table></figure>
-<p>用new命令时，默认给构造函数的起始位置加上<code>var this = {}</code>，结尾默认<code>return this</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">x(); <span class="comment">//window</span></div><div class="line"><span class="keyword">new</span> x(); <span class="comment">//对象&#123;&#125;</span></div></pre></td></tr></table></figure></p>
-<h2 id="new做了些什么"><a href="#new做了些什么" class="headerlink" title="new做了些什么"></a>new做了些什么</h2><ol>
-<li><code>var this = {}</code> 产生一个空对象，且this指向这个空对象</li>
-<li>this.<strong>proto</strong> = 构造函数.prototype【举例：var stage = new Human(‘stage’)，则stage.<strong>proto</strong> === Human.prototype】</li>
-<li>执行<code>构造函数.call(this,参数1,参数2...)</code></li>
-<li>return this(生成的对象)</li>
-</ol>
-<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式()"></a>工厂模式()</h2><ul>
-<li>原料</li>
-<li>加工</li>
-<li>怵场</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Vehicle</span>(<span class="params"></span>) </span>&#123; <span class="comment">//默认内部有一个var this = &#123;&#125; 作为原料</span></div><div class="line">  <span class="keyword">this</span>.price = <span class="number">1000</span>; <span class="comment">//加工</span></div><div class="line">  					<span class="comment">//默认最终将this return出去</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="原型对象prototype"><a href="#原型对象prototype" class="headerlink" title="原型对象prototype"></a>原型对象prototype</h1><p>作用：将一模一样的属性和方法放到原型对象prototype上，构造函数内留私有方法</p>
-<p>构造函数的缺陷<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name, color</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">  <span class="keyword">this</span>.color = color;</div><div class="line">  <span class="keyword">this</span>.meow = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'喵喵'</span>);</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">'大毛'</span>, <span class="string">'白色'</span>);</div><div class="line"><span class="keyword">var</span> cat2 = <span class="keyword">new</span> Cat(<span class="string">'二毛'</span>, <span class="string">'黑色'</span>);</div><div class="line"></div><div class="line">cat1.meow === cat2.meow</div><div class="line"><span class="comment">// false 系统资源浪费</span></div></pre></td></tr></table></figure></p>
-<p>上面代码中，cat1和cat2是同一个构造函数的两个实例，它们都具有meow方法。由于meow方法是生成在每个实例对象上面，所以两个实例就生成了两次。也就是说，每新建一个实例，就会新建一个meow方法。这就造成了系统资源浪费，因为所有meow方法都是一模一样的，完全可以共享。</p>
-<p>这个问题的解决方法，就是 JavaScript 的原型对象（prototype）。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line">Animal.prototype.color = <span class="string">'white'</span>;</div><div class="line">Animal.prototype.walk = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + <span class="string">' is walking'</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Animal(<span class="string">'大毛'</span>);</div><div class="line"><span class="keyword">var</span> cat2 = <span class="keyword">new</span> Animal(<span class="string">'二毛'</span>);</div><div class="line"></div><div class="line">cat1.walk(); <span class="comment">//大毛 is walking</span></div><div class="line">cat1.color <span class="comment">// 'white'</span></div><div class="line">cat2.color <span class="comment">// 'white'</span></div><div class="line">cat1.color === cat2.color <span class="comment">//true 节省资源</span></div></pre></td></tr></table></figure>
-<p>当实例对象本身没有某个属性或方法的时候，它会到原型对象去寻找该属性或方法。如果实例对象自身就有某个属性或方法，它就不会再去原型对象寻找这个属性或方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cat1.color = <span class="string">'black'</span>;</div><div class="line"></div><div class="line">cat1.color <span class="comment">// 'black'</span></div><div class="line">cat2.color <span class="comment">// 'white'</span></div></pre></td></tr></table></figure></p>
-<h1 id="如果构造函数里找不到，就会顺着原型链一步步找下去"><a href="#如果构造函数里找不到，就会顺着原型链一步步找下去" class="headerlink" title="如果构造函数里找不到，就会顺着原型链一步步找下去"></a>如果构造函数里找不到，就会顺着原型链一步步找下去</h1><p>test.age === test.<strong>proto</strong>.age === Person.prototype.age<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name=name;</div><div class="line">&#125;</div><div class="line">Person.prototype.age=<span class="string">'18岁'</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> test = <span class="keyword">new</span> Person(<span class="string">'stage'</span>);</div><div class="line"><span class="built_in">console</span>.log(tset.name); <span class="comment">//stage</span></div><div class="line"><span class="built_in">console</span>.log(test.age); <span class="comment">//18岁 【在它的原型上找到了属性age】</span></div><div class="line"></div><div class="line">test.age === test.__proto__.age === Person.prototype.age</div></pre></td></tr></table></figure></p>
-<h1 id="类与实例对象"><a href="#类与实例对象" class="headerlink" title="类与实例对象"></a>类与实例对象</h1><p>类：模子 -&gt; 植入默认的属性和方法<br>实例对象：产品 -&gt; 使用默认的属性和方法</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>原则：       </p>
-<ul>
-<li>构造函数用来加私有属性</li>
-<li>原型用来加公有方法</li>
-<li>如果构造函数里找不到，就会顺着原型链一步步找下去【test.age === test.<strong>proto</strong>.age === Person.prototype.age】</li>
-</ul>
+<h1 id="全局函数-构造函数"><a href="#全局函数-构造函数" class="headerlink" title="全局函数(构造函数)"></a>全局函数(构造函数)</h1><p>全局函数都是由Function构造的，因此<br>全局函数.<strong>proto</strong> === Function.prototype<br>Function.<strong>proto</strong> === Function.prototype<br>1.Number<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> n = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">1</span>) 创建一个 <span class="built_in">Number</span> 对象</div><div class="line"><span class="keyword">var</span> n = <span class="number">1</span> 与 <span class="keyword">var</span> n = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">1</span>) 的区别是什么？看内存图</div></pre></td></tr></table></figure></p>
+<p><img src="http://ww3.sinaimg.cn/large/87c01ec7gy1fp1x86aqjhj20rc0fh41j.jpg" alt=""></p>
+<p>2.String<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'hello'</span>) 创建一个 <span class="built_in">String</span> 对象</div><div class="line"><span class="string">'hello'</span> 与 <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'hello'</span>) 的区别是什么？看内存图</div></pre></td></tr></table></figure></p>
+<p>3.Boolean<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>) 创建一个 <span class="built_in">Boolean</span> 对象</div><div class="line"><span class="literal">true</span> 与 <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>) 的区别是什么？看内存图</div><div class="line"></div><div class="line"><span class="keyword">var</span> a = <span class="literal">false</span>;</div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>);</div><div class="line"><span class="keyword">if</span>(a)&#123;<span class="built_in">console</span>.log(<span class="number">1</span>)&#125;</div><div class="line"><span class="keyword">if</span>(b)&#123;<span class="built_in">console</span>.log(<span class="number">2</span>)&#125; </div><div class="line">结果是<span class="number">2</span>，因为b是个对象</div></pre></td></tr></table></figure></p>
+<p>4.Object<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var o1 = &#123;&#125;</div><div class="line">var o2 = new Object()</div><div class="line">o1 和 o2 的数据没区别</div><div class="line">但是o1不等于o2，因为他们两个在Stack区的地址不同</div></pre></td></tr></table></figure></p>
+<h1 id="原型和原型链"><a href="#原型和原型链" class="headerlink" title="原型和原型链"></a>原型和原型链</h1><p>原型 === 共有属性 === prototype<br>原型链：顺着<strong>proto</strong>组成的链子一直往下走，直到<strong>proto</strong> 为 null<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">创建一个对象后的原型链</div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">arr.__proto__ === <span class="built_in">Array</span>.prototype <span class="comment">//新创建的对象由对应的全局函数构造</span></div><div class="line">arr.__proto__.__proto__ === <span class="built_in">Object</span>.prototype</div><div class="line">arr.__proto__.__proto__.__proto__ === <span class="literal">null</span></div><div class="line">所以它的原型链是：arr --&gt; <span class="built_in">Array</span>.prototype --&gt; <span class="built_in">Object</span>.prototype --&gt; <span class="literal">null</span></div><div class="line"></div><div class="line"></div><div class="line">全局函数的原型链</div><div class="line"><span class="built_in">Array</span>.__proto__ === <span class="built_in">Function</span>.prototype <span class="comment">//全局函数由Function构造</span></div><div class="line"><span class="built_in">Array</span>.__proto__.__proto__ === <span class="built_in">Object</span>.prototype</div><div class="line"><span class="built_in">Array</span>.__proto__.__proto__.__proto__ === <span class="literal">null</span></div><div class="line">所以它的原型链是：<span class="built_in">Array</span>.prototype --&gt; <span class="built_in">Function</span>.prototype --&gt; <span class="built_in">Object</span>.prototype --&gt; <span class="literal">null</span></div></pre></td></tr></table></figure></p>
+<h2 id="隐藏的公用属性-prototype"><a href="#隐藏的公用属性-prototype" class="headerlink" title="隐藏的公用属性(prototype)"></a>隐藏的公用属性(prototype)</h2><p>所有对象都有 toString 和 valueOf 属性，那么我们是否有必要给每个对象一个 toString 和 valueOf 呢？</p>
+<p>明显不需要。</p>
+<p>JS 的做法是把 toString 和 valueOf 放在一个对象里（Object.prototype）</p>
+<p>然后让每一个对象有1个隐藏的 <strong>proto</strong> 存储这个「公用属性组成的对象」的地址。</p>
+<p>Object的<strong>proto</strong>指向Function.prototype<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj =&#123;</div><div class="line">	<span class="attr">name</span>: <span class="string">'stage'</span>,</div><div class="line">	<span class="attr">age</span>: <span class="number">24</span></div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(obj);<span class="comment">//&#123;name: "stage", age: 24&#125; 以及隐藏的__proto__指向Function.prototype</span></div></pre></td></tr></table></figure></p>
+<p><img src="http://ww1.sinaimg.cn/large/87c01ec7gy1fp1yzikk2zj212t0mm10f.jpg" alt=""></p>
+<hr>
+<h2 id="重点公式"><a href="#重点公式" class="headerlink" title="重点公式"></a>重点公式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 对象 = <span class="keyword">new</span> 全局函数() <span class="comment">//全局函数包括Number(123)、String('123')/Function()等</span></div><div class="line">对象.__proto__ === (构造了它的)全局函数.prototype </div><div class="line"><span class="comment">//.__proto__用来存原型(prototype)的地址，从而引用prototype的数据</span></div><div class="line"><span class="comment">//__proto__是对象的属性</span></div><div class="line"><span class="comment">//prototype是函数的属性</span></div><div class="line"><span class="comment">//对象的__proto__指向函数的prototype</span></div><div class="line"></div><div class="line"></div><div class="line">比如：</div><div class="line"><span class="keyword">var</span> num = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">1</span>);</div><div class="line">num.__proto__ === <span class="built_in">Number</span>.prototype; </div><div class="line"><span class="comment">//num由Number构造生成</span></div><div class="line"><span class="comment">//创建的num，它的隐藏的__proto__指向【Number】的公用属性Number.prototype</span></div><div class="line"></div><div class="line">num.__proto__.__proto__ === <span class="built_in">Object</span>.prototype; </div><div class="line"><span class="comment">//创建的num，它隐藏的__proto__指向Number.prototype,</span></div><div class="line"><span class="built_in">Number</span>.prototype.的隐藏__proto__继续指向<span class="built_in">Object</span>的公用属性<span class="built_in">Object</span>.prototype</div><div class="line"></div><div class="line">----------</div><div class="line"></div><div class="line">obj.toString === <span class="built_in">Object</span>.prototype.toString </div><div class="line"><span class="comment">//对象的toString方法，实际上是调用了Object的公用属性(prototype)的toString方法</span></div><div class="line"></div><div class="line">-----------</div><div class="line"><span class="keyword">var</span> fn = <span class="keyword">new</span> <span class="built_in">Function</span>() </div><div class="line">fn.__proto__ === <span class="built_in">Function</span>.prototype <span class="comment">//fn由Function构造生成 </span></div><div class="line">由于<span class="built_in">Function</span>的是由<span class="built_in">Function</span>构造的，所以</div><div class="line"><span class="built_in">Function</span>.__proto__ === <span class="built_in">Function</span>.prototype </div><div class="line">也就是说，<span class="built_in">Function</span>.__proto__指向它本身的prototype</div><div class="line"></div><div class="line">-------------</div><div class="line"><span class="built_in">Object</span>的_proto_指向<span class="built_in">Function</span>.prototype</div><div class="line"><span class="built_in">Object</span>.__ptoto__ === <span class="built_in">Function</span>.prototype，因为 <span class="built_in">Function</span> 是 <span class="built_in">Object</span> 的构造函数。</div></pre></td></tr></table></figure>
+<p><img src="http://ww2.sinaimg.cn/large/87c01ec7gy1fp1z9ksu1rj212k0ntajd.jpg" alt=""></p>
 
       
     </div>
@@ -442,9 +414,9 @@
           
             <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
           
-            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
           
-            <a href="/tags/面向对象/" rel="tag"><i class="fa fa-tag"></i> 面向对象</a>
+            <a href="/tags/笔记/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
           
         </div>
       
@@ -457,8 +429,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/17/jquery版云音乐/" rel="next" title="🔒 JQuery版云音乐">
-                <i class="fa fa-chevron-left"></i> 🔒 JQuery版云音乐
+              <a href="/2018/03/05/js类型转换/" rel="next" title="js类型转换，内存图，数据的引用，垃圾回收，深拷贝vs浅拷贝">
+                <i class="fa fa-chevron-left"></i> js类型转换，内存图，数据的引用，垃圾回收，深拷贝vs浅拷贝
               </a>
             
           </div>
@@ -467,8 +439,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/07/vue的相关面试题/" rel="prev" title="🔒 vue的相关面试题">
-                🔒 vue的相关面试题 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/07/jquery知识点补充/" rel="prev" title="🔒 jquery知识点补充">
+                🔒 jquery知识点补充 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -621,7 +593,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象的概念"><span class="nav-number">1.</span> <span class="nav-text">面向对象的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象编程-OOP"><span class="nav-number">1.1.</span> <span class="nav-text">面向对象编程(OOP)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this"><span class="nav-number">2.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造函数-大写"><span class="nav-number">3.</span> <span class="nav-text">构造函数(大写)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#new"><span class="nav-number">4.</span> <span class="nav-text">new</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#new做了些什么"><span class="nav-number">4.1.</span> <span class="nav-text">new做了些什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工厂模式"><span class="nav-number">4.2.</span> <span class="nav-text">工厂模式()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型对象prototype"><span class="nav-number">5.</span> <span class="nav-text">原型对象prototype</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如果构造函数里找不到，就会顺着原型链一步步找下去"><span class="nav-number">6.</span> <span class="nav-text">如果构造函数里找不到，就会顺着原型链一步步找下去</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类与实例对象"><span class="nav-number">7.</span> <span class="nav-text">类与实例对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#全局函数-构造函数"><span class="nav-number">1.</span> <span class="nav-text">全局函数(构造函数)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原型和原型链"><span class="nav-number">2.</span> <span class="nav-text">原型和原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏的公用属性-prototype"><span class="nav-number">2.1.</span> <span class="nav-text">隐藏的公用属性(prototype)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重点公式"><span class="nav-number">2.2.</span> <span class="nav-text">重点公式</span></a></li></ol></li></ol></div>
             
 
           </div>
