@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[react快速入门(更新中.....)]]></title>
     <url>%2F2018%2F09%2F17%2Freact%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[虚拟DOM本质：用js对象模拟DOM和嵌套关系目的：实现DOM的高效更新（数据更新时，浏览器DOM会整个重新渲染，而虚拟DOM只渲染更新的部分、按需渲染） 将新的DOM树和旧的DOM树进行对比，得到改变的部分对其按需渲染然而，浏览器没有提供api可以用来获取整棵DOM树，因此，需要程序员创建虚拟DOM Diff算法 tree diff：新旧两颗DOM树逐层对比（对比是否有增加或删除组件） component diff：每一层中组件的对比；如果对比前后，组件的类型相同，再进行element diff；如果对比前后，组件的类型不同，则移除旧组件，创建新组件，然后追加到页面上 element diff：组件中，元素的对比（比如旧组件中的p标签变成了div标签） 在入口文件引入react12import React from 'react'; //创建React对象import ReactDOM from 'react-dom'; //将React创建的对象渲染到页面上 React.createElement(参数1,参数2,参数3)React.createElement接收3个参数： 参数1：标签名（String） 参数2：拥有的属性或者null（Object） 参数3：子节点 1&lt;div id="title" class="xxx"&gt;hello world&lt;/div&gt; 123const myTitle = React.createElement('div', &#123;id:'title', className:'xxx'&#125;, 'hello world')ReactDOM.render(myTitle, document.querySelector('#app')) 这种方法太过麻烦，React提供了JSX语法 JSX语法1234567const xxx = 'World';const el=&lt;div id="title" className="xxx"&gt;Hello &#123;xxx&#125;&lt;/div&gt;ReactDOM.render( el, document.querySelector('#app')) 【点击查看代码】 123在JSX中，`变量`用`&#123; &#125;`括起来，花括号内的东西看作js语法 你可以用 花括号 表示任意的 JavaScript 表达式，比如&#123;user.name&#125; 如果要传字符串的话，`id=&quot;title&quot;`或者`id=&#123;&apos;title&apos;&#125;` 更新已渲染的元素React 元素是 不可突变（immutable） 的. 一旦你创建了一个元素, 就不能再修改其子元素或任何属性。一个元素就像电影里的一帧: 它表示在某一特定时间点的 冻结UI 。 就我们所知, 更新 UI 的唯一方法是创建一个新的元素, 并将其传入 ReactDOM.render() 方法 123456789101112function tick() &#123; const element = ( &lt;div&gt; &lt;h1&gt;Hello, world!&lt;/h1&gt; &lt;h2&gt;It is &#123;new Date().toLocaleTimeString()&#125;.&lt;/h2&gt; &lt;/div&gt; ); ReactDOM.render(element, document.getElementById('root'));&#125;setInterval(tick, 1000); 添加注释1234&#123;/* 单行注释 */&#125;&#123;// 多行注释，必须换行，不然闭合的花括号会被注释掉&#125; className和htmlFor在jsx中，class要写成className；label标签的for属性要写成htmlFor 列表循环123456789101112const todos = [&#123;name:'a',id:1&#125;,&#123;name:'b',id:2&#125;,&#123;name:'c',id:3&#125;,&#123;name:'d',id:4&#125;];const el=&lt;div id="title" className="red"&gt;&#123;todos.map((todo,index) =&gt; &lt;h2 key=&#123;todo.id&#125;&gt;&#123;todo.name&#125;&lt;/h2&gt;)&#125;&lt;/div&gt;ReactDOM.render( el, document.querySelector('#app')) 【点击查看代码】 如果列表没有key，也可以用index代替（原则上不推荐用index作为key）1&lt;h2 key=&#123;index&#125;&gt; &#123;todo.id&#125; &lt;/h2&gt; 组件组件：参考文档组件名必须大写开头！&lt;div /&gt;表示div标签,&lt;Div /&gt;表示组件组件中的props是只读的，无法进行修改 构造函数组件你可以用ES5的构造函数来写一个组件：123456789function Welcome(props) &#123; //形参props接收数据 return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;&#125;const el = &lt;Welcome name="Sara" /&gt;;ReactDOM.render( el, document.getElementById('root')); 类组件你也可以用ES6的class来写一个组件：1234567891011class Welcome extends React.Component &#123; render() &#123; return &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;; //组件接收数据 &#125;&#125;const el = &lt;Welcome name="Sara" /&gt;; //给组件传数据ReactDOM.render( el, document.getElementById('root')); 【点击查看代码】 1类组件不需要形参props接收数据，直接使用`&#123;this.props.xxx&#125;`接收 使用展开运算符123456let obj = &#123; name:'stage', age:24, city:'shanghai'&#125;const el = &lt;Welcome name=&#123;obj.name&#125; age=&#123;obj.age&#125; city=&#123;obj.city&#125; /&gt;; //给组件传数据。这种形式太繁琐！我们用下面这种展开运算符简写 12345678910111213let obj = &#123;a:'hello',b:'world'&#125;function Hello(props)&#123; return &lt;h1&gt; &#123;props.a&#125; &#123;props.b&#125; &lt;/h1&gt;;&#125;ReactDOM.render( &lt;Hello &#123;...obj&#125; /&gt;, document.querySelector('#app')) 【点击查看代码】展开运算符可以将 数组 或者 对象 的项进行展开1234567891011let obj1 = &#123;a:1,b:2,c:3&#125;let obj2 = &#123; a:obj1.a, b:obj1.b, c:obj1.c&#125;等同于let obj2 = &#123; ...obj1 &#125; 注意！是值拷贝，不是地址拷贝，因此修改obj1的值，对obj2没有影响 function组件和class组件的区别 class组件有props，私有状态state，生命周期，因此称为“有状态组件” function组件只有props，没有私有状态state和生命周期，因此称为“无状态组件”，运行效率比有状态组件高 123456789101112131415161718class Hello extends React.Component &#123; constructor(props) &#123; super(props); this.state = &#123; xxx:'我是state中的xxx' &#125;; &#125; render() &#123; return &lt;h1&gt; &#123;this.state.xxx&#125; - &#123;this.props.name&#125; &lt;/h1&gt;; &#125;&#125;ReactDOM.render( &lt;Hello name="我是props中的name" /&gt;, document.querySelector('#app')) 合成组件组件中，引入其他组件123456789101112131415161718function Hello(props)&#123; return &lt;h1&gt; hello,&#123;props.name&#125; &lt;/h1&gt;;&#125;function People(props)&#123; return &lt;div&gt; &lt;Hello name="Alice" /&gt; &lt;Hello name="Lisa" /&gt; &lt;Hello name="Benny" /&gt; &lt;/div&gt;&#125;ReactDOM.render( &lt;People /&gt;, document.querySelector('#app')) 【点击查看代码】 提取组件在src/components下新建一个Hello.jsx的组件123456import React from 'react';export default function Hello(props)&#123; return &lt;h1&gt; hello,&#123;props.name&#125; &lt;/h1&gt;;&#125; 或者12345678import React from 'react';function Hello(props)&#123; return &lt;h1&gt; hello,&#123;props.name&#125; &lt;/h1&gt;;&#125;export default Hello; //把组件导出去 在其他地方引入这个Hello组件：1import Hello from 'cp/Hello.jsx' 状态state123只有class组件才有state和生命周期 state里的数据是可读可写的【不能直接`this.statexxx` = &apos;修改&apos;，而是`this.setState(&#123;xxx: &apos;修改&apos;&#125;);`】 props里的数据只读 123456789101112131415161718class Hello extends React.Component &#123; constructor(props) &#123; super(props); this.state = &#123; xxx:'我是state中的xxx' &#125;; &#125; render() &#123; return &lt;h1&gt; &#123;this.state.xxx&#125; - &#123;this.props.name&#125; &lt;/h1&gt;; &#125;&#125;ReactDOM.render( &lt;Hello name="我是props中的name" /&gt;, document.querySelector('#app')) 【点击查看代码】 props和state的区别 state里的数据是可读可写的，props里的数据只读 state里的数据是私有的(比如ajax请求),props里的数据是外部传入过来的 父子组件子组件：123456import React from 'react';export default function Son(props)&#123;//由于子组件不需要私有状态state，因此写成函数式组件 return &lt;li&gt; &#123;props.user&#125;：&#123;props.content&#125; &lt;/li&gt;&#125; 父组件：12345678910111213141516171819202122import React from 'react';import Son from 'cp/Son.jsx'; //因为父组件中用到了子组件，因此要引入export default class Father extends React.Component &#123; constructor(props) &#123; super(props); this.state = &#123; lists:[ &#123;id:1,user:'Dan',content:'哈哈哈'&#125;, &#123;id:2,user:'Alice',content:'你好'&#125;, &#123;id:3,user:'Ben',content:'沙发'&#125;, &#123;id:4,user:'Cat',content:'大海蓝天'&#125; ] &#125;; &#125; render() &#123; return &lt;ul&gt; &#123;this.state.lists.map(list =&gt; &lt;Son key=&#123;list.id&#125; &#123;...list&#125; /&gt;)&#125; /* map在哪，则key在哪；因此key写在这，而不是子组件&lt;li key=&#123;props.id&#125;&gt;上 */ &lt;/ul&gt;; &#125;&#125; 然后在main.js中使用12345678910import React from 'react';import ReactDOM from 'react-dom';import Father from 'cp/Father.jsx';ReactDOM.render( &lt;Father /&gt;, document.querySelector('#app')) 【点击查看代码】 在jsx中写style样式12style样式写成对象`&#123;&#125;`的形式，然后放在大括号内 `&#123;&#123;color:&apos;red&apos;,fontSize:&apos;20px&apos;&#125;&#125;`或者`&#123;&#123;color:&apos;red&apos;, &apos;font-size&apos;:&apos;20px&apos;&#125;&#125;` 12345678910function App(props)&#123; return &lt;h1 style=&#123;&#123;color:'red','font-style':'italic'&#125;&#125;&gt;Hello &lt;h2 style=&#123;&#123;color:'blue'&#125;&#125;&gt;world&lt;/h2&gt; &lt;/h1&gt;&#125;ReactDOM.render( &lt;App /&gt;, document.querySelector('#app')) 把样式对象抽离出来：12345678const h1Style = &#123;color:'red','font-style':'italic'&#125;;const h2Style = &#123;color:'blue'&#125;;function App(props)&#123; return &lt;h1 style=&#123;h1Style&#125;&gt;Hello &lt;h2 style=&#123;h2Style&#125;&gt;world&lt;/h2&gt; &lt;/h1&gt;&#125; 继续精简，把所有的样式放在一个样式表对象中：12345678910const styles = &#123; h1: &#123;color:'red','font-style':'italic'&#125;, h2: &#123;color:'blue'&#125;&#125;;function App(props)&#123; return &lt;h1 style=&#123;styles.h1&#125;&gt;Hello &lt;h2 style=&#123;styles.h2&#125;&gt;world&lt;/h2&gt; &lt;/h1&gt;&#125; 最后，将styles抽离成单独的【样式模块】新建styles.js文件1234export defaulf &#123; h1: &#123;color:'red','font-style':'italic'&#125;, h2: &#123;color:'blue'&#125;&#125;; 别处引入该样式模块：1import styles from 'modules/styles.js' 【点击查看代码】 css模块化在vue中，使用scoped来作为组件私有样式，不加scoped的样式则为全局样式在react，如果直接导入import &#39;css/styles.css&#39;则为全局样式；如果想要组件私有样式，则：import cssObj from &#39;css/styles.css&#39;注意！！！需要在webpack中配置css-loader:css-loader?modules&amp;localIdentName=[path][name]-[local]-[hash:8]，否则无法使用css模块 父组件的className为xxx，如果直接import &#39;css/styles.css&#39;则为全局样式，会导致子组件&lt;Son /&gt;中的字体颜色也为红色，因此需要css模块化这里的类选择器和id选择器会替换成[path][name]-[local]-[hash:8]，如果想让样式表中的某个样式时全局样式的话，可以使用:global(类选择器orid选择器)12345678/* styles.css */.xxx&#123; color:red;&#125;:global(.yyy)&#123; font-style: italic;&#125; 12345678910111213141516171819202122232425import React from 'react';import Son from './Son.jsx';import cssObj from './styles.css'; //css模块化export default class Father extends React.Component &#123; constructor(props) &#123; super(props); this.state = &#123; lists: [ &#123; id: 1, user: "Dan", content: "哈哈哈" &#125;, &#123; id: 2, user: "Alice", content: "你好" &#125;, &#123; id: 3, user: "Ben", content: "沙发" &#125;, &#123; id: 4, user: "Cat", content: "大海蓝天" &#125; ] &#125;; &#125; render() &#123; return ( &lt;ul className=&#123;cssObj.xxx&#125;&gt; /* 使用css模块 */ &lt;h1&gt;父组件的颜色&lt;/h1&gt; &#123;this.state.lists.map(list =&gt; &lt;Son key=&#123;list.id&#125; &#123;...list&#125; /&gt;)&#125; &lt;/ul&gt; ); &#125;&#125; 注意！！css模块化只对类选择器和id选择器生效，对于标签选择器无效。 如果有多个样式，可以写成数组的形式，然后用join将逗号变成空格：1&lt;ul className=&#123;[cssObj.xxx, 'yyy'].join(' ')&#125;&gt;&lt;/ul&gt; 绑定事件html中，绑定事件：1&lt;button onclick="xxx()"&gt;点我&lt;/button&gt; 在jsx中绑定事件：12345678function xxx()&#123; console.log(1)&#125;ReactDOM.render( &lt;button onClick=&#123;xxx&#125;&gt;点我&lt;/button&gt;, document.querySelector('#app')) 在组件中绑定事件123456789101112131415161718class Button extends React.Component &#123; constructor(props) &#123; super(props); this.state = &#123;a:'hello'&#125;; &#125;; render() &#123; return &lt;button onClick=&#123;this.xxx.bind(this)&#125;&gt;点我&lt;/button&gt;; &#125;; xxx()&#123; console.log(this.state.a) &#125; &#125;ReactDOM.render( &lt;Button /&gt;, document.querySelector('#app')) this的指向问题在JSX回调中你必须注意 this 的指向。 在 JavaScript 中，类方法默认没有 绑定 的。如果你忘记绑定 this.xxx 并将其传递给onClick，那么在直接调用该函数时，this 会是 undefined 。 你可以通bind(this)来绑定this：1&lt;button onClick=&#123;this.xxx.bind(this,参数1,参数2)&#125;&gt;点我&lt;/button&gt; 这种写法，回调函数xxx的第一个参数默认是ev 或者可以通过箭头函数解决this的指向问题：1&lt;button onClick=&#123; (ev)=&gt; this.xxx(参数1,参数2,ev) &#125;&gt;点我&lt;/button&gt; 这种写法，ev被显式地传入回调函数xxx中 【点击查看代码】 setState()的注意点setState是异步的，因此：123456xxx(ev)&#123; this.setState(&#123;a:'我被修改了'&#125;); console.log(this.state.a)&#125;//会先打印出初始值，然后执行修改 1如果想要修改后，立即获取修改后的值，想要使用：`this.setState(&#123;&#125;,回调函数)`： 12345xxx(ev)&#123; this.setState(&#123;a:'我被修改了'&#125;,() =&gt; &#123; console.log(this.state.a) &#125;);&#125; 【点击查看代码】 input的数据双向绑定必须给input提供value和onChange：1234567891011121314151617181920class Input extends React.Component &#123; constructor(props) &#123; super(props); this.state = &#123;a:'hello'&#125;; &#125;; render() &#123; const &#123;a&#125; = this.state; return &lt;div&gt; &lt;input value=&#123;a&#125; onChange=&#123;this.xxx.bind(this)&#125; /&gt; &lt;p&gt;&#123;a&#125;&lt;/p&gt; &lt;/div&gt;; &#125;; xxx(ev)&#123; this.setState(&#123; a:ev.target.value /* 或者通过ref获取target */ &#125;) &#125;&#125; 【点击查看代码】 ref获取DOM元素在Vue中，通过this.$refs获取DOM元素而在React中,通过this.refs获取DOM元素123456789101112131415161718192021222324252627class Input extends React.Component &#123; constructor(props) &#123; super(props); this.textInput = null; this.setTextInputRef = element =&gt; &#123; this.textInput = element; //将回调得到的DOM元素赋值给textInput &#125;; this.state = &#123;a:'hello'&#125;; &#125;; render() &#123; return &lt;div&gt; &lt;input ref=&#123;this.setTextInputRef&#125; value=&#123;this.state.a&#125; onChange=&#123;this.xxx.bind(this)&#125; /&gt; &lt;p&gt;&#123;this.state.a&#125;&lt;/p&gt; &lt;/div&gt;; &#125;; xxx(ev)&#123; console.log(this.textInput) this.setState(&#123; a:this.textInput.value &#125;) &#125;&#125; 【点击查看代码】 生命周期函数]]></content>
+    <content type="text"><![CDATA[虚拟DOM本质：用js对象模拟DOM和嵌套关系目的：实现DOM的高效更新（数据更新时，浏览器DOM会整个重新渲染，而虚拟DOM只渲染更新的部分、按需渲染） 将新的DOM树和旧的DOM树进行对比，得到改变的部分对其按需渲染然而，浏览器没有提供api可以用来获取整棵DOM树，因此，需要程序员创建虚拟DOM Diff算法 tree diff：新旧两颗DOM树逐层对比（对比是否有增加或删除组件） component diff：每一层中组件的对比；如果对比前后，组件的类型相同，再进行element diff；如果对比前后，组件的类型不同，则移除旧组件，创建新组件，然后追加到页面上 element diff：组件中，元素的对比（比如旧组件中的p标签变成了div标签） 开始一个React项目123npx create-react-app todoListcd todoListnpm start 在入口文件引入react12import React from 'react'; //创建React对象import ReactDOM from 'react-dom'; //将React创建的对象渲染到页面上 React.createElement(参数1,参数2,参数3)React.createElement接收3个参数： 参数1：标签名（String） 参数2：拥有的属性或者null（Object） 参数3：子节点 1&lt;div id="title" class="xxx"&gt;hello world&lt;/div&gt; 123const myTitle = React.createElement('div', &#123;id:'title', className:'xxx'&#125;, 'hello world')ReactDOM.render(myTitle, document.querySelector('#app')) 这种方法太过麻烦，React提供了JSX语法 JSX语法1234567const xxx = 'World';const el=&lt;div id="title" className="xxx"&gt;Hello &#123;xxx&#125;&lt;/div&gt;ReactDOM.render( el, document.querySelector('#app')) 【点击查看代码】 123在JSX中，`变量`用`&#123; &#125;`括起来，花括号内的东西看作js语法 你可以用 花括号 表示任意的 JavaScript 表达式，比如&#123;user.name&#125; 如果要传字符串的话，`id=&quot;title&quot;`或者`id=&#123;&apos;title&apos;&#125;` 更新已渲染的元素React 元素是 不可突变（immutable） 的. 一旦你创建了一个元素, 就不能再修改其子元素或任何属性。一个元素就像电影里的一帧: 它表示在某一特定时间点的 冻结UI 。 就我们所知, 更新 UI 的唯一方法是创建一个新的元素, 并将其传入 ReactDOM.render() 方法 123456789101112function tick() &#123; const element = ( &lt;div&gt; &lt;h1&gt;Hello, world!&lt;/h1&gt; &lt;h2&gt;It is &#123;new Date().toLocaleTimeString()&#125;.&lt;/h2&gt; &lt;/div&gt; ); ReactDOM.render(element, document.getElementById('root'));&#125;setInterval(tick, 1000); 添加注释1234&#123;/* 单行注释 */&#125;&#123;// 多行注释，必须换行，不然闭合的花括号会被注释掉&#125; className和htmlFor在jsx中，class要写成className；label标签的for属性要写成htmlFor 列表循环1234567891011121314const todos = [&#123;name:'a',id:1&#125;,&#123;name:'b',id:2&#125;,&#123;name:'c',id:3&#125;,&#123;name:'d',id:4&#125;];const el=&lt;div id="title" className="red"&gt; &#123;todos.map((todo,index) =&gt; &lt;h2 key=&#123;todo.id&#125;&gt; &#123;todo.name&#125;&lt;/h2&gt; )&#125;&lt;/div&gt;ReactDOM.render( el, document.querySelector('#app')) 【点击查看代码】 如果列表没有key，也可以用index代替（原则上不推荐用index作为key）1&lt;h2 key=&#123;index&#125;&gt; &#123;todo.id&#125; &lt;/h2&gt; 或者用随机值：1&lt;h2 key=&#123;Math.random()&#125;&gt; &#123;todo.id&#125; &lt;/h2&gt; 组件组件：参考文档组件名必须大写开头！&lt;div /&gt;表示div标签,&lt;Div /&gt;表示组件组件中的props是只读的，无法进行修改 构造函数组件你可以用ES5的构造函数来写一个组件：123456789function Welcome(props) &#123; //形参props接收数据 return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;&#125;const el = &lt;Welcome name="Sara" /&gt;;ReactDOM.render( el, document.getElementById('root')); 类组件你也可以用ES6的class来写一个组件：123456789101112class Welcome extends React.Component &#123; render() &#123; const &#123;name&#125; = this.props; return &lt;h1&gt;Hello, &#123;name&#125;&lt;/h1&gt;; //组件接收数据 &#125;&#125;const el = &lt;Welcome name="Sara" /&gt;; //给组件传数据ReactDOM.render( el, document.getElementById('root')); 【点击查看代码】 1类组件不需要形参props接收数据，直接使用`&#123;this.props.xxx&#125;`接收 使用展开运算符123456let obj = &#123; name:'stage', age:24, city:'shanghai'&#125;const el = &lt;Welcome name=&#123;obj.name&#125; age=&#123;obj.age&#125; city=&#123;obj.city&#125; /&gt;; //给组件传数据。这种形式太繁琐！我们用下面这种展开运算符简写 12345678910111213let obj = &#123;a:'hello',b:'world'&#125;function Hello(props)&#123; return &lt;h1&gt; &#123;props.a&#125; &#123;props.b&#125; &lt;/h1&gt;;&#125;ReactDOM.render( &lt;Hello &#123;...obj&#125; /&gt;, document.querySelector('#app')) 【点击查看代码】展开运算符可以将 数组 或者 对象 的项进行展开1234567891011let obj1 = &#123;a:1,b:2,c:3&#125;let obj2 = &#123; a:obj1.a, b:obj1.b, c:obj1.c&#125;等同于let obj2 = &#123; ...obj1 &#125; 注意！是值拷贝，不是地址拷贝，因此修改obj1的值，对obj2没有影响 function组件和class组件的区别 class组件有props，私有状态state，生命周期，因此称为“有状态组件” function组件只有props，没有私有状态state和生命周期，因此称为“无状态组件”，运行效率比有状态组件高 1234567891011121314151617181920class Hello extends React.Component &#123; constructor(props) &#123; super(props); this.state = &#123; xxx:'我是state中的xxx' &#125;; &#125; render() &#123; const &#123;xxx&#125; = this.state; const &#123;name&#125; = this.props; return &lt;h1&gt; &#123;xxx&#125; - &#123;name&#125; &lt;/h1&gt;; &#125;&#125;ReactDOM.render( &lt;Hello name="我是props中的name" /&gt;, document.querySelector('#app')) 合成组件组件中，引入其他组件123456789101112131415161718function Hello(props)&#123; return &lt;h1&gt; hello,&#123;props.name&#125; &lt;/h1&gt;;&#125;function People(props)&#123; return &lt;div&gt; &lt;Hello name="Alice" /&gt; &lt;Hello name="Lisa" /&gt; &lt;Hello name="Benny" /&gt; &lt;/div&gt;&#125;ReactDOM.render( &lt;People /&gt;, document.querySelector('#app')) 【点击查看代码】 提取组件在src/components下新建一个Hello.jsx的组件123456import React from 'react';export default function Hello(props)&#123; return &lt;h1&gt; hello,&#123;props.name&#125; &lt;/h1&gt;;&#125; 或者12345678import React from 'react';function Hello(props)&#123; return &lt;h1&gt; hello,&#123;props.name&#125; &lt;/h1&gt;;&#125;export default Hello; //把组件导出去 在其他地方引入这个Hello组件：1import Hello from 'cp/Hello.jsx' 状态state123只有class组件才有state和生命周期 state里的数据是可读可写的【不能直接`this.statexxx` = &apos;修改&apos;，而是`this.setState(&#123;xxx: &apos;修改&apos;&#125;);`】 props里的数据只读 1234567891011121314151617181920class Hello extends React.Component &#123; constructor(props) &#123; super(props); this.state = &#123; xxx:'我是state中的xxx' &#125;; &#125; render() &#123; const &#123;xxx&#125; = this.state; const &#123;name&#125; = this.props; return &lt;h1&gt; &#123;xxx&#125; - &#123;name&#125; &lt;/h1&gt;; &#125;&#125;ReactDOM.render( &lt;Hello name="我是props中的name" /&gt;, document.querySelector('#app')) 【点击查看代码】 props和state的区别 state里的数据是可读可写的，props里的数据只读 state里的数据是私有的(比如ajax请求),props里的数据是外部传入过来的 父子组件父传子12345父组件通过属性的形式传递参数`&lt;Son xxx=&#123;this.state.a&#125; /&gt;`子组件通过props接收传递过来的参数function组件写成：&lt;div&gt;&#123;props.a&#125;&lt;/div&gt;class组件写成：&lt;div&gt;&#123;this.props.a&#125;&lt;/div&gt; 子组件：123456import React from 'react';export default function Son(props)&#123;//此处子组件不需要私有状态state，因此写成函数式组件 return &lt;li&gt; &#123;props.user&#125;：&#123;props.content&#125; &lt;/li&gt;&#125; 父组件：12345678910111213141516171819202122import React from 'react';import Son from 'cp/Son.jsx'; //此处父组件中用到了子组件，因此要引入export default class Father extends React.Component &#123; constructor(props) &#123; super(props); this.state = &#123; lists:[ &#123;id:1,user:'Dan',content:'哈哈哈'&#125;, &#123;id:2,user:'Alice',content:'你好'&#125;, &#123;id:3,user:'Ben',content:'沙发'&#125;, &#123;id:4,user:'Cat',content:'大海蓝天'&#125; ] &#125;; &#125; render() &#123; return &lt;ul&gt; &#123;this.state.lists.map(list =&gt; &lt;Son key=&#123;list.id&#125; &#123;...list&#125; /&gt;)&#125; /* map在哪，则key在哪；因此key写在这，而不是子组件&lt;li key=&#123;props.id&#125;&gt;上 */ &lt;/ul&gt;; &#125;&#125; 然后在index.js中使用12345678910import React from 'react';import ReactDOM from 'react-dom';import Father from 'cp/Father.jsx';ReactDOM.render( &lt;Father /&gt;, document.querySelector('#app')) 【点击查看代码】 子传父123456父组件将方法通过属性传递给子组件：&lt;Son fn=&#123;this.fn.bind(this)&#125; /&gt;子组件通过调用传过来的方法，将数据作为参数传给父组件:(handleFn()&#123; this.props.fn(子组件的数据)&#125; 123456789101112131415161718192021222324252627282930313233343536class Son extends React.Component &#123; constructor(props)&#123; super(props); this.handleChangeData = this.handleChangeData.bind(this); &#125; handleChangeData()&#123; this.props.changeData('修改为子组件的数据') &#125; render()&#123; return &lt;li onClick=&#123;this.handleChangeData&#125;&gt;&#123;this.props.a&#125;&lt;/li&gt; &#125;&#125;class Father extends React.Component &#123; constructor(props) &#123; super(props); this.state = &#123; a:'父组件的数据' &#125;; this.changeData = this.changeData.bind(this); &#125; changeData(data)&#123; this.setState(&#123; a:data &#125;) &#125; render() &#123; return &lt;div&gt; &lt;h1&gt;子组件向父组件传数据&lt;/h1&gt; &lt;Son a=&#123;this.state.a&#125; changeData=&#123;this.changeData&#125; /&gt; &lt;/div&gt; &#125;&#125; 【点击查看代码】 在jsx中写style样式12style样式写成对象`&#123;&#125;`的形式，然后放在大括号内 `&#123;&#123;color:&apos;red&apos;,fontSize:&apos;20px&apos;&#125;&#125;`或者`&#123;&#123;color:&apos;red&apos;, &apos;font-size&apos;:&apos;20px&apos;&#125;&#125;` 12345678910function App(props)&#123; return &lt;h1 style=&#123;&#123;color:'red','font-style':'italic'&#125;&#125;&gt;Hello &lt;h2 style=&#123;&#123;color:'blue'&#125;&#125;&gt;world&lt;/h2&gt; &lt;/h1&gt;&#125;ReactDOM.render( &lt;App /&gt;, document.querySelector('#app')) 把样式对象抽离出来：12345678const h1Style = &#123;color:'red','font-style':'italic'&#125;;const h2Style = &#123;color:'blue'&#125;;function App(props)&#123; return &lt;h1 style=&#123;h1Style&#125;&gt;Hello &lt;h2 style=&#123;h2Style&#125;&gt;world&lt;/h2&gt; &lt;/h1&gt;&#125; 继续精简，把所有的样式放在一个样式表对象中：12345678910const styles = &#123; h1: &#123;color:'red','font-style':'italic'&#125;, h2: &#123;color:'blue'&#125;&#125;;function App(props)&#123; return &lt;h1 style=&#123;styles.h1&#125;&gt;Hello &lt;h2 style=&#123;styles.h2&#125;&gt;world&lt;/h2&gt; &lt;/h1&gt;&#125; 最后，将styles抽离成单独的【样式模块】新建styles.js文件1234export defaulf &#123; h1: &#123;color:'red','font-style':'italic'&#125;, h2: &#123;color:'blue'&#125;&#125;; 别处引入该样式模块：1import styles from 'modules/styles.js' 【点击查看代码】 css模块化在vue中，使用scoped来作为组件私有样式，不加scoped的样式则为全局样式在react，如果直接导入import &#39;css/styles.css&#39;则为全局样式；如果想要组件私有样式，则：import cssObj from &#39;css/styles.css&#39;注意！！！需要在webpack中配置css-loader:css-loader?modules&amp;localIdentName=[path][name]-[local]-[hash:8]，否则无法使用css模块 父组件的className为xxx，如果直接import &#39;css/styles.css&#39;则为全局样式，会导致子组件&lt;Son /&gt;中的字体颜色也为红色，因此需要css模块化这里的类选择器和id选择器会替换成[path][name]-[local]-[hash:8]，如果想让样式表中的某个样式时全局样式的话，可以使用:global(类选择器orid选择器)12345678/* styles.css */.xxx&#123; color:red;&#125;:global(.yyy)&#123; font-style: italic;&#125; 12345678910111213141516171819202122232425import React from 'react';import Son from './Son.jsx';import cssObj from './styles.css'; //css模块化export default class Father extends React.Component &#123; constructor(props) &#123; super(props); this.state = &#123; lists: [ &#123; id: 1, user: "Dan", content: "哈哈哈" &#125;, &#123; id: 2, user: "Alice", content: "你好" &#125;, &#123; id: 3, user: "Ben", content: "沙发" &#125;, &#123; id: 4, user: "Cat", content: "大海蓝天" &#125; ] &#125;; &#125; render() &#123; return ( &lt;ul className=&#123;cssObj.xxx&#125;&gt; /* 使用css模块 */ &lt;h1&gt;父组件的颜色&lt;/h1&gt; &#123;this.state.lists.map(list =&gt; &lt;Son key=&#123;list.id&#125; &#123;...list&#125; /&gt;)&#125; &lt;/ul&gt; ); &#125;&#125; 注意！！css模块化只对类选择器和id选择器生效，对于标签选择器无效。 如果有多个样式，可以写成数组的形式，然后用join将逗号变成空格：1&lt;ul className=&#123;[cssObj.xxx, 'yyy'].join(' ')&#125;&gt;&lt;/ul&gt; 绑定事件html中，绑定事件：1&lt;button onclick="xxx()"&gt;点我&lt;/button&gt; 在jsx中绑定事件：12345678function xxx()&#123; console.log(1)&#125;ReactDOM.render( &lt;button onClick=&#123;xxx&#125;&gt;点我&lt;/button&gt;, document.querySelector('#app')) 在组件中绑定事件12345678910111213141516171819class Button extends React.Component &#123; constructor(props) &#123; super(props); this.state = &#123;a:'hello'&#125;; this.xxx = this.xxx.bind(this); &#125;; render() &#123; return &lt;button onClick=&#123;this.xxx&#125;&gt;点我&lt;/button&gt;; &#125;; xxx()&#123; console.log(this.state.a) &#125; &#125;ReactDOM.render( &lt;Button /&gt;, document.querySelector('#app')) this的指向问题在JSX回调中你必须注意 this 的指向。 在 JavaScript 中，类方法默认没有 绑定 的。如果你忘记绑定 this.xxx 并将其传递给onClick，那么在直接调用该函数时，this 会是 undefined 。 你可以通bind(this)来绑定this：1&lt;button onClick=&#123;this.xxx.bind(this,参数1,参数2)&#125;&gt;点我&lt;/button&gt; 这种写法，回调函数xxx的第一个参数默认是ev 或者可以通过箭头函数解决this的指向问题：1&lt;button onClick=&#123; (ev)=&gt; this.xxx(参数1,参数2,ev) &#125;&gt;点我&lt;/button&gt; 这种写法，ev被显式地传入回调函数xxx中 【点击查看代码】 setState()的注意点setState是异步的，因此：123456xxx(ev)&#123; this.setState(&#123;a:'我被修改了'&#125;); console.log(this.state.a)&#125;//会先打印出初始值，然后执行修改 1如果想要修改后，立即获取修改后的值，想要使用：`this.setState(&#123;&#125;,回调函数)`： 12345xxx(ev)&#123; this.setState(&#123;a:'我被修改了'&#125;,() =&gt; &#123; console.log(this.state.a) &#125;);&#125; 【点击查看代码】 input的数据双向绑定必须给input提供value和onChange：123456789101112131415161718192021class Input extends React.Component &#123; constructor(props) &#123; super(props); this.state = &#123;a:'hello'&#125;; this.xxx = this.xxx.bind(this); &#125;; render() &#123; const &#123;a&#125; = this.state; return &lt;div&gt; &lt;input value=&#123;a&#125; onChange=&#123;this.xxx&#125; /&gt; &lt;p&gt;&#123;a&#125;&lt;/p&gt; &lt;/div&gt;; &#125;; xxx(ev)&#123; this.setState(&#123; a:ev.target.value /* 或者通过ref获取target */ &#125;) &#125;&#125; 【点击查看代码】 ref获取DOM元素在Vue中，通过this.$refs获取DOM元素而在React中,通过this.refs获取DOM元素1234567891011121314151617181920212223242526272829class Input extends React.Component &#123; constructor(props) &#123; super(props); this.textInput = null; this.setTextInputRef = element =&gt; &#123; this.textInput = element; //将回调得到的DOM元素赋值给textInput &#125;; this.state = &#123;a:'hello'&#125;; this.xxx = this.xxx.bind(this); &#125;; render() &#123; return &lt;div&gt; &lt;input ref=&#123;this.setTextInputRef&#125; value=&#123;this.state.a&#125; onChange=&#123;this.xxx&#125; /&gt; &lt;p&gt;&#123;this.state.a&#125;&lt;/p&gt; &lt;/div&gt;; &#125;; xxx(ev)&#123; console.log(this.textInput) this.setState(&#123; a:this.textInput.value &#125;) &#125;&#125; 【点击查看代码】 生命周期函数数组的操作数组的添加：在vue中，给数组添加一项用this.lists.push(&#39;xxx&#39;)即可而在react中：1234567addItem()&#123; const lists = [...this.state.lists]; lists.push('xxx'); this.setState(&#123; lists &#125;)&#125; 数组的删除：1234567deleteItem(i)&#123; const lists = [...this.state.lists];//值拷贝，而不是地址拷贝 lists.splice(i,1);//删除第i项 this.setState(&#123; lists &#125;)&#125; 虽然下面这种做法也行，但不推荐使用↓12345deleteItem(i)&#123; this.setState(&#123; lists: this.state.lists.splice(i,1) &#125;)&#125; 在react中，不建议直接修改state中的数据；最好先进行拷贝，然后修改拷贝的数据，最后再把修改完成的拷贝数据赋值给原始数据！ 一个todoList实例 React.Fragment作为根节点React要求只能有一个根节点，如果用&lt;div&gt;&lt;/div&gt;包裹，最终生成的html会有多余的div标签；通过React.Fragment，生成的最终html不包含该标签12345&lt;React.Fragment&gt; &lt;div&gt;1&lt;/div&gt; &lt;div&gt;2&lt;/div&gt; &lt;div&gt;3&lt;/div&gt;&lt;/React.Fragment&gt;]]></content>
       <categories>
         <category>react</category>
       </categories>
@@ -93,9 +93,9 @@
         <category>js</category>
       </categories>
       <tags>
+        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -130,9 +130,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>es6</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>es6</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
@@ -190,8 +190,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>js</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -237,9 +237,9 @@
         <category>js</category>
       </categories>
       <tags>
+        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -408,8 +408,8 @@
         <category>简历</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>js</tag>
+        <tag>css</tag>
         <tag>html</tag>
       </tags>
   </entry>
@@ -433,8 +433,8 @@
         <category>效果及美化</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>js</tag>
+        <tag>css</tag>
         <tag>教程</tag>
       </tags>
   </entry>
@@ -459,9 +459,9 @@
         <category>js</category>
       </categories>
       <tags>
+        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -472,9 +472,9 @@
         <category>http</category>
       </categories>
       <tags>
+        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
-        <tag>js</tag>
         <tag>http</tag>
         <tag>请求与响应</tag>
       </tags>
@@ -487,8 +487,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>js</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -511,9 +511,9 @@
         <category>js</category>
       </categories>
       <tags>
+        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -561,10 +561,10 @@
         <category>移动端</category>
       </categories>
       <tags>
+        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>css</tag>
-        <tag>js</tag>
         <tag>移动端</tag>
       </tags>
   </entry>
@@ -617,9 +617,9 @@
         <category>前端</category>
       </categories>
       <tags>
+        <tag>js</tag>
         <tag>面试题</tag>
         <tag>css</tag>
-        <tag>js</tag>
         <tag>html</tag>
         <tag>http</tag>
         <tag>数据结构与算法</tag>
@@ -633,10 +633,10 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>面试题</tag>
         <tag>js</tag>
         <tag>dom</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -647,9 +647,9 @@
         <category>es6</category>
       </categories>
       <tags>
-        <tag>es6</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>es6</tag>
       </tags>
   </entry>
   <entry>
@@ -673,9 +673,9 @@
         <category>前端</category>
       </categories>
       <tags>
+        <tag>js</tag>
         <tag>面试题</tag>
         <tag>css</tag>
-        <tag>js</tag>
         <tag>html</tag>
         <tag>jq</tag>
       </tags>
@@ -688,8 +688,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
         <tag>jq</tag>
       </tags>
   </entry>
@@ -701,10 +701,10 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>面试题</tag>
         <tag>js</tag>
         <tag>dom</tag>
+        <tag>笔记</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -715,9 +715,9 @@
         <category>js</category>
       </categories>
       <tags>
+        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -728,9 +728,9 @@
         <category>js</category>
       </categories>
       <tags>
+        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -754,9 +754,9 @@
         <category>js</category>
       </categories>
       <tags>
+        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -767,9 +767,9 @@
         <category>js</category>
       </categories>
       <tags>
+        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -780,9 +780,9 @@
         <category>js</category>
       </categories>
       <tags>
+        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -805,9 +805,9 @@
         <category>js</category>
       </categories>
       <tags>
+        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -831,9 +831,9 @@
         <category>js</category>
       </categories>
       <tags>
+        <tag>js</tag>
         <tag>笔记</tag>
         <tag>面试题</tag>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
