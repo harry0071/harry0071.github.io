@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[26个字母全排列,求第k项]]></title>
     <url>%2F2018%2F09%2F27%2F26%E4%B8%AA%E5%AD%97%E6%AF%8D%E5%85%A8%E6%8E%92%E5%88%97-%E6%B1%82%E7%AC%ACk%E9%A1%B9%2F</url>
-    <content type="text"><![CDATA[思路如果有4个字母abcd全排列，求第13项 12345678910111213141516第13项/3! = 2.....余1因此，第0个字母是abcd中的第2项，即c此时剩下abd余数1/2! = 0.....余1因此，第1个字母是abd中的第0项，即a此时剩下bd余数1/1! = 1.....余0因此，第2个字母是bd中的第1项，即d此时剩下b余数0/0! = 0因此，第3个字母是b中的第0项，即b最终结果是 cadb 4个字母全排列代码1234567891011121314151617181920212223242526272829//阶乘function factorial(n,p=1) &#123; if (n &lt;= 1) &#123; return p &#125; var s = n * p return factorial(n - 1, s)&#125;//获取第k项function getResult(k) &#123; if(k&lt;0 || k&gt;=factorial(4))&#123; return 'k的值不在范围内' &#125; var result = ''; var j = 0; var letters = 'abcd'; for (var i=3; i&gt;=0; i--) &#123; j = parseInt(k / factorial(i)) k = k % factorial(i) result += letters[j] letters = letters.replace(letters[j],'') &#125; return result;&#125;console.log( getResult(13) ) 4个字母可以通过以上代码实现效果，但是26个字母不行。因为大整数超出范围会溢出，导致精度问题。可通过BigInt解决！ BigInt解决精度问题 JS整数范围：−9007199254740992 ~ 9007199254740992 （即正负2的53次方）当超出该范围时，会存在精度问题，因此需要用到BigInt方法关于BigInt的详细介绍：https://zhuanlan.zhihu.com/p/36330307 12345678910111213141516var x = 2**53;var y = 2**53 + 1;y-x // 竟然是0！！！//下面，我们用BigInt来解决大整数的精度问题var x = 2n**53nvar y = 2n**53n+1ny-x // 1nparseInt(y-x) // 1//也可以用下面这种写法：var x = BigInt(2**53)var y = BigInt(2**53)+BigInt(1)y-x // 1nparseInt(y-x) // 1 26个字母全排列,求第k项最终代码：123456789101112131415161718192021222324252627282930313233//阶乘function factorial(n,p=1) &#123; if (n &lt;= 1) &#123; return BigInt(p) &#125; var s = BigInt(n) * BigInt(p) return factorial(n - 1, s)&#125;function getResult(k) &#123; if(k&lt;0 || k&gt;=factorial(26))&#123; return 'k的值不在范围内' &#125; var result = ''; var j = 0; var letters = 'abcdefghijklmnopqrstuvwxyz'; for (var i=25; i&gt;=0; i--) &#123; j = parseInt(BigInt(k) / factorial(i)) k = BigInt(k) % factorial(i) result += letters[j] letters = letters.replace(letters[j],'') &#125; return result;&#125;console.log( getResult(0) ) //第0项：a~z//最后一项var lastItem = factorial(26) - 1n;console.log( getResult(lastItem) ) //最后1项：z~a 【点击查看在线运行结果】]]></content>
+    <content type="text"><![CDATA[思路如果有4个字母abcd全排列，求第13项 12345678910111213141516第13项/3! = 2.....余1因此，第0个字母是abcd中的第2项，即c此时剩下abd余数1/2! = 0.....余1因此，第1个字母是abd中的第0项，即a此时剩下bd余数1/1! = 1.....余0因此，第2个字母是bd中的第1项，即d此时剩下b余数0/0! = 0因此，第3个字母是b中的第0项，即b最终结果是 cadb 根据上面的思路，写成如下js代码↓ 4个字母全排列代码1234567891011121314151617181920212223242526272829//阶乘function factorial(n,p=1) &#123; if (n &lt;= 1) &#123; return p &#125; var s = n * p return factorial(n - 1, s)&#125;//获取第k项function getResult(k) &#123; if(k&lt;0 || k&gt;=factorial(4))&#123; return 'k的值不在范围内' &#125; var result = ''; var j = 0; var letters = 'abcd'; for (var i=3; i&gt;=0; i--) &#123; j = parseInt(k / factorial(i)) //商 k = k % factorial(i) //余数 result += letters[j] letters = letters.replace(letters[j],'') &#125; return result;&#125;console.log( getResult(13) ) 4个字母可以通过以上代码实现效果，但是26个字母不行。因为大整数超出范围会溢出，导致精度问题。可通过BigInt解决！ BigInt解决精度问题 JS整数范围：−9007199254740992 ~ 9007199254740992 （即正负2的53次方）当超出该范围时，会存在精度问题，因此需要用到BigInt方法关于BigInt的详细介绍：https://zhuanlan.zhihu.com/p/36330307 12345678910111213141516var x = 2**53;var y = 2**53 + 1;y-x // 竟然是0！！！//下面，我们用BigInt来解决大整数的精度问题var x = 2n**53nvar y = 2n**53n+1ny-x // 1nparseInt(y-x) // 1//也可以用下面这种写法：var x = BigInt(2**53)var y = BigInt(2**53)+BigInt(1)y-x // 1nparseInt(y-x) // 1 26个字母全排列,求第k项最终代码：123456789101112131415161718192021222324252627282930313233//阶乘function factorial(n,p=1) &#123; if (n &lt;= 1) &#123; return BigInt(p) &#125; var s = BigInt(n) * BigInt(p) return factorial(n - 1, s)&#125;function getResult(k) &#123; if(k&lt;0 || k&gt;=factorial(26))&#123; return 'k的值不在范围内' &#125; var result = ''; var j = 0; var letters = 'abcdefghijklmnopqrstuvwxyz'; for (var i=25; i&gt;=0; i--) &#123; j = parseInt(BigInt(k) / factorial(i)) k = BigInt(k) % factorial(i) result += letters[j] letters = letters.replace(letters[j],'') &#125; return result;&#125;console.log( getResult(0) ) //第0项：a~z//最后一项var lastItem = factorial(26) - 1n;console.log( getResult(lastItem) ) //最后1项：z~a 【点击查看在线运行结果】]]></content>
       <categories>
         <category>算法与数据结构</category>
       </categories>
@@ -31,8 +31,8 @@
         <category>vue</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>笔记</tag>
         <tag>vue</tag>
       </tags>
   </entry>
@@ -92,8 +92,8 @@
         <category>css</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>css</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -104,9 +104,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -141,9 +141,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>es6</tag>
-        <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>笔记</tag>
+        <tag>es6</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
@@ -213,8 +213,8 @@
         <category>css</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>css</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -248,9 +248,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -331,8 +331,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -343,8 +343,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>笔记</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
@@ -381,8 +381,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>笔记</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
@@ -419,9 +419,9 @@
         <category>简历</category>
       </categories>
       <tags>
-        <tag>html</tag>
         <tag>css</tag>
         <tag>js</tag>
+        <tag>html</tag>
       </tags>
   </entry>
   <entry>
@@ -470,9 +470,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -483,9 +483,9 @@
         <category>http</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
         <tag>http</tag>
         <tag>请求与响应</tag>
       </tags>
@@ -522,9 +522,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -535,8 +535,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>笔记</tag>
         <tag>面向对象</tag>
       </tags>
   </entry>
@@ -572,10 +572,10 @@
         <category>移动端</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>面试题</tag>
         <tag>css</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
         <tag>移动端</tag>
       </tags>
   </entry>
@@ -599,8 +599,8 @@
         <category>ajax</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>笔记</tag>
         <tag>ajax</tag>
         <tag>jq</tag>
       </tags>
@@ -613,8 +613,8 @@
         <category>ajax</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>笔记</tag>
         <tag>ajax</tag>
         <tag>json</tag>
         <tag>jsonp</tag>
@@ -628,10 +628,10 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
-        <tag>html</tag>
         <tag>css</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
+        <tag>html</tag>
         <tag>http</tag>
         <tag>数据结构与算法</tag>
       </tags>
@@ -644,10 +644,10 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>js</tag>
         <tag>dom</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -658,9 +658,9 @@
         <category>es6</category>
       </categories>
       <tags>
-        <tag>es6</tag>
-        <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>笔记</tag>
+        <tag>es6</tag>
       </tags>
   </entry>
   <entry>
@@ -671,8 +671,8 @@
         <category>jq</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>笔记</tag>
         <tag>jq</tag>
       </tags>
   </entry>
@@ -684,10 +684,10 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
-        <tag>html</tag>
         <tag>css</tag>
+        <tag>面试题</tag>
         <tag>js</tag>
+        <tag>html</tag>
         <tag>jq</tag>
       </tags>
   </entry>
@@ -699,8 +699,8 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
         <tag>jq</tag>
       </tags>
   </entry>
@@ -712,10 +712,10 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>js</tag>
         <tag>dom</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -726,9 +726,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -739,9 +739,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -752,8 +752,8 @@
         <category>jq</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>笔记</tag>
         <tag>jq</tag>
       </tags>
   </entry>
@@ -765,9 +765,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -778,9 +778,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -791,9 +791,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -816,9 +816,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -842,9 +842,9 @@
         <category>js</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
         <tag>js</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -879,9 +879,9 @@
         <category>css</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>面试题</tag>
         <tag>css</tag>
+        <tag>面试题</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -892,8 +892,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -904,8 +904,8 @@
         <category>html</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>笔记</tag>
         <tag>html</tag>
       </tags>
   </entry>
@@ -917,8 +917,8 @@
         <category>html</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>面试题</tag>
+        <tag>笔记</tag>
         <tag>html</tag>
       </tags>
   </entry>
@@ -1036,8 +1036,8 @@
       </categories>
       <tags>
         <tag>教程</tag>
-        <tag>插件</tag>
         <tag>jq</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
   <entry>
@@ -1061,8 +1061,8 @@
       </categories>
       <tags>
         <tag>js</tag>
-        <tag>插件</tag>
         <tag>jq</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
   <entry>
@@ -1074,8 +1074,8 @@
       </categories>
       <tags>
         <tag>js</tag>
-        <tag>插件</tag>
         <tag>jq</tag>
+        <tag>插件</tag>
       </tags>
   </entry>
 </search>
