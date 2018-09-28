@@ -89,20 +89,17 @@
 
 
 
-<meta name="description" content="Vuex 就是前端为了方便数据的操作而建立的一个” 前端数据库“，用来管理所有组件的数据。state 就是数据库getter 用来 获取 数据mutation 用来定义一些方法对数据进行 修改/存储actions 呢。你想呀，后端从前端拿到了数据，总要做个异步处理吧，处理完了再存到数据库中(.then( () =&amp;gt; {异步处理完成后执行}))。其实这就是action的过程。如果是个同步操">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vuex使用教程">
 <meta property="og:url" content="harry0071.github.io/2018/08/30/Vuex使用教程/index.html">
 <meta property="og:site_name" content="stage's blog">
-<meta property="og:description" content="Vuex 就是前端为了方便数据的操作而建立的一个” 前端数据库“，用来管理所有组件的数据。state 就是数据库getter 用来 获取 数据mutation 用来定义一些方法对数据进行 修改/存储actions 呢。你想呀，后端从前端拿到了数据，总要做个异步处理吧，处理完了再存到数据库中(.then( () =&amp;gt; {异步处理完成后执行}))。其实这就是action的过程。如果是个同步操">
-<meta property="og:image" content="https://images2017.cnblogs.com/blog/1186521/201801/1186521-20180117104457365-1977452942.png">
+<meta property="og:image" content="https://i.loli.net/2018/09/27/5bac79e8228d0.png">
 <meta property="og:image" content="https://i.loli.net/2018/06/26/5b3254451c8e0.jpg">
 <meta property="og:image" content="https://i.loli.net/2018/06/26/5b32561498a1a.jpg">
-<meta property="og:updated_time" content="2018-08-31T01:26:05.459Z">
+<meta property="og:updated_time" content="2018-09-27T06:35:22.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vuex使用教程">
-<meta name="twitter:description" content="Vuex 就是前端为了方便数据的操作而建立的一个” 前端数据库“，用来管理所有组件的数据。state 就是数据库getter 用来 获取 数据mutation 用来定义一些方法对数据进行 修改/存储actions 呢。你想呀，后端从前端拿到了数据，总要做个异步处理吧，处理完了再存到数据库中(.then( () =&amp;gt; {异步处理完成后执行}))。其实这就是action的过程。如果是个同步操">
-<meta name="twitter:image" content="https://images2017.cnblogs.com/blog/1186521/201801/1186521-20180117104457365-1977452942.png">
+<meta name="twitter:image" content="https://i.loli.net/2018/09/27/5bac79e8228d0.png">
 
 
 
@@ -368,11 +365,11 @@
       
 
       
-        <p><img src="https://images2017.cnblogs.com/blog/1186521/201801/1186521-20180117104457365-1977452942.png" alt=""></p>
+        <p><img src="https://i.loli.net/2018/09/27/5bac79e8228d0.png" alt="预览图.png"></p>
+<a id="more"></a>
 <blockquote>
 <p>Vuex 就是前端为了方便数据的操作而建立的一个” 前端数据库“，用来管理所有组件的数据。<br>state 就是数据库<br>getter 用来 获取 数据<br>mutation 用来定义一些方法对数据进行 修改/存储<br>actions 呢。你想呀，后端从前端拿到了数据，总要做个异步处理吧，处理完了再存到数据库中(<code>.then( () =&gt; {异步处理完成后执行})</code>)。其实这就是<br>action的过程。如果是个同步操作，那么可以直接丢到数据库，所以vuex也可以在<br>action 中直接存，就是直接mutation。<br>在我看来，Vuex 相当于某种意义上设置了读写权限的全局变量，将数据保存保存到该“全局变量”下，并通过一定的方法去读写数据。</p>
 </blockquote>
-<a id="more"></a>
 <h1 id="为什么使用Vuex"><a href="#为什么使用Vuex" class="headerlink" title="为什么使用Vuex"></a>为什么使用Vuex</h1><p><img src="https://i.loli.net/2018/06/26/5b3254451c8e0.jpg" alt=""><br>如图所示，顶层父组件App有一个数据<code>a:123</code>,组件A想要获取这个数据，必须通过props一层层向下传<code>App -&gt; G -&gt; A</code>,B组件也想获取数据a，必须通过props一层层向下传<code>App -&gt; E -&gt; D -&gt;B</code></p>
 <p>如果B组件有个按钮，点击后想要修改a的值，则必须通过自定义事件<code>$emit()</code>一层层向上通知父组件<code>B -&gt; D -&gt; E -&gt; App</code></p>
 <p><img src="https://i.loli.net/2018/06/26/5b32561498a1a.jpg" alt=""><br>如图所示，用了Vuex后，相当于建立了一个前端数据库，所有的组件都可以直接获取到Vuex里的数据，并且可以直接修改数据</p>
@@ -566,7 +563,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

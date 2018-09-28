@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="css,面试题,js,html,jq," />
+  <meta name="keywords" content="面试题,html,css,js,jq," />
 
 
 
@@ -102,7 +102,7 @@
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/87c01ec7gy1fsytnwf64aj20ka0z20vd.jpg">
 <meta property="og:image" content="https://i.loli.net/2018/08/02/5b626611e6b32.png">
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/87c01ec7gy1fpdbcbit86j20xc0ien4p.jpg">
-<meta property="og:updated_time" content="2018-09-20T06:56:43.450Z">
+<meta property="og:updated_time" content="2018-09-27T06:45:49.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="🔒 前端面试题">
 <meta name="twitter:description" content="总结了一些前端的相关面试题http://ovenzeze.coding.me/菜鸟教程前端面试题2018春招-头条，腾讯，小米，百度面经https://www.cnblogs.com/itlkNote/p/6831115.htmlhttps://wenku.baidu.com/view/cbded359326c1eb91a37f111f18583d049640f99.htmlhttps://gi">
@@ -386,9 +386,15 @@
 <h2 id="如何理解-HTML-语义化"><a href="#如何理解-HTML-语义化" class="headerlink" title="如何理解 HTML 语义化"></a>如何理解 HTML 语义化</h2><p>目的：</p>
 <ul>
 <li>对人友好：标签语义化就是给某块内容用上最恰当合适的标签，使其通俗易懂；</li>
-<li>对搜索引擎友好：网页良好的结构和语义自然容易被搜索引擎捕捉</li>
+<li>对搜索引擎友好：使搜索引擎能够更方便地识别页面的每个部分</li>
 </ul>
-<p>方法1 举例子：头部用 header，章节用 section，段落用 p，边栏用 aside，主要内容用 main<br>方法2 讲发展历史：             </p>
+<p>方法1 举例子：</p>
+<ul>
+<li>块元素：头部用 header，nav导航，章节用 section，段落用 p，边栏用 aside，主要内容用 main</li>
+<li>行内元素：span，a链接，b加粗，i斜体，time时间，progress进度条</li>
+</ul>
+<p>注意！！input，button等元素是inline-block元素</p>
+<p>方法2 讲发展历史：             </p>
 <blockquote>
 <p>最开始是 PHP 后端写 HTML，不会 CSS，于是就用 table 来布局。table 使用展示表格的。严重违反了 HTML 语义化。<br>后来有了专门的写 CSS 的前端，他们会使用 DIV + CSS 布局，主要是用 float 和绝对定位布局。稍微符合了 HTML 语义化。<br>再后来，前端专业化，知道 HTML 的各个标签的用法，于是会使用恰当的标签来展示内容，而不是傻傻的全用 div，会尽量使用 h1、ul、p、main、header 等标签<br>语义化的好处是易读、有利于SEO等。</p>
 </blockquote>
@@ -444,7 +450,7 @@
 <p><a class="jsbin-embed" href="http://jsbin.com/dejopenaco/embed?html,css,output" target="_blank" rel="external">【点击查看代码】</a><script src="http://static.jsbin.com/js/embed.min.js?4.1.4"></script></p>
 <h2 id="BFC-是什么？"><a href="#BFC-是什么？" class="headerlink" title="BFC 是什么？"></a>BFC 是什么？</h2><p>块级格式化上下文(Block Formatting Contexts)<br>举例子：</p>
 <ul>
-<li>给爸爸overflow:hidden 清除浮动。（但我平常总是用 .clearfix 清除浮动)</li>
+<li>给爸爸overflow:hidden 清除浮动。（但我平常总是用 .clearfix 清除浮动）</li>
 <li>外边距合并，给爸爸添加overflow:hidden 取消父子 margin 合并(给儿子设置margin-top时，爸爸也会被顶下去)</li>
 </ul>
 <h3 id="BFC的原理"><a href="#BFC的原理" class="headerlink" title="BFC的原理"></a>BFC的原理</h3><ul>
@@ -776,7 +782,7 @@
 <h2 id="LocalStorage-和-Cookie-的区别是什么？"><a href="#LocalStorage-和-Cookie-的区别是什么？" class="headerlink" title="LocalStorage 和 Cookie 的区别是什么？"></a>LocalStorage 和 Cookie 的区别是什么？</h2><ul>
 <li>Cookie 会随请求被发到服务器上【每次请求都会带上，影响获取资源的效率】，而 LocalStorage 不会</li>
 <li>Cookie 存储量为4kb【因为每次发送请求，都会自动带上cookie，所以cookie不能太大】，LocalStorage 一般5Mb 左右</li>
-<li><p>cookie的api用起来很麻烦，不是key:value的对象形式，而是字符串”a=1; b=2”这种形式，操作起来不方便;LocalStorage是key:value的对象形式，它的api用起来方便</p>
+<li><p>cookie的api用起来很麻烦，不是key:value的对象形式，而是字符串”a=1; b=2; c=3”这种形式，操作起来不方便;LocalStorage是key:value的对象形式，它的api用起来方便(localStorage.getItem(key))</p>
 </li>
 <li><p>localStorage：永久存储，除非手动删除；</p>
 </li>
@@ -807,7 +813,7 @@
 <li>beforeDestroy：实例销毁之前调用。在这一步，实例仍然完全可用。</li>
 <li>destroyed：Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。 该钩子在服务器端渲染期间不被调用。<br>8.1 errorCaptured:当捕获一个来自子孙组件的错误时被调用。</li>
 </ol>
-<p><img src="http://ww4.sinaimg.cn/large/87c01ec7gy1fsytnwf64aj20ka0z20vd.jpg" alt="生命周期黑白简图"><br>| 钩子函数        | 描述   | 例子 |<br>| ——–   | ——  | ——— |<br>| beforeCreate  | 实例初始化，$el 与 data 都未初始化 | 此时无法获取到this(data和methods) |<br>| created  | 实例创建完成，data 配置完成但挂载还未开始 $el 仍未初始化 | 此时可以获取到this(data和methods)，一般用于异步数据的请求/初始化(将$bus绑定到this.prototype、读取localStorage等) |<br>| beforeMount |挂载开始前，render 函数被调用，$el 和 data 配置完成，但数据未在 DOM 上渲染 |<br>| mounted | 挂载完成，el 被新创建的 vm.$el 替换并挂载到实例上去，data里的初始数据在 DOM 上渲染完毕 | 此时可以获取由data里初始数据渲染后的DOM节点 |<br>| beforeUpdate | 数据更新时调用，但不进行 DOM 重新渲染 |<br>| updated | 数据更新并且 DOM 重新渲染，此时可执行依赖于 DOM 的操作 | 此时可以获取到异步请求的数据替换初始数据渲染后的DOM节点 |<br>| beforeDertroy | 实例销毁前 |<br>| destroyed | 实例销毁后 |</p>
+<p><img src="http://ww4.sinaimg.cn/large/87c01ec7gy1fsytnwf64aj20ka0z20vd.jpg" alt="生命周期黑白简图"><br>| 钩子函数        | 描述   | 例子 |<br>| ——–   | ——  | ——— |<br>| beforeCreate  | 实例初始化，$el 与 data 都未初始化 | 此时无法获取到this(data和methods) |<br>| created  | 实例创建完成，data 配置完成但挂载还未开始 $el 仍未初始化 | 此时可以获取到this(data和methods)，一般用于异步数据的请求/初始化(将$bus绑定到this.prototype、读取localStorage等) |<br>| beforeMount |挂载开始前，render 函数被调用，$el 和 data 配置完成，但数据未在 DOM 上渲染 |<br>| mounted | 挂载完成，el 被新创建的 vm.$el 替换并挂载到实例上去，data里的初始数据在 DOM 上渲染完毕 | 此时可以获取由data里初始数据渲染后的DOM节点；可以获取ref |<br>| beforeUpdate | 数据更新时调用，但不进行 DOM 重新渲染 |<br>| updated | 数据更新并且 DOM 重新渲染，此时可执行依赖于 DOM 的操作 | 此时可以获取到异步请求的数据替换初始数据渲染后的DOM节点 |<br>| beforeDertroy | 实例销毁前 |<br>| destroyed | 实例销毁后 |</p>
 <p>日期<code>new Date()</code>不能放在<code>data:{time:new Date()}</code>，这样日期不会实时变化，可以放在<code>created</code>或者<code>mounted</code>这两个生命周期函数内<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mounted()&#123;</div><div class="line">  timer = setInterval(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">    <span class="keyword">this</span>.time = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">  &#125;,<span class="number">1000</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><a class="jsbin-embed" href="http://js.jirengu.com/tojujaxuvo/1/embed?html,js,output" target="_blank" rel="external">【时间与生命周期函数】</a><script src="http://js.jirengu.com/js/embed.js"></script></p>
 <p>第一次页面加载会触发哪几个钩子？<br>答：会触发 下面这几个beforeCreate, created, beforeMount, mounted 。</p>
@@ -888,8 +894,9 @@
 </ul>
 <h2 id="有哪些loader和plugin？"><a href="#有哪些loader和plugin？" class="headerlink" title="有哪些loader和plugin？"></a>有哪些loader和plugin？</h2><p>loader的规则从右往左执行</p>
 <h2 id="转译出的文件过大怎么办？"><a href="#转译出的文件过大怎么办？" class="headerlink" title="转译出的文件过大怎么办？"></a>转译出的文件过大怎么办？</h2><ol>
-<li>按需异步加载模块<br>在vue单页应用中，若不做任何处理，所有vue文件会打包为一个js文件，这个js文件非常的大，造成网页在首次进入时比较缓慢。利用code split(代码拆分)，会将代码分离到不同的js中，然后进行按需加载这些js文件，能够提高页面首次进入的速度，网站性能也能够得到提升。</li>
+<li>使用code split(代码拆分)实现按需异步加载模块</li>
 </ol>
+<p>在vue单页应用中，若不做任何处理，所有vue文件会打包为一个js文件，这个js文件非常的大，造成网页在首次进入时比较缓慢。利用code split(代码拆分)，会将代码分离到不同的js中，然后进行按需加载这些js文件，能够提高页面首次进入的速度，网站性能也能够得到提升。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> page1 <span class="keyword">from</span> <span class="string">'@/page/page1.vue'</span></div><div class="line"></div><div class="line"><span class="comment">//将上述代码改成</span></div><div class="line"><span class="keyword">const</span> page1 = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'@/page/page1.vue'</span>)</div></pre></td></tr></table></figure>
 <ol>
 <li>生产环境，压缩混淆并移除console</li>
@@ -951,13 +958,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
-          
             <a href="/tags/面试题/" rel="tag"><i class="fa fa-tag"></i> 面试题</a>
           
-            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
-          
             <a href="/tags/html/" rel="tag"><i class="fa fa-tag"></i> html</a>
+          
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
           
             <a href="/tags/jq/" rel="tag"><i class="fa fa-tag"></i> jq</a>
           
@@ -1065,7 +1072,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
