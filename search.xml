@@ -155,8 +155,8 @@
         <category>前端工程化</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>教程</tag>
+        <tag>笔记</tag>
         <tag>打包工具</tag>
         <tag>webpack</tag>
       </tags>
@@ -213,8 +213,8 @@
         <category>css</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>面试题</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -225,8 +225,8 @@
         <category>html</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>html</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -265,9 +265,21 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[响应式布局]]></title>
+    <url>%2F2018%2F06%2F29%2F%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80%2F</url>
+    <content type="text"><![CDATA[一套代码如何在多种设备下完美显示？你得玩玩响应式布局。 设置meta:vp1&lt;meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"&gt; 媒体查询设置完meta:vp后，接下来设置媒体查询 link标签的 media 属性123&lt;link rel="stylesheet" href="print.css" media="print"&gt; 打印&lt;link rel="stylesheet" href="desktop.css" media="screen and (min-width:500px)"&gt; 大于500px时生效&lt;link rel="stylesheet" href="mobile.css" media="screen and (max-width:500px)"&gt; 小于500px时生效 css文件中使用 @media1234567891011.box&#123; background-color: red; color:blue;&#125;@media (max-width:320px)&#123; .box&#123; background-color: green; color:orange; &#125;&#125; 【点击查看在线演示】 利用checkbox的:checked伪类，实现点击切换状态点击checkbox后，h1的字体变红：123#checkbox:checked ~ h1&#123; color:red;&#125; 【点击查看在线演示】 使用label美化，添加按钮图标12&lt;label for="menu-checkbox"&gt;点击菜单&lt;/label&gt;&lt;input id="menu-checkbox" type="checkbox"&gt; 【点击查看在线演示】]]></content>
+      <categories>
+        <category>移动端</category>
+      </categories>
+      <tags>
+        <tag>html</tag>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[yarn使用教程]]></title>
     <url>%2F2018%2F06%2F25%2Fyarn%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[yarn,快速、可靠、安全的依赖管理。有了npm，为什么还要用yarn？因为yarn比npm快速！ 安装方法1：进入官网进行安装，然后重启电脑！！！！方法2：npm i yarn -g直接通过npm工具全局安装 yarn -v : 查看版本号 yarn self-update：更新 Yarn 到最新可用版本（该命令可能存在bug，最好手动安装更新） yarn -h ：查看帮助 yarn config get registry : 查看当前镜像，默认https://registry.yarnpkg.com yarn config set registry https://registry.npm.taobao.org:切换成淘宝镜像 yarn config set loglevel http：显示所有http请求 yarn config delete loglevel:删除loglevel这项配置 yarn config set progress false yarn config set strict-ssl false 使用 yarn init -y : 初始化项目,生成package.json文件【对应npm init -y】 yarn ：安装package.json里的全部包，相当于npm i yarn add vue : 添加vue，会记录在 package.json 的 dependencies 下 yarn add vue --offline:可以离线添加之前已经缓存过的包 yarn global add vue-cli : 全局安装，注意global必须接在yarn的后面！ yarn global list : 查看全局安装的包 yarn add vue@2.3.0 : 指定版本号 yarn add bable -D : 添加到开发环境package.json 的 devDependencies下 yarn remove vue ： 移除vue yarn cache dir:会打印出当前的 yarn 全局缓存在哪里 yarn cache clean : 清除缓存 yarn run dev、yarn start、yarn run build：运行package.json里script下的脚本 yarn autoclean -I：通过从依赖文件中移除不需要的文件和文件夹来释放空间 减少了 node_modules 的体积 小技巧一次添加多个库12345# npmnpm i -S vue vuex vue-router# yarnyarn add vue vuex vue-router 更多命令点此查看 相关博文：https://blog.csdn.net/mjzhang1993/article/details/70092902 可供选择的镜像 https://registry.yarnpkg.com https://registry.npmjs.org https://r.cnpmjs.org https://registry.npm.taobao.org]]></content>
+    <content type="text"><![CDATA[yarn,快速、可靠、安全的依赖管理。有了npm，为什么还要用yarn？因为yarn比npm快速！ 安装方法1：进入官网进行安装，然后重启电脑！！！！方法2：npm i yarn -g直接通过npm工具全局安装 yarn -v : 查看版本号 yarn self-update：更新 Yarn 到最新可用版本（该命令可能存在bug，最好手动安装更新） yarn -h ：查看帮助 yarn config get registry : 查看当前镜像，默认https://registry.yarnpkg.com yarn config set registry https://registry.npm.taobao.org:切换成淘宝镜像 yarn config set loglevel http：显示所有http请求 yarn config delete loglevel:删除loglevel这项配置 yarn config set progress false yarn config set strict-ssl false 使用 yarn init -y : 初始化项目,生成package.json文件【对应npm init -y】 yarn ：安装package.json里的全部包，相当于npm i yarn add vue : 添加vue，会记录在 package.json 的 dependencies 下 yarn add vue --offline:可以离线添加之前已经缓存过的包 yarn global add vue-cli : 全局安装，注意global必须接在yarn的后面！ yarn global list : 查看全局安装的包 yarn add vue@2.3.0 : 指定版本号 yarn add bable -D : 添加到开发环境package.json 的 devDependencies下 yarn remove vue ： 移除vue yarn upgrade vue：升级vue yarn cache dir:会打印出当前的 yarn 全局缓存在哪里 yarn cache clean : 清除缓存 yarn run dev、yarn start、yarn run build：运行package.json里script下的脚本 yarn autoclean -I：通过从依赖文件中移除不需要的文件和文件夹来释放空间 减少了 node_modules 的体积 小技巧一次添加多个库12345# npmnpm i -S vue vuex vue-router# yarnyarn add vue vuex vue-router 更多命令点此查看 相关博文：https://blog.csdn.net/mjzhang1993/article/details/70092902 可供选择的镜像 https://registry.yarnpkg.com https://registry.npmjs.org https://r.cnpmjs.org https://registry.npm.taobao.org]]></content>
       <categories>
         <category>教程</category>
       </categories>
@@ -318,8 +330,8 @@
         <category>项目</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>教程</tag>
+        <tag>面试题</tag>
         <tag>vue</tag>
       </tags>
   </entry>
@@ -356,8 +368,8 @@
         <category>vue</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>教程</tag>
+        <tag>笔记</tag>
         <tag>vue</tag>
       </tags>
   </entry>
@@ -394,8 +406,8 @@
         <category>项目</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>教程</tag>
+        <tag>笔记</tag>
         <tag>jq</tag>
       </tags>
   </entry>
@@ -419,9 +431,9 @@
         <category>简历</category>
       </categories>
       <tags>
+        <tag>html</tag>
         <tag>css</tag>
         <tag>js</tag>
-        <tag>html</tag>
       </tags>
   </entry>
   <entry>
@@ -444,9 +456,9 @@
         <category>效果及美化</category>
       </categories>
       <tags>
+        <tag>教程</tag>
         <tag>css</tag>
         <tag>js</tag>
-        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -572,8 +584,8 @@
         <category>移动端</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>面试题</tag>
+        <tag>css</tag>
         <tag>js</tag>
         <tag>笔记</tag>
         <tag>移动端</tag>
@@ -628,10 +640,10 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>css</tag>
-        <tag>面试题</tag>
-        <tag>js</tag>
         <tag>html</tag>
+        <tag>面试题</tag>
+        <tag>css</tag>
+        <tag>js</tag>
         <tag>http</tag>
         <tag>数据结构与算法</tag>
       </tags>
@@ -684,10 +696,10 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>css</tag>
-        <tag>面试题</tag>
-        <tag>js</tag>
         <tag>html</tag>
+        <tag>面试题</tag>
+        <tag>css</tag>
+        <tag>js</tag>
         <tag>jq</tag>
       </tags>
   </entry>
@@ -799,7 +811,7 @@
   <entry>
     <title><![CDATA[Node.js和npm]]></title>
     <url>%2F2018%2F03%2F02%2FNode-js%E5%92%8Cnpm%2F</url>
-    <content type="text"><![CDATA[node.js的常用命令npm的配置及使用 Node.js从官网下载node.jsshift + 鼠标右键，选择在此处打开命令窗口 Node.js相关命令 where node ：查看node.exe的安装路径 where npm ：查看npm安装路径 node -v：查看版本号 npm -v exit：退出 npm list -g --depth=0 查看所有全局安装 npm cache clean --force清除本地缓存 npmnpm常用命令及使用步骤：https://www.cnblogs.com/wdlhao/p/5900360.htmlnpm 常用命令详解：https://www.cnblogs.com/itlkNote/p/6830682.html 升级npm:npm i npm -g 配置npm123456789101112131415npm get registry //查看当前镜像，官方https://registry.npmjs.org/npm config set registry https://registry.npm.taobao.org/npm config set loglevel http //显示所有http请求npm config delete loglevel //删除这个配置npm config set progress falsenpm config set strict-ssl false---------------npm config，可以看到config可以简写为c所以上面的4句话可以简写为npm c set registry https://registry.npm.taobao.org/npm c set loglevel httpnpm c set progress falsenpm c set strict-ssl false npm 的配置被存储在 ~/.npmrc，你可以随时通过npm c edit查看修改。 安装模块在使用node的时候，用npm安装了很多软件，过一段时间没有使用就会忘记，怎么查看自己全局安装过的包，用命令npm list -g --depth 0 http-server安装：npm i http-server -g(默认安装在C:\Users\Administrator\AppData\Roaming\npm\node_modules) 然后就可以使用 http-server 或者 hs 来启动http-server了ctrl + C退出http-server 卸载：npm uninstall http-server -g，简写npm un http-server -g http-server的使用: 输入 hs 文件路径 参数 启用，默认localhost:8080如果直接 hs -c-1 就是在当前目录启用,禁止缓存,自动打开浏览器如果hhs D:\饥人谷\resume -c-1 -o 就是在指定的路径启用,禁止缓存,自动打开浏览器 如果想改变端口和地址采用这个方式：http-server &lt;文件路径&gt; -a hostip -p 端口号。参数-a是监听地址，而参数-p是修改监听端口。 -o 启动服务器后打开浏览器窗口-c 设置缓存控制max-age头的缓存时间（以秒为单位），例如-c10 10秒（默认为’3600’）。要禁用缓存，请使用-c-1，因为有时候修改代码后重启服务页面不一定立刻生效，所以禁用缓存-p 要使用的端口（默认为8080）-a 要使用的地址（默认为0.0.0.0）-d 显示目录列表（默认为“True”）-s或--silent从输出中抑制日志消息:这个意思就是你输入之后，日志消息不会显示 hs -h查看帮助 less安装:npm i less -g lessc -h:查看帮助 lessc -v:查看版本号 lessc /xxx/a.less &gt; /yyy/b.css 使用nrm切换镜像仓库github:nrm 安装nrmnpm i -g nrm 使用nrm nrm ls:查看有哪些镜像仓库 nrm test：测试速度 nrm use taobao：使用taobao镜像]]></content>
+    <content type="text"><![CDATA[node.js的常用命令npm的配置及使用 Node.js从官网下载node.jsshift + 鼠标右键，选择在此处打开命令窗口 Node.js相关命令 where node ：查看node.exe的安装路径 where npm ：查看npm安装路径 node -v：查看版本号 npm -v exit：退出 npm list -g --depth=0 查看所有全局安装 npm cache clean --force清除本地缓存 npmnpm常用命令及使用步骤：https://www.cnblogs.com/wdlhao/p/5900360.htmlnpm 常用命令详解：https://www.cnblogs.com/itlkNote/p/6830682.html文档-npm命令：https://docs.npmjs.com/ 升级npm:npm i npm -g npm -h:查看帮助 npm up vue:更新vue到最新版 npm rm vue：卸载vue 配置npm123456789101112131415npm get registry //查看当前镜像，官方https://registry.npmjs.org/npm config set registry https://registry.npm.taobao.org/npm config set loglevel http //显示所有http请求npm config delete loglevel //删除这个配置npm config set progress falsenpm config set strict-ssl false---------------npm config，可以看到config可以简写为c所以上面的4句话可以简写为npm c set registry https://registry.npm.taobao.org/npm c set loglevel httpnpm c set progress falsenpm c set strict-ssl false npm 的配置被存储在 ~/.npmrc，你可以随时通过npm c edit查看修改。 安装模块在使用node的时候，用npm安装了很多软件，过一段时间没有使用就会忘记，怎么查看自己全局安装过的包，用命令npm list -g --depth 0 http-server安装：npm i http-server -g(默认安装在C:\Users\Administrator\AppData\Roaming\npm\node_modules) 然后就可以使用 http-server 或者 hs 来启动http-server了ctrl + C退出http-server 卸载：npm uninstall http-server -g，简写npm un http-server -g http-server的使用: 输入 hs 文件路径 参数 启用，默认localhost:8080如果直接 hs -c-1 就是在当前目录启用,禁止缓存,自动打开浏览器如果hhs D:\饥人谷\resume -c-1 -o 就是在指定的路径启用,禁止缓存,自动打开浏览器 如果想改变端口和地址采用这个方式：http-server &lt;文件路径&gt; -a hostip -p 端口号。参数-a是监听地址，而参数-p是修改监听端口。 -o 启动服务器后打开浏览器窗口-c 设置缓存控制max-age头的缓存时间（以秒为单位），例如-c10 10秒（默认为’3600’）。要禁用缓存，请使用-c-1，因为有时候修改代码后重启服务页面不一定立刻生效，所以禁用缓存-p 要使用的端口（默认为8080）-a 要使用的地址（默认为0.0.0.0）-d 显示目录列表（默认为“True”）-s或--silent从输出中抑制日志消息:这个意思就是你输入之后，日志消息不会显示 hs -h查看帮助 less安装:npm i less -g lessc -h:查看帮助 lessc -v:查看版本号 lessc /xxx/a.less &gt; /yyy/b.css 使用nrm切换镜像仓库github:nrm 安装nrmnpm i -g nrm 使用nrm nrm ls:查看有哪些镜像仓库 nrm test：测试速度 nrm use taobao：使用taobao镜像]]></content>
       <categories>
         <category>命令行</category>
       </categories>
@@ -829,8 +841,8 @@
         <category>html</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>html</tag>
+        <tag>笔记</tag>
         <tag>canvas</tag>
       </tags>
   </entry>
@@ -855,8 +867,8 @@
         <category>算法与数据结构</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>算法与数据结构</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -867,8 +879,8 @@
         <category>算法与数据结构</category>
       </categories>
       <tags>
-        <tag>面试题</tag>
         <tag>算法与数据结构</tag>
+        <tag>面试题</tag>
       </tags>
   </entry>
   <entry>
@@ -879,8 +891,8 @@
         <category>css</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>面试题</tag>
+        <tag>css</tag>
         <tag>笔记</tag>
       </tags>
   </entry>
@@ -904,22 +916,22 @@
         <category>html</category>
       </categories>
       <tags>
+        <tag>html</tag>
         <tag>面试题</tag>
         <tag>笔记</tag>
-        <tag>html</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[🔒 html知识点补充]]></title>
     <url>%2F2018%2F02%2F22%2Fhtml%E7%9F%A5%E8%AF%86%E7%82%B9%E8%A1%A5%E5%85%85%2F</url>
-    <content type="text"><![CDATA[html知识点补充，查漏补缺，比较零碎 iframe 标签嵌套页面12&lt;iframe src="https://www.baidu.com" name="qqqqq" width=100% height=200 &gt;&lt;/iframe&gt;&lt;a href="https://www.qq.com" name="qqqqq"&gt;在name=qqqqq的iframe中打开&lt;/a&gt; a 标签跳转页面（HTTP GET 请求） download属性123456&lt;a href="xxxx" download&gt;下载链接&lt;/a&gt;&lt;a href="http://www.xxx.com/3.png" download="3.png"&gt;下载图片3.png&lt;/a&gt;加上download属性，就会下载下来否则就是用浏览器打开预览文件download="文件名"用js可以操作文件名，比如a.download = imgName + '.png'; target属性12345&lt;a target="_blank|_self|_parent|_top|framename"&gt;_blank 在新窗口中打开_self 在a标签所在的页面中打开_parent 在a标签所在页面的父级窗口中打开_top 如果嵌套iframe,就在最顶层（也就是当前页面）中打开 href属性1234567891011121314151617181920212223242526绝对路径&lt;a href="www.qq.com"&gt;错误！！！！漏了协议&lt;/a&gt;&lt;a href="https://www.qq.com"&gt;正确，https协议&lt;/a&gt;&lt;a href="//www.qq.com"&gt;正确,自定义协议&lt;/a&gt;相对路径&lt;a href="./xxx.html"&gt;&lt;/a&gt;结果打开127.0.0.1:8080/xxx.html&lt;a href="#锚点"&gt;&lt;/a&gt;结果打开127.0.0.1:8080/index.html#锚点，锚点不发起请求&lt;a href="?name=stage"&gt;&lt;/a&gt;结果打开127.0.0.1:8080/index.html?name=stage,自动发起 ?name=stage 的GET请求&lt;a href="javascript:;"&gt;&lt;/a&gt;点击之后什么都不发生&lt;a href="#"&gt;&lt;/a&gt;点击之后不刷新，锚点变成#，滚回到顶部&lt;a href=""&gt;&lt;/a&gt;点击之后刷新当前页面移动端点击拨打电话&lt;a href="tel:10086"&gt;10086&lt;/a&gt; form12345678&lt;form action="index2.php" method="get"&gt; First name: &lt;input type="text" name="fname"&gt;&lt;br&gt; Last name: &lt;input type="text" name="lname"&gt;&lt;br&gt; &lt;input type="submit" value="提交"&gt;&lt;/form&gt;将fname=xxx&amp;lname=xxx提交到index2.php中文会转码 method属性 GET时，如果有提交的数据，数据会作为查询参数出现在地址栏127.0.0.1::8080/index.html?fname=xxx&amp;lname=xxx POST时，用Chrome开发者工具可以看到，数据在Form Data里 重点如果一个表单中没有input-submit时 如果有&lt;button&gt;没有写type的按钮&lt;/button&gt;，该button自动升级为type=submit，可以提交表单 如果写了type=button，则无法提交表单 label 标签1234567891011&lt;label for="male"&gt;文字&lt;/label&gt;&lt;input type="checkbox" name="male" id="male"&gt;这样点击文字也能选中复选框，请将label的for与input的id名对应---------------------简便写法：label把input包起来&lt;label&gt;文字&lt;input type="checkbox" name="male"&gt;&lt;/label&gt;这样就不用for和id名了 select 标签1234567&lt;select name=&quot;choose&quot; multiple&gt; &lt;option value=&quot;&quot;&gt; - &lt;/option&gt; &lt;option value=&quot;1&quot; selected&gt;默认&lt;/option&gt; &lt;option value=&quot;2&quot; disabled&gt;禁选&lt;/option&gt; &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt; &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;&lt;/select&gt; multiple属性该属性允许多选对于 windows：按住Ctrl按钮来选择多个选项 table 标签可以用colgroup&gt;col控制表格的样式，第一个col控制第一竖列，第二个col控制第2竖列123456789101112131415161718192021222324252627&lt;table border=&quot;1&quot;&gt;&lt;colgroup&gt; &lt;col width=200&gt; &lt;col bgcolor=red&gt;&lt;/colgroup&gt; &lt;thead&gt; &lt;tr&gt; &lt;th&gt;姓名&lt;/th&gt;&lt;th&gt;得分&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td&gt;小明&lt;/td&gt;&lt;td&gt;100&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;小红&lt;/td&gt;&lt;td&gt;80&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;tfoot&gt; &lt;tr&gt; &lt;td&gt;所有人&lt;/td&gt; &lt;td&gt;180&lt;/td&gt; &lt;/tr&gt; &lt;/tfoot&gt;&lt;/table&gt; pre和code 标签&lt;pre&gt;标签，保留多个空格和回车换行,&lt;pre&gt;显示多行代码，&lt;code&gt;显示一行代码，&lt;pre&gt;可以替代&lt;code&gt; details 标签默认是个三角形▼123456&lt;details&gt; &lt;summary&gt;点我&lt;/summary&gt; &lt;p&gt;loremxxxxxxxxxx&lt;/p&gt; &lt;p&gt;loremxxxxxxxxxx&lt;/p&gt; &lt;p&gt;loremxxxxxxxxxx&lt;/p&gt;&lt;/details&gt; hidden 属性123&lt;p hidden&gt;这是一段隐藏的文字&lt;/p&gt;js用getAttribute('hidden')/setAttribute()/removeAttribute()操作 progress标签html5:progress标签 用于进度条、技能条等的显示1&lt;progress value="22" max="100"&gt;&lt;/progress&gt; figure标签 头像1234&lt;figure&gt; &lt;img src="avatar.jpg" width="60" height="60"&gt; &lt;figcaption&gt;昵称&lt;/figcaption&gt;&lt;/figure&gt; 上传限制格式通过accept可以限制上传的格式1&lt;input type="file" accept="image/*" /&gt;]]></content>
+    <content type="text"><![CDATA[html知识点补充，查漏补缺，比较零碎 iframe 标签嵌套页面12&lt;iframe src="https://www.baidu.com" name="qqqqq" width=100% height=200 &gt;&lt;/iframe&gt;&lt;a href="https://www.qq.com" name="qqqqq"&gt;在name=qqqqq的iframe中打开&lt;/a&gt; a 标签跳转页面（HTTP GET 请求） download属性123456&lt;a href="xxxx" download&gt;下载链接&lt;/a&gt;&lt;a href="http://www.xxx.com/3.png" download="3.png"&gt;下载图片3.png&lt;/a&gt;加上download属性，就会下载下来否则就是用浏览器打开预览文件download="文件名"用js可以操作文件名，比如a.download = imgName + '.png'; target属性12345&lt;a target="_blank|_self|_parent|_top|framename"&gt;_blank 在新窗口中打开_self 在a标签所在的页面中打开_parent 在a标签所在页面的父级窗口中打开_top 如果嵌套iframe,就在最顶层（也就是当前页面）中打开 href属性1234567891011121314151617181920212223242526绝对路径&lt;a href="www.qq.com"&gt;错误！！！！漏了协议&lt;/a&gt;&lt;a href="https://www.qq.com"&gt;正确，https协议&lt;/a&gt;&lt;a href="//www.qq.com"&gt;正确,自定义协议&lt;/a&gt;相对路径&lt;a href="./xxx.html"&gt;&lt;/a&gt;结果打开127.0.0.1:8080/xxx.html&lt;a href="#锚点"&gt;&lt;/a&gt;结果打开127.0.0.1:8080/index.html#锚点，锚点不发起请求&lt;a href="?name=stage"&gt;&lt;/a&gt;结果打开127.0.0.1:8080/index.html?name=stage,自动发起 ?name=stage 的GET请求&lt;a href="javascript:;"&gt;&lt;/a&gt;点击之后什么都不发生&lt;a href="#"&gt;&lt;/a&gt;点击之后不刷新，锚点变成#，滚回到顶部&lt;a href=""&gt;&lt;/a&gt;点击之后刷新当前页面移动端点击拨打电话&lt;a href="tel:10086"&gt;10086&lt;/a&gt; form12345678&lt;form action="index2.php" method="get"&gt; First name: &lt;input type="text" name="fname"&gt;&lt;br&gt; Last name: &lt;input type="text" name="lname"&gt;&lt;br&gt; &lt;input type="submit" value="提交"&gt;&lt;/form&gt;将fname=xxx&amp;lname=xxx提交到index2.php中文会转码 method属性 GET时，如果有提交的数据，数据会作为查询参数出现在地址栏127.0.0.1::8080/index.html?fname=xxx&amp;lname=xxx POST时，用Chrome开发者工具可以看到，数据在Form Data里 重点如果一个表单中没有input-submit时 如果有&lt;button&gt;没有写type的按钮&lt;/button&gt;，该button自动升级为type=submit，可以提交表单 如果写了type=button，则无法提交表单 label 标签1234567891011&lt;label for="male"&gt;文字&lt;/label&gt;&lt;input type="checkbox" name="male" id="male"&gt;这样点击文字也能选中复选框，请将label的for与input的id名对应---------------------简便写法：label把input包起来&lt;label&gt;文字&lt;input type="checkbox" name="male"&gt;&lt;/label&gt;这样就不用for和id名了 select 标签1234567&lt;select name=&quot;choose&quot; multiple&gt; &lt;option value=&quot;&quot;&gt; - &lt;/option&gt; &lt;option value=&quot;1&quot; selected&gt;默认&lt;/option&gt; &lt;option value=&quot;2&quot; disabled&gt;禁选&lt;/option&gt; &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt; &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;&lt;/select&gt; multiple属性该属性允许多选对于 windows：按住Ctrl按钮来选择多个选项 table 标签可以用colgroup&gt;col控制表格的样式，第一个col控制第一竖列，第二个col控制第2竖列123456789101112131415161718192021222324252627&lt;table border=&quot;1&quot;&gt;&lt;colgroup&gt; &lt;col width=200&gt; &lt;col bgcolor=red&gt;&lt;/colgroup&gt; &lt;thead&gt; &lt;tr&gt; &lt;th&gt;姓名&lt;/th&gt;&lt;th&gt;得分&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td&gt;小明&lt;/td&gt;&lt;td&gt;100&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;小红&lt;/td&gt;&lt;td&gt;80&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;tfoot&gt; &lt;tr&gt; &lt;td&gt;所有人&lt;/td&gt; &lt;td&gt;180&lt;/td&gt; &lt;/tr&gt; &lt;/tfoot&gt;&lt;/table&gt; pre和code 标签&lt;pre&gt;标签，保留多个空格和回车换行,&lt;pre&gt;显示多行代码，&lt;code&gt;显示一行代码，&lt;pre&gt;可以替代&lt;code&gt; details 标签默认是个三角形▼123456&lt;details&gt; &lt;summary&gt;点我&lt;/summary&gt; &lt;p&gt;loremxxxxxxxxxx&lt;/p&gt; &lt;p&gt;loremxxxxxxxxxx&lt;/p&gt; &lt;p&gt;loremxxxxxxxxxx&lt;/p&gt;&lt;/details&gt; 设置open属性&lt;details open&gt;则默认展开 hidden 属性123&lt;p hidden&gt;这是一段隐藏的文字&lt;/p&gt;js用getAttribute('hidden')/setAttribute()/removeAttribute()操作 progress标签html5:progress标签 用于进度条、技能条等的显示1&lt;progress value="22" max="100"&gt;&lt;/progress&gt; figure标签 头像1234&lt;figure&gt; &lt;img src="avatar.jpg" width="60" height="60"&gt; &lt;figcaption&gt;昵称&lt;/figcaption&gt;&lt;/figure&gt; 上传限制格式通过accept可以限制上传的格式1&lt;input type="file" accept="image/*" /&gt;]]></content>
       <categories>
         <category>html</category>
       </categories>
       <tags>
+        <tag>html</tag>
         <tag>面试题</tag>
         <tag>笔记</tag>
-        <tag>html</tag>
       </tags>
   </entry>
   <entry>

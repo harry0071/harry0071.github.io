@@ -13,8 +13,8 @@
 <meta name="theme-color" content="#222">
 <script>
     (function(){
-        if('11111111'){
-            if (prompt('请输入文章密码') !== '11111111'){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
                 alert('密码错误！');
                 //history.back(); 不推荐这种方法，建议使用下面的方法
                 location="//harry0071.github.io"; //返回网站，请自定义
@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="html,css," />
 
 
 
@@ -89,16 +89,18 @@
 
 
 
-<meta name="description" content="模板引擎的使用">
+<meta name="description" content="一套代码如何在多种设备下完美显示？你得玩玩响应式布局。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="🔒 模板引擎的使用">
-<meta property="og:url" content="harry0071.github.io/2018/07/31/模板引擎的使用/index.html">
+<meta property="og:title" content="响应式布局">
+<meta property="og:url" content="harry0071.github.io/2018/06/29/响应式布局/index.html">
 <meta property="og:site_name" content="stage's blog">
-<meta property="og:description" content="模板引擎的使用">
-<meta property="og:updated_time" content="2018-08-27T05:19:16.110Z">
+<meta property="og:description" content="一套代码如何在多种设备下完美显示？你得玩玩响应式布局。">
+<meta property="og:image" content="https://i.loli.net/2018/09/29/5baf105d6f181.jpg">
+<meta property="og:updated_time" content="2018-09-29T08:44:17.778Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="🔒 模板引擎的使用">
-<meta name="twitter:description" content="模板引擎的使用">
+<meta name="twitter:title" content="响应式布局">
+<meta name="twitter:description" content="一套代码如何在多种设备下完美显示？你得玩玩响应式布局。">
+<meta name="twitter:image" content="https://i.loli.net/2018/09/29/5baf105d6f181.jpg">
 
 
 
@@ -128,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="harry0071.github.io/2018/07/31/模板引擎的使用/"/>
+  <link rel="canonical" href="harry0071.github.io/2018/06/29/响应式布局/"/>
 
 
 
 
 
-  <title>🔒 模板引擎的使用 | stage's blog</title>
+  <title>响应式布局 | stage's blog</title>
   
 
 
@@ -275,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="harry0071.github.io/2018/07/31/模板引擎的使用/">
+    <link itemprop="mainEntityOfPage" href="harry0071.github.io/2018/06/29/响应式布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="stage">
@@ -292,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">🔒 模板引擎的使用</h1>
+          <h1 class="post-title" itemprop="name headline">响应式布局</h1>
         
 
         <div class="post-meta">
@@ -304,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T16:15:00+08:00">
-                2018-07-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-29T13:38:00+08:00">
+                2018-06-29
               </time>
             
 
@@ -327,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
                   </a>
                 </span>
 
@@ -364,11 +366,20 @@
       
 
       
-        <blockquote>
-<p>模板引擎的使用</p>
+        <p><img src="https://i.loli.net/2018/09/29/5baf105d6f181.jpg" alt="logo.jpg"></p>
+<blockquote>
+<p>一套代码如何在多种设备下完美显示？你得玩玩响应式布局。</p>
 </blockquote>
 <a id="more"></a>
-<p><a class="jsbin-embed" href="http://js.jirengu.com/bojuraxowe/1/embed?html,js,output" target="_blank" rel="external">【点击查看代码】】</a><script src="http://js.jirengu.com/js/embed.js"></script></p>
+<h1 id="设置meta-vp"><a href="#设置meta-vp" class="headerlink" title="设置meta:vp"></a>设置meta:vp</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h1><p>设置完meta:vp后，接下来设置媒体查询</p>
+<h2 id="link标签的-media-属性"><a href="#link标签的-media-属性" class="headerlink" title="link标签的 media 属性"></a>link标签的 media 属性</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>  <span class="attr">href</span>=<span class="string">"print.css"</span> <span class="attr">media</span>=<span class="string">"print"</span>&gt;</span>  打印</div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>  <span class="attr">href</span>=<span class="string">"desktop.css"</span> <span class="attr">media</span>=<span class="string">"screen and (min-width:500px)"</span>&gt;</span>  大于500px时生效</div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>  <span class="attr">href</span>=<span class="string">"mobile.css"</span> <span class="attr">media</span>=<span class="string">"screen and (max-width:500px)"</span>&gt;</span>  小于500px时生效</div></pre></td></tr></table></figure>
+<h2 id="css文件中使用-media"><a href="#css文件中使用-media" class="headerlink" title="css文件中使用 @media"></a>css文件中使用 @media</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">  <span class="attribute">background-color</span>: red;</div><div class="line">  <span class="attribute">color</span>:blue;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@<span class="keyword">media</span> (max-width:<span class="number">320px</span>)&#123;</div><div class="line">  <span class="selector-class">.box</span>&#123;</div><div class="line">    <span class="attribute">background-color</span>: green;</div><div class="line">    <span class="attribute">color</span>:orange;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a class="jsbin-embed" href="http://js.jirengu.com/cutejejoja/1/embed?css,output" target="_blank" rel="external">【点击查看在线演示】</a><script src="http://js.jirengu.com/js/embed.js"></script></p>
+<h1 id="利用checkbox的-checked伪类，实现点击切换状态"><a href="#利用checkbox的-checked伪类，实现点击切换状态" class="headerlink" title="利用checkbox的:checked伪类，实现点击切换状态"></a>利用checkbox的:checked伪类，实现点击切换状态</h1><p>点击checkbox后，h1的字体变红：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#checkbox</span><span class="selector-pseudo">:checked</span> ~ <span class="selector-tag">h1</span>&#123;</div><div class="line">  <span class="attribute">color</span>:red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a class="jsbin-embed" href="http://js.jirengu.com/ziquzuzuxi/1/embed?css,output" target="_blank" rel="external">【点击查看在线演示】</a><script src="http://js.jirengu.com/js/embed.js"></script></p>
+<h1 id="使用label美化，添加按钮图标"><a href="#使用label美化，添加按钮图标" class="headerlink" title="使用label美化，添加按钮图标"></a>使用label美化，添加按钮图标</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"menu-checkbox"</span>&gt;</span>点击菜单<span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"menu-checkbox"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a class="jsbin-embed" href="http://js.jirengu.com/kexulizujo/1/embed?html,css,output" target="_blank" rel="external">【点击查看在线演示】</a><script src="http://js.jirengu.com/js/embed.js"></script></p>
 
       
     </div>
@@ -392,6 +403,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/html/" rel="tag"><i class="fa fa-tag"></i> html</a>
+          
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+          
+        </div>
+      
 
       
       
@@ -401,8 +420,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/21/MVC小例子/" rel="next" title="MVC小例子">
-                <i class="fa fa-chevron-left"></i> MVC小例子
+              <a href="/2018/06/25/yarn使用教程/" rel="next" title="yarn使用教程">
+                <i class="fa fa-chevron-left"></i> yarn使用教程
               </a>
             
           </div>
@@ -411,8 +430,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/04/实现一个简单的router/" rel="prev" title="实现一个简单的router">
-                实现一个简单的router <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/30/移动端豆瓣电影项目笔记/" rel="prev" title="🔒 移动端豆瓣电影项目笔记">
+                🔒 移动端豆瓣电影项目笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -465,8 +484,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -546,6 +574,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#设置meta-vp"><span class="nav-number">1.</span> <span class="nav-text">设置meta:vp</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#媒体查询"><span class="nav-number">2.</span> <span class="nav-text">媒体查询</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#link标签的-media-属性"><span class="nav-number">2.1.</span> <span class="nav-text">link标签的 media 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css文件中使用-media"><span class="nav-number">2.2.</span> <span class="nav-text">css文件中使用 @media</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#利用checkbox的-checked伪类，实现点击切换状态"><span class="nav-number">3.</span> <span class="nav-text">利用checkbox的:checked伪类，实现点击切换状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用label美化，添加按钮图标"><span class="nav-number">4.</span> <span class="nav-text">使用label美化，添加按钮图标</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
