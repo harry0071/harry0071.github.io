@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                //history.back(); 不推荐这种方法，建议使用下面的方法
+                location="//harry0071.github.io"; //返回网站，请自定义
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css,教程," />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="sass深入浅出">
+<meta property="og:url" content="harry0071.github.io/2018/09/30/sass入门/index.html">
+<meta property="og:site_name" content="stage's blog">
+<meta property="og:image" content="https://i.loli.net/2018/09/30/5bb08ab1ad336.png">
+<meta property="og:updated_time" content="2018-10-04T04:02:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sass深入浅出">
+<meta name="twitter:image" content="https://i.loli.net/2018/09/30/5bb08ab1ad336.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="harry0071.github.io/2018/09/30/sass入门/"/>
+
+
+
+
+
+  <title>sass深入浅出 | stage's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">stage's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="harry0071.github.io/2018/09/30/sass入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="stage">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/22497777">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="stage's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">sass深入浅出</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T16:31:41+08:00">
+                2018-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://i.loli.net/2018/09/30/5bb08ab1ad336.png" alt="logo.png"></p>
+<a id="more"></a>
+<h1 id="辅助工具"><a href="#辅助工具" class="headerlink" title="辅助工具"></a>辅助工具</h1><ul>
+<li>sass在线转css：<a href="https://www.sassmeister.com/" target="_blank" rel="external">https://www.sassmeister.com/</a></li>
+<li>使用LESS color函数创建配色方案：<a href="http://www.ui.cn/detail/48294.html" target="_blank" rel="external">http://www.ui.cn/detail/48294.html</a></li>
+</ul>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 这种注释内容不会出现在生成的css文件中</span></div><div class="line"><span class="comment">/* 这种注释内容会出现在生成的css文件中 */</span></div></pre></td></tr></table></figure>
+<h1 id="导入-import"><a href="#导入-import" class="headerlink" title="导入@import"></a>导入@import</h1><p>scss模块需要以<code>_</code>开头<br>新建<code>_base.scss</code>文件<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">	<span class="attribute">margin</span>:<span class="number">0</span>;</div><div class="line">	<span class="attribute">padding</span>:<span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后在其他scss文件中引入<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">import</span> <span class="string">'base'</span>;  <span class="comment">//不需要下划线和文件名</span></div></pre></td></tr></table></figure></p>
+<h1 id="变量-Variables"><a href="#变量-Variables" class="headerlink" title="变量 Variables"></a>变量 Variables</h1><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$bg-color</span>: red;</div><div class="line"><span class="variable">$bd</span>: <span class="number">1px</span> solid <span class="variable">$bg-color</span></div><div class="line"></div><div class="line">.box&#123;</div><div class="line">	border: <span class="variable">$bd</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="嵌套-Nesting"><a href="#嵌套-Nesting" class="headerlink" title="嵌套 Nesting"></a>嵌套 Nesting</h1><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">nav</span> &#123;</div><div class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">	<span class="selector-tag">ul</span> &#123;</div><div class="line">		<span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">		<span class="selector-tag">li</span> &#123;</div><div class="line">			<span class="attribute">padding</span>: <span class="number">5px</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.father</span> &#123;</div><div class="line">	&gt; <span class="selector-class">.son</span>&#123;    <span class="comment">// `&gt;`选择器</span></div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.father</span> &#123;</div><div class="line">	<span class="selector-class">.son</span>&#123;    <span class="comment">// .father .son</span></div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.father</span> &#123;</div><div class="line">	&amp;<span class="selector-class">.son</span>&#123;    <span class="comment">// .father.son</span></div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="amp-调用父选择器"><a href="#amp-调用父选择器" class="headerlink" title="&amp; 调用父选择器"></a>&amp; 调用父选择器</h2><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">	&amp;:hover&#123;    <span class="comment">// 伪类 .box:hover</span></div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">	&amp; &amp;-info&#123;    <span class="comment">// 调用父选择器 .box .box-info</span></div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="群组选择器的嵌套"><a href="#群组选择器的嵌套" class="headerlink" title="群组选择器的嵌套"></a>群组选择器的嵌套</h2><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">  <span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span> &#123;<span class="attribute">color</span>:red;&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 编译结果：</span></div><div class="line"><span class="selector-class">.box</span> <span class="selector-tag">h1</span>, <span class="selector-class">.box</span> <span class="selector-tag">h2</span>, <span class="selector-class">.box</span> <span class="selector-tag">h3</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.a</span>, <span class="selector-class">.b</span> &#123;</div><div class="line">  <span class="selector-tag">div</span> &#123;<span class="attribute">color</span>: blue&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 编译结果：</div><div class="line">.a div, .b div &#123;</div><div class="line">  color: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="mixin-混合-一般用于有参数的情况"><a href="#mixin-混合-一般用于有参数的情况" class="headerlink" title="mixin 混合(一般用于有参数的情况)"></a>mixin 混合(一般用于有参数的情况)</h1><p>语法<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> 名字(参数<span class="number">1</span>,参数<span class="number">2</span>...)&#123;</div><div class="line">	...</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">	@<span class="keyword">include</span> 名字;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>优点 : 可以传参</li>
+<li>缺点 : 调用时,会把<code>@mixin</code>中的所有代码 copy 到下面的选择器中,产生大量重复代码</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> danger &#123;</div><div class="line">	<span class="attribute">color</span>: red;</div><div class="line">	<span class="selector-tag">div</span> &#123;</div><div class="line">	  <span class="attribute">color</span>: blue;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.danger-box</span> &#123;</div><div class="line">	@<span class="keyword">include</span> danger;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.danger-item</span> &#123;</div><div class="line">  @<span class="keyword">include</span> danger;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//编译结果：</span></div><div class="line"><span class="selector-class">.danger-box</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.danger-box</span> <span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">color</span>: blue;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.danger-item</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.danger-item</span> <span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">color</span>: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>相当于把<code>@mixin danger</code>里的所有属性复制到下面<code>@include</code>的选择器中</p>
+<h2 id="mixin传参"><a href="#mixin传参" class="headerlink" title="mixin传参"></a>mixin传参</h2><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> danger(<span class="variable">$color</span>,<span class="variable">$div-color</span>) &#123;</div><div class="line">	<span class="attribute">color</span>: <span class="variable">$color</span>;</div><div class="line">	<span class="selector-tag">div</span> &#123;</div><div class="line">	  <span class="attribute">color</span>: darken(<span class="variable">$div-color</span>,<span class="number">10%</span>);  <span class="comment">//加深10%</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.danger-box</span> &#123;</div><div class="line">	@<span class="keyword">include</span> danger(red,blue);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.danger-item</span> &#123;</div><div class="line">  @<span class="keyword">include</span> danger(red,blue);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//编译结果：</span></div><div class="line"><span class="selector-class">.danger-box</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.danger-box</span> <span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#0000cc</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.danger-item</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.danger-item</span> <span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#0000cc</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的方法，必须按照顺序传入参数；如果你记不住参数顺序，你们可以使用下面的格式<code>$name:value</code>：　　　　　　　　<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> danger(<span class="variable">$color</span>,<span class="variable">$div-color</span>,<span class="variable">$fz</span>) &#123;</div><div class="line">	<span class="attribute">color</span>: <span class="variable">$color</span>;</div><div class="line">	<span class="attribute">font-size</span>: <span class="variable">$fz</span>;</div><div class="line">	<span class="selector-tag">div</span> &#123;</div><div class="line">	  <span class="attribute">color</span>: <span class="variable">$div-color</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.danger-box</span> &#123;</div><div class="line">	@<span class="keyword">include</span> danger(<span class="variable">$fz</span>:<span class="number">12px</span>,<span class="variable">$color</span>:blue,<span class="variable">$div-color</span>:orange); <span class="comment">//$name:value格式</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//编译结果：</span></div><div class="line"><span class="selector-class">.danger-box</span> &#123;</div><div class="line">  <span class="attribute">color</span>: blue;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.danger-box</span> <span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">color</span>: orange;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="mixin默认值"><a href="#mixin默认值" class="headerlink" title="mixin默认值"></a>mixin默认值</h2><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> danger(<span class="variable">$color</span>:red, <span class="variable">$div-color</span>:<span class="variable">$color</span>, <span class="variable">$fz</span>:<span class="number">16px</span>) &#123;</div><div class="line">	<span class="attribute">color</span>: <span class="variable">$color</span>;</div><div class="line">	<span class="attribute">font-size</span>: <span class="variable">$fz</span>;</div><div class="line">	<span class="selector-tag">div</span> &#123;</div><div class="line">	  <span class="attribute">color</span>: <span class="variable">$div-color</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="继承-extend-一般用于无参数的情况"><a href="#继承-extend-一般用于无参数的情况" class="headerlink" title="继承 extend(一般用于无参数的情况)"></a>继承 extend(一般用于无参数的情况)</h1><p>优点 : 将相同代码,提取到群组选择器,减少冗余代码</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.a</span>&#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.a</span>&gt;<span class="selector-tag">p</span>&#123;</div><div class="line">  <span class="attribute">font-size</span>:<span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.a-x</span>&#123;</div><div class="line">  @<span class="keyword">extend</span> .a;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//编译结果：</span></div><div class="line"><span class="selector-class">.a</span>, <span class="selector-class">.a-x</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.a</span>&gt;<span class="selector-tag">p</span>, <span class="selector-class">.a-x</span>&gt;<span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>相当于把下面用到<code>@extend</code>的选择器挪到上面的<code>.a</code>形成群组选择器<br>！！使用占位符(placeholder)<code>%</code>可以不编译该选择器：<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">%<span class="selector-tag">a</span>&#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.b</span>&#123;</div><div class="line">  @<span class="keyword">extend</span> %a;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.c</span>&#123;</div><div class="line">  @<span class="keyword">extend</span> %a;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//编译结果：</span></div><div class="line"><span class="selector-class">.c</span>, <span class="selector-class">.b</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h1><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.box</span>&#123;</div><div class="line">	<span class="attribute">width</span>:<span class="number">5px</span> + <span class="number">1px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$content</span>: <span class="string">'hello'</span>;</div><div class="line"><span class="selector-tag">div</span>:after&#123;</div><div class="line">	<span class="attribute">content</span>: to-upper-case(<span class="variable">$content</span>); <span class="comment">//变成大写</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//此外</span></div><div class="line">to-lower-case(字符串) <span class="comment">//变成小写</span></div></pre></td></tr></table></figure>
+<h1 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h1><h2 id="adjust-hue"><a href="#adjust-hue" class="headerlink" title="adjust-hue"></a>adjust-hue</h2><p>该函数改变hsl中的h<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$text-color</span>: red;  <span class="comment">//即hsl(0,100%,50%)</span></div><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">	<span class="attribute">color</span>: adjust-hue(<span class="variable">$text-color</span>,<span class="number">250</span>) //变成hsl(<span class="number">250</span>,<span class="number">100%</span>,<span class="number">50%</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="lighten和darken"><a href="#lighten和darken" class="headerlink" title="lighten和darken"></a>lighten和darken</h2><ul>
+<li>lighten加深hsl中的l(明度)</li>
+<li>darken减弱hsl中的l(明度)</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$base-color</span>: red; <span class="comment">//即hsl(0,100%,50%)</span></div><div class="line"><span class="variable">$light-color</span>: lighten(<span class="variable">$base-color</span>,<span class="number">30%</span>); <span class="comment">//即hsl(0,100%,80%)</span></div><div class="line"><span class="variable">$light-color</span>: darken(<span class="variable">$base-color</span>,<span class="number">30%</span>); <span class="comment">//hsl(0,100%,20%)</span></div></pre></td></tr></table></figure>
+<h2 id="saturate和desaturate"><a href="#saturate和desaturate" class="headerlink" title="saturate和desaturate"></a>saturate和desaturate</h2><ul>
+<li>saturate:饱和度s加深</li>
+<li>desaturate：饱和度s减弱</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$base-color</span>: hsl(<span class="number">0</span>,<span class="number">50%</span>,<span class="number">50%</span>)</div><div class="line"><span class="variable">$saturate-color</span>: saturate(<span class="variable">$base-color</span>,<span class="number">30%</span>); <span class="comment">//即hsl(0,80%,50%)</span></div><div class="line"><span class="variable">$desaturate-color</span>: desaturate(<span class="variable">$base-color</span>,<span class="number">30%</span>); <span class="comment">//hsl(0,20%,20%)</span></div></pre></td></tr></table></figure>
+<h2 id="opacify-fade-in-和-transparentize-fade-out"><a href="#opacify-fade-in-和-transparentize-fade-out" class="headerlink" title="opacify/fade-in 和 transparentize/fade-out"></a>opacify/fade-in 和 transparentize/fade-out</h2><ul>
+<li>opacify:增加透明度 【或者fade-in($color,增加透明度)】</li>
+<li>transparentize:减弱透明度 【或者fade-out($color,减弱透明度)】</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$base-color</span>: rgba(<span class="number">0</span>,<span class="number">77</span>,<span class="number">255</span>,<span class="number">0.5</span>); </div><div class="line"><span class="variable">$deep-color</span>: opacify(<span class="variable">$base-color</span>,<span class="number">0.3</span>); <span class="comment">//rgba(0,77,255,0.8);</span></div><div class="line">等同于： <span class="variable">$deep-color</span>: fade-in(<span class="variable">$base-color</span>,<span class="number">0.3</span>);</div><div class="line"></div><div class="line"></div><div class="line"><span class="variable">$light-color</span>: transparentize(<span class="variable">$base-color</span>,<span class="number">0.3</span>); <span class="comment">//rgba(0,77,255,0.2);</span></div><div class="line">等同于： <span class="variable">$light-color</span>: fade-out(<span class="variable">$base-color</span>,<span class="number">0.3</span>);</div></pre></td></tr></table></figure>
+<h2 id="complement-color-返回一个补充色"><a href="#complement-color-返回一个补充色" class="headerlink" title="complement($color) 返回一个补充色"></a>complement($color) 返回一个补充色</h2><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$color</span>: rgb(<span class="number">100</span>,<span class="number">150</span>,<span class="number">200</span>);</div><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">  <span class="attribute">color</span>: complement(<span class="variable">$color</span>);  <span class="comment">//rgb(200,150,100);</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="invert-color-返回反相色"><a href="#invert-color-返回反相色" class="headerlink" title="invert($color) 返回反相色"></a>invert($color) 返回反相色</h2><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">  <span class="attribute">color</span>: invert(rgb(<span class="number">3</span>,<span class="number">6</span>,<span class="number">9</span>)); <span class="comment">//rgb(252,249,246)</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="maps"><a href="#maps" class="headerlink" title="maps"></a>maps</h1><p>语法：<code>$名字:(key1: value1, key2: value2, key3: value3);</code></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$alert-colors</span>:(primary:blue,danger:red,warning:yellow);</div><div class="line"></div><div class="line"><span class="selector-class">.alert-primary</span>&#123;</div><div class="line">	<span class="attribute">color</span>: map-get(<span class="variable">$alert-colors</span>,primary)</div><div class="line">&#125;</div><div class="line"></div><div class="line">//编译结果：</div><div class="line">.alert-primary &#123;</div><div class="line">  color: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="插值"><a href="#插值" class="headerlink" title="插值#{}"></a>插值#{}</h1><p>选择器名字、属性名等，需要用插值引入变量</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$text</span>: <span class="string">'primary'</span>;</div><div class="line"><span class="variable">$l</span>: <span class="string">'left'</span>;</div><div class="line"></div><div class="line"><span class="selector-class">.alert-</span>#&#123;<span class="variable">$text</span>&#125;&#123;</div><div class="line">  <span class="attribute">padding</span>-#&#123;<span class="variable">$l</span>&#125;: <span class="number">2px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//编译结果：</span></div><div class="line"><span class="selector-class">.alert-primary</span> &#123;</div><div class="line">  <span class="attribute">padding-left</span>: <span class="number">2px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="控制指令"><a href="#控制指令" class="headerlink" title="控制指令"></a>控制指令</h1><h2 id="if"><a href="#if" class="headerlink" title="@if"></a>@if</h2><p>语法：<code>@if 条件{ ... }</code></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$theme</span>:<span class="string">'light'</span>;</div><div class="line"></div><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">	@<span class="keyword">if</span> <span class="variable">$theme</span> == dark&#123;</div><div class="line">		<span class="attribute">background-color</span>: black;</div><div class="line">	&#125; @<span class="keyword">else</span> if <span class="variable">$theme</span> == light&#123;</div><div class="line">		<span class="attribute">background-color</span>: white;</div><div class="line">	&#125; @<span class="keyword">else</span> &#123;</div><div class="line">		<span class="attribute">background-color</span>: red;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="for"><a href="#for" class="headerlink" title="@for"></a>@for</h2><p>语法：<code>@for $i from 第几项 through 第几项{ ... }</code></p>
+<ul>
+<li>through 4：会输出到4为止</li>
+<li>to 4：输出到3结束</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$columns</span>:<span class="number">4</span>;</div><div class="line">@<span class="keyword">for</span> <span class="variable">$i</span> from 1 through <span class="variable">$columns</span> &#123;</div><div class="line">	<span class="selector-tag">col</span>-#&#123;<span class="variable">$i</span>&#125; &#123;</div><div class="line">		<span class="attribute">width</span>: <span class="number">100%</span> / <span class="variable">$columns</span>*<span class="variable">$i</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//编译结果：</span></div><div class="line"><span class="selector-tag">col</span>-1 &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">25%</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">col</span>-2 &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">50%</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">col</span>-3 &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">75%</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">col</span>-4 &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="each"><a href="#each" class="headerlink" title="@each"></a>@each</h2><p>语法：<code>@each $list in $lists { ... }</code><br>该方法用于列表lists</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$types</span>: success danger warning;</div><div class="line"></div><div class="line">@<span class="keyword">each</span> <span class="variable">$type</span> in <span class="variable">$types</span> &#123;</div><div class="line">	<span class="selector-class">.alert-</span>#&#123;<span class="variable">$type</span>&#125; &#123;</div><div class="line">		<span class="attribute">background-image</span>: url(../imgs/#&#123;<span class="variable">$type</span>&#125;.png);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//编译结果：</span></div><div class="line"><span class="selector-class">.alert-success</span> &#123;</div><div class="line">  <span class="attribute">background-image</span>: url(../imgs/success.png);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.alert-danger</span> &#123;</div><div class="line">  <span class="attribute">background-image</span>: url(../imgs/danger.png);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.alert-warning</span> &#123;</div><div class="line">  <span class="attribute">background-image</span>: url(../imgs/warning.png);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果列表是个map：<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">each</span> <span class="variable">$h</span>, <span class="variable">$size</span> in (h1: 2em, h2: 1.5em, h3: 1.2em) &#123;</div><div class="line">  #&#123;<span class="variable">$h</span>&#125; &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="variable">$size</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//编译结果：</span></div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">2em</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h2</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">1.5em</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h3</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">1.2em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$types-colors</span>: (primary:blue, danger:red, warning:yellow);</div><div class="line"></div><div class="line">@<span class="keyword">each</span> <span class="variable">$type</span>,<span class="variable">$color</span> in <span class="variable">$types-colors</span> &#123;</div><div class="line">  <span class="selector-class">.alert-</span>#&#123;<span class="variable">$type</span>&#125; &#123;</div><div class="line">    <span class="attribute">color</span>: <span class="variable">$color</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//编译结果：</span></div><div class="line"><span class="selector-class">.alert-primary</span> &#123;</div><div class="line">  <span class="attribute">color</span>: blue;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.alert-danger</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.alert-warning</span> &#123;</div><div class="line">  <span class="attribute">color</span>: yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p>二维map：<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$theme-color</span>: (</div><div class="line">  primary: (background-color:blue, width:<span class="number">10px</span>),</div><div class="line">  danger: (background-color:blue, width:<span class="number">20px</span>),</div><div class="line">  success: (background-color:green, width:<span class="number">30px</span>)</div><div class="line">);</div><div class="line"></div><div class="line">@<span class="keyword">each</span> <span class="variable">$keys</span>,<span class="variable">$values</span> in <span class="variable">$theme-color</span> &#123;</div><div class="line">  <span class="selector-class">.alert-</span>#&#123;<span class="variable">$keys</span>&#125; &#123;</div><div class="line">    @<span class="keyword">each</span> <span class="variable">$key</span>,<span class="variable">$value</span> in <span class="variable">$values</span> &#123;</div><div class="line">      #&#123;<span class="variable">$key</span>&#125;: <span class="variable">$value</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//编译结果：</span></div><div class="line"><span class="selector-class">.alert-primary</span> &#123;</div><div class="line">  <span class="attribute">background-color</span>: blue;</div><div class="line">  <span class="attribute">width</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.alert-danger</span> &#123;</div><div class="line">  <span class="attribute">background-color</span>: blue;</div><div class="line">  <span class="attribute">width</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.alert-success</span> &#123;</div><div class="line">  <span class="attribute">background-color</span>: green;</div><div class="line">  <span class="attribute">width</span>: <span class="number">30px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="while"><a href="#while" class="headerlink" title="@while"></a>@while</h2><p>语法：<code>@while 条件 { ... }</code></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$i</span>:<span class="number">1</span>;</div><div class="line">@<span class="keyword">while</span> <span class="variable">$i</span> &lt; 6 &#123;</div><div class="line">  <span class="selector-class">.item-</span>#&#123;<span class="variable">$i</span>&#125; &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">10px</span> * <span class="variable">$i</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="variable">$i</span>: <span class="variable">$i</span>+<span class="number">2</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//编译结果：</span></div><div class="line"><span class="selector-class">.item-1</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">10px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.item-3</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">30px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.item-5</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">50px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h1><p>语法：<code>@function 函数名(参数1,参数2...){ @return ... }</code></p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$colors</span>: (light:white, dark:black);</div><div class="line">@function getColor(<span class="variable">$key</span>)&#123;</div><div class="line">	@return map-get(<span class="variable">$colors</span>, <span class="variable">$key</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line">div&#123;</div><div class="line">	<span class="attribute">color</span>: getColor(light); <span class="comment">//得到white</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+    <div>
+      
+          <div>
+    
+        <div style="text-align:center;color: #404040;font-size:18px;margin-top:70px;">-------------本文结束<i class="fa fa-star"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+          
+            <a href="/tags/教程/" rel="tag"><i class="fa fa-tag"></i> 教程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/27/26个字母全排列-求第k项/" rel="next" title="26个字母全排列,求第k项">
+                <i class="fa fa-chevron-left"></i> 26个字母全排列,求第k项
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/08/bootstrap-vue实现一个新闻网站/" rel="prev" title="bootstrap + vue，实现一个新闻网站">
+                bootstrap + vue，实现一个新闻网站 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://avatars3.githubusercontent.com/u/22497777"
+                alt="stage" />
+            
+              <p class="site-author-name" itemprop="name">stage</p>
+              <p class="site-description motion-element" itemprop="description">学习、记录、感悟、成长</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">89</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/harry0071" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:2015081a@sina.com" target="_blank" title="E-mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#辅助工具"><span class="nav-number">1.</span> <span class="nav-text">辅助工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注释"><span class="nav-number">2.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#导入-import"><span class="nav-number">3.</span> <span class="nav-text">导入@import</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量-Variables"><span class="nav-number">4.</span> <span class="nav-text">变量 Variables</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#嵌套-Nesting"><span class="nav-number">5.</span> <span class="nav-text">嵌套 Nesting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#amp-调用父选择器"><span class="nav-number">5.1.</span> <span class="nav-text">& 调用父选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#群组选择器的嵌套"><span class="nav-number">5.2.</span> <span class="nav-text">群组选择器的嵌套</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mixin-混合-一般用于有参数的情况"><span class="nav-number">6.</span> <span class="nav-text">mixin 混合(一般用于有参数的情况)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mixin传参"><span class="nav-number">6.1.</span> <span class="nav-text">mixin传参</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mixin默认值"><span class="nav-number">6.2.</span> <span class="nav-text">mixin默认值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承-extend-一般用于无参数的情况"><span class="nav-number">7.</span> <span class="nav-text">继承 extend(一般用于无参数的情况)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数字"><span class="nav-number">8.</span> <span class="nav-text">数字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串"><span class="nav-number">9.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#颜色"><span class="nav-number">10.</span> <span class="nav-text">颜色</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#adjust-hue"><span class="nav-number">10.1.</span> <span class="nav-text">adjust-hue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lighten和darken"><span class="nav-number">10.2.</span> <span class="nav-text">lighten和darken</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#saturate和desaturate"><span class="nav-number">10.3.</span> <span class="nav-text">saturate和desaturate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#opacify-fade-in-和-transparentize-fade-out"><span class="nav-number">10.4.</span> <span class="nav-text">opacify/fade-in 和 transparentize/fade-out</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#complement-color-返回一个补充色"><span class="nav-number">10.5.</span> <span class="nav-text">complement($color) 返回一个补充色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#invert-color-返回反相色"><span class="nav-number">10.6.</span> <span class="nav-text">invert($color) 返回反相色</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#maps"><span class="nav-number">11.</span> <span class="nav-text">maps</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插值"><span class="nav-number">12.</span> <span class="nav-text">插值#{}</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控制指令"><span class="nav-number">13.</span> <span class="nav-text">控制指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#if"><span class="nav-number">13.1.</span> <span class="nav-text">@if</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for"><span class="nav-number">13.2.</span> <span class="nav-text">@for</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#each"><span class="nav-number">13.3.</span> <span class="nav-text">@each</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while"><span class="nav-number">13.4.</span> <span class="nav-text">@while</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义函数"><span class="nav-number">14.</span> <span class="nav-text">自定义函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">stage</span>
+
+  
+</div>
+
+
+  <div class="powered-by">自豪地采用 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
